@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "about-retro",
+  "title": "Retro about",
+  "description": "Values as bright rounded cards with sticker icons.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/about/about-retro.tsx",
+      "content": "import { Heart, Leaf, Sun, Users } from \"lucide-react\"\n\nconst VALUES = [\n  { icon: Sun, title: \"Made for good days\", body: \"We build the drink you reach for when the sun's out and plans are loose.\", color: \"bg-accent\" },\n  { icon: Leaf, title: \"Kind to the planet\", body: \"Recyclable cans, real ingredients, suppliers we actually visit.\", color: \"bg-secondary text-secondary-foreground\" },\n  { icon: Users, title: \"Small, loud team\", body: \"Nine humans in one bright room, mixing flavors and arguing about color.\", color: \"bg-primary text-primary-foreground\" },\n  { icon: Heart, title: \"No weird stuff\", body: \"If we can't pronounce it, it doesn't go in. Simple as that.\", color: \"bg-card\" },\n]\n\n/**\n * Retro about — values as bright rounded cards with sticker icons.\n */\nexport function AboutRetro() {\n  return (\n    <section className=\"bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl\">\n        <p className=\"font-black tracking-[0.2em] uppercase text-primary\">Who we are</p>\n        <h2 className=\"mt-3 max-w-2xl text-[clamp(2rem,5vw,3.25rem)] font-black leading-[0.95] tracking-tight\">\n          A soda company that takes fun seriously.\n        </h2>\n\n        <div className=\"mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4\">\n          {VALUES.map(({ icon: Icon, title, body, color }) => (\n            <div\n              key={title}\n              className={`rounded-[1.5rem] border-2 border-foreground p-6 shadow-[5px_5px_0_0_var(--foreground)] ${color}`}\n            >\n              <span className=\"grid size-12 place-items-center rounded-2xl border-2 border-foreground bg-card text-foreground\">\n                <Icon className=\"size-6\" />\n              </span>\n              <p className=\"mt-4 text-lg font-black\">{title}</p>\n              <p className=\"mt-1.5 text-sm font-medium opacity-80\">{body}</p>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/about-retro.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

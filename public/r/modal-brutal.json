@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "modal-brutal",
+  "title": "Brutal modal",
+  "description": "Hard-shadow dialog with Escape and backdrop close.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/overlays/modal-brutal.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { X } from \"lucide-react\"\n\n/**\n * Brutal modal — hard-shadow dialog with Escape + backdrop close.\n */\nexport function ModalBrutal() {\n  const [open, setOpen] = React.useState(false)\n\n  React.useEffect(() => {\n    if (!open) return\n    const onKey = (e: KeyboardEvent) => e.key === \"Escape\" && setOpen(false)\n    window.addEventListener(\"keydown\", onKey)\n    return () => window.removeEventListener(\"keydown\", onKey)\n  }, [open])\n\n  return (\n    <section className=\"grid min-h-[340px] place-items-center border-y-4 border-foreground bg-background px-5 py-16 text-foreground\">\n      <button\n        onClick={() => setOpen(true)}\n        className=\"border-2 border-foreground bg-accent px-8 py-4 text-lg font-black uppercase shadow-[6px_6px_0_0_var(--foreground)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-[3px_3px_0_0_var(--foreground)]\"\n      >\n        Open dialog\n      </button>\n\n      {open && (\n        <div\n          className=\"fixed inset-0 z-50 grid place-items-center bg-foreground/40 p-5\"\n          onClick={() => setOpen(false)}\n        >\n          <div\n            role=\"dialog\"\n            aria-modal=\"true\"\n            onClick={(e) => e.stopPropagation()}\n            className=\"w-full max-w-md border-4 border-foreground bg-background p-7 shadow-[10px_10px_0_0_var(--foreground)]\"\n          >\n            <div className=\"flex items-start justify-between\">\n              <h3 className=\"text-2xl font-black uppercase leading-none\">Are you sure?</h3>\n              <button\n                aria-label=\"Close\"\n                onClick={() => setOpen(false)}\n                className=\"grid size-9 place-items-center border-2 border-foreground transition-colors hover:bg-foreground hover:text-background\"\n              >\n                <X className=\"size-5\" />\n              </button>\n            </div>\n            <p className=\"mt-4 font-mono text-sm leading-relaxed text-muted-foreground\">\n              This action is loud and permanent. There&apos;s no quiet undo — only borders.\n            </p>\n            <div className=\"mt-6 flex gap-3\">\n              <button\n                onClick={() => setOpen(false)}\n                className=\"flex-1 border-2 border-foreground bg-foreground px-4 py-3 text-sm font-black uppercase text-background\"\n              >\n                Do it\n              </button>\n              <button\n                onClick={() => setOpen(false)}\n                className=\"flex-1 border-2 border-foreground px-4 py-3 text-sm font-black uppercase hover:bg-accent\"\n              >\n                Cancel\n              </button>\n            </div>\n          </div>\n        </div>\n      )}\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/modal-brutal.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

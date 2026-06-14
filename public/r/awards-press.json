@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "awards-press",
+  "title": "Awards & press",
+  "description": "Accreditation cards beside press quotes.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/about/awards-press.tsx",
+      "content": "import { Award, Quote } from \"lucide-react\"\n\nconst AWARDS = [\n  { year: \"2025\", title: \"Best of the Region\", org: \"Community Choice Awards\" },\n  { year: \"2024\", title: \"Top-Rated Provider\", org: \"CareCompare\" },\n  { year: \"2024\", title: \"Excellence in Service\", org: \"State Trade Council\" },\n  { year: \"2023\", title: \"A+ Accredited\", org: \"Better Business Bureau\" },\n]\n\nconst PRESS = [\n  { quote: \"The team you actually want to call.\", source: \"The Tribune\" },\n  { quote: \"Five-star care, every visit.\", source: \"Local Living\" },\n  { quote: \"Reliable, honest, and fast.\", source: \"Home & Hearth\" },\n]\n\n/**\n * Awards & press — accreditations and \"as seen in\" quotes that build\n * trust. Pair credentials on the left with press mentions on the right.\n */\nexport function AwardsPress() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"mx-auto max-w-6xl\">\n        <div className=\"mb-12 text-center\">\n          <p className=\"font-medium text-primary\">Recognized for it</p>\n          <h2 className=\"mt-2 text-3xl font-semibold tracking-tight text-balance sm:text-4xl\">\n            Trusted by our community — and the people who cover it.\n          </h2>\n        </div>\n\n        <div className=\"grid gap-6 lg:grid-cols-2\">\n          <div className=\"grid grid-cols-2 gap-4\">\n            {AWARDS.map((a) => (\n              <div key={a.title} className=\"rounded-2xl border bg-card p-5\">\n                <div className=\"flex items-center justify-between\">\n                  <Award className=\"size-6 text-accent-foreground\" />\n                  <span className=\"font-mono text-xs text-muted-foreground\">{a.year}</span>\n                </div>\n                <p className=\"mt-4 font-semibold leading-tight\">{a.title}</p>\n                <p className=\"mt-1 text-sm text-muted-foreground\">{a.org}</p>\n              </div>\n            ))}\n          </div>\n\n          <div className=\"flex flex-col justify-center gap-4 rounded-2xl border bg-secondary p-7\">\n            <p className=\"font-mono text-xs tracking-[0.2em] uppercase text-muted-foreground\">As seen in</p>\n            {PRESS.map((p) => (\n              <figure key={p.source} className=\"border-b border-border/60 pb-4 last:border-0 last:pb-0\">\n                <Quote className=\"size-4 text-primary\" />\n                <blockquote className=\"mt-1.5 font-serif text-xl leading-snug text-balance\">{p.quote}</blockquote>\n                <figcaption className=\"mt-1 text-sm text-muted-foreground\">— {p.source}</figcaption>\n              </figure>\n            ))}\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/awards-press.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

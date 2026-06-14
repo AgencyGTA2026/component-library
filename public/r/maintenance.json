@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "maintenance",
+  "title": "Maintenance screen",
+  "description": "Scheduled-downtime screen with ETA and notify-me field.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/states/maintenance.tsx",
+      "content": "\"use client\"\n\nimport { Clock, Wrench } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\n\n/**\n * Maintenance — a scheduled-downtime / be-right-back screen with an ETA\n * and an optional notify-me field. Loud brutal treatment by default.\n */\nexport function Maintenance() {\n  return (\n    <section className=\"grid min-h-[80vh] place-items-center border-y-4 border-foreground bg-background px-5 py-20 text-foreground sm:px-8\">\n      <div className=\"mx-auto max-w-xl text-center\">\n        <span className=\"mx-auto grid size-16 -rotate-3 place-items-center border-2 border-foreground bg-accent text-accent-foreground shadow-[5px_5px_0_0_var(--foreground)]\">\n          <Wrench className=\"size-8\" />\n        </span>\n        <h1 className=\"mt-8 text-[clamp(2.5rem,8vw,5rem)] font-black leading-[0.9] tracking-tighter uppercase\">\n          Down for a tune-up.\n        </h1>\n        <p className=\"mx-auto mt-5 max-w-md font-mono text-sm\">\n          We&apos;re making things faster and better. The site will be back\n          shortly — thanks for your patience.\n        </p>\n\n        <div className=\"mt-7 inline-flex items-center gap-2 border-2 border-foreground bg-card px-4 py-2 font-mono text-sm font-bold\">\n          <Clock className=\"size-4\" />\n          Estimated back by 3:00 PM EST\n        </div>\n\n        <form className=\"mx-auto mt-8 flex max-w-sm gap-2\" onSubmit={(e) => e.preventDefault()}>\n          <Input placeholder=\"Email me when it's back\" className=\"rounded-none border-2 border-foreground\" />\n          <Button type=\"submit\" className=\"shrink-0 rounded-none border-2 border-foreground\">Notify me</Button>\n        </form>\n\n        <p className=\"mt-6 font-mono text-xs text-muted-foreground\">\n          Urgent? Call us at (555) 123-4567.\n        </p>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/maintenance.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "service-retro",
+  "title": "Retro process steps",
+  "description": "A four-step rail of bright rounded cards.",
+  "files": [
+    {
+      "path": "registry/blocks/service/service-retro.tsx",
+      "content": "const STEPS = [\n  { n: \"1\", title: \"Pick flavors\", body: \"Mix and match a case from six loud flavors — or grab the sampler.\", color: \"bg-accent\" },\n  { n: \"2\", title: \"Set a pace\", body: \"One-time or subscribe. Every 2 to 8 weeks, you choose.\", color: \"bg-secondary text-secondary-foreground\" },\n  { n: \"3\", title: \"We ship cold\", body: \"Cold-packed and on your doorstep in 2 to 4 days.\", color: \"bg-primary text-primary-foreground\" },\n  { n: \"4\", title: \"Pop & repeat\", body: \"Skip, swap, or pause anytime. No lock-in, ever.\", color: \"bg-card\" },\n]\n\n/**\n * Retro process — a four-step rail of bright rounded cards.\n */\nexport function ServiceRetro() {\n  return (\n    <section className=\"bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl\">\n        <p className=\"font-black tracking-[0.2em] uppercase text-primary\">How it works</p>\n        <h2 className=\"mt-3 text-[clamp(2rem,5vw,3.25rem)] font-black tracking-tight\">\n          From thirsty to fizzy in four steps\n        </h2>\n\n        <div className=\"mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4\">\n          {STEPS.map((s) => (\n            <div\n              key={s.n}\n              className={`rounded-[1.5rem] border-2 border-foreground p-6 shadow-[5px_5px_0_0_var(--foreground)] ${s.color}`}\n            >\n              <span className=\"grid size-12 place-items-center rounded-full border-2 border-foreground bg-card text-2xl font-black text-foreground\">\n                {s.n}\n              </span>\n              <p className=\"mt-4 text-xl font-black\">{s.title}</p>\n              <p className=\"mt-1.5 text-sm font-medium opacity-80\">{s.body}</p>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/service-retro.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

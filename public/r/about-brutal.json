@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "about-brutal",
+  "title": "Brutal about",
+  "description": "Company values as bordered cells that invert on hover.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/about/about-brutal.tsx",
+      "content": "import { Asterisk, Hammer, Ruler, Zap } from \"lucide-react\"\n\nconst VALUES = [\n  { icon: Ruler, title: \"Measured twice\", body: \"We scope hard before we build. No surprises, no scope-creep invoices.\" },\n  { icon: Hammer, title: \"Built to last\", body: \"Heavy foundations. Your site won't wobble when traffic shows up.\" },\n  { icon: Zap, title: \"Ships fast\", body: \"Weeks, not quarters. We move while the idea is still hot.\" },\n  { icon: Asterisk, title: \"No fluff\", body: \"Plain talk, real deadlines, work that does the job. That's the whole pitch.\" },\n]\n\n/**\n * Brutal about — company values as bordered cells that invert on hover.\n */\nexport function AboutBrutal() {\n  return (\n    <section className=\"border-y-4 border-foreground bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl\">\n        <p className=\"font-mono text-xs tracking-[0.25em] uppercase text-muted-foreground\">What we stand on</p>\n        <h2 className=\"mt-4 max-w-3xl text-[clamp(2.25rem,6vw,4.5rem)] font-black leading-[0.9] tracking-tighter uppercase\">\n          Values you can <span className=\"bg-foreground px-2 text-accent\">measure.</span>\n        </h2>\n\n        <div className=\"mt-12 grid border-2 border-foreground sm:grid-cols-2 lg:grid-cols-4\">\n          {VALUES.map(({ icon: Icon, title, body }, i) => (\n            <div\n              key={title}\n              className=\"group border-foreground p-6 transition-colors not-last:border-b-2 hover:bg-foreground hover:text-background sm:not-last:border-b-0 sm:[&:not(:nth-child(2n))]:border-r-2 lg:[&:not(:nth-child(4n))]:border-r-2\"\n            >\n              <div className=\"flex size-12 items-center justify-center border-2 border-foreground bg-accent text-foreground shadow-[4px_4px_0_0_var(--foreground)] group-hover:bg-background\">\n                <Icon className=\"size-6\" />\n              </div>\n              <p className=\"mt-5 text-xl font-black uppercase\">{title}</p>\n              <p className=\"mt-2 font-mono text-sm leading-relaxed text-muted-foreground group-hover:text-background/70\">\n                {body}\n              </p>\n              <span className=\"mt-4 block font-mono text-xs font-bold\">0{i + 1}</span>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/about-brutal.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

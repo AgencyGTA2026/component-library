@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "faq-noir",
+  "title": "Noir FAQ",
+  "description": "A serif accordion divided by gold hairlines.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/misc/faq-noir.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { Plus } from \"lucide-react\"\n\nconst FAQS = [\n  { q: \"How long does a commission take?\", a: \"Most pieces take eight to twelve weeks from approved drawing to unveiling. Restorations and intricate settings may take longer — we will never rush the setting room.\" },\n  { q: \"Can you work from an heirloom?\", a: \"Often, yes. We can reset stones from an existing piece or redraw it entirely while preserving its character. Bring it to a viewing and we will advise honestly.\" },\n  { q: \"Do you ship internationally?\", a: \"We deliver worldwide, fully insured and by private courier. Engraving and resizing remain complimentary wherever you are.\" },\n  { q: \"What is your guarantee?\", a: \"Every piece carries a lifetime guarantee against defects in craftsmanship, alongside complimentary cleaning and condition reports for as long as you own it.\" },\n  { q: \"May I visit without an appointment?\", a: \"You are always welcome, though a booked viewing lets us prepare a selection and set aside the time you deserve.\" },\n]\n\n/**\n * Noir FAQ — a serif accordion divided by gold hairlines.\n */\nexport function FaqNoir() {\n  const [open, setOpen] = React.useState<number | null>(0)\n\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"mx-auto grid max-w-5xl gap-12 lg:grid-cols-[1fr_1.6fr]\">\n        <div className=\"h-fit lg:sticky lg:top-16\">\n          <p className=\"font-mono text-[11px] tracking-[0.35em] uppercase text-primary\">Enquiries</p>\n          <h2 className=\"mt-5 font-serif text-4xl leading-[1.05] tracking-tight\">Questions, answered plainly.</h2>\n        </div>\n\n        <div className=\"divide-y divide-border border-y border-border\">\n          {FAQS.map((f, i) => {\n            const isOpen = open === i\n            return (\n              <div key={f.q}>\n                <button\n                  onClick={() => setOpen(isOpen ? null : i)}\n                  className=\"flex w-full items-center justify-between gap-6 py-5 text-left\"\n                >\n                  <span className=\"font-serif text-lg tracking-tight\">{f.q}</span>\n                  <Plus className={`size-4 shrink-0 text-primary transition-transform ${isOpen ? \"rotate-45\" : \"\"}`} />\n                </button>\n                {isOpen && <p className=\"pb-5 leading-relaxed text-muted-foreground\">{f.a}</p>}\n              </div>\n            )\n          })}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/faq-noir.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

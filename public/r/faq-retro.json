@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "faq-retro",
+  "title": "Retro FAQ",
+  "description": "Rounded cards that pop open with a sticker toggle.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/misc/faq-retro.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { Plus } from \"lucide-react\"\n\nconst FAQS = [\n  { q: \"Is it actually healthy?\", a: \"40 calories, real fruit, no artificial sweeteners. It's a treat that happens to be kind to you.\" },\n  { q: \"Can I mix flavors in a case?\", a: \"Absolutely. Every subscription case is build-your-own — all six flavors are fair game.\" },\n  { q: \"How fast is shipping?\", a: \"Cold-packed and out the door same or next day. Most orders land in 2 to 4 days.\" },\n  { q: \"Can I pause or cancel?\", a: \"Anytime, in two taps. Skip a delivery, change your pace, or stop — no phone calls, no guilt.\" },\n  { q: \"Where can I buy in stores?\", a: \"We're in 3,200+ shops and counting. Use the stockist finder to spot one near you.\" },\n]\n\n/**\n * Retro FAQ — rounded cards that pop open with a sticker toggle.\n */\nexport function FaqRetro() {\n  const [open, setOpen] = React.useState<number | null>(0)\n\n  return (\n    <section className=\"bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-2xl\">\n        <h2 className=\"text-center text-[clamp(2rem,5vw,3.25rem)] font-black tracking-tight\">Good questions</h2>\n\n        <div className=\"mt-10 space-y-3\">\n          {FAQS.map((f, i) => {\n            const isOpen = open === i\n            return (\n              <div\n                key={f.q}\n                className=\"rounded-[1.25rem] border-2 border-foreground bg-card shadow-[4px_4px_0_0_var(--foreground)]\"\n              >\n                <button\n                  onClick={() => setOpen(isOpen ? null : i)}\n                  className=\"flex w-full items-center justify-between gap-4 p-5 text-left\"\n                >\n                  <span className=\"text-lg font-black\">{f.q}</span>\n                  <span\n                    className={`grid size-8 shrink-0 place-items-center rounded-full border-2 border-foreground transition-transform ${\n                      isOpen ? \"rotate-45 bg-primary text-primary-foreground\" : \"bg-accent\"\n                    }`}\n                  >\n                    <Plus className=\"size-4\" />\n                  </span>\n                </button>\n                {isOpen && (\n                  <p className=\"px-5 pb-5 font-medium text-muted-foreground\">{f.a}</p>\n                )}\n              </div>\n            )\n          })}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/faq-retro.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

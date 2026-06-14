@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "author-bio",
+  "title": "Author bio",
+  "description": "Byline card with avatar, follow action, and other posts.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/content/author-bio.tsx",
+      "content": "import Link from \"next/link\"\nimport { ArrowUpRight } from \"lucide-react\"\n\nconst POSTS = [\"When to repair vs. replace\", \"A homeowner's seasonal checklist\", \"Questions to ask any contractor\"]\n\n/**\n * Author bio — a byline card with avatar, blurb, follow action, and a\n * short list of the author's other posts. Sits at the end of an article.\n */\nexport function AuthorBio() {\n  return (\n    <section className=\"bg-background px-5 py-12 text-foreground sm:px-8\">\n      <div className=\"mx-auto max-w-2xl rounded-2xl border bg-card p-6 sm:p-8\">\n        <div className=\"flex flex-col gap-5 sm:flex-row\">\n          <span className=\"grid size-16 shrink-0 place-items-center rounded-full bg-gradient-to-br from-primary to-accent text-xl font-bold text-primary-foreground\">\n            JO\n          </span>\n          <div className=\"flex-1\">\n            <div className=\"flex flex-wrap items-center justify-between gap-3\">\n              <div>\n                <p className=\"font-mono text-xs tracking-[0.2em] uppercase text-muted-foreground\">Written by</p>\n                <h3 className=\"text-lg font-semibold\">June Okafor</h3>\n                <p className=\"text-sm text-muted-foreground\">Master technician · 18 years in the trade</p>\n              </div>\n              <Link href=\"#\" className=\"rounded-full border px-4 py-1.5 text-sm font-medium transition-colors hover:bg-secondary\">\n                Follow\n              </Link>\n            </div>\n            <p className=\"mt-3 text-sm leading-relaxed text-muted-foreground\">\n              June writes plain-language guides to help homeowners make\n              confident decisions — and avoid the repairs that didn&apos;t need\n              to happen.\n            </p>\n          </div>\n        </div>\n\n        <div className=\"mt-6 border-t pt-5\">\n          <p className=\"mb-3 text-sm font-semibold\">More from June</p>\n          <ul className=\"space-y-1\">\n            {POSTS.map((p) => (\n              <li key={p}>\n                <Link href=\"#\" className=\"group flex items-center justify-between gap-2 py-1.5 text-sm transition-colors hover:text-primary\">\n                  {p}\n                  <ArrowUpRight className=\"size-4 opacity-0 transition-opacity group-hover:opacity-100\" />\n                </Link>\n              </li>\n            ))}\n          </ul>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/author-bio.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

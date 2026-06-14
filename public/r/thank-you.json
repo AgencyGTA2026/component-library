@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "thank-you",
+  "title": "Thank-you page",
+  "description": "Booking/quote confirmation with next steps and calendar add.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/states/thank-you.tsx",
+      "content": "import Link from \"next/link\"\nimport { CalendarPlus, CheckCircle2, Clock, Mail, MapPin, Phone } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\n\nconst NEXT_STEPS = [\n  { icon: Mail, title: \"Check your inbox\", body: \"A confirmation and prep checklist are on the way.\" },\n  { icon: Phone, title: \"We may call\", body: \"Our team confirms details the day before.\" },\n  { icon: MapPin, title: \"Plan your visit\", body: \"Parking is free; enter through the north door.\" },\n]\n\n/**\n * Thank-you / confirmation — the page after a booking, quote, or form\n * submit. Shows the appointment summary, next steps, and a calendar add.\n */\nexport function ThankYou() {\n  return (\n    <section className=\"grid min-h-[80vh] place-items-center bg-background px-5 py-20 text-foreground sm:px-8\">\n      <div className=\"mx-auto w-full max-w-xl text-center\">\n        <span className=\"mx-auto grid size-16 place-items-center rounded-full bg-primary/10 text-primary\">\n          <CheckCircle2 className=\"size-9\" strokeWidth={1.75} />\n        </span>\n        <h1 className=\"mt-6 text-3xl font-semibold tracking-tight text-balance sm:text-4xl\">\n          You&apos;re all set, Jordan.\n        </h1>\n        <p className=\"mt-3 text-muted-foreground\">\n          Your appointment is booked. We&apos;ve emailed a confirmation to\n          jordan@email.com.\n        </p>\n\n        <div className=\"mt-8 rounded-2xl border bg-card p-6 text-left\">\n          <div className=\"flex flex-wrap items-center justify-between gap-3\">\n            <div>\n              <p className=\"text-sm text-muted-foreground\">Appointment</p>\n              <p className=\"text-lg font-semibold\">Consultation · Dr. Okafor</p>\n            </div>\n            <span className=\"flex items-center gap-2 rounded-full bg-secondary px-3 py-1.5 text-sm font-medium text-secondary-foreground\">\n              <Clock className=\"size-4\" />\n              Tue, Jun 18 · 10:00 AM\n            </span>\n          </div>\n          <Button className=\"mt-5 w-full\" variant=\"outline\">\n            <CalendarPlus className=\"size-4\" />\n            Add to calendar\n          </Button>\n        </div>\n\n        <div className=\"mt-8 grid gap-4 sm:grid-cols-3\">\n          {NEXT_STEPS.map((s) => (\n            <div key={s.title} className=\"rounded-xl border bg-card p-4 text-left\">\n              <s.icon className=\"size-5 text-primary\" />\n              <p className=\"mt-3 text-sm font-semibold\">{s.title}</p>\n              <p className=\"mt-1 text-xs text-muted-foreground\">{s.body}</p>\n            </div>\n          ))}\n        </div>\n\n        <div className=\"mt-8\">\n          <Button asChild><Link href=\"#home\">Back to home</Link></Button>\n          <p className=\"mt-3 text-sm text-muted-foreground\">\n            Need to reschedule? <Link href=\"#\" className=\"text-primary underline underline-offset-4\">Manage your booking</Link>.\n          </p>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/thank-you.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

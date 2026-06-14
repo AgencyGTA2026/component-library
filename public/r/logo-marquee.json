@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "logo-marquee",
+  "title": "Logo marquee",
+  "description": "Two rows of wordmarks scrolling opposite directions; pause on hover.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/media/logo-marquee.tsx",
+      "content": "\"use client\"\n\nimport { motion } from \"framer-motion\"\n\nconst ROW_A = [\"Aperture\", \"Northwind\", \"Vela\", \"Cobalt\", \"Lumen\", \"Pinewood\", \"Soapbox\"]\nconst ROW_B = [\"Quantive\", \"Almanac\", \"Driftwell\", \"Maple & Co\", \"Verdant\", \"Atlas\", \"Hearth\"]\n\n/**\n * Logo marquee — two rows of wordmarks scrolling in opposite directions,\n * pausing on hover. Animation-only (no logos shipped); replace the text\n * spans with client <img> logos. Distinct from the static logo-cloud.\n */\nexport function LogoMarquee() {\n  return (\n    <section className=\"overflow-hidden bg-background py-16 text-foreground\">\n      <p className=\"mb-10 text-center text-sm font-medium text-muted-foreground\">\n        Trusted by teams at every stage\n      </p>\n\n      <div className=\"space-y-6 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]\">\n        {[ROW_A, ROW_B].map((row, r) => (\n          <div key={r} className=\"group flex overflow-hidden\">\n            <motion.div\n              className=\"flex w-max items-center gap-16 pr-16 group-hover:[animation-play-state:paused]\"\n              animate={{ x: r === 0 ? [\"0%\", \"-50%\"] : [\"-50%\", \"0%\"] }}\n              transition={{ duration: 30, ease: \"linear\", repeat: Infinity }}\n            >\n              {[...row, ...row].map((logo, i) => (\n                <span\n                  key={i}\n                  className=\"font-serif text-2xl font-semibold tracking-tight whitespace-nowrap text-muted-foreground/50 transition-colors hover:text-foreground\"\n                >\n                  {logo}\n                </span>\n              ))}\n            </motion.div>\n          </div>\n        ))}\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/logo-marquee.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

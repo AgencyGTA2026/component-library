@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-retro",
+  "title": "Retro CTA",
+  "description": "A bold rounded banner with floating Memphis shapes.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/cta/cta-retro.tsx",
+      "content": "import Link from \"next/link\"\nimport { ArrowRight } from \"lucide-react\"\n\n/**\n * Retro CTA — a bold rounded banner with floating Memphis shapes.\n */\nexport function CtaRetro() {\n  return (\n    <section className=\"bg-background px-5 py-16 text-foreground sm:px-8 sm:py-20\">\n      <div className=\"relative mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] border-2 border-foreground bg-primary px-6 py-14 text-center text-primary-foreground shadow-[8px_8px_0_0_var(--foreground)] sm:px-10 sm:py-20\">\n        <div aria-hidden className=\"pointer-events-none absolute inset-0\">\n          <div className=\"absolute -left-6 top-6 size-24 rounded-full border-[10px] border-accent/60\" />\n          <div className=\"absolute right-8 bottom-6 size-16 rotate-12 rounded-2xl bg-secondary\" />\n          <div className=\"absolute right-1/3 top-8 size-5 rounded-full bg-accent\" />\n        </div>\n\n        <div className=\"relative\">\n          <h2 className=\"mx-auto max-w-2xl text-[clamp(2rem,6vw,4rem)] font-black leading-[0.95] tracking-tight\">\n            Your fridge called. It wants color.\n          </h2>\n          <p className=\"mx-auto mt-4 max-w-md text-lg font-medium text-primary-foreground/85\">\n            Grab a sampler and find your flavor. First case ships free.\n          </p>\n          <Link\n            href=\"#\"\n            className=\"mt-8 inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-accent px-8 py-4 text-lg font-black text-foreground shadow-[5px_5px_0_0_var(--foreground)] transition-transform hover:-translate-y-1\"\n          >\n            Shop the sampler <ArrowRight className=\"size-5\" />\n          </Link>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/cta-retro.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

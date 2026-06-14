@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "notification-toast",
+  "title": "Notification toasts",
+  "description": "Trigger buttons spawn stacked, auto-dismissing toasts.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/overlays/notification-toast.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { AnimatePresence, motion } from \"framer-motion\"\nimport { AlertTriangle, CheckCircle2, Info, X } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\n\ntype Variant = \"success\" | \"error\" | \"info\"\ntype Toast = { id: number; variant: Variant; title: string; body: string }\n\nconst CONFIG: Record<Variant, { icon: React.ElementType; accent: string; title: string; body: string }> = {\n  success: { icon: CheckCircle2, accent: \"text-primary\", title: \"Saved\", body: \"Your changes are live.\" },\n  error: { icon: AlertTriangle, accent: \"text-destructive\", title: \"Something went wrong\", body: \"We couldn't reach the server.\" },\n  info: { icon: Info, accent: \"text-accent-foreground\", title: \"Heads up\", body: \"A new version is available.\" },\n}\n\n/**\n * Notification toasts — trigger buttons push toasts into a stacked\n * corner region; each auto-dismisses after 4s or on manual close. Lift\n * the `push` function into a context to call from anywhere.\n */\nexport function NotificationToast() {\n  const [toasts, setToasts] = React.useState<Toast[]>([])\n  const next = React.useRef(0)\n\n  const dismiss = (id: number) => setToasts((t) => t.filter((x) => x.id !== id))\n  const push = (variant: Variant) => {\n    const id = next.current++\n    const { title, body } = CONFIG[variant]\n    setToasts((t) => [...t, { id, variant, title, body }])\n    setTimeout(() => dismiss(id), 4000)\n  }\n\n  return (\n    <section className=\"grid min-h-72 place-items-center bg-background px-5 py-20 text-foreground\">\n      <div className=\"flex flex-wrap justify-center gap-3\">\n        <Button onClick={() => push(\"success\")}>Show success</Button>\n        <Button variant=\"outline\" onClick={() => push(\"error\")}>Show error</Button>\n        <Button variant=\"ghost\" onClick={() => push(\"info\")}>Show info</Button>\n      </div>\n\n      <div className=\"pointer-events-none fixed right-4 bottom-4 z-50 flex w-full max-w-sm flex-col gap-3\">\n        <AnimatePresence initial={false}>\n          {toasts.map((t) => {\n            const c = CONFIG[t.variant]\n            return (\n              <motion.div\n                key={t.id}\n                layout\n                initial={{ opacity: 0, x: 40, scale: 0.96 }}\n                animate={{ opacity: 1, x: 0, scale: 1 }}\n                exit={{ opacity: 0, x: 40, scale: 0.9 }}\n                transition={{ type: \"spring\", stiffness: 320, damping: 28 }}\n                className=\"pointer-events-auto flex gap-3 rounded-xl border bg-card p-4 text-card-foreground shadow-lg\"\n              >\n                <c.icon className={`mt-0.5 size-5 shrink-0 ${c.accent}`} />\n                <div className=\"flex-1\">\n                  <p className=\"text-sm font-semibold\">{t.title}</p>\n                  <p className=\"text-sm text-muted-foreground\">{t.body}</p>\n                </div>\n                <button onClick={() => dismiss(t.id)} aria-label=\"Dismiss\" className=\"text-muted-foreground transition-colors hover:text-foreground\">\n                  <X className=\"size-4\" />\n                </button>\n              </motion.div>\n            )\n          })}\n        </AnimatePresence>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/notification-toast.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

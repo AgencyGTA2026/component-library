@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "feature-noir",
+  "title": "Noir features",
+  "description": "Numbered serif rows divided by gold hairlines.",
+  "files": [
+    {
+      "path": "registry/blocks/features/feature-noir.tsx",
+      "content": "const ROWS = [\n  {\n    kicker: \"I\",\n    title: \"Drawn before it is made\",\n    body: \"Every commission begins as a pencil study, refined with you across as many sittings as it takes. Nothing is cast until the drawing is right.\",\n  },\n  {\n    kicker: \"II\",\n    title: \"Set under the loupe\",\n    body: \"Stones are placed by a single master setter, by hand, by eye. The work is slow on purpose — that is where the light comes from.\",\n  },\n  {\n    kicker: \"III\",\n    title: \"Yours, and only yours\",\n    body: \"Each piece is numbered, recorded in the house ledger, and accompanied by a signed certificate of origin. A quiet kind of permanence.\",\n  },\n]\n\n/**\n * Noir features — numbered serif rows divided by gold hairlines.\n */\nexport function FeatureNoir() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"mx-auto max-w-4xl\">\n        <p className=\"font-mono text-[11px] tracking-[0.35em] uppercase text-primary\">The craft</p>\n\n        <div className=\"mt-10 divide-y divide-border border-y border-border\">\n          {ROWS.map((r) => (\n            <div key={r.kicker} className=\"grid gap-6 py-10 sm:grid-cols-[auto_1fr] sm:gap-12\">\n              <span className=\"font-serif text-3xl text-primary\">{r.kicker}</span>\n              <div>\n                <h3 className=\"font-serif text-2xl tracking-tight\">{r.title}</h3>\n                <p className=\"mt-3 max-w-xl leading-relaxed text-muted-foreground\">{r.body}</p>\n              </div>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/feature-noir.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

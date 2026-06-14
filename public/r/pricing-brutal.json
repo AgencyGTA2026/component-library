@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pricing-brutal",
+  "title": "Brutal pricing",
+  "description": "Three bordered plan cards; the middle one is inverted.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/pricing/pricing-brutal.tsx",
+      "content": "import { Check } from \"lucide-react\"\n\nconst PLANS = [\n  {\n    name: \"Page\",\n    price: \"3.5k\",\n    blurb: \"One landing page, done right.\",\n    points: [\"Single page\", \"Copywriting\", \"2 revisions\", \"Launch in 2 weeks\"],\n    featured: false,\n  },\n  {\n    name: \"Site\",\n    price: \"9k\",\n    blurb: \"Full marketing site, soup to nuts.\",\n    points: [\"Up to 8 pages\", \"CMS + blog\", \"Unlimited revisions\", \"SEO setup\", \"30-day support\"],\n    featured: true,\n  },\n  {\n    name: \"Build\",\n    price: \"18k+\",\n    blurb: \"Custom app or store.\",\n    points: [\"Custom features\", \"Integrations\", \"Dedicated PM\", \"Quarterly care\"],\n    featured: false,\n  },\n]\n\n/**\n * Brutal pricing — three bordered plan cards; the middle one is inverted.\n */\nexport function PricingBrutal() {\n  return (\n    <section className=\"border-y-4 border-foreground bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl\">\n        <h2 className=\"text-center text-[clamp(2rem,5vw,3.5rem)] font-black leading-[0.9] tracking-tighter uppercase\">\n          Pick a weight class.\n        </h2>\n\n        <div className=\"mt-12 grid gap-6 md:grid-cols-3\">\n          {PLANS.map((p) => (\n            <div\n              key={p.name}\n              className={`flex flex-col border-2 border-foreground p-6 ${\n                p.featured\n                  ? \"bg-foreground text-background shadow-[8px_8px_0_0_var(--accent)]\"\n                  : \"bg-background\"\n              }`}\n            >\n              <div className=\"flex items-center justify-between\">\n                <p className=\"text-xl font-black uppercase\">{p.name}</p>\n                {p.featured && (\n                  <span className=\"border-2 border-background bg-accent px-2 py-0.5 font-mono text-[10px] font-bold uppercase text-foreground\">\n                    Popular\n                  </span>\n                )}\n              </div>\n              <p className={`mt-2 font-mono text-xs ${p.featured ? \"text-background/70\" : \"text-muted-foreground\"}`}>\n                {p.blurb}\n              </p>\n              <p className=\"mt-6 text-[clamp(2.5rem,7vw,4rem)] font-black leading-none tracking-tighter\">\n                ${p.price}\n              </p>\n              <ul className=\"mt-6 flex-1 space-y-2\">\n                {p.points.map((pt) => (\n                  <li key={pt} className=\"flex items-center gap-2 text-sm font-bold uppercase\">\n                    <Check className=\"size-4 shrink-0\" />\n                    {pt}\n                  </li>\n                ))}\n              </ul>\n              <button\n                className={`mt-6 border-2 px-4 py-3 text-sm font-black uppercase transition-all ${\n                  p.featured\n                    ? \"border-background bg-accent text-foreground hover:bg-background\"\n                    : \"border-foreground bg-foreground text-background shadow-[5px_5px_0_0_var(--accent)] hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none\"\n                }`}\n              >\n                Start here\n              </button>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/pricing-brutal.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

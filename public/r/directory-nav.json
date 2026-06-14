@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "directory-nav",
+  "title": "Directory nav",
+  "description": "Searchable, categorized link grid.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/navigation/directory-nav.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport Link from \"next/link\"\nimport {\n  Activity,\n  Baby,\n  Bone,\n  Brain,\n  Ear,\n  Eye,\n  Heart,\n  Search,\n  Stethoscope,\n} from \"lucide-react\"\n\nimport { Input } from \"@/components/ui/input\"\n\nconst DEPARTMENTS = [\n  { icon: Heart, name: \"Cardiology\", desc: \"Heart & vascular care\", href: \"#\" },\n  { icon: Brain, name: \"Neurology\", desc: \"Brain & nervous system\", href: \"#\" },\n  { icon: Bone, name: \"Orthopedics\", desc: \"Bones, joints & muscles\", href: \"#\" },\n  { icon: Eye, name: \"Ophthalmology\", desc: \"Eye & vision care\", href: \"#\" },\n  { icon: Ear, name: \"ENT\", desc: \"Ear, nose & throat\", href: \"#\" },\n  { icon: Baby, name: \"Pediatrics\", desc: \"Care for kids\", href: \"#\" },\n  { icon: Activity, name: \"Emergency\", desc: \"24/7 urgent care\", href: \"#\" },\n  { icon: Stethoscope, name: \"Primary care\", desc: \"Everyday checkups\", href: \"#\" },\n]\n\n/**\n * Directory nav — a searchable, categorized link grid for sites with\n * many sections (clinic departments, service lines, locations, help\n * topics). Filters live as you type.\n */\nexport function DirectoryNav() {\n  const [q, setQ] = React.useState(\"\")\n  const shown = DEPARTMENTS.filter((d) =>\n    (d.name + d.desc).toLowerCase().includes(q.toLowerCase())\n  )\n\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-5xl\">\n        <div className=\"mb-8 flex flex-wrap items-end justify-between gap-4\">\n          <div>\n            <h2 className=\"text-3xl font-semibold tracking-tight text-balance sm:text-4xl\">\n              Find your department\n            </h2>\n            <p className=\"mt-2 text-muted-foreground\">Browse care by specialty, or search below.</p>\n          </div>\n          <div className=\"relative w-full max-w-xs\">\n            <Search className=\"absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground\" />\n            <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder=\"Search departments…\" className=\"pl-9\" />\n          </div>\n        </div>\n\n        {shown.length === 0 ? (\n          <p className=\"py-12 text-center text-muted-foreground\">No departments match “{q}”.</p>\n        ) : (\n          <div className=\"grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4\">\n            {shown.map((d) => (\n              <Link\n                key={d.name}\n                href={d.href}\n                className=\"group flex items-center gap-3 rounded-xl border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md\"\n              >\n                <span className=\"grid size-11 shrink-0 place-items-center rounded-lg bg-secondary text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground\">\n                  <d.icon className=\"size-5\" />\n                </span>\n                <span>\n                  <span className=\"block text-sm font-semibold\">{d.name}</span>\n                  <span className=\"block text-xs text-muted-foreground\">{d.desc}</span>\n                </span>\n              </Link>\n            ))}\n          </div>\n        )}\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/directory-nav.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

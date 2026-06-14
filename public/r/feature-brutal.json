@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "feature-brutal",
+  "title": "Brutal feature rows",
+  "description": "Alternating bordered rows with a checklist and color block.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/features/feature-brutal.tsx",
+      "content": "import { Check } from \"lucide-react\"\n\nconst ROWS = [\n  {\n    kicker: \"01 / Strategy\",\n    title: \"We map it before we build it\",\n    body: \"Every project starts with a hard scope: pages, priorities, deadlines. You sign off before a single pixel moves.\",\n    points: [\"Sitemap & priorities\", \"Fixed deadline\", \"One point of contact\"],\n    swatch: \"#d9f526\",\n  },\n  {\n    kicker: \"02 / Build\",\n    title: \"Heavy code, fast pages\",\n    body: \"Hand-built, no bloated page-builders. Sites that score 95+ on speed and don't fall over under load.\",\n    points: [\"95+ Lighthouse\", \"Zero template lock-in\", \"Owned by you\"],\n    swatch: \"#0c0c0c\",\n  },\n]\n\n/**\n * Brutal features — alternating bordered rows with a checklist and color block.\n */\nexport function FeatureBrutal() {\n  return (\n    <section className=\"border-y-4 border-foreground bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl space-y-8\">\n        {ROWS.map((r, i) => (\n          <div\n            key={r.title}\n            className={`grid items-stretch gap-0 border-2 border-foreground md:grid-cols-2 ${\n              i % 2 === 1 ? \"md:[&>*:first-child]:order-2\" : \"\"\n            }`}\n          >\n            <div className=\"border-foreground p-7 not-last:border-b-2 md:not-last:border-b-0 md:[&:first-child]:border-r-2 md:[&:last-child]:border-l-2 sm:p-9\">\n              <p className=\"font-mono text-xs font-bold uppercase text-muted-foreground\">{r.kicker}</p>\n              <h3 className=\"mt-3 text-[clamp(1.5rem,3.5vw,2.5rem)] font-black leading-[0.95] tracking-tight uppercase\">\n                {r.title}\n              </h3>\n              <p className=\"mt-4 font-mono text-sm leading-relaxed text-muted-foreground\">{r.body}</p>\n              <ul className=\"mt-6 space-y-2\">\n                {r.points.map((p) => (\n                  <li key={p} className=\"flex items-center gap-3 text-sm font-bold uppercase\">\n                    <span className=\"grid size-6 place-items-center border-2 border-foreground bg-accent\">\n                      <Check className=\"size-3.5\" />\n                    </span>\n                    {p}\n                  </li>\n                ))}\n              </ul>\n            </div>\n            <div\n              className=\"min-h-[220px]\"\n              style={{ backgroundColor: r.swatch }}\n              aria-hidden\n            />\n          </div>\n        ))}\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/feature-brutal.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

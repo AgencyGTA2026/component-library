@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "values-grid",
+  "title": "Values grid",
+  "description": "Company principles as icon cards over hairline dividers.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/about/values-grid.tsx",
+      "content": "import { HandHeart, Leaf, ShieldCheck, Sparkles, Users, Wrench } from \"lucide-react\"\n\nconst VALUES = [\n  { icon: HandHeart, title: \"People first\", body: \"Every decision starts with the person in front of us — not the schedule, not the paperwork.\" },\n  { icon: ShieldCheck, title: \"Do it right\", body: \"We'd rather take the extra hour than cut a corner you'll pay for later.\" },\n  { icon: Sparkles, title: \"Plain honesty\", body: \"Clear pricing, clear options, and the truth even when it's not what you hoped.\" },\n  { icon: Wrench, title: \"Craft\", body: \"We sweat the details others skip, because the details are the work.\" },\n  { icon: Users, title: \"Show up\", body: \"On time, prepared, and reachable. Reliability is a feature.\" },\n  { icon: Leaf, title: \"Leave it better\", body: \"Clean sites, responsible materials, and a lighter footprint where we can.\" },\n]\n\n/**\n * Values grid — the principles behind a service business, as icon cards.\n * Reads warm and human; swap copy to your team's actual values.\n */\nexport function ValuesGrid() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"mx-auto max-w-6xl\">\n        <div className=\"mb-14 max-w-xl\">\n          <p className=\"font-mono text-xs tracking-[0.2em] uppercase text-muted-foreground\">What we stand for</p>\n          <h2 className=\"mt-3 font-serif text-4xl leading-[1.05] tracking-tight text-balance sm:text-5xl\">\n            Values you can feel in the work.\n          </h2>\n        </div>\n\n        <div className=\"grid gap-px overflow-hidden rounded-xl border bg-border sm:grid-cols-2 lg:grid-cols-3\">\n          {VALUES.map((v) => (\n            <article key={v.title} className=\"bg-background p-7\">\n              <span className=\"grid size-11 place-items-center rounded-lg bg-secondary text-primary\">\n                <v.icon className=\"size-5\" />\n              </span>\n              <h3 className=\"mt-5 text-lg font-semibold\">{v.title}</h3>\n              <p className=\"mt-2 text-sm leading-relaxed text-muted-foreground\">{v.body}</p>\n            </article>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/values-grid.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

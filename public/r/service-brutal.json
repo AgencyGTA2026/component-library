@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "service-brutal",
+  "title": "Brutal process steps",
+  "description": "Four-step numbered rail in bordered cells.",
+  "files": [
+    {
+      "path": "registry/blocks/service/service-brutal.tsx",
+      "content": "const STEPS = [\n  { n: \"01\", title: \"Call\", body: \"Tell us the job. We give a straight answer on fit, timeline, and ballpark — same day.\" },\n  { n: \"02\", title: \"Quote\", body: \"Fixed price, no padding. You see every line item before anything starts.\" },\n  { n: \"03\", title: \"Build\", body: \"We do the work on a dated schedule and show progress, not promises.\" },\n  { n: \"04\", title: \"Ship\", body: \"Launch day, plus 30 days of free fixes. The work is yours, fully owned.\" },\n]\n\n/**\n * Brutal process — a four-step numbered rail in bordered cells.\n */\nexport function ServiceBrutal() {\n  return (\n    <section className=\"border-y-4 border-foreground bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl\">\n        <p className=\"font-mono text-xs tracking-[0.25em] uppercase text-muted-foreground\">How it works</p>\n        <h2 className=\"mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[0.9] tracking-tighter uppercase\">\n          Four steps. No mystery.\n        </h2>\n\n        <div className=\"mt-12 grid border-2 border-foreground sm:grid-cols-2 lg:grid-cols-4\">\n          {STEPS.map((s, i) => (\n            <div\n              key={s.n}\n              className=\"group relative border-foreground p-6 transition-colors not-last:border-b-2 hover:bg-accent sm:[&:not(:nth-child(2n))]:border-r-2 lg:[&:not(:nth-child(4n))]:border-r-2 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+4)]:border-b-0\"\n            >\n              <span className=\"block text-5xl font-black leading-none tracking-tighter\">{s.n}</span>\n              <p className=\"mt-4 text-xl font-black uppercase\">{s.title}</p>\n              <p className=\"mt-2 font-mono text-sm leading-relaxed text-muted-foreground group-hover:text-foreground\">\n                {s.body}\n              </p>\n              {i < STEPS.length - 1 && (\n                <span className=\"absolute top-6 right-4 hidden font-black lg:block\" aria-hidden>\n                  →\n                </span>\n              )}\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/service-brutal.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

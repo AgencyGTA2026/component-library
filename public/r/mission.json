@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "mission",
+  "title": "Mission statement",
+  "description": "Large statement of purpose with supporting stats.",
+  "files": [
+    {
+      "path": "registry/blocks/about/mission.tsx",
+      "content": "const STATS = [\n  { value: \"11\", label: \"Years serving the area\" },\n  { value: \"14k+\", label: \"Neighbors helped\" },\n  { value: \"38\", label: \"People on our team\" },\n  { value: \"4.9★\", label: \"Average rating\" },\n]\n\n/**\n * Mission — a large statement of purpose with supporting stats. The\n * \"why we exist\" section for an about page. Set in display type.\n */\nexport function Mission() {\n  return (\n    <section className=\"bg-background px-5 py-24 text-foreground sm:px-8 sm:py-32\">\n      <div className=\"mx-auto max-w-4xl\">\n        <p className=\"font-mono text-xs tracking-[0.25em] uppercase text-muted-foreground\">Our mission</p>\n        <p className=\"mt-8 font-serif text-[clamp(1.75rem,4.5vw,3rem)] leading-[1.18] tracking-tight text-balance\">\n          We started this company on a simple belief: that good, honest work —\n          done by people who care — still means something. Every day we try to\n          earn back the trust the industry too often spends.{\" \"}\n          <span className=\"text-primary\">That&apos;s the whole job.</span>\n        </p>\n\n        <div className=\"mt-16 grid grid-cols-2 gap-8 border-t pt-10 sm:grid-cols-4\">\n          {STATS.map((s) => (\n            <div key={s.label}>\n              <p className=\"font-serif text-4xl tracking-tight text-primary sm:text-5xl\">{s.value}</p>\n              <p className=\"mt-2 text-sm text-muted-foreground\">{s.label}</p>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/mission.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

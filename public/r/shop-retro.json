@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shop-retro",
+  "title": "Retro shop",
+  "description": "Rounded product cards with sticker prices and add buttons.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/commerce/shop-retro.tsx",
+      "content": "import { Plus, Star } from \"lucide-react\"\n\nconst PRODUCTS = [\n  { name: \"Citrus Pop\", price: 24, note: \"12-pack\", color: \"#ffd23f\", rating: 4.9 },\n  { name: \"Berry Blast\", price: 24, note: \"12-pack\", color: \"#ff5a5f\", rating: 4.8 },\n  { name: \"Cool Lime\", price: 24, note: \"12-pack\", color: \"#1fb5a8\", rating: 4.9 },\n  { name: \"Mango Wave\", price: 26, note: \"12-pack\", color: \"#ff9f1c\", rating: 4.7 },\n  { name: \"Sampler\", price: 28, note: \"Mixed 12\", color: \"#ffd23f\", rating: 5.0 },\n  { name: \"Party Case\", price: 44, note: \"24-pack\", color: \"#ff5a5f\", rating: 4.9 },\n]\n\n/**\n * Retro shop — rounded product cards with sticker prices and add buttons.\n */\nexport function ShopRetro() {\n  return (\n    <section className=\"bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl\">\n        <h2 className=\"text-[clamp(2rem,5vw,3.25rem)] font-black tracking-tight\">Stock the fridge</h2>\n\n        <div className=\"mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3\">\n          {PRODUCTS.map((p) => (\n            <div\n              key={p.name}\n              className=\"overflow-hidden rounded-[1.75rem] border-2 border-foreground bg-card shadow-[5px_5px_0_0_var(--foreground)]\"\n            >\n              <div className=\"relative h-44\" style={{ backgroundColor: p.color }}>\n                <span className=\"absolute top-3 right-3 flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-2.5 py-0.5 text-xs font-black\">\n                  <Star className=\"size-3 fill-foreground\" />\n                  {p.rating}\n                </span>\n              </div>\n              <div className=\"flex items-center justify-between p-5\">\n                <div>\n                  <p className=\"text-lg font-black\">{p.name}</p>\n                  <p className=\"text-sm font-bold text-muted-foreground\">\n                    ${p.price} · {p.note}\n                  </p>\n                </div>\n                <button\n                  aria-label={`Add ${p.name}`}\n                  className=\"grid size-11 place-items-center rounded-full border-2 border-foreground bg-primary text-primary-foreground shadow-[3px_3px_0_0_var(--foreground)] transition-transform hover:-translate-y-0.5\"\n                >\n                  <Plus className=\"size-5\" />\n                </button>\n              </div>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/shop-retro.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

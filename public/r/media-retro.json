@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "media-retro",
+  "title": "Retro gallery",
+  "description": "A rounded color grid that opens a playful lightbox.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/media/media-retro.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { X } from \"lucide-react\"\n\nconst TILES = [\n  { label: \"Beach day\", color: \"#ffd23f\", span: \"sm:col-span-2 sm:row-span-2\" },\n  { label: \"Studio mix\", color: \"#ff5a5f\", span: \"\" },\n  { label: \"Can wall\", color: \"#1fb5a8\", span: \"\" },\n  { label: \"Festival\", color: \"#ff9f1c\", span: \"\" },\n  { label: \"Fridge goals\", color: \"#ffd23f\", span: \"\" },\n]\n\n/**\n * Retro gallery — a rounded color grid that opens a playful lightbox.\n */\nexport function MediaRetro() {\n  const [open, setOpen] = React.useState<number | null>(null)\n\n  return (\n    <section className=\"bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl\">\n        <h2 className=\"text-[clamp(2rem,5vw,3.25rem)] font-black tracking-tight\">In the wild</h2>\n\n        <div className=\"mt-10 grid auto-rows-[150px] grid-cols-2 gap-4 sm:grid-cols-4\">\n          {TILES.map((t, i) => (\n            <button\n              key={t.label}\n              onClick={() => setOpen(i)}\n              className={`group relative rounded-[1.5rem] border-2 border-foreground shadow-[4px_4px_0_0_var(--foreground)] transition-transform hover:-translate-y-1 ${t.span}`}\n              style={{ backgroundColor: t.color }}\n            >\n              <span className=\"absolute bottom-3 left-3 rounded-full border-2 border-foreground bg-card px-2.5 py-0.5 text-xs font-black\">\n                {t.label}\n              </span>\n            </button>\n          ))}\n        </div>\n      </div>\n\n      {open !== null && (\n        <div\n          className=\"fixed inset-0 z-50 grid place-items-center bg-foreground/50 p-5\"\n          onClick={() => setOpen(null)}\n        >\n          <div\n            onClick={(e) => e.stopPropagation()}\n            className=\"relative w-full max-w-2xl rounded-[2rem] border-4 border-foreground shadow-[8px_8px_0_0_var(--foreground)]\"\n            style={{ backgroundColor: TILES[open].color, aspectRatio: \"16 / 10\" }}\n          >\n            <button\n              aria-label=\"Close\"\n              onClick={() => setOpen(null)}\n              className=\"absolute -top-4 -right-4 grid size-10 place-items-center rounded-full border-2 border-foreground bg-card transition-transform hover:rotate-90\"\n            >\n              <X className=\"size-5\" />\n            </button>\n            <span className=\"absolute bottom-4 left-4 rounded-full border-2 border-foreground bg-card px-3 py-1 text-sm font-black\">\n              {TILES[open].label}\n            </span>\n          </div>\n        </div>\n      )}\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/media-retro.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

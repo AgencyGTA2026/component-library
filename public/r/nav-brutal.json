@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "nav-brutal",
+  "title": "Brutal anchor nav",
+  "description": "Boxed nav cells; the active one inverts.",
+  "files": [
+    {
+      "path": "registry/blocks/navigation/nav-brutal.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nconst SECTIONS = [\n  { id: \"overview\", label: \"Overview\" },\n  { id: \"scope\", label: \"Scope\" },\n  { id: \"timeline\", label: \"Timeline\" },\n  { id: \"pricing\", label: \"Pricing\" },\n  { id: \"contact\", label: \"Contact\" },\n]\n\n/**\n * Brutal anchor nav — boxed cells, the active one inverts. Click to scroll.\n */\nexport function NavBrutal() {\n  const [active, setActive] = React.useState(SECTIONS[0].id)\n\n  return (\n    <section className=\"border-y-4 border-foreground bg-background text-foreground\">\n      <nav className=\"flex flex-wrap border-b-2 border-foreground\">\n        {SECTIONS.map((s) => (\n          <button\n            key={s.id}\n            onClick={() => setActive(s.id)}\n            className={`flex-1 border-foreground px-5 py-4 text-sm font-black uppercase whitespace-nowrap transition-colors [&:not(:last-child)]:border-r-2 ${\n              active === s.id ? \"bg-foreground text-background\" : \"hover:bg-accent\"\n            }`}\n          >\n            {s.label}\n          </button>\n        ))}\n      </nav>\n\n      <div className=\"grid gap-px bg-foreground sm:grid-cols-2\">\n        {SECTIONS.map((s) => (\n          <div\n            key={s.id}\n            className={`bg-background p-8 transition-opacity ${active === s.id ? \"\" : \"opacity-50\"}`}\n          >\n            <span className=\"font-mono text-xs font-bold uppercase text-muted-foreground\">\n              {SECTIONS.indexOf(s) + 1 < 10 ? \"0\" : \"\"}\n              {SECTIONS.indexOf(s) + 1}\n            </span>\n            <p className=\"mt-1 text-2xl font-black uppercase\">{s.label}</p>\n            <p className=\"mt-2 font-mono text-sm text-muted-foreground\">\n              Jump straight to {s.label.toLowerCase()} — no scrolling past the fluff.\n            </p>\n          </div>\n        ))}\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/nav-brutal.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

@@ -10,6 +10,8 @@ const VIBES = [
   { id: "landscape", label: "Landscape", swatch: "#3f7a33", note: "earthy green, clay accent — lawn & garden" },
   { id: "trade", label: "Trade", swatch: "#f5610a", note: "steel + safety orange — roofing & contractors" },
   { id: "services", label: "Services", swatch: "#1668c4", note: "trust blue, amber CTA — HVAC, plumbing, home" },
+  { id: "retro", label: "Retro", swatch: "#ff5a5f", note: "Memphis pop — cream, coral, geometric" },
+  { id: "noir", label: "Noir", swatch: "#c8a45a", note: "near-black, gold, serif luxury" },
 ]
 
 export default function Home() {
@@ -18,7 +20,7 @@ export default function Home() {
       <header className="border-b border-[#ece4d4]/15 px-6 py-4 sm:px-10">
         <div className="flex items-center justify-between font-mono text-[11px] tracking-[0.25em] uppercase text-[#ece4d4]/50">
           <span>Connor / Agency</span>
-          <span>{BLOCKS.length} blocks · 3 vibes</span>
+          <span>{BLOCKS.length} blocks · {VIBES.length} vibes</span>
         </div>
       </header>
 

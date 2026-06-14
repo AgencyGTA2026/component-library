@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "press-bar",
+  "title": "Press bar",
+  "description": "Slim as-seen-in strip of outlet wordmarks.",
+  "files": [
+    {
+      "path": "registry/blocks/testimonials/press-bar.tsx",
+      "content": "const OUTLETS = [\"The Tribune\", \"Local Living\", \"Home & Hearth\", \"City Press\", \"Trade Weekly\"]\n\n/**\n * Press bar — a slim \"as seen in\" strip of outlet wordmarks over a\n * hairline divider. Lighter than the awards-press section; drops neatly\n * under a hero. Swap the text for publication logos.\n */\nexport function PressBar() {\n  return (\n    <section className=\"border-y bg-background px-5 py-6 text-foreground sm:px-8\">\n      <div className=\"mx-auto flex max-w-6xl flex-col items-center gap-4 sm:flex-row sm:gap-8\">\n        <p className=\"shrink-0 font-mono text-xs tracking-[0.2em] uppercase text-muted-foreground\">As seen in</p>\n        <div className=\"flex flex-1 flex-wrap items-center justify-center gap-x-8 gap-y-3 sm:justify-between\">\n          {OUTLETS.map((o) => (\n            <span key={o} className=\"font-serif text-lg font-semibold tracking-tight text-muted-foreground/60 transition-colors hover:text-foreground\">\n              {o}\n            </span>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/press-bar.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

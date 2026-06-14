@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shop-noir",
+  "title": "Noir collection",
+  "description": "Hairline product cards with serif names and gold prices.",
+  "files": [
+    {
+      "path": "registry/blocks/commerce/shop-noir.tsx",
+      "content": "import Link from \"next/link\"\n\nconst PIECES = [\n  { name: \"Solène Ring\", meta: \"18k gold · 1.2ct\", price: \"12,400\", tint: \"#2a2317\" },\n  { name: \"Lumière Pendant\", meta: \"Platinum · 0.8ct\", price: \"8,900\", tint: \"#241f1a\" },\n  { name: \"Astra Earrings\", meta: \"18k gold · pavé\", price: \"6,200\", tint: \"#2c2519\" },\n  { name: \"Margaux Cuff\", meta: \"Brushed gold\", price: \"4,800\", tint: \"#221d15\" },\n  { name: \"Étoile Necklace\", meta: \"Platinum · 1.5ct\", price: \"18,600\", tint: \"#272019\" },\n  { name: \"Cœur Band\", meta: \"18k gold\", price: \"3,100\", tint: \"#231e16\" },\n]\n\n/**\n * Noir collection — hairline product cards with serif names and gold price.\n */\nexport function ShopNoir() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"mx-auto max-w-6xl\">\n        <div className=\"flex flex-wrap items-end justify-between gap-4 border-b border-border pb-6\">\n          <h2 className=\"font-serif text-[clamp(1.75rem,4vw,3rem)] tracking-tight\">The Collection</h2>\n          <p className=\"font-mono text-[11px] tracking-[0.3em] uppercase text-muted-foreground\">Spring commissions</p>\n        </div>\n\n        <div className=\"mt-10 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3\">\n          {PIECES.map((p) => (\n            <Link key={p.name} href=\"#\" className=\"group flex flex-col bg-card p-5\">\n              <div\n                className=\"relative aspect-square border border-border\"\n                style={{ background: `radial-gradient(circle at 50% 35%, ${p.tint}, var(--card) 72%)` }}\n              >\n                <span className=\"absolute inset-x-0 bottom-0 translate-y-2 bg-primary py-2 text-center font-mono text-[10px] tracking-[0.25em] uppercase text-primary-foreground opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100\">\n                  View piece\n                </span>\n              </div>\n              <div className=\"mt-5 flex items-baseline justify-between\">\n                <div>\n                  <p className=\"font-serif text-lg tracking-tight\">{p.name}</p>\n                  <p className=\"mt-1 font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground\">{p.meta}</p>\n                </div>\n                <p className=\"font-serif text-primary\">${p.price}</p>\n              </div>\n            </Link>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/shop-noir.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

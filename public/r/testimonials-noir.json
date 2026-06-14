@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "testimonials-noir",
+  "title": "Noir testimonials",
+  "description": "One typeset pull-quote at a time, paged with a crossfade.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/testimonials/testimonials-noir.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { ChevronLeft, ChevronRight } from \"lucide-react\"\n\nconst QUOTES = [\n  { quote: \"They drew my grandmother's ring from a single photograph. I wept when I opened the box.\", name: \"Eleanor V.\", role: \"Patron since 2009\" },\n  { quote: \"Nothing about Aurum is hurried, and that is precisely the luxury. The wait is part of the gift.\", name: \"Charles M.\", role: \"Cercle member\" },\n  { quote: \"I have bought from the great houses. None made me feel as quietly understood as this one.\", name: \"Sofia R.\", role: \"Patron since 2016\" },\n]\n\n/**\n * Noir testimonials — one typeset pull-quote at a time, paged with a crossfade.\n */\nexport function TestimonialsNoir() {\n  const [i, setI] = React.useState(0)\n  const q = QUOTES[i]\n\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"mx-auto max-w-3xl text-center\">\n        <p className=\"font-mono text-[11px] tracking-[0.35em] uppercase text-primary\">In their words</p>\n\n        <blockquote key={i} className=\"mt-10 font-serif text-[clamp(1.5rem,4vw,2.75rem)] leading-[1.2] tracking-tight text-balance animate-in fade-in duration-700\">\n          &ldquo;{q.quote}&rdquo;\n        </blockquote>\n\n        <p className=\"mt-8 font-mono text-[11px] tracking-[0.25em] uppercase text-muted-foreground\">\n          {q.name} · {q.role}\n        </p>\n\n        <div className=\"mt-10 flex items-center justify-center gap-4\">\n          <button\n            aria-label=\"Previous\"\n            onClick={() => setI((p) => (p - 1 + QUOTES.length) % QUOTES.length)}\n            className=\"grid size-10 place-items-center border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary\"\n          >\n            <ChevronLeft className=\"size-4\" />\n          </button>\n          <span className=\"font-mono text-[11px] tracking-[0.2em] text-muted-foreground\">\n            {String(i + 1).padStart(2, \"0\")} / {String(QUOTES.length).padStart(2, \"0\")}\n          </span>\n          <button\n            aria-label=\"Next\"\n            onClick={() => setI((p) => (p + 1) % QUOTES.length)}\n            className=\"grid size-10 place-items-center border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary\"\n          >\n            <ChevronRight className=\"size-4\" />\n          </button>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/testimonials-noir.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

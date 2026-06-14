@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "service-noir",
+  "title": "Noir process",
+  "description": "A four-step serif rail divided by gold hairlines.",
+  "files": [
+    {
+      "path": "registry/blocks/service/service-noir.tsx",
+      "content": "const STEPS = [\n  { n: \"I\", title: \"The conversation\", body: \"We begin with you — the occasion, the hand, the story you wish to tell. No catalogue, no pressure.\" },\n  { n: \"II\", title: \"The drawing\", body: \"Our designer renders the piece by hand and refines it with you until the line is exactly right.\" },\n  { n: \"III\", title: \"The making\", body: \"Stone is chosen, gold is poured, and a single master setter brings the drawing to life over weeks.\" },\n  { n: \"IV\", title: \"The unveiling\", body: \"Your finished piece is presented in the atelier, numbered, and entered into the house ledger.\" },\n]\n\n/**\n * Noir process — a four-step serif rail divided by gold hairlines.\n */\nexport function ServiceNoir() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"mx-auto max-w-6xl\">\n        <div className=\"max-w-xl\">\n          <p className=\"font-mono text-[11px] tracking-[0.35em] uppercase text-primary\">The commission</p>\n          <h2 className=\"mt-5 font-serif text-[clamp(2rem,5vw,3.5rem)] leading-[1.02] tracking-tight\">\n            Four quiet steps, taken slowly.\n          </h2>\n        </div>\n\n        <div className=\"mt-12 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4\">\n          {STEPS.map((s) => (\n            <div key={s.n} className=\"bg-card p-8\">\n              <span className=\"font-serif text-4xl text-primary\">{s.n}</span>\n              <p className=\"mt-6 font-serif text-xl tracking-tight\">{s.title}</p>\n              <p className=\"mt-3 leading-relaxed text-muted-foreground\">{s.body}</p>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/service-noir.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

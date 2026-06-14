@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-form-capture",
+  "title": "Form-capture hero",
+  "description": "Headline + benefits beside an inline lead form.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/heroes/hero-form-capture.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { motion } from \"framer-motion\"\nimport { Check, Star } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\n\nconst POINTS = [\"Free, no-obligation quote\", \"Licensed & insured\", \"Same-week scheduling\"]\n\n/**\n * Form-capture hero — headline + benefits beside a lead form, so the\n * primary action is above the fold. Converts better than a hero that\n * only links to a contact page. Wire onSubmit to your CRM/email.\n */\nexport function HeroFormCapture() {\n  const [sent, setSent] = React.useState(false)\n\n  return (\n    <section className=\"relative overflow-hidden bg-background text-foreground\">\n      <div className=\"pointer-events-none absolute inset-0\">\n        <div className=\"absolute -top-24 -left-16 size-80 rounded-full bg-primary/10 blur-3xl\" />\n        <div className=\"absolute -right-20 bottom-0 size-72 rounded-full bg-accent/40 blur-3xl\" />\n      </div>\n\n      <div className=\"relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-2\">\n        <div>\n          <div className=\"flex items-center gap-2 text-sm\">\n            <span className=\"flex gap-0.5 text-accent-foreground\">\n              {Array.from({ length: 5 }).map((_, i) => <Star key={i} className=\"size-4 fill-current\" />)}\n            </span>\n            <span className=\"text-muted-foreground\">Rated 4.9 by 600+ neighbors</span>\n          </div>\n          <h1 className=\"mt-5 text-4xl font-semibold tracking-tight text-balance sm:text-6xl\">\n            Your project, done right the first time.\n          </h1>\n          <p className=\"mt-5 max-w-md text-lg text-muted-foreground\">\n            Tell us what you need and we&apos;ll send a clear, fixed quote — no\n            pressure, no surprise fees.\n          </p>\n          <ul className=\"mt-7 grid gap-2 sm:grid-cols-3\">\n            {POINTS.map((p) => (\n              <li key={p} className=\"flex items-center gap-2 text-sm\">\n                <Check className=\"size-4 text-primary\" /> {p}\n              </li>\n            ))}\n          </ul>\n        </div>\n\n        <motion.div\n          initial={{ opacity: 0, y: 24 }}\n          animate={{ opacity: 1, y: 0 }}\n          transition={{ duration: 0.6 }}\n          className=\"rounded-2xl border bg-card p-6 shadow-xl sm:p-8\"\n        >\n          {sent ? (\n            <div className=\"py-10 text-center\">\n              <span className=\"mx-auto grid size-14 place-items-center rounded-full bg-primary/10 text-primary\">\n                <Check className=\"size-7\" />\n              </span>\n              <h2 className=\"mt-4 text-xl font-semibold\">Request received</h2>\n              <p className=\"mt-2 text-sm text-muted-foreground\">We&apos;ll text you a quote within one business day.</p>\n            </div>\n          ) : (\n            <form className=\"space-y-4\" onSubmit={(e) => { e.preventDefault(); setSent(true) }}>\n              <p className=\"text-lg font-semibold\">Get your free quote</p>\n              <div className=\"grid gap-4 sm:grid-cols-2\">\n                <Input placeholder=\"Name\" required />\n                <Input type=\"tel\" placeholder=\"Phone\" required />\n              </div>\n              <Input type=\"email\" placeholder=\"Email\" required />\n              <Input placeholder=\"What do you need done?\" />\n              <Button type=\"submit\" size=\"lg\" className=\"w-full\">Get my free quote</Button>\n              <p className=\"text-center text-xs text-muted-foreground\">No spam. We never share your info.</p>\n            </form>\n          )}\n        </motion.div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/hero-form-capture.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

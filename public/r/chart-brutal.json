@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-brutal",
+  "title": "Brutal stat bars",
+  "description": "Heavy horizontal bars with hard-edged fills and deltas.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/charts/chart-brutal.tsx",
+      "content": "import { ArrowUpRight } from \"lucide-react\"\n\nconst BARS = [\n  { label: \"Organic traffic\", value: 92, delta: \"+214%\" },\n  { label: \"Conversion rate\", value: 74, delta: \"+61%\" },\n  { label: \"Page speed score\", value: 98, delta: \"+40 pts\" },\n  { label: \"Bounce rate\", value: 28, delta: \"−37%\" },\n]\n\n/**\n * Brutal stats — heavy horizontal bars with hard-edged fills and deltas.\n */\nexport function ChartBrutal() {\n  return (\n    <section className=\"border-y-4 border-foreground bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-4xl\">\n        <p className=\"font-mono text-xs tracking-[0.25em] uppercase text-muted-foreground\">After we shipped</p>\n        <h2 className=\"mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[0.9] tracking-tighter uppercase\">\n          The numbers moved.\n        </h2>\n\n        <div className=\"mt-12 space-y-7\">\n          {BARS.map((b) => (\n            <div key={b.label}>\n              <div className=\"flex items-end justify-between\">\n                <span className=\"text-sm font-black uppercase\">{b.label}</span>\n                <span className=\"flex items-center gap-1 border-2 border-foreground bg-accent px-2 py-0.5 font-mono text-xs font-bold\">\n                  <ArrowUpRight className=\"size-3\" />\n                  {b.delta}\n                </span>\n              </div>\n              <div className=\"mt-2 h-7 border-2 border-foreground bg-background p-0.5\">\n                <div\n                  className=\"h-full bg-foreground\"\n                  style={{ width: `${b.value}%` }}\n                />\n              </div>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/chart-brutal.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

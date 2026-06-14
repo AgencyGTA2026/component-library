@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-noir",
+  "title": "Noir hero",
+  "description": "Oversized serif statement over near-black with a layered gold media slot.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/heroes/hero-noir.tsx",
+      "content": "\"use client\"\n\nimport Link from \"next/link\"\nimport { motion } from \"framer-motion\"\nimport { ArrowUpRight } from \"lucide-react\"\n\nconst fadeUp = {\n  hidden: { opacity: 0, y: 24 },\n  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const } },\n}\n\n/**\n * Noir hero — an oversized serif statement over near-black, with a gold rule.\n */\nexport function HeroNoir() {\n  return (\n    <section className=\"relative overflow-hidden bg-background text-foreground\">\n      <div className=\"mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1.5fr_1fr] lg:items-end\">\n        <motion.div initial=\"hidden\" animate=\"show\" transition={{ staggerChildren: 0.14 }}>\n          <motion.p variants={fadeUp} className=\"font-mono text-[11px] tracking-[0.35em] uppercase text-primary\">\n            Maison Aurum · Est. 1924\n          </motion.p>\n          <motion.h1\n            variants={fadeUp}\n            className=\"mt-8 font-serif text-[clamp(2.75rem,8vw,6.5rem)] leading-[0.95] tracking-tight text-balance\"\n          >\n            Light, set in <em className=\"text-primary not-italic\">gold.</em>\n          </motion.h1>\n          <motion.p variants={fadeUp} className=\"mt-8 max-w-md text-lg leading-relaxed text-muted-foreground\">\n            Each piece is drawn by hand and finished over weeks, not hours. Quiet luxury for those\n            who already know.\n          </motion.p>\n          <motion.div variants={fadeUp} className=\"mt-10 flex flex-wrap items-center gap-8\">\n            <Link\n              href=\"#\"\n              className=\"group inline-flex items-center gap-2 bg-primary px-8 py-3.5 text-sm tracking-[0.15em] uppercase text-primary-foreground transition-opacity hover:opacity-90\"\n            >\n              View the collection\n              <ArrowUpRight className=\"size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5\" />\n            </Link>\n            <Link href=\"#\" className=\"text-sm tracking-wide text-muted-foreground underline-offset-4 hover:text-foreground hover:underline\">\n              Book an appointment\n            </Link>\n          </motion.div>\n        </motion.div>\n\n        <motion.div\n          initial={{ opacity: 0, scale: 0.98 }}\n          animate={{ opacity: 1, scale: 1 }}\n          transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}\n          className=\"relative aspect-[4/5] w-full\"\n        >\n          <div className=\"absolute inset-0 border border-primary/40\" />\n          <div className=\"absolute inset-0 translate-x-3 translate-y-3 bg-[radial-gradient(circle_at_50%_30%,#2a241a,transparent_70%)]\">\n            <div className=\"absolute inset-0 bg-[conic-gradient(from_140deg_at_50%_45%,transparent,rgba(200,164,90,0.25),transparent_55%)]\" />\n            <p className=\"absolute bottom-4 left-4 font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground\">\n              No. 01 — The Solène ring\n            </p>\n          </div>\n        </motion.div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/hero-noir.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "error-404",
+  "title": "404 page",
+  "description": "Friendly not-found with search and escape links.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/states/error-404.tsx",
+      "content": "\"use client\"\n\nimport Link from \"next/link\"\nimport { ArrowLeft, Home, Search } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\n\nconst SUGGESTIONS = [\n  { label: \"Services\", href: \"#services\" },\n  { label: \"Book an appointment\", href: \"#book\" },\n  { label: \"Contact us\", href: \"#contact\" },\n]\n\n/**\n * 404 — a friendly not-found page with an oversized code, a search box,\n * and a few escape hatches. Drop in app/not-found.tsx.\n */\nexport function Error404() {\n  return (\n    <section className=\"grid min-h-[80vh] place-items-center bg-background px-5 py-20 text-foreground sm:px-8\">\n      <div className=\"mx-auto max-w-xl text-center\">\n        <p className=\"font-serif text-[clamp(6rem,22vw,14rem)] leading-none tracking-tight text-primary\">\n          404\n        </p>\n        <h1 className=\"mt-2 font-serif text-3xl tracking-tight text-balance sm:text-4xl\">\n          We couldn&apos;t find that page.\n        </h1>\n        <p className=\"mx-auto mt-4 max-w-md text-muted-foreground\">\n          It may have moved or never existed. Try a search, or head back to\n          familiar ground.\n        </p>\n\n        <form className=\"mx-auto mt-8 flex max-w-sm gap-2\" onSubmit={(e) => e.preventDefault()}>\n          <div className=\"relative flex-1\">\n            <Search className=\"absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground\" />\n            <Input placeholder=\"Search the site…\" className=\"pl-9\" />\n          </div>\n          <Button type=\"submit\">Search</Button>\n        </form>\n\n        <div className=\"mt-8 flex flex-wrap items-center justify-center gap-3\">\n          <Button asChild variant=\"outline\">\n            <Link href=\"#\"><ArrowLeft className=\"size-4\" /> Go back</Link>\n          </Button>\n          <Button asChild>\n            <Link href=\"#home\"><Home className=\"size-4\" /> Home</Link>\n          </Button>\n        </div>\n\n        <div className=\"mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm\">\n          {SUGGESTIONS.map((s) => (\n            <Link key={s.label} href={s.href} className=\"text-primary underline-offset-4 hover:underline\">\n              {s.label}\n            </Link>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/error-404.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

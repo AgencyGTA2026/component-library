@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-noir",
+  "title": "Noir CTA",
+  "description": "A single serif statement and one gold action over near-black.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/cta/cta-noir.tsx",
+      "content": "import Link from \"next/link\"\nimport { ArrowUpRight } from \"lucide-react\"\n\n/**\n * Noir CTA — a single serif statement and one gold action over near-black.\n */\nexport function CtaNoir() {\n  return (\n    <section className=\"relative overflow-hidden bg-background px-5 py-24 text-foreground sm:px-8 sm:py-32\">\n      <div\n        aria-hidden\n        className=\"pointer-events-none absolute left-1/2 top-0 size-[50vw] max-w-[600px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-[radial-gradient(circle,rgba(200,164,90,0.14),transparent_65%)]\"\n      />\n      <div className=\"relative mx-auto max-w-3xl border-y border-border py-16 text-center\">\n        <p className=\"font-mono text-[11px] tracking-[0.35em] uppercase text-primary\">By appointment</p>\n        <h2 className=\"mt-6 font-serif text-[clamp(2.25rem,6vw,4.5rem)] leading-[1.02] tracking-tight text-balance\">\n          Some things are worth the wait.\n        </h2>\n        <p className=\"mx-auto mt-6 max-w-md leading-relaxed text-muted-foreground\">\n          Begin a commission, or simply visit the atelier. There is no obligation — only champagne\n          and good company.\n        </p>\n        <Link\n          href=\"#\"\n          className=\"group mt-10 inline-flex items-center gap-2 bg-primary px-9 py-4 text-sm tracking-[0.15em] uppercase text-primary-foreground transition-opacity hover:opacity-90\"\n        >\n          Request an appointment\n          <ArrowUpRight className=\"size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5\" />\n        </Link>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/cta-noir.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "nav-retro",
+  "title": "Retro pager",
+  "description": "Chunky rounded number pills with prev/next.",
+  "files": [
+    {
+      "path": "registry/blocks/navigation/nav-retro.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nconst PAGES = [\"Citrus\", \"Berry\", \"Lime\", \"Mango\", \"Sampler\"]\n\n/**\n * Retro pager — chunky rounded number pills with prev/next.\n */\nexport function NavRetro() {\n  const [page, setPage] = React.useState(1)\n  const total = 8\n\n  const go = (n: number) => setPage(Math.min(total, Math.max(1, n)))\n  const nums = Array.from({ length: total }, (_, i) => i + 1)\n\n  return (\n    <section className=\"bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-3xl text-center\">\n        <h2 className=\"text-2xl font-black tracking-tight\">Browse the flavors</h2>\n        <p className=\"mt-2 font-bold text-muted-foreground\">Page {page} of {total} · {PAGES[(page - 1) % PAGES.length]}</p>\n\n        <nav className=\"mt-8 flex flex-wrap items-center justify-center gap-2\">\n          <button\n            onClick={() => go(page - 1)}\n            disabled={page === 1}\n            className=\"rounded-full border-2 border-foreground bg-card px-4 py-2 text-sm font-black shadow-[3px_3px_0_0_var(--foreground)] transition-transform enabled:hover:-translate-y-0.5 disabled:opacity-40\"\n          >\n            ← Prev\n          </button>\n\n          {nums.map((n) => (\n            <button\n              key={n}\n              onClick={() => go(n)}\n              className={`grid size-10 place-items-center rounded-full border-2 border-foreground text-sm font-black transition-transform hover:-translate-y-0.5 ${\n                page === n\n                  ? \"bg-primary text-primary-foreground shadow-[3px_3px_0_0_var(--foreground)]\"\n                  : \"bg-card\"\n              }`}\n            >\n              {n}\n            </button>\n          ))}\n\n          <button\n            onClick={() => go(page + 1)}\n            disabled={page === total}\n            className=\"rounded-full border-2 border-foreground bg-card px-4 py-2 text-sm font-black shadow-[3px_3px_0_0_var(--foreground)] transition-transform enabled:hover:-translate-y-0.5 disabled:opacity-40\"\n          >\n            Next →\n          </button>\n        </nav>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/nav-retro.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

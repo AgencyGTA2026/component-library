@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "content-retro",
+  "title": "Retro blog grid",
+  "description": "Rounded color cards with sticker category tags.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/content/content-retro.tsx",
+      "content": "import Link from \"next/link\"\nimport { ArrowUpRight } from \"lucide-react\"\n\nconst POSTS = [\n  { cat: \"Recipes\", title: \"5 spritzes to make with Citrus Pop\", read: \"4 min\", color: \"bg-accent\" },\n  { cat: \"Behind the can\", title: \"How we mix a flavor (it takes 40 tries)\", read: \"6 min\", color: \"bg-secondary text-secondary-foreground\" },\n  { cat: \"Stockists\", title: \"We just landed in 200 new stores\", read: \"2 min\", color: \"bg-primary text-primary-foreground\" },\n]\n\n/**\n * Retro blog grid — rounded color cards with a sticker category tag.\n */\nexport function ContentRetro() {\n  return (\n    <section className=\"bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl\">\n        <div className=\"flex flex-wrap items-end justify-between gap-4\">\n          <h2 className=\"text-[clamp(2rem,5vw,3.25rem)] font-black tracking-tight\">The Fizz Journal</h2>\n          <Link href=\"#\" className=\"font-bold underline decoration-2 underline-offset-4\">\n            All posts\n          </Link>\n        </div>\n\n        <div className=\"mt-10 grid gap-5 md:grid-cols-3\">\n          {POSTS.map((p) => (\n            <Link\n              key={p.title}\n              href=\"#\"\n              className={`group flex min-h-[300px] flex-col justify-between rounded-[1.75rem] border-2 border-foreground p-6 shadow-[5px_5px_0_0_var(--foreground)] transition-transform hover:-translate-y-1 ${p.color}`}\n            >\n              <span className=\"w-fit rounded-full border-2 border-foreground bg-card px-3 py-1 text-xs font-black text-foreground\">\n                {p.cat}\n              </span>\n              <div>\n                <h3 className=\"text-2xl font-black leading-tight\">{p.title}</h3>\n                <p className=\"mt-3 flex items-center gap-1 text-sm font-bold\">\n                  {p.read} read\n                  <ArrowUpRight className=\"size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5\" />\n                </p>\n              </div>\n            </Link>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/content-retro.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

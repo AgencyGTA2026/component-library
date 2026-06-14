@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "nav-noir",
+  "title": "Noir anchor nav",
+  "description": "Sticky hairline rail with a gold active underline.",
+  "files": [
+    {
+      "path": "registry/blocks/navigation/nav-noir.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nconst SECTIONS = [\n  { id: \"heritage\", label: \"Heritage\" },\n  { id: \"craft\", label: \"The craft\" },\n  { id: \"collection\", label: \"Collection\" },\n  { id: \"bespoke\", label: \"Bespoke\" },\n  { id: \"visit\", label: \"Visit us\" },\n]\n\n/**\n * Noir anchor nav — a sticky hairline rail with a gold active underline.\n */\nexport function NavNoir() {\n  const [active, setActive] = React.useState(SECTIONS[0].id)\n\n  return (\n    <section className=\"bg-background text-foreground\">\n      <nav className=\"sticky top-0 z-10 flex flex-wrap gap-x-8 gap-y-2 border-y border-border bg-background/90 px-5 py-4 backdrop-blur sm:px-8\">\n        {SECTIONS.map((s) => (\n          <button\n            key={s.id}\n            onClick={() => setActive(s.id)}\n            className={`border-b pb-1 text-sm tracking-[0.12em] uppercase transition-colors ${\n              active === s.id\n                ? \"border-primary text-primary\"\n                : \"border-transparent text-muted-foreground hover:text-foreground\"\n            }`}\n          >\n            {s.label}\n          </button>\n        ))}\n      </nav>\n\n      <div className=\"mx-auto max-w-4xl px-5 py-16 sm:px-8\">\n        {SECTIONS.map((s) => (\n          <div key={s.id} className={active === s.id ? \"\" : \"hidden\"}>\n            <p className=\"font-mono text-[11px] tracking-[0.35em] uppercase text-primary\">\n              {String(SECTIONS.indexOf(s) + 1).padStart(2, \"0\")}\n            </p>\n            <h3 className=\"mt-4 font-serif text-4xl tracking-tight\">{s.label}</h3>\n            <p className=\"mt-4 max-w-xl leading-relaxed text-muted-foreground\">\n              A quiet word on {s.label.toLowerCase()} — the kind of detail that rewards the patient\n              reader and the patient collector alike.\n            </p>\n          </div>\n        ))}\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/nav-noir.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

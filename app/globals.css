@@ -186,6 +186,58 @@
   --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Memphis / 80s revival — cream canvas, bold pop, chunky rounded type. */
+
+[data-vibe="retro"] {
+  --background: #fdf6e3;
+  --foreground: #2b2b2b;
+  --card: #fffdf7;
+  --card-foreground: #2b2b2b;
+  --popover: #fffdf7;
+  --popover-foreground: #2b2b2b;
+  --primary: #ff5a5f;
+  --primary-foreground: #fffdf7;
+  --secondary: #1fb5a8;
+  --secondary-foreground: #ffffff;
+  --muted: #f3ead0;
+  --muted-foreground: #6b6353;
+  --accent: #ffd23f;
+  --accent-foreground: #2b2b2b;
+  --destructive: #e4572e;
+  --border: #2b2b2b;
+  --input: #2b2b2b;
+  --ring: #ff5a5f;
+  --radius: 0.9rem;
+  --font-body: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Noir — dark luxury: near-black canvas, ivory text, gold accent, serif display. */
+
+[data-vibe="noir"] {
+  --background: #0e0d0b;
+  --foreground: #f1ece1;
+  --card: #17150f;
+  --card-foreground: #f1ece1;
+  --popover: #17150f;
+  --popover-foreground: #f1ece1;
+  --primary: #c8a45a;
+  --primary-foreground: #0e0d0b;
+  --secondary: #211e17;
+  --secondary-foreground: #f1ece1;
+  --muted: #211e17;
+  --muted-foreground: #9c9486;
+  --accent: #c8a45a;
+  --accent-foreground: #0e0d0b;
+  --destructive: #b4452f;
+  --border: #322c20;
+  --input: #322c20;
+  --ring: #c8a45a;
+  --radius: 0.25rem;
+  --font-body: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

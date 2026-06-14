@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-state",
+  "title": "Empty state",
+  "description": "Reusable nothing-here-yet panel with illustration slot.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/states/empty-state.tsx",
+      "content": "import { FileQuestion, Plus } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\n\n/**\n * Empty state — a reusable \"nothing here yet\" panel with an illustration\n * slot, message, and a primary action. Use inside lists, tables, search\n * results, or dashboards. Pass your own copy/icon via props if you like.\n */\nexport function EmptyState() {\n  return (\n    <section className=\"grid min-h-[60vh] place-items-center bg-background px-5 py-20 text-foreground\">\n      <div className=\"mx-auto max-w-sm text-center\">\n        <span className=\"mx-auto grid size-20 place-items-center rounded-2xl border-2 border-dashed bg-card text-muted-foreground\">\n          <FileQuestion className=\"size-9\" strokeWidth={1.5} />\n        </span>\n        <h2 className=\"mt-6 text-xl font-semibold tracking-tight\">No records yet</h2>\n        <p className=\"mt-2 text-sm text-muted-foreground\">\n          When you add your first item, it&apos;ll show up here. Nothing to see\n          for now.\n        </p>\n        <Button className=\"mt-6\">\n          <Plus className=\"size-4\" />\n          Add your first item\n        </Button>\n        <p className=\"mt-3 text-xs text-muted-foreground\">\n          Or <button className=\"text-primary underline underline-offset-2\">import from a file</button>.\n        </p>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/empty-state.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

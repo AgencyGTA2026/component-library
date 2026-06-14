@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-rings",
+  "title": "Progress rings",
+  "description": "Circular percentage stats for outcomes and capacity.",
+  "files": [
+    {
+      "path": "registry/blocks/charts/progress-rings.tsx",
+      "content": "const RINGS = [\n  { label: \"Patient satisfaction\", value: 96, caption: \"1,200 surveys\" },\n  { label: \"On-time arrivals\", value: 88, caption: \"last 90 days\" },\n  { label: \"Capacity used\", value: 72, caption: \"this week\" },\n  { label: \"Recovery on track\", value: 94, caption: \"post-op cases\" },\n]\n\n/**\n * Progress rings — circular percentage stats for outcomes and capacity.\n * Pure SVG stroke-dasharray; the ring fills via a CSS transition. Great\n * for healthcare/service KPIs.\n */\nexport function ProgressRings() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl\">\n        <div className=\"mb-12 max-w-xl\">\n          <p className=\"font-medium text-primary\">Outcomes that matter</p>\n          <h2 className=\"mt-2 text-3xl font-semibold tracking-tight text-balance sm:text-4xl\">\n            The numbers we hold ourselves to.\n          </h2>\n        </div>\n\n        <div className=\"grid grid-cols-2 gap-6 lg:grid-cols-4\">\n          {RINGS.map((r) => {\n            const C = 2 * Math.PI * 42\n            return (\n              <div key={r.label} className=\"flex flex-col items-center rounded-2xl border bg-card p-6 text-center\">\n                <div className=\"relative size-32\">\n                  <svg viewBox=\"0 0 100 100\" className=\"size-full -rotate-90\">\n                    <circle cx=\"50\" cy=\"50\" r=\"42\" fill=\"none\" stroke=\"var(--muted)\" strokeWidth=\"8\" />\n                    <circle\n                      cx=\"50\"\n                      cy=\"50\"\n                      r=\"42\"\n                      fill=\"none\"\n                      stroke=\"var(--primary)\"\n                      strokeWidth=\"8\"\n                      strokeLinecap=\"round\"\n                      strokeDasharray={C}\n                      strokeDashoffset={C - (r.value / 100) * C}\n                      className=\"[transition:stroke-dashoffset_1s_ease]\"\n                    />\n                  </svg>\n                  <div className=\"absolute inset-0 grid place-content-center\">\n                    <span className=\"text-2xl font-semibold tabular-nums\">{r.value}%</span>\n                  </div>\n                </div>\n                <p className=\"mt-4 text-sm font-semibold\">{r.label}</p>\n                <p className=\"text-xs text-muted-foreground\">{r.caption}</p>\n              </div>\n            )\n          })}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/progress-rings.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

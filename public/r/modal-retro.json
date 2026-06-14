@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "modal-retro",
+  "title": "Retro modal",
+  "description": "A playful rounded promo dialog with a sticker close button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/overlays/modal-retro.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { Gift, X } from \"lucide-react\"\n\n/**\n * Retro modal — a playful rounded dialog with a sticker close button.\n */\nexport function ModalRetro() {\n  const [open, setOpen] = React.useState(false)\n\n  React.useEffect(() => {\n    if (!open) return\n    const onKey = (e: KeyboardEvent) => e.key === \"Escape\" && setOpen(false)\n    window.addEventListener(\"keydown\", onKey)\n    return () => window.removeEventListener(\"keydown\", onKey)\n  }, [open])\n\n  return (\n    <section className=\"grid min-h-[340px] place-items-center bg-background px-5 py-16 text-foreground\">\n      <button\n        onClick={() => setOpen(true)}\n        className=\"rounded-full border-2 border-foreground bg-primary px-7 py-3.5 text-base font-black text-primary-foreground shadow-[5px_5px_0_0_var(--foreground)] transition-transform hover:-translate-y-1\"\n      >\n        Unlock 15% off\n      </button>\n\n      {open && (\n        <div\n          className=\"fixed inset-0 z-50 grid place-items-center bg-foreground/40 p-5\"\n          onClick={() => setOpen(false)}\n        >\n          <div\n            role=\"dialog\"\n            aria-modal=\"true\"\n            onClick={(e) => e.stopPropagation()}\n            className=\"relative w-full max-w-sm rounded-[2rem] border-4 border-foreground bg-card p-7 text-center shadow-[8px_8px_0_0_var(--foreground)]\"\n          >\n            <button\n              aria-label=\"Close\"\n              onClick={() => setOpen(false)}\n              className=\"absolute -top-4 -right-4 grid size-10 place-items-center rounded-full border-2 border-foreground bg-accent transition-transform hover:rotate-90\"\n            >\n              <X className=\"size-5\" />\n            </button>\n\n            <span className=\"mx-auto grid size-14 -rotate-6 place-items-center rounded-2xl border-2 border-foreground bg-accent shadow-[3px_3px_0_0_var(--foreground)]\">\n              <Gift className=\"size-7\" />\n            </span>\n            <h3 className=\"mt-5 text-2xl font-black\">Here&apos;s a treat</h3>\n            <p className=\"mt-2 font-medium text-muted-foreground\">\n              Pop your email in and we&apos;ll fizz over a 15% code for your first case.\n            </p>\n            <div className=\"mt-5 flex gap-2\">\n              <input\n                type=\"email\"\n                placeholder=\"you@email.com\"\n                className=\"w-full rounded-full border-2 border-foreground bg-background px-4 py-2.5 text-sm font-medium outline-none focus:ring-2 focus:ring-ring\"\n              />\n              <button\n                onClick={() => setOpen(false)}\n                className=\"shrink-0 rounded-full border-2 border-foreground bg-primary px-5 py-2.5 text-sm font-black text-primary-foreground\"\n              >\n                Send\n              </button>\n            </div>\n          </div>\n        </div>\n      )}\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/modal-retro.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

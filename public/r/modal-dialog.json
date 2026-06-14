@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "modal-dialog",
+  "title": "Modal dialog",
+  "description": "Accessible centered modal with overlay, Escape, and backdrop close.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/overlays/modal-dialog.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { AnimatePresence, motion } from \"framer-motion\"\nimport { Sparkles, X } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\n\n/**\n * Modal dialog — an accessible centered modal: focus moves in on open,\n * Escape and backdrop click close it, and body scroll is intentionally\n * left to the page. A self-contained pattern, no dialog library needed.\n */\nexport function ModalDialog() {\n  const [open, setOpen] = React.useState(false)\n  const closeRef = React.useRef<HTMLButtonElement>(null)\n\n  React.useEffect(() => {\n    if (!open) return\n    closeRef.current?.focus()\n    const onKey = (e: KeyboardEvent) => e.key === \"Escape\" && setOpen(false)\n    window.addEventListener(\"keydown\", onKey)\n    return () => window.removeEventListener(\"keydown\", onKey)\n  }, [open])\n\n  return (\n    <section className=\"grid min-h-72 place-items-center bg-background px-5 py-20 text-foreground\">\n      <Button size=\"lg\" onClick={() => setOpen(true)}>Open dialog</Button>\n\n      <AnimatePresence>\n        {open && (\n          <div className=\"fixed inset-0 z-50 grid place-items-center p-4\">\n            <motion.div\n              initial={{ opacity: 0 }}\n              animate={{ opacity: 1 }}\n              exit={{ opacity: 0 }}\n              onClick={() => setOpen(false)}\n              className=\"absolute inset-0 bg-foreground/40 backdrop-blur-sm\"\n            />\n            <motion.div\n              role=\"dialog\"\n              aria-modal=\"true\"\n              aria-labelledby=\"modal-title\"\n              initial={{ opacity: 0, scale: 0.96, y: 8 }}\n              animate={{ opacity: 1, scale: 1, y: 0 }}\n              exit={{ opacity: 0, scale: 0.96, y: 8 }}\n              transition={{ duration: 0.2 }}\n              className=\"relative w-full max-w-md rounded-2xl border bg-card p-7 text-card-foreground shadow-2xl\"\n            >\n              <button\n                ref={closeRef}\n                onClick={() => setOpen(false)}\n                aria-label=\"Close\"\n                className=\"absolute top-4 right-4 grid size-8 place-items-center rounded-md text-muted-foreground hover:bg-secondary\"\n              >\n                <X className=\"size-4\" />\n              </button>\n\n              <span className=\"grid size-12 place-items-center rounded-xl bg-secondary text-primary\">\n                <Sparkles className=\"size-6\" />\n              </span>\n              <h2 id=\"modal-title\" className=\"mt-5 text-xl font-semibold tracking-tight\">\n                You&apos;ve unlocked Pro\n              </h2>\n              <p className=\"mt-2 text-muted-foreground\">\n                Your trial now includes unlimited projects, priority support,\n                and the full template library. Nothing to install.\n              </p>\n\n              <div className=\"mt-7 flex justify-end gap-3\">\n                <Button variant=\"ghost\" onClick={() => setOpen(false)}>Maybe later</Button>\n                <Button onClick={() => setOpen(false)}>Explore Pro</Button>\n              </div>\n            </motion.div>\n          </div>\n        )}\n      </AnimatePresence>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/modal-dialog.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

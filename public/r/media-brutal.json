@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "media-brutal",
+  "title": "Brutal gallery",
+  "description": "Bordered work grid over a hard-edged logo wall.",
+  "files": [
+    {
+      "path": "registry/blocks/media/media-brutal.tsx",
+      "content": "const TILES = [\n  { label: \"Fig. 01\", color: \"#d9f526\", span: \"sm:col-span-2 sm:row-span-2\" },\n  { label: \"Fig. 02\", color: \"#0c0c0c\", span: \"\" },\n  { label: \"Fig. 03\", color: \"#e11d48\", span: \"\" },\n  { label: \"Fig. 04\", color: \"#0c0c0c\", span: \"\" },\n  { label: \"Fig. 05\", color: \"#d9f526\", span: \"\" },\n]\n\nconst LOGOS = [\"TONNE\", \"STAK\", \"GRIDLOCK\", \"MONOLITH\", \"BRUT&CO\", \"HARDSET\"]\n\n/**\n * Brutal gallery — a bordered work grid over a marquee-free logo wall.\n */\nexport function MediaBrutal() {\n  return (\n    <section className=\"border-y-4 border-foreground bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl\">\n        <h2 className=\"text-[clamp(2rem,5vw,3.5rem)] font-black leading-[0.9] tracking-tighter uppercase\">\n          Selected work.\n        </h2>\n\n        <div className=\"mt-10 grid auto-rows-[160px] grid-cols-2 gap-3 sm:grid-cols-4\">\n          {TILES.map((t) => (\n            <div\n              key={t.label}\n              className={`group relative border-2 border-foreground ${t.span}`}\n              style={{ backgroundColor: t.color }}\n            >\n              <span className=\"absolute bottom-2 left-2 border-2 border-foreground bg-background px-2 py-0.5 font-mono text-[10px] font-bold uppercase\">\n                {t.label}\n              </span>\n            </div>\n          ))}\n        </div>\n\n        <div className=\"mt-10 grid grid-cols-2 border-2 border-foreground sm:grid-cols-3 lg:grid-cols-6\">\n          {LOGOS.map((l) => (\n            <div\n              key={l}\n              className=\"border-foreground p-5 text-center font-black uppercase [&:not(:last-child)]:border-r-2\"\n            >\n              {l}\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/media-brutal.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

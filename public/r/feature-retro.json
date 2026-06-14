@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "feature-retro",
+  "title": "Retro features",
+  "description": "Alternating rounded rows with a bright color panel.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/features/feature-retro.tsx",
+      "content": "import { Check } from \"lucide-react\"\n\nconst ROWS = [\n  {\n    kicker: \"Taste\",\n    title: \"Bold flavor, no aftertaste\",\n    body: \"We dial in every batch on real fruit and a whisper of fizz. It tastes like the label looks — fun.\",\n    points: [\"Pressed fruit base\", \"Lightly carbonated\", \"No artificial sweeteners\"],\n    color: \"bg-accent\",\n  },\n  {\n    kicker: \"Body\",\n    title: \"Light enough to keep up\",\n    body: \"40 calories, no jitters, no crash. The can you reach for at 3pm and again at the beach.\",\n    points: [\"40 calories\", \"Naturally caffeinated\", \"Vegan & gluten-free\"],\n    color: \"bg-secondary text-secondary-foreground\",\n  },\n]\n\n/**\n * Retro features — alternating rounded rows with a bright color panel.\n */\nexport function FeatureRetro() {\n  return (\n    <section className=\"bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl space-y-6\">\n        {ROWS.map((r, i) => (\n          <div\n            key={r.title}\n            className={`grid items-center gap-6 rounded-[2rem] border-2 border-foreground bg-card p-4 shadow-[5px_5px_0_0_var(--foreground)] md:grid-cols-2 md:p-5 ${\n              i % 2 === 1 ? \"md:[&>*:first-child]:order-2\" : \"\"\n            }`}\n          >\n            <div className=\"p-4 sm:p-6\">\n              <span className=\"inline-block rounded-full border-2 border-foreground bg-primary px-3 py-1 text-xs font-black text-primary-foreground\">\n                {r.kicker}\n              </span>\n              <h3 className=\"mt-4 text-3xl font-black leading-tight tracking-tight\">{r.title}</h3>\n              <p className=\"mt-3 font-medium text-muted-foreground\">{r.body}</p>\n              <ul className=\"mt-5 space-y-2\">\n                {r.points.map((p) => (\n                  <li key={p} className=\"flex items-center gap-2.5 font-bold\">\n                    <span className=\"grid size-6 place-items-center rounded-full border-2 border-foreground bg-accent\">\n                      <Check className=\"size-3.5\" />\n                    </span>\n                    {p}\n                  </li>\n                ))}\n              </ul>\n            </div>\n            <div className={`grid min-h-[220px] place-items-center rounded-[1.5rem] border-2 border-foreground ${r.color}`}>\n              <span className=\"text-6xl font-black opacity-80\">{String(i + 1).padStart(2, \"0\")}</span>\n            </div>\n          </div>\n        ))}\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/feature-retro.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

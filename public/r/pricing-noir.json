@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pricing-noir",
+  "title": "Noir membership",
+  "description": "Hairline membership tiers with a gold-framed featured plan.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/pricing/pricing-noir.tsx",
+      "content": "import { Check } from \"lucide-react\"\n\nconst TIERS = [\n  {\n    name: \"Atelier\",\n    price: \"Complimentary\",\n    blurb: \"For every piece that leaves the house.\",\n    points: [\"Lifetime cleaning\", \"Engraving & resizing\", \"Annual condition report\"],\n    featured: false,\n  },\n  {\n    name: \"Cercle\",\n    price: \"$1,200 / yr\",\n    blurb: \"For the collector who returns.\",\n    points: [\"Everything in Atelier\", \"Private viewings\", \"First sight of new work\", \"Restoration priority\"],\n    featured: true,\n  },\n  {\n    name: \"Patron\",\n    price: \"By invitation\",\n    blurb: \"For the few we know by name.\",\n    points: [\"Everything in Cercle\", \"Dedicated maître\", \"Bespoke commissions\", \"House events\"],\n    featured: false,\n  },\n]\n\n/**\n * Noir membership tiers — hairline cards with a gold-framed featured plan.\n */\nexport function PricingNoir() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"mx-auto max-w-6xl\">\n        <div className=\"max-w-xl\">\n          <p className=\"font-mono text-[11px] tracking-[0.35em] uppercase text-primary\">Membership</p>\n          <h2 className=\"mt-5 font-serif text-[clamp(2rem,5vw,3.5rem)] leading-[1.02] tracking-tight\">\n            The circle around the house\n          </h2>\n        </div>\n\n        <div className=\"mt-12 grid gap-px border border-border bg-border md:grid-cols-3\">\n          {TIERS.map((t) => (\n            <div\n              key={t.name}\n              className={`flex flex-col p-8 ${t.featured ? \"bg-card ring-1 ring-inset ring-primary\" : \"bg-card\"}`}\n            >\n              <div className=\"flex items-center justify-between\">\n                <p className=\"font-serif text-2xl tracking-tight\">{t.name}</p>\n                {t.featured && (\n                  <span className=\"font-mono text-[9px] tracking-[0.25em] uppercase text-primary\">Most chosen</span>\n                )}\n              </div>\n              <p className=\"mt-2 text-sm text-muted-foreground\">{t.blurb}</p>\n              <p className=\"mt-6 font-serif text-2xl tracking-tight text-primary\">{t.price}</p>\n\n              <ul className=\"mt-7 flex-1 space-y-3\">\n                {t.points.map((p) => (\n                  <li key={p} className=\"flex items-start gap-3 text-sm text-muted-foreground\">\n                    <Check className=\"mt-0.5 size-4 shrink-0 text-primary\" />\n                    {p}\n                  </li>\n                ))}\n              </ul>\n\n              <button\n                className={`mt-8 py-3 text-sm tracking-[0.15em] uppercase transition-opacity ${\n                  t.featured\n                    ? \"bg-primary text-primary-foreground hover:opacity-90\"\n                    : \"border border-border text-foreground hover:border-primary\"\n                }`}\n              >\n                {t.name === \"Patron\" ? \"Enquire\" : \"Join\"}\n              </button>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/pricing-noir.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

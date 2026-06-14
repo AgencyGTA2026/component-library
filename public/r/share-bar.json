@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "share-bar",
+  "title": "Share bar",
+  "description": "Copy-link, email, print, and save with clipboard feedback.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/content/share-bar.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { Bookmark, Check, Link2, Mail, Printer, Share2 } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\n\n/**\n * Share bar — a compact share rail (copy-link, email, print, bookmark)\n * that turns horizontal on mobile and vertical/sticky on desktop. The\n * copy-link button gives real clipboard feedback.\n */\nexport function ShareBar() {\n  const [copied, setCopied] = React.useState(false)\n  const [saved, setSaved] = React.useState(false)\n\n  const copy = async () => {\n    try { await navigator.clipboard.writeText(typeof window !== \"undefined\" ? window.location.href : \"\") } catch {}\n    setCopied(true)\n    setTimeout(() => setCopied(false), 1600)\n  }\n\n  const items = [\n    { key: \"copy\", label: copied ? \"Copied!\" : \"Copy link\", icon: copied ? Check : Link2, onClick: copy },\n    { key: \"email\", label: \"Email\", icon: Mail, onClick: () => {} },\n    { key: \"print\", label: \"Print\", icon: Printer, onClick: () => typeof window !== \"undefined\" && window.print() },\n    { key: \"save\", label: saved ? \"Saved\" : \"Save\", icon: Bookmark, onClick: () => setSaved((s) => !s) },\n  ]\n\n  return (\n    <section className=\"bg-background px-5 py-12 text-foreground sm:px-8\">\n      <div className=\"mx-auto flex max-w-2xl items-center justify-between gap-4 rounded-full border bg-card px-5 py-3\">\n        <p className=\"flex items-center gap-2 text-sm font-medium\">\n          <Share2 className=\"size-4 text-primary\" /> Share this\n        </p>\n        <div className=\"flex items-center gap-1\">\n          {items.map((it) => (\n            <button\n              key={it.key}\n              onClick={it.onClick}\n              className={cn(\n                \"flex items-center gap-2 rounded-full px-3 py-2 text-sm transition-colors hover:bg-secondary\",\n                (it.key === \"copy\" && copied) || (it.key === \"save\" && saved) ? \"text-primary\" : \"text-muted-foreground\"\n              )}\n            >\n              <it.icon className={cn(\"size-4\", it.key === \"save\" && saved && \"fill-current\")} />\n              <span className=\"hidden sm:inline\">{it.label}</span>\n            </button>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/share-bar.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

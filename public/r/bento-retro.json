@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bento-retro",
+  "title": "Retro bento",
+  "description": "Playful rounded cells in bright Memphis colors.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/bento/bento-retro.tsx",
+      "content": "import { Droplet, Leaf, Recycle, Sparkles, Truck } from \"lucide-react\"\n\n/**\n * Retro bento — playful rounded cells in bright Memphis colors.\n */\nexport function BentoRetro() {\n  return (\n    <section className=\"bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl\">\n        <h2 className=\"max-w-2xl text-[clamp(2rem,5vw,3.25rem)] font-black leading-[0.95] tracking-tight\">\n          Good stuff, all the way down.\n        </h2>\n\n        <div className=\"mt-10 grid auto-rows-[minmax(150px,auto)] gap-4 sm:grid-cols-3\">\n          <div className=\"flex flex-col justify-between rounded-3xl border-2 border-foreground bg-primary p-6 text-primary-foreground shadow-[5px_5px_0_0_var(--foreground)] sm:col-span-2 sm:row-span-2\">\n            <Sparkles className=\"size-9\" />\n            <div>\n              <p className=\"text-2xl font-black\">Real fruit, real flavor</p>\n              <p className=\"mt-2 max-w-sm font-medium text-primary-foreground/80\">\n                Pressed, never powdered. Every can starts with something that grew.\n              </p>\n            </div>\n          </div>\n\n          <div className=\"flex flex-col justify-between rounded-3xl border-2 border-foreground bg-accent p-6 shadow-[5px_5px_0_0_var(--foreground)]\">\n            <Leaf className=\"size-7\" />\n            <p className=\"text-lg font-black\">Plant-based, gluten-free</p>\n          </div>\n\n          <div className=\"flex flex-col justify-between rounded-3xl border-2 border-foreground bg-secondary p-6 text-secondary-foreground shadow-[5px_5px_0_0_var(--foreground)]\">\n            <Recycle className=\"size-7\" />\n            <p className=\"text-lg font-black\">100% recyclable cans</p>\n          </div>\n\n          <div className=\"flex items-center gap-4 rounded-3xl border-2 border-foreground bg-card p-6 shadow-[5px_5px_0_0_var(--foreground)] sm:col-span-2\">\n            <Truck className=\"size-8 shrink-0\" />\n            <div>\n              <p className=\"text-lg font-black\">Free shipping on cases</p>\n              <p className=\"font-medium text-muted-foreground\">Doorstep in 2–4 days, cold-pack included.</p>\n            </div>\n          </div>\n\n          <div className=\"flex flex-col justify-between rounded-3xl border-2 border-foreground bg-card p-6 shadow-[5px_5px_0_0_var(--foreground)]\">\n            <Droplet className=\"size-7\" />\n            <p className=\"text-lg font-black\">Only 40 calories</p>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/bento-retro.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

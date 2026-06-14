@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-split",
+  "title": "Split hero",
+  "description": "Full-bleed media half beside a copy half.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/heroes/hero-split.tsx",
+      "content": "import Link from \"next/link\"\nimport { ArrowRight, Phone } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\n\n/**\n * Split hero — a full-bleed media half beside a copy half, flush to the\n * page edges. Swap the gradient panel for a hero photograph.\n */\nexport function HeroSplit() {\n  return (\n    <section className=\"bg-background text-foreground\">\n      <div className=\"grid min-h-[70vh] lg:grid-cols-2\">\n        <div className=\"flex flex-col justify-center px-5 py-16 sm:px-10 lg:py-24\">\n          <div className=\"mx-auto w-full max-w-lg\">\n            <p className=\"font-mono text-xs tracking-[0.25em] uppercase text-muted-foreground\">\n              Family-owned since 2014\n            </p>\n            <h1 className=\"mt-6 font-serif text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[1.02] tracking-tight text-balance\">\n              Care for your home, the way you&apos;d do it yourself.\n            </h1>\n            <p className=\"mt-6 max-w-md text-lg leading-relaxed text-muted-foreground\">\n              Honest pricing, tidy work, and people who treat your place like\n              it&apos;s theirs. That&apos;s the whole idea.\n            </p>\n            <div className=\"mt-9 flex flex-wrap gap-4\">\n              <Button asChild size=\"lg\">\n                <Link href=\"#quote\">Get a free quote <ArrowRight className=\"size-4\" /></Link>\n              </Button>\n              <Button asChild size=\"lg\" variant=\"outline\">\n                <Link href=\"tel:+15551234567\"><Phone className=\"size-4\" /> (555) 123-4567</Link>\n              </Button>\n            </div>\n          </div>\n        </div>\n\n        <div className=\"relative min-h-72 overflow-hidden bg-[linear-gradient(150deg,color-mix(in_oklab,var(--primary)_80%,#000)_0%,var(--foreground)_100%)]\">\n          <div className=\"absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_70%_25%,color-mix(in_oklab,var(--accent)_60%,transparent),transparent_55%)]\" />\n          <div className=\"absolute bottom-6 left-6 rounded-xl bg-background/90 px-5 py-4 shadow-lg backdrop-blur\">\n            <p className=\"text-2xl font-semibold\">4.9★</p>\n            <p className=\"text-sm text-muted-foreground\">600+ five-star reviews</p>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/hero-split.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

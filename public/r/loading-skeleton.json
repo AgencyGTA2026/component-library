@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "loading-skeleton",
+  "title": "Loading skeleton",
+  "description": "Shimmer placeholders for card, list, and table shapes.",
+  "files": [
+    {
+      "path": "registry/blocks/states/loading-skeleton.tsx",
+      "content": "/**\n * Loading skeletons — shimmer placeholders for card, list, and table\n * shapes while data loads. Swap each block in for its real content once\n * loaded. The shimmer is pure CSS (Tailwind animate-pulse).\n */\nexport function LoadingSkeleton() {\n  return (\n    <section className=\"bg-background px-5 py-16 text-foreground sm:px-8\">\n      <div className=\"mx-auto max-w-5xl space-y-12\">\n        {/* Card grid */}\n        <div>\n          <Bar className=\"mb-5 h-5 w-40\" />\n          <div className=\"grid gap-5 sm:grid-cols-3\">\n            {Array.from({ length: 3 }).map((_, i) => (\n              <div key={i} className=\"rounded-xl border bg-card p-4\">\n                <Bar className=\"aspect-[4/3] w-full rounded-lg\" />\n                <Bar className=\"mt-4 h-4 w-3/4\" />\n                <Bar className=\"mt-2 h-4 w-1/2\" />\n                <div className=\"mt-4 flex items-center gap-2\">\n                  <Bar className=\"size-8 rounded-full\" />\n                  <Bar className=\"h-3 w-20\" />\n                </div>\n              </div>\n            ))}\n          </div>\n        </div>\n\n        {/* List */}\n        <div className=\"space-y-3\">\n          <Bar className=\"mb-5 h-5 w-32\" />\n          {Array.from({ length: 4 }).map((_, i) => (\n            <div key={i} className=\"flex items-center gap-4 rounded-xl border bg-card p-4\">\n              <Bar className=\"size-12 shrink-0 rounded-full\" />\n              <div className=\"flex-1 space-y-2\">\n                <Bar className=\"h-4 w-1/3\" />\n                <Bar className=\"h-3 w-2/3\" />\n              </div>\n              <Bar className=\"h-8 w-20 rounded-md\" />\n            </div>\n          ))}\n        </div>\n\n        {/* Table */}\n        <div className=\"overflow-hidden rounded-xl border\">\n          <div className=\"flex gap-4 border-b bg-muted/40 p-4\">\n            {[\"w-1/4\", \"w-1/4\", \"w-1/6\", \"w-1/6\"].map((w, i) => (\n              <Bar key={i} className={`h-4 ${w}`} />\n            ))}\n          </div>\n          {Array.from({ length: 5 }).map((_, i) => (\n            <div key={i} className=\"flex gap-4 border-b p-4 last:border-b-0\">\n              {[\"w-1/4\", \"w-1/4\", \"w-1/6\", \"w-1/6\"].map((w, j) => (\n                <Bar key={j} className={`h-4 ${w}`} />\n              ))}\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n\nfunction Bar({ className = \"\" }: { className?: string }) {\n  return <div className={`animate-pulse rounded bg-muted ${className}`} />\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/loading-skeleton.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

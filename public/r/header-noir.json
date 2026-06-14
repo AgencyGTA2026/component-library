@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "header-noir",
+  "title": "Noir header",
+  "description": "Hairline utility bar over a centered serif wordmark and quiet nav.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/headers/header-noir.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport Link from \"next/link\"\nimport { Menu, X } from \"lucide-react\"\n\nconst LINKS = [\"Collections\", \"Bespoke\", \"Maison\", \"Journal\"]\n\n/**\n * Noir header — a hairline utility bar over a serif wordmark and quiet nav.\n */\nexport function HeaderNoir() {\n  const [open, setOpen] = React.useState(false)\n\n  return (\n    <header className=\"border-b border-border bg-background text-foreground\">\n      <div className=\"flex items-center justify-center border-b border-border px-5 py-2 text-center font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground\">\n        Complimentary engraving · Worldwide delivery\n      </div>\n\n      <div className=\"mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8\">\n        <nav className=\"hidden items-center gap-8 md:flex md:flex-1\">\n          {LINKS.slice(0, 2).map((l) => (\n            <Link key={l} href=\"#\" className=\"text-sm tracking-wide text-muted-foreground transition-colors hover:text-foreground\">\n              {l}\n            </Link>\n          ))}\n        </nav>\n\n        <Link href=\"#\" className=\"font-serif text-2xl tracking-[0.2em] uppercase md:flex-1 md:text-center\">\n          Aurum\n        </Link>\n\n        <div className=\"flex items-center justify-end gap-8 md:flex-1\">\n          <nav className=\"hidden items-center gap-8 md:flex\">\n            {LINKS.slice(2).map((l) => (\n              <Link key={l} href=\"#\" className=\"text-sm tracking-wide text-muted-foreground transition-colors hover:text-foreground\">\n                {l}\n              </Link>\n            ))}\n          </nav>\n          <Link href=\"#\" className=\"hidden border-b border-primary pb-0.5 text-sm tracking-wide text-primary sm:block\">\n            Enquire\n          </Link>\n          <button\n            onClick={() => setOpen((o) => !o)}\n            aria-label=\"Menu\"\n            className=\"text-foreground md:hidden\"\n          >\n            {open ? <X className=\"size-5\" /> : <Menu className=\"size-5\" />}\n          </button>\n        </div>\n      </div>\n\n      {open && (\n        <nav className=\"grid gap-1 border-t border-border px-5 py-4 md:hidden\">\n          {LINKS.map((l) => (\n            <Link key={l} href=\"#\" className=\"py-2 text-sm tracking-wide text-muted-foreground hover:text-foreground\">\n              {l}\n            </Link>\n          ))}\n        </nav>\n      )}\n    </header>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/header-noir.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

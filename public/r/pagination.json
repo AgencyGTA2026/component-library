@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination",
+  "title": "Pagination",
+  "description": "Numbered pager with prev/next and ellipsis truncation.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/navigation/pagination.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { ChevronLeft, ChevronRight, MoreHorizontal } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction pageList(current: number, total: number) {\n  const out: (number | \"…\")[] = []\n  for (let p = 1; p <= total; p++) {\n    if (p === 1 || p === total || Math.abs(p - current) <= 1) out.push(p)\n    else if (out[out.length - 1] !== \"…\") out.push(\"…\")\n  }\n  return out\n}\n\n/**\n * Pagination — numbered pager with prev/next and ellipsis truncation for\n * blog, resource, and listing indexes. Self-contained demo state; lift\n * `page` up and wire it to your data/query.\n */\nexport function Pagination({ total = 12 }: { total?: number }) {\n  const [page, setPage] = React.useState(4)\n  const pages = pageList(page, total)\n\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8\">\n      <div className=\"mx-auto max-w-2xl\">\n        <p className=\"mb-6 text-center text-sm text-muted-foreground\">\n          Showing page {page} of {total}\n        </p>\n        <nav className=\"flex items-center justify-center gap-1.5\" aria-label=\"Pagination\">\n          <button\n            onClick={() => setPage((p) => Math.max(1, p - 1))}\n            disabled={page === 1}\n            className=\"flex h-10 items-center gap-1 rounded-md border px-3 text-sm transition-colors hover:bg-secondary disabled:opacity-40\"\n          >\n            <ChevronLeft className=\"size-4\" />\n            <span className=\"hidden sm:inline\">Previous</span>\n          </button>\n\n          {pages.map((p, i) =>\n            p === \"…\" ? (\n              <span key={`e${i}`} className=\"grid size-10 place-items-center text-muted-foreground\">\n                <MoreHorizontal className=\"size-4\" />\n              </span>\n            ) : (\n              <button\n                key={p}\n                onClick={() => setPage(p)}\n                aria-current={page === p ? \"page\" : undefined}\n                className={cn(\n                  \"grid size-10 place-items-center rounded-md border text-sm tabular-nums transition-colors\",\n                  page === p ? \"border-primary bg-primary text-primary-foreground\" : \"hover:bg-secondary\"\n                )}\n              >\n                {p}\n              </button>\n            )\n          )}\n\n          <button\n            onClick={() => setPage((p) => Math.min(total, p + 1))}\n            disabled={page === total}\n            className=\"flex h-10 items-center gap-1 rounded-md border px-3 text-sm transition-colors hover:bg-secondary disabled:opacity-40\"\n          >\n            <span className=\"hidden sm:inline\">Next</span>\n            <ChevronRight className=\"size-4\" />\n          </button>\n        </nav>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/pagination.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

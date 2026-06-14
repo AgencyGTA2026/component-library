@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "parallax-retro",
+  "title": "Retro parallax",
+  "description": "A statement band whose Memphis shapes drift on scroll.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/parallax/parallax-retro.tsx",
+      "content": "\"use client\"\n\nimport { useRef } from \"react\"\nimport { motion, useScroll, useTransform } from \"framer-motion\"\n\n/**\n * Retro parallax — a statement band whose Memphis shapes drift on scroll.\n */\nexport function ParallaxRetro() {\n  const ref = useRef<HTMLDivElement>(null)\n  const { scrollYProgress } = useScroll({ target: ref, offset: [\"start end\", \"end start\"] })\n\n  const y1 = useTransform(scrollYProgress, [0, 1], [\"-30%\", \"30%\"])\n  const y2 = useTransform(scrollYProgress, [0, 1], [\"20%\", \"-20%\"])\n  const rotate = useTransform(scrollYProgress, [0, 1], [0, 45])\n\n  return (\n    <section\n      ref={ref}\n      className=\"relative grid min-h-[440px] place-items-center overflow-hidden border-y-2 border-foreground bg-primary px-5 py-20 text-primary-foreground\"\n    >\n      <motion.div\n        style={{ y: y1 }}\n        className=\"pointer-events-none absolute -left-6 top-10 size-32 rounded-full border-[10px] border-accent\"\n        aria-hidden\n      />\n      <motion.div\n        style={{ y: y2, rotate }}\n        className=\"pointer-events-none absolute right-[8%] bottom-8 size-24 rounded-2xl bg-secondary\"\n        aria-hidden\n      />\n      <motion.div\n        style={{ y: y2 }}\n        className=\"pointer-events-none absolute left-[14%] bottom-12 size-6 rounded-full bg-accent\"\n        aria-hidden\n      />\n\n      <div className=\"relative max-w-3xl text-center\">\n        <p className=\"text-sm font-black tracking-[0.25em] uppercase\">Since 2019</p>\n        <h2 className=\"mt-4 text-[clamp(2.25rem,7vw,5rem)] font-black leading-[0.95] tracking-tight\">\n          Loud cans, good vibes, zero compromise.\n        </h2>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/parallax-retro.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

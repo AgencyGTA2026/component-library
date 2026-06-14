@@ -1882,6 +1882,649 @@
       ]
     },
     {
+      "name": "product-grid",
+      "type": "registry:block",
+      "title": "Product grid",
+      "description": "Filterable storefront cards with rating, wishlist, and hover quick-add.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/commerce/product-grid.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/product-grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "product-detail",
+      "type": "registry:block",
+      "title": "Product detail",
+      "description": "Thumbnail gallery beside variants, qty, add-to-cart, and detail accordion.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "accordion",
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/commerce/product-detail.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/product-detail.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cart-drawer",
+      "type": "registry:block",
+      "title": "Cart drawer",
+      "description": "Slide-over cart with steppers, free-shipping bar, and checkout.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/commerce/cart-drawer.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cart-drawer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "lightbox-gallery",
+      "type": "registry:block",
+      "title": "Lightbox gallery",
+      "description": "Masonry grid that opens a fullscreen lightbox with prev/next.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/media/lightbox-gallery.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/lightbox-gallery.tsx"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:block",
+      "title": "Carousel",
+      "description": "One-at-a-time slideshow with arrows, dots, and pausable autoplay.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/media/carousel.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/carousel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo-marquee",
+      "type": "registry:block",
+      "title": "Logo marquee",
+      "description": "Two rows of wordmarks scrolling opposite directions; pause on hover.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/media/logo-marquee.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/logo-marquee.tsx"
+        }
+      ]
+    },
+    {
+      "name": "modal-dialog",
+      "type": "registry:block",
+      "title": "Modal dialog",
+      "description": "Accessible centered modal with overlay, Escape, and backdrop close.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/overlays/modal-dialog.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/modal-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cookie-consent",
+      "type": "registry:block",
+      "title": "Cookie consent",
+      "description": "Bottom banner with accept/reject and expandable preference toggles.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/overlays/cookie-consent.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cookie-consent.tsx"
+        }
+      ]
+    },
+    {
+      "name": "notification-toast",
+      "type": "registry:block",
+      "title": "Notification toasts",
+      "description": "Trigger buttons spawn stacked, auto-dismissing toasts.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/overlays/notification-toast.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/notification-toast.tsx"
+        }
+      ]
+    },
+    {
+      "name": "error-404",
+      "type": "registry:block",
+      "title": "404 page",
+      "description": "Friendly not-found with search and escape links.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/states/error-404.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/error-404.tsx"
+        }
+      ]
+    },
+    {
+      "name": "thank-you",
+      "type": "registry:block",
+      "title": "Thank-you page",
+      "description": "Booking/quote confirmation with next steps and calendar add.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/states/thank-you.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/thank-you.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:block",
+      "title": "Empty state",
+      "description": "Reusable nothing-here-yet panel with illustration slot.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/states/empty-state.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/empty-state.tsx"
+        }
+      ]
+    },
+    {
+      "name": "loading-skeleton",
+      "type": "registry:block",
+      "title": "Loading skeleton",
+      "description": "Shimmer placeholders for card, list, and table shapes.",
+      "files": [
+        {
+          "path": "registry/blocks/states/loading-skeleton.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/loading-skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "maintenance",
+      "type": "registry:block",
+      "title": "Maintenance screen",
+      "description": "Scheduled-downtime screen with ETA and notify-me field.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/states/maintenance.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/maintenance.tsx"
+        }
+      ]
+    },
+    {
+      "name": "anchor-nav",
+      "type": "registry:block",
+      "title": "Anchor nav",
+      "description": "Sticky on-page nav with IntersectionObserver scroll-spy.",
+      "files": [
+        {
+          "path": "registry/blocks/navigation/anchor-nav.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/anchor-nav.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:block",
+      "title": "Pagination",
+      "description": "Numbered pager with prev/next and ellipsis truncation.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/navigation/pagination.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/pagination.tsx"
+        }
+      ]
+    },
+    {
+      "name": "directory-nav",
+      "type": "registry:block",
+      "title": "Directory nav",
+      "description": "Searchable, categorized link grid.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/navigation/directory-nav.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/directory-nav.tsx"
+        }
+      ]
+    },
+    {
+      "name": "values-grid",
+      "type": "registry:block",
+      "title": "Values grid",
+      "description": "Company principles as icon cards over hairline dividers.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/about/values-grid.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/values-grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "locations",
+      "type": "registry:block",
+      "title": "Locations",
+      "description": "Multi-branch cards beside a map with selectable pins.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/about/locations.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/locations.tsx"
+        }
+      ]
+    },
+    {
+      "name": "awards-press",
+      "type": "registry:block",
+      "title": "Awards & press",
+      "description": "Accreditation cards beside press quotes.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/about/awards-press.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/awards-press.tsx"
+        }
+      ]
+    },
+    {
+      "name": "mission",
+      "type": "registry:block",
+      "title": "Mission statement",
+      "description": "Large statement of purpose with supporting stats.",
+      "files": [
+        {
+          "path": "registry/blocks/about/mission.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/mission.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sparkline-cards",
+      "type": "registry:block",
+      "title": "Sparkline cards",
+      "description": "KPI tiles each with a mini trend line and delta.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/sparkline-cards.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/sparkline-cards.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress-rings",
+      "type": "registry:block",
+      "title": "Progress rings",
+      "description": "Circular percentage stats for outcomes and capacity.",
+      "files": [
+        {
+          "path": "registry/blocks/charts/progress-rings.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/progress-rings.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-comparison",
+      "type": "registry:block",
+      "title": "Stat comparison",
+      "description": "Paired before/after bars that make improvement obvious.",
+      "files": [
+        {
+          "path": "registry/blocks/charts/stat-comparison.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stat-comparison.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-form-capture",
+      "type": "registry:block",
+      "title": "Form-capture hero",
+      "description": "Headline + benefits beside an inline lead form.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/heroes/hero-form-capture.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-form-capture.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-split",
+      "type": "registry:block",
+      "title": "Split hero",
+      "description": "Full-bleed media half beside a copy half.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/heroes/hero-split.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-split.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-newsletter-card",
+      "type": "registry:block",
+      "title": "Newsletter CTA card",
+      "description": "Rounded gradient-edged newsletter card with inline success.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-newsletter-card.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-newsletter-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-otp",
+      "type": "registry:block",
+      "title": "OTP verification",
+      "description": "Segmented code input with paste, auto-advance, and verify.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/forms/form-otp.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-otp.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-date-picker",
+      "type": "registry:block",
+      "title": "Date & time picker",
+      "description": "Month calendar + time slots for appointment booking.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/forms/form-date-picker.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-date-picker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-address",
+      "type": "registry:block",
+      "title": "Address form",
+      "description": "Service-address fields with a lightweight autocomplete.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/forms/form-address.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-address.tsx"
+        }
+      ]
+    },
+    {
+      "name": "article-body",
+      "type": "registry:block",
+      "title": "Article body",
+      "description": "Typeset long-form prose with drop cap, pull-quote, and figure.",
+      "files": [
+        {
+          "path": "registry/blocks/content/article-body.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/article-body.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table-of-contents",
+      "type": "registry:block",
+      "title": "Table of contents",
+      "description": "Sticky TOC with scroll-spy and a reading progress bar.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/content/table-of-contents.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/table-of-contents.tsx"
+        }
+      ]
+    },
+    {
+      "name": "author-bio",
+      "type": "registry:block",
+      "title": "Author bio",
+      "description": "Byline card with avatar, follow action, and other posts.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/content/author-bio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/author-bio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "share-bar",
+      "type": "registry:block",
+      "title": "Share bar",
+      "description": "Copy-link, email, print, and save with clipboard feedback.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/content/share-bar.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/share-bar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonial-video",
+      "type": "registry:block",
+      "title": "Video testimonial",
+      "description": "Play-button video stage beside a pulled quote.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/testimonial-video.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonial-video.tsx"
+        }
+      ]
+    },
+    {
+      "name": "case-study-card",
+      "type": "registry:block",
+      "title": "Case study cards",
+      "description": "Problem to result cards with hard before/after metrics.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/case-study-card.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/case-study-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "press-bar",
+      "type": "registry:block",
+      "title": "Press bar",
+      "description": "Slim as-seen-in strip of outlet wordmarks.",
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/press-bar.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/press-bar.tsx"
+        }
+      ]
+    },
+    {
       "name": "theme-editorial",
       "type": "registry:theme",
       "title": "Editorial theme",
@@ -2054,6 +2697,947 @@
           "radius": "0.75rem"
         }
       }
+    },
+    {
+      "name": "about-brutal",
+      "type": "registry:block",
+      "title": "Brutal about",
+      "description": "Company values as bordered cells that invert on hover.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/about/about-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/about-brutal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calc-brutal",
+      "type": "registry:block",
+      "title": "Brutal estimator",
+      "description": "Pick a base package and add-ons; watch the hard-shadow total tick.",
+      "files": [
+        {
+          "path": "registry/blocks/calculators/calc-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/calc-brutal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chart-brutal",
+      "type": "registry:block",
+      "title": "Brutal stat bars",
+      "description": "Heavy horizontal bars with hard-edged fills and deltas.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/chart-brutal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "product-brutal",
+      "type": "registry:block",
+      "title": "Brutal product grid",
+      "description": "Bordered product cards with a hard-shadow add button.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/commerce/product-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/product-brutal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-brutal",
+      "type": "registry:block",
+      "title": "Brutal blog grid",
+      "description": "One screaming featured post over a bordered list.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/content/content-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/content-brutal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-brutal",
+      "type": "registry:block",
+      "title": "Brutal feature rows",
+      "description": "Alternating bordered rows with a checklist and color block.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/features/feature-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/feature-brutal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "media-brutal",
+      "type": "registry:block",
+      "title": "Brutal gallery",
+      "description": "Bordered work grid over a hard-edged logo wall.",
+      "files": [
+        {
+          "path": "registry/blocks/media/media-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/media-brutal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nav-brutal",
+      "type": "registry:block",
+      "title": "Brutal anchor nav",
+      "description": "Boxed nav cells; the active one inverts.",
+      "files": [
+        {
+          "path": "registry/blocks/navigation/nav-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/nav-brutal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "modal-brutal",
+      "type": "registry:block",
+      "title": "Brutal modal",
+      "description": "Hard-shadow dialog with Escape and backdrop close.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/overlays/modal-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/modal-brutal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-brutal",
+      "type": "registry:block",
+      "title": "Brutal pricing",
+      "description": "Three bordered plan cards; the middle one is inverted.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/pricing/pricing-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/pricing-brutal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "service-brutal",
+      "type": "registry:block",
+      "title": "Brutal process steps",
+      "description": "Four-step numbered rail in bordered cells.",
+      "files": [
+        {
+          "path": "registry/blocks/service/service-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/service-brutal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-brutal",
+      "type": "registry:block",
+      "title": "Brutal testimonials",
+      "description": "One screaming pull-quote over a bordered review grid.",
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/testimonials-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-brutal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "header-retro",
+      "type": "registry:block",
+      "title": "Retro header",
+      "description": "Chunky rounded pill nav with a wobbly sticker logo.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/headers/header-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-retro",
+      "type": "registry:block",
+      "title": "Retro hero",
+      "description": "Memphis squiggles, a sticker badge, and a chunky CTA.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/heroes/hero-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bento-retro",
+      "type": "registry:block",
+      "title": "Retro bento",
+      "description": "Playful rounded cells in bright Memphis colors.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/bento/bento-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-retro",
+      "type": "registry:block",
+      "title": "Retro features",
+      "description": "Alternating rounded rows with a bright color panel.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/features/feature-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/feature-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-retro",
+      "type": "registry:block",
+      "title": "Retro blog grid",
+      "description": "Rounded color cards with sticker category tags.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/content/content-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/content-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "parallax-retro",
+      "type": "registry:block",
+      "title": "Retro parallax",
+      "description": "A statement band whose Memphis shapes drift on scroll.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/parallax/parallax-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/parallax-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "shop-retro",
+      "type": "registry:block",
+      "title": "Retro shop",
+      "description": "Rounded product cards with sticker prices and add buttons.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/commerce/shop-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/shop-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "media-retro",
+      "type": "registry:block",
+      "title": "Retro gallery",
+      "description": "A rounded color grid that opens a playful lightbox.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/media/media-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/media-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "modal-retro",
+      "type": "registry:block",
+      "title": "Retro modal",
+      "description": "A playful rounded promo dialog with a sticker close button.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/overlays/modal-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/modal-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nav-retro",
+      "type": "registry:block",
+      "title": "Retro pager",
+      "description": "Chunky rounded number pills with prev/next.",
+      "files": [
+        {
+          "path": "registry/blocks/navigation/nav-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/nav-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "about-retro",
+      "type": "registry:block",
+      "title": "Retro about",
+      "description": "Values as bright rounded cards with sticker icons.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/about/about-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/about-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chart-retro",
+      "type": "registry:block",
+      "title": "Retro stats",
+      "description": "Rounded KPI tiles with chunky progress bars.",
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/chart-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "states-retro",
+      "type": "registry:block",
+      "title": "Retro 404",
+      "description": "A big bouncy number over a Memphis-shape backdrop.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/states/states-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/states-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-retro",
+      "type": "registry:block",
+      "title": "Retro contact form",
+      "description": "Rounded fields, sticker topic chips, success swap.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/forms/form-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calc-retro",
+      "type": "registry:block",
+      "title": "Retro plan builder",
+      "description": "A subscription builder with a chunky live total.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/calculators/calc-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/calc-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-retro",
+      "type": "registry:block",
+      "title": "Retro pricing",
+      "description": "Three rounded plan cards; the middle one pops in coral.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/pricing/pricing-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/pricing-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-retro",
+      "type": "registry:block",
+      "title": "Retro testimonials",
+      "description": "Bright rounded review cards with star ratings.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/testimonials-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-retro",
+      "type": "registry:block",
+      "title": "Retro CTA",
+      "description": "A bold rounded banner with floating Memphis shapes.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "service-retro",
+      "type": "registry:block",
+      "title": "Retro process steps",
+      "description": "A four-step rail of bright rounded cards.",
+      "files": [
+        {
+          "path": "registry/blocks/service/service-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/service-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-retro",
+      "type": "registry:block",
+      "title": "Retro FAQ",
+      "description": "Rounded cards that pop open with a sticker toggle.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/misc/faq-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/faq-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-retro",
+      "type": "registry:block",
+      "title": "Retro footer",
+      "description": "A bright rounded newsletter card over playful link columns.",
+      "files": [
+        {
+          "path": "registry/blocks/footers/footer-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-retro",
+      "type": "registry:block",
+      "title": "Soda brand site (retro)",
+      "description": "Playful Memphis one-pager from nine retro blocks.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/layouts/page-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/page-retro.tsx"
+        },
+        {
+          "path": "registry/blocks/headers/header-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-retro.tsx"
+        },
+        {
+          "path": "registry/blocks/heroes/hero-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-retro.tsx"
+        },
+        {
+          "path": "registry/blocks/bento/bento-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-retro.tsx"
+        },
+        {
+          "path": "registry/blocks/features/feature-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/feature-retro.tsx"
+        },
+        {
+          "path": "registry/blocks/parallax/parallax-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/parallax-retro.tsx"
+        },
+        {
+          "path": "registry/blocks/testimonials/testimonials-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-retro.tsx"
+        },
+        {
+          "path": "registry/blocks/pricing/pricing-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/pricing-retro.tsx"
+        },
+        {
+          "path": "registry/blocks/cta/cta-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-retro.tsx"
+        },
+        {
+          "path": "registry/blocks/footers/footer-retro.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-retro.tsx"
+        }
+      ]
+    },
+    {
+      "name": "header-noir",
+      "type": "registry:block",
+      "title": "Noir header",
+      "description": "Hairline utility bar over a centered serif wordmark and quiet nav.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/headers/header-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-noir",
+      "type": "registry:block",
+      "title": "Noir hero",
+      "description": "Oversized serif statement over near-black with a layered gold media slot.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/heroes/hero-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bento-noir",
+      "type": "registry:block",
+      "title": "Noir bento",
+      "description": "Asymmetric grid of hairline cells over near-black.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/bento/bento-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-noir",
+      "type": "registry:block",
+      "title": "Noir features",
+      "description": "Numbered serif rows divided by gold hairlines.",
+      "files": [
+        {
+          "path": "registry/blocks/features/feature-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/feature-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-noir",
+      "type": "registry:block",
+      "title": "Noir journal",
+      "description": "Featured serif lead beside a hairline list of entries.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/content/content-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/content-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "parallax-noir",
+      "type": "registry:block",
+      "title": "Noir parallax",
+      "description": "A serif statement band whose gold glow drifts on scroll.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/parallax/parallax-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/parallax-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "shop-noir",
+      "type": "registry:block",
+      "title": "Noir collection",
+      "description": "Hairline product cards with serif names and gold prices.",
+      "files": [
+        {
+          "path": "registry/blocks/commerce/shop-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/shop-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "media-noir",
+      "type": "registry:block",
+      "title": "Noir gallery",
+      "description": "A hairline grid that opens a quiet fullscreen lightbox.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/media/media-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/media-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "modal-noir",
+      "type": "registry:block",
+      "title": "Noir modal",
+      "description": "A hairline-framed private-viewing invitation with a gold action.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/overlays/modal-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/modal-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nav-noir",
+      "type": "registry:block",
+      "title": "Noir anchor nav",
+      "description": "Sticky hairline rail with a gold active underline.",
+      "files": [
+        {
+          "path": "registry/blocks/navigation/nav-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/nav-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "about-noir",
+      "type": "registry:block",
+      "title": "Noir about",
+      "description": "Values as serif cards over a hairline grid.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/about/about-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/about-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chart-noir",
+      "type": "registry:block",
+      "title": "Noir stats",
+      "description": "Serif figures over thin gold measure lines.",
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/chart-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "states-noir",
+      "type": "registry:block",
+      "title": "Noir 404",
+      "description": "Oversized serif numeral over near-black with a gold rule.",
+      "files": [
+        {
+          "path": "registry/blocks/states/states-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/states-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-noir",
+      "type": "registry:block",
+      "title": "Noir enquiry form",
+      "description": "Hairline fields and gold chips with a quiet success state.",
+      "files": [
+        {
+          "path": "registry/blocks/forms/form-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calc-noir",
+      "type": "registry:block",
+      "title": "Noir bespoke estimator",
+      "description": "Choose stone, setting, and metal; a serif total updates.",
+      "files": [
+        {
+          "path": "registry/blocks/calculators/calc-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/calc-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-noir",
+      "type": "registry:block",
+      "title": "Noir membership",
+      "description": "Hairline membership tiers with a gold-framed featured plan.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/pricing/pricing-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/pricing-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-noir",
+      "type": "registry:block",
+      "title": "Noir testimonials",
+      "description": "One typeset pull-quote at a time, paged with a crossfade.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/testimonials-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-noir",
+      "type": "registry:block",
+      "title": "Noir CTA",
+      "description": "A single serif statement and one gold action over near-black.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "service-noir",
+      "type": "registry:block",
+      "title": "Noir process",
+      "description": "A four-step serif rail divided by gold hairlines.",
+      "files": [
+        {
+          "path": "registry/blocks/service/service-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/service-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-noir",
+      "type": "registry:block",
+      "title": "Noir FAQ",
+      "description": "A serif accordion divided by gold hairlines.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/misc/faq-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/faq-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-noir",
+      "type": "registry:block",
+      "title": "Noir footer",
+      "description": "Hairline link columns beneath a serif wordmark and gold rule.",
+      "files": [
+        {
+          "path": "registry/blocks/footers/footer-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-noir.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-noir",
+      "type": "registry:block",
+      "title": "Jewellery maison site (noir)",
+      "description": "Dark-luxury one-pager from ten noir blocks.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/layouts/page-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/page-noir.tsx"
+        },
+        {
+          "path": "registry/blocks/headers/header-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-noir.tsx"
+        },
+        {
+          "path": "registry/blocks/heroes/hero-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-noir.tsx"
+        },
+        {
+          "path": "registry/blocks/bento/bento-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-noir.tsx"
+        },
+        {
+          "path": "registry/blocks/features/feature-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/feature-noir.tsx"
+        },
+        {
+          "path": "registry/blocks/parallax/parallax-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/parallax-noir.tsx"
+        },
+        {
+          "path": "registry/blocks/commerce/shop-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/shop-noir.tsx"
+        },
+        {
+          "path": "registry/blocks/testimonials/testimonials-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-noir.tsx"
+        },
+        {
+          "path": "registry/blocks/pricing/pricing-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/pricing-noir.tsx"
+        },
+        {
+          "path": "registry/blocks/cta/cta-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-noir.tsx"
+        },
+        {
+          "path": "registry/blocks/footers/footer-noir.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-noir.tsx"
+        }
+      ]
     }
   ]
 }

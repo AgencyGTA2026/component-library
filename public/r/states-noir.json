@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "states-noir",
+  "title": "Noir 404",
+  "description": "Oversized serif numeral over near-black with a gold rule.",
+  "files": [
+    {
+      "path": "registry/blocks/states/states-noir.tsx",
+      "content": "import Link from \"next/link\"\n\n/**\n * Noir 404 — an oversized serif numeral over near-black with a gold rule.\n */\nexport function StatesNoir() {\n  return (\n    <section className=\"relative grid min-h-[560px] place-items-center overflow-hidden bg-background px-5 py-24 text-center text-foreground\">\n      <div\n        aria-hidden\n        className=\"pointer-events-none absolute left-1/2 top-1/2 size-[60vw] max-w-[640px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(200,164,90,0.12),transparent_65%)]\"\n      />\n      <div className=\"relative\">\n        <p className=\"font-serif text-[clamp(6rem,22vw,15rem)] leading-none tracking-tight text-primary\">404</p>\n        <div className=\"mx-auto mt-6 h-px w-16 bg-primary\" />\n        <h1 className=\"mt-6 font-serif text-3xl tracking-tight\">This page has been mislaid</h1>\n        <p className=\"mx-auto mt-4 max-w-sm leading-relaxed text-muted-foreground\">\n          The piece you are looking for is no longer here. Allow us to show you back to the collection.\n        </p>\n        <div className=\"mt-9 flex flex-wrap items-center justify-center gap-6\">\n          <Link href=\"#\" className=\"bg-primary px-8 py-3.5 text-sm tracking-[0.15em] uppercase text-primary-foreground transition-opacity hover:opacity-90\">\n            Return home\n          </Link>\n          <Link href=\"#\" className=\"text-sm tracking-wide text-muted-foreground underline-offset-4 hover:text-foreground hover:underline\">\n            View the collection\n          </Link>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/states-noir.tsx"
+    }
+  ],
+  "type": "registry:block"
+}
