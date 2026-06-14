@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "gallery-masonry",
+  "title": "Gallery masonry",
+  "description": "Staggered project grid with hover captions and filters.",
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/content/gallery-masonry.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\"\n\nconst PROJECTS = [\n  { title: \"Backyard transformation\", tag: \"Hardscape\", span: \"row-span-2\", hue: \"from-primary/30 to-primary/10\" },\n  { title: \"Drought-tolerant front yard\", tag: \"Planting\", span: \"\", hue: \"from-accent/30 to-accent/10\" },\n  { title: \"Paver patio & fire pit\", tag: \"Hardscape\", span: \"\", hue: \"from-secondary to-background\" },\n  { title: \"Cedar privacy screen\", tag: \"Carpentry\", span: \"row-span-2\", hue: \"from-primary/20 to-secondary\" },\n  { title: \"Full irrigation install\", tag: \"Systems\", span: \"\", hue: \"from-accent/20 to-background\" },\n  { title: \"Spring cleanup & mulch\", tag: \"Maintenance\", span: \"\", hue: \"from-primary/25 to-accent/10\" },\n]\n\n/**\n * Gallery masonry — a staggered project grid with hover captions. Built\n * for portfolios and before/after showcases. Swap panels for photos.\n */\nexport function GalleryMasonry() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"mx-auto max-w-6xl\">\n        <div className=\"mb-12 flex flex-wrap items-end justify-between gap-4\">\n          <div>\n            <p className=\"font-semibold text-primary\">Recent work</p>\n            <h2 className=\"mt-2 font-serif text-3xl tracking-tight text-balance sm:text-4xl\">\n              Projects from around the neighborhood.\n            </h2>\n          </div>\n          <div className=\"flex flex-wrap gap-2\">\n            {[\"All\", \"Hardscape\", \"Planting\", \"Maintenance\"].map((f, i) => (\n              <button\n                key={f}\n                className={`rounded-full border px-4 py-1.5 text-sm transition-colors ${\n                  i === 0 ? \"border-primary bg-primary text-primary-foreground\" : \"hover:border-foreground/40\"\n                }`}\n              >\n                {f}\n              </button>\n            ))}\n          </div>\n        </div>\n\n        <div className=\"grid auto-rows-[200px] grid-cols-2 gap-4 lg:grid-cols-3\">\n          {PROJECTS.map((p) => (\n            <figure\n              key={p.title}\n              className={`group relative overflow-hidden rounded-xl bg-gradient-to-br ${p.hue} ${p.span}`}\n            >\n              <figcaption className=\"absolute inset-x-0 bottom-0 translate-y-2 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100\">\n                <Badge variant=\"secondary\" className=\"mb-2\">{p.tag}</Badge>\n                <p className=\"font-semibold text-foreground drop-shadow-sm\">{p.title}</p>\n              </figcaption>\n            </figure>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/gallery-masonry.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

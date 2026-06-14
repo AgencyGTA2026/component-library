@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "header-centered",
+  "title": "Centered header",
+  "description": "Serif wordmark flanked by split navigation.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/headers/header-centered.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport Link from \"next/link\"\nimport { Menu, Search, X } from \"lucide-react\"\n\nconst LEFT = [\n  { label: \"Collections\", href: \"#collections\" },\n  { label: \"Lookbook\", href: \"#lookbook\" },\n  { label: \"Journal\", href: \"#journal\" },\n]\nconst RIGHT = [\n  { label: \"About\", href: \"#about\" },\n  { label: \"Stockists\", href: \"#stockists\" },\n  { label: \"Contact\", href: \"#contact\" },\n]\n\n/**\n * Centered header — a serif wordmark flanked by split navigation, with a\n * thin utility row above. Reads like a fashion or editorial masthead.\n */\nexport function HeaderCentered() {\n  const [open, setOpen] = React.useState(false)\n\n  return (\n    <header className=\"border-b bg-background text-foreground\">\n      <div className=\"hidden justify-center border-b py-1.5 text-center font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground sm:block\">\n        Complimentary shipping on orders over $150\n      </div>\n\n      <div className=\"mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center px-5 py-5 sm:px-8\">\n        <nav className=\"hidden items-center gap-7 md:flex\">\n          {LEFT.map((i) => (\n            <Link key={i.label} href={i.href} className=\"text-sm tracking-wide transition-colors hover:text-primary\">\n              {i.label}\n            </Link>\n          ))}\n        </nav>\n\n        <button className=\"justify-self-start md:hidden\" onClick={() => setOpen((v) => !v)} aria-label=\"Menu\">\n          {open ? <X className=\"size-6\" /> : <Menu className=\"size-6\" />}\n        </button>\n\n        <Link href=\"#\" className=\"justify-self-center font-serif text-2xl tracking-[0.15em] uppercase sm:text-3xl\">\n          Maison&nbsp;Vela\n        </Link>\n\n        <nav className=\"hidden items-center justify-end gap-7 md:flex\">\n          {RIGHT.map((i) => (\n            <Link key={i.label} href={i.href} className=\"text-sm tracking-wide transition-colors hover:text-primary\">\n              {i.label}\n            </Link>\n          ))}\n          <button aria-label=\"Search\" className=\"transition-colors hover:text-primary\">\n            <Search className=\"size-4\" />\n          </button>\n        </nav>\n\n        <button aria-label=\"Search\" className=\"justify-self-end transition-colors hover:text-primary md:hidden\">\n          <Search className=\"size-5\" />\n        </button>\n      </div>\n\n      {open && (\n        <nav className=\"flex flex-col border-t md:hidden\">\n          {[...LEFT, ...RIGHT].map((i) => (\n            <Link key={i.label} href={i.href} onClick={() => setOpen(false)} className=\"border-b px-5 py-3.5 font-serif text-xl\">\n              {i.label}\n            </Link>\n          ))}\n        </nav>\n      )}\n    </header>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/header-centered.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

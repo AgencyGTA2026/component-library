@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "footer-editorial",
+  "title": "Editorial footer",
+  "description": "Link columns over hairlines and a giant bleeding wordmark.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/footers/footer-editorial.tsx",
+      "content": "import Link from \"next/link\"\nimport { ArrowUpRight } from \"lucide-react\"\n\nconst COLUMNS = [\n  {\n    heading: \"Studio\",\n    links: [\"About\", \"Process\", \"Careers\", \"Press\"],\n  },\n  {\n    heading: \"Work\",\n    links: [\"Case studies\", \"Industries\", \"Archive\"],\n  },\n  {\n    heading: \"Connect\",\n    links: [\"Instagram\", \"LinkedIn\", \"Are.na\", \"Newsletter\"],\n  },\n]\n\n/**\n * Editorial footer — link columns over hairlines, a contact invitation,\n * and a giant serif wordmark bleeding off the bottom edge.\n */\nexport function FooterEditorial() {\n  return (\n    <footer className=\"overflow-hidden border-t bg-background text-foreground\">\n      <div className=\"grid gap-12 px-5 py-16 sm:px-8 md:grid-cols-[1.2fr_2fr]\">\n        <div className=\"space-y-6\">\n          <p className=\"font-mono text-xs tracking-[0.2em] uppercase text-muted-foreground\">\n            New business\n          </p>\n          <Link\n            href=\"mailto:hello@harborandpine.com\"\n            className=\"group inline-flex items-baseline gap-2 font-serif text-2xl sm:text-3xl\"\n          >\n            hello@harborandpine.com\n            <ArrowUpRight className=\"size-5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1\" />\n          </Link>\n          <p className=\"max-w-xs text-sm leading-relaxed text-muted-foreground\">\n            A design studio for brands that would rather be remembered than\n            merely noticed.\n          </p>\n        </div>\n\n        <div className=\"grid grid-cols-2 gap-8 sm:grid-cols-3\">\n          {COLUMNS.map((col) => (\n            <div key={col.heading}>\n              <p className=\"mb-4 border-b pb-2 font-mono text-xs tracking-[0.2em] uppercase text-muted-foreground\">\n                {col.heading}\n              </p>\n              <ul className=\"space-y-2.5\">\n                {col.links.map((label) => (\n                  <li key={label}>\n                    <Link\n                      href=\"#\"\n                      className=\"text-sm transition-colors hover:text-primary\"\n                    >\n                      {label}\n                    </Link>\n                  </li>\n                ))}\n              </ul>\n            </div>\n          ))}\n        </div>\n      </div>\n\n      <div className=\"flex items-center justify-between border-t px-5 py-3 font-mono text-[11px] tracking-widest uppercase text-muted-foreground sm:px-8\">\n        <span>© {new Date().getFullYear()} Harbor &amp; Pine</span>\n        <span>45.5152° N, 122.6784° W</span>\n      </div>\n\n      <p\n        aria-hidden\n        className=\"-mb-[0.23em] select-none px-5 text-center font-serif text-[clamp(4rem,16.5vw,15rem)] leading-none tracking-tight text-foreground/90 sm:px-8\"\n      >\n        Harbor<span className=\"italic text-primary\">&amp;</span>Pine\n      </p>\n    </footer>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/footer-editorial.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

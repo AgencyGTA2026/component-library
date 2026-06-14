@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "horizontal-scroll-gallery",
+  "title": "Horizontal scroll gallery",
+  "description": "Vertical scroll pans a horizontal row of project cards.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/parallax/horizontal-scroll-gallery.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { motion, useScroll, useTransform } from \"framer-motion\"\nimport { ArrowRight } from \"lucide-react\"\n\nconst CARDS = [\n  { title: \"Cedar Hill estate\", tag: \"Full landscape\", hue: \"from-primary/40 to-primary/10\" },\n  { title: \"Courtyard garden\", tag: \"Planting design\", hue: \"from-accent/40 to-accent/10\" },\n  { title: \"Poolside hardscape\", tag: \"Paver & stone\", hue: \"from-secondary to-background\" },\n  { title: \"Native meadow\", tag: \"Restoration\", hue: \"from-primary/30 to-accent/15\" },\n  { title: \"Rooftop terrace\", tag: \"Containers\", hue: \"from-accent/30 to-primary/10\" },\n]\n\n/**\n * Horizontal scroll gallery — vertical page scroll drives a horizontal\n * pan across project cards (pinned while it scrubs). Element-targeted so\n * it animates inside the preview iframe.\n */\nexport function HorizontalScrollGallery() {\n  const ref = React.useRef<HTMLDivElement>(null)\n  const { scrollYProgress } = useScroll({ target: ref, offset: [\"start start\", \"end end\"] })\n  const x = useTransform(scrollYProgress, [0, 1], [\"2%\", \"-72%\"])\n\n  return (\n    <section ref={ref} className=\"relative h-[300vh] bg-background text-foreground\">\n      <div className=\"sticky top-0 flex h-screen flex-col justify-center overflow-hidden\">\n        <div className=\"mb-8 flex items-end justify-between px-5 sm:px-8\">\n          <div>\n            <p className=\"font-mono text-xs tracking-[0.2em] uppercase text-muted-foreground\">\n              Selected work\n            </p>\n            <h2 className=\"mt-2 font-serif text-3xl tracking-tight sm:text-4xl\">\n              Scroll to wander the portfolio.\n            </h2>\n          </div>\n          <ArrowRight className=\"hidden size-7 text-muted-foreground sm:block\" />\n        </div>\n\n        <motion.div style={{ x }} className=\"flex gap-6 px-5 sm:px-8\">\n          {CARDS.map((c) => (\n            <article key={c.title} className=\"group w-[80vw] shrink-0 sm:w-[48vw] lg:w-[34vw]\">\n              <div className={`relative aspect-[4/3] overflow-hidden rounded-2xl border bg-gradient-to-br ${c.hue}`}>\n                <span className=\"absolute top-4 left-4 rounded-full bg-background/80 px-3 py-1 text-xs font-medium backdrop-blur\">\n                  {c.tag}\n                </span>\n              </div>\n              <h3 className=\"mt-4 font-serif text-2xl tracking-tight\">{c.title}</h3>\n            </article>\n          ))}\n        </motion.div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/horizontal-scroll-gallery.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

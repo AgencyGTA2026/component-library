@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "footer-brutal",
+  "title": "Brutal footer",
+  "description": "Bordered grid around a screaming LET'S WORK cell.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/footers/footer-brutal.tsx",
+      "content": "import Link from \"next/link\"\nimport { ArrowUpRight } from \"lucide-react\"\n\nconst LINKS = [\n  [\"Work\", \"#work\"],\n  [\"About\", \"#about\"],\n  [\"Process\", \"#process\"],\n  [\"Journal\", \"#journal\"],\n  [\"Contact\", \"#contact\"],\n] as const\n\nconst SOCIALS = [\"IG\", \"X\", \"LI\", \"BE\"] as const\n\n/**\n * Brutal footer — everything lives in a bordered grid; the centerpiece\n * is a screaming \"LET'S WORK\" cell that inverts on hover.\n */\nexport function FooterBrutal() {\n  return (\n    <footer className=\"border-t-4 border-foreground bg-background text-foreground\">\n      <Link\n        href=\"#contact\"\n        className=\"group flex items-center justify-between px-5 py-10 transition-colors hover:bg-foreground hover:text-background sm:px-8\"\n      >\n        <span className=\"text-[clamp(2.5rem,9vw,7rem)] font-black leading-none tracking-tighter uppercase\">\n          Let&apos;s work\n        </span>\n        <ArrowUpRight className=\"size-[clamp(2.5rem,7vw,5rem)] transition-transform group-hover:rotate-45\" />\n      </Link>\n\n      <div className=\"grid border-t-2 border-foreground sm:grid-cols-2 md:grid-cols-4\">\n        <div className=\"border-b-2 border-foreground p-5 sm:border-r-2 md:border-b-0\">\n          <p className=\"text-xl font-black uppercase\">Tonne®</p>\n          <p className=\"mt-2 font-mono text-xs leading-relaxed text-muted-foreground\">\n            Industrial-strength websites.\n            <br />\n            Antwerp / Remote.\n          </p>\n        </div>\n\n        <nav className=\"grid border-b-2 border-foreground sm:border-r-0 md:border-r-2 md:border-b-0\">\n          {LINKS.map(([label, href]) => (\n            <Link\n              key={label}\n              href={href}\n              className=\"flex items-center justify-between border-b-2 border-foreground px-5 py-2 text-sm font-bold uppercase last:border-b-0 hover:bg-accent\"\n            >\n              {label}\n              <span aria-hidden>→</span>\n            </Link>\n          ))}\n        </nav>\n\n        <div className=\"border-b-2 border-foreground p-5 sm:border-r-2 sm:border-b-0\">\n          <p className=\"mb-3 font-mono text-xs uppercase\">Elsewhere</p>\n          <div className=\"flex flex-wrap gap-2\">\n            {SOCIALS.map((s) => (\n              <Link\n                key={s}\n                href=\"#\"\n                className=\"grid size-10 place-items-center border-2 border-foreground font-mono text-xs font-bold shadow-[3px_3px_0_0_var(--foreground)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none\"\n              >\n                {s}\n              </Link>\n            ))}\n          </div>\n        </div>\n\n        <div className=\"flex flex-col justify-between p-5\">\n          <p className=\"font-mono text-xs leading-relaxed text-muted-foreground\">\n            No cookies. No trackers.\n            <br />\n            Just borders.\n          </p>\n          <p className=\"mt-6 font-mono text-xs font-bold uppercase\">\n            © {new Date().getFullYear()} — All rights reserved\n          </p>\n        </div>\n      </div>\n    </footer>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/footer-brutal.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

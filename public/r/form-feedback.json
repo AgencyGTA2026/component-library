@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-feedback",
+  "title": "Feedback / NPS",
+  "description": "0-10 recommend scale with comment and thank-you state.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "label",
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/forms/form-feedback.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { PartyPopper } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Label } from \"@/components/ui/label\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { cn } from \"@/lib/utils\"\n\n/**\n * Feedback / NPS — a 0–10 \"how likely to recommend\" scale with a\n * follow-up comment and a thank-you state. Wire onSubmit to your store.\n */\nexport function FormFeedback() {\n  const [score, setScore] = React.useState<number | null>(null)\n  const [comment, setComment] = React.useState(\"\")\n  const [sent, setSent] = React.useState(false)\n\n  const bucket =\n    score === null ? null : score <= 6 ? \"detractor\" : score <= 8 ? \"passive\" : \"promoter\"\n  const prompt =\n    bucket === \"promoter\"\n      ? \"Wonderful — what did we get right?\"\n      : bucket === \"passive\"\n        ? \"Thanks — what would make it a 10?\"\n        : \"Sorry to hear it. What let you down?\"\n\n  if (sent) {\n    return (\n      <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n        <div className=\"mx-auto max-w-md rounded-lg border bg-card p-10 text-center\">\n          <PartyPopper className=\"mx-auto size-12 text-primary\" strokeWidth={1.5} />\n          <h2 className=\"mt-4 font-serif text-2xl\">Thank you</h2>\n          <p className=\"mt-2 text-muted-foreground\">\n            Your feedback goes straight to the team that can do something about it.\n          </p>\n        </div>\n      </section>\n    )\n  }\n\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"mx-auto max-w-xl\">\n        <div className=\"mb-8\">\n          <p className=\"font-mono text-xs tracking-[0.2em] uppercase text-muted-foreground\">\n            Quick favor\n          </p>\n          <h2 className=\"mt-3 font-serif text-3xl tracking-tight text-balance sm:text-4xl\">\n            How likely are you to recommend us?\n          </h2>\n        </div>\n\n        <div className=\"rounded-lg border bg-card p-6 sm:p-8\">\n          <div className=\"grid grid-cols-11 gap-1.5\">\n            {Array.from({ length: 11 }).map((_, n) => (\n              <button\n                key={n}\n                onClick={() => setScore(n)}\n                className={cn(\n                  \"aspect-square rounded-md border text-sm font-medium tabular-nums transition-colors\",\n                  score === n\n                    ? \"border-primary bg-primary text-primary-foreground\"\n                    : \"hover:border-foreground/40\"\n                )}\n              >\n                {n}\n              </button>\n            ))}\n          </div>\n          <div className=\"mt-2 flex justify-between font-mono text-[11px] tracking-wide text-muted-foreground uppercase\">\n            <span>Not likely</span>\n            <span>Very likely</span>\n          </div>\n\n          {score !== null && (\n            <div className=\"mt-7 space-y-3\">\n              <Label htmlFor=\"fb-comment\">{prompt}</Label>\n              <Textarea\n                id=\"fb-comment\"\n                rows={4}\n                value={comment}\n                onChange={(e) => setComment(e.target.value)}\n                placeholder=\"Optional, but appreciated…\"\n              />\n              <Button className=\"w-full\" onClick={() => setSent(true)}>\n                Send feedback\n              </Button>\n            </div>\n          )}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/form-feedback.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

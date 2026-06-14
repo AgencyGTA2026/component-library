@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "integration-grid",
+  "title": "Integration grid",
+  "description": "Connect-your-stack tiles with hover lift.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/features/integration-grid.tsx",
+      "content": "import {\n  Calendar,\n  CreditCard,\n  Database,\n  Hash,\n  Mail,\n  MessageSquare,\n  Phone,\n  Receipt,\n} from \"lucide-react\"\n\nconst INTEGRATIONS = [\n  { icon: CreditCard, name: \"Stripe\", category: \"Payments\" },\n  { icon: Mail, name: \"Mailchimp\", category: \"Email\" },\n  { icon: Hash, name: \"Slack\", category: \"Comms\" },\n  { icon: Calendar, name: \"Google Cal\", category: \"Scheduling\" },\n  { icon: Receipt, name: \"QuickBooks\", category: \"Accounting\" },\n  { icon: MessageSquare, name: \"Twilio\", category: \"SMS\" },\n  { icon: Database, name: \"Airtable\", category: \"Data\" },\n  { icon: Phone, name: \"Aircall\", category: \"Voice\" },\n]\n\n/**\n * Integration grid — connect-your-stack tiles with hover lift. Swap the\n * lucide glyphs for real brand logos when you have them.\n */\nexport function IntegrationGrid() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"mx-auto max-w-5xl\">\n        <div className=\"mb-12 max-w-xl\">\n          <p className=\"font-semibold text-primary\">Plays nicely with others</p>\n          <h2 className=\"mt-3 text-3xl font-semibold tracking-tight text-balance sm:text-4xl\">\n            Connect the tools you already pay for.\n          </h2>\n        </div>\n\n        <div className=\"grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4\">\n          {INTEGRATIONS.map((it) => (\n            <div\n              key={it.name}\n              className=\"group flex items-center gap-3 rounded-xl border bg-card p-4 transition-all hover:-translate-y-0.5 hover:shadow-md\"\n            >\n              <span className=\"grid size-11 shrink-0 place-items-center rounded-lg bg-secondary text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground\">\n                <it.icon className=\"size-5\" />\n              </span>\n              <span>\n                <span className=\"block text-sm font-semibold\">{it.name}</span>\n                <span className=\"block text-xs text-muted-foreground\">{it.category}</span>\n              </span>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/integration-grid.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

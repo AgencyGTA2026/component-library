@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "process-steps",
+  "title": "Process steps",
+  "description": "Four-step 'how it works' rail with connecting line and numbered nodes.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/service/process-steps.tsx",
+      "content": "import { CalendarCheck, ClipboardList, Hammer, ThumbsUp } from \"lucide-react\"\n\nconst STEPS = [\n  {\n    icon: ClipboardList,\n    title: \"Free inspection\",\n    body: \"We come out, climb up, and give you an honest assessment — no pressure, no fine print.\",\n  },\n  {\n    icon: CalendarCheck,\n    title: \"Clear quote\",\n    body: \"A written, itemized estimate with a fixed price and a firm start date. What we say is what you pay.\",\n  },\n  {\n    icon: Hammer,\n    title: \"We get to work\",\n    body: \"Licensed crews, clean job sites, daily updates. Most jobs wrap in one to three days.\",\n  },\n  {\n    icon: ThumbsUp,\n    title: \"Final walkthrough\",\n    body: \"We walk the property with you, clean up every nail, and back it with our workmanship warranty.\",\n  },\n]\n\n/**\n * Process steps — a four-step \"how it works\" rail with connecting line\n * and numbered nodes. Reassures service customers who fear surprises.\n */\nexport function ProcessSteps() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"mx-auto max-w-6xl\">\n        <div className=\"mb-14 max-w-xl\">\n          <p className=\"font-mono text-xs font-semibold tracking-[0.2em] uppercase text-accent\">\n            How it works\n          </p>\n          <h2 className=\"mt-3 text-3xl font-bold tracking-tight text-balance sm:text-4xl\">\n            Four steps from leak to peace of mind.\n          </h2>\n        </div>\n\n        <div className=\"relative grid gap-10 sm:grid-cols-2 lg:grid-cols-4\">\n          <div className=\"absolute top-7 right-0 left-0 hidden h-0.5 bg-border lg:block\" />\n          {STEPS.map((step, i) => (\n            <div key={step.title} className=\"relative\">\n              <div className=\"flex items-center gap-4 lg:block\">\n                <div className=\"relative z-10 grid size-14 shrink-0 place-items-center rounded-md bg-primary text-primary-foreground\">\n                  <step.icon className=\"size-6\" />\n                  <span className=\"absolute -top-2 -right-2 grid size-6 place-items-center rounded-full bg-accent text-xs font-bold text-accent-foreground\">\n                    {i + 1}\n                  </span>\n                </div>\n                <h3 className=\"text-lg font-bold lg:mt-5\">{step.title}</h3>\n              </div>\n              <p className=\"mt-3 text-sm leading-relaxed text-muted-foreground\">\n                {step.body}\n              </p>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/process-steps.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

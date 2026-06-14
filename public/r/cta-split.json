@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-split",
+  "title": "Split CTA",
+  "description": "Offer copy beside a media panel with an editorial divider.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/cta/cta-split.tsx",
+      "content": "import Link from \"next/link\"\nimport { ArrowUpRight, Check } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\n\nconst POINTS = [\"A senior team, start to finish\", \"Fixed price, dated schedule\", \"30 days of free fixes\"]\n\n/**\n * Split CTA — offer copy on one side, a media panel on the other, with a\n * hard editorial divider. Swap the gradient for a client image.\n */\nexport function CtaSplit() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"mx-auto grid max-w-6xl overflow-hidden border md:grid-cols-2\">\n        <div className=\"flex flex-col justify-center p-8 sm:p-12\">\n          <p className=\"font-mono text-xs tracking-[0.2em] uppercase text-muted-foreground\">\n            Booking Q3\n          </p>\n          <h2 className=\"mt-4 font-serif text-4xl leading-[1.05] tracking-tight text-balance sm:text-5xl\">\n            Let&apos;s make something worth bookmarking.\n          </h2>\n          <ul className=\"mt-7 space-y-2.5\">\n            {POINTS.map((p) => (\n              <li key={p} className=\"flex items-center gap-2.5 text-sm\">\n                <Check className=\"size-4 text-primary\" />\n                {p}\n              </li>\n            ))}\n          </ul>\n          <div className=\"mt-9 flex flex-wrap gap-4\">\n            <Button asChild size=\"lg\" className=\"rounded-none px-8\">\n              <Link href=\"#contact\">\n                Start a project\n                <ArrowUpRight className=\"size-4\" />\n              </Link>\n            </Button>\n            <Button asChild size=\"lg\" variant=\"ghost\">\n              <Link href=\"#work\">See the work</Link>\n            </Button>\n          </div>\n        </div>\n\n        <div className=\"relative min-h-72 border-t md:border-t-0 md:border-l\">\n          <div className=\"absolute inset-0 bg-[linear-gradient(150deg,color-mix(in_oklab,var(--primary)_85%,#000)_0%,var(--foreground)_100%)]\">\n            <div className=\"absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_70%_30%,color-mix(in_oklab,var(--accent)_60%,transparent),transparent_55%)]\" />\n            <p className=\"absolute bottom-4 left-4 font-mono text-[10px] tracking-[0.25em] uppercase text-background/70\">\n              Fig. 09 — Next launch\n            </p>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/cta-split.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

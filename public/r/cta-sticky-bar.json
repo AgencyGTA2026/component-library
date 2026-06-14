@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-sticky-bar",
+  "title": "Sticky CTA bar",
+  "description": "Dismissible bar pinned to the bottom of the viewport.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/cta/cta-sticky-bar.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { ArrowRight, X } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\n\n/**\n * Sticky CTA bar — a dismissible bar pinned to the bottom of the\n * viewport. Drop it once near the root; it floats above page content.\n */\nexport function CtaStickyBar() {\n  const [open, setOpen] = React.useState(true)\n\n  return (\n    <div className=\"relative min-h-64 bg-background\">\n      {/* Demo backdrop so the bar has something to float over. */}\n      <div className=\"px-5 py-16 text-center text-muted-foreground sm:px-8\">\n        <p className=\"font-mono text-xs tracking-[0.2em] uppercase\">Page content scrolls under the bar ↓</p>\n      </div>\n\n      {open && (\n        <div className=\"sticky bottom-0 z-50 border-t bg-card/90 backdrop-blur\">\n          <div className=\"mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-3 px-5 py-3.5 sm:px-8\">\n            <div className=\"flex items-center gap-3\">\n              <span className=\"hidden rounded-full bg-primary px-2.5 py-1 text-xs font-bold text-primary-foreground sm:inline\">\n                Limited\n              </span>\n              <p className=\"text-sm font-medium\">\n                Free system tune-up with any install booked this month.\n              </p>\n            </div>\n            <div className=\"ml-auto flex items-center gap-2\">\n              <Button size=\"sm\" className=\"gap-1.5\">\n                Claim offer\n                <ArrowRight className=\"size-4\" />\n              </Button>\n              <button\n                onClick={() => setOpen(false)}\n                aria-label=\"Dismiss\"\n                className=\"grid size-8 place-items-center rounded-md text-muted-foreground transition-colors hover:bg-secondary\"\n              >\n                <X className=\"size-4\" />\n              </button>\n            </div>\n          </div>\n        </div>\n      )}\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/cta-sticky-bar.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

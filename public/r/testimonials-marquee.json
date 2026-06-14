@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "testimonials-marquee",
+  "title": "Review marquee",
+  "description": "Press logos over counter-scrolling review cards; pauses on hover.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/testimonials/testimonials-marquee.tsx",
+      "content": "\"use client\"\n\nimport { motion } from \"framer-motion\"\nimport { Star } from \"lucide-react\"\n\nconst REVIEWS = [\n  { quote: \"Setup took 4 minutes. The calm is permanent.\", name: \"Jordan M.\", role: \"Designer\" },\n  { quote: \"First app my therapist and I agree on.\", name: \"Sam K.\", role: \"Teacher\" },\n  { quote: \"I've kept a streak for 3 months. Me!\", name: \"Alex P.\", role: \"Engineer\" },\n  { quote: \"The Sunday letters are weirdly moving.\", name: \"Riley T.\", role: \"Writer\" },\n  { quote: \"Finally deleted my other 4 habit apps.\", name: \"Casey L.\", role: \"Nurse\" },\n  { quote: \"It nudges. It never nags. Bliss.\", name: \"Devon W.\", role: \"Chef\" },\n]\n\nconst LOGOS = [\"TheVerge\", \"WIRED\", \"Fast Company\", \"Lifehacker\", \"TechCrunch\"]\n\n/**\n * Marquee testimonials — a press-logo strip over two counter-scrolling\n * rows of review cards that pause on hover.\n */\nexport function TestimonialsMarquee() {\n  return (\n    <section className=\"overflow-hidden bg-background py-20 text-foreground sm:py-24\">\n      <div className=\"mx-auto mb-12 max-w-4xl px-5 text-center\">\n        <h2 className=\"text-3xl font-semibold tracking-tight text-balance sm:text-4xl\">\n          40,000 calmer mornings and counting.\n        </h2>\n        <div className=\"mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-muted-foreground/60\">\n          {LOGOS.map((l) => (\n            <span key={l} className=\"font-serif text-lg font-semibold tracking-tight\">\n              {l}\n            </span>\n          ))}\n        </div>\n      </div>\n\n      <div className=\"space-y-4 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]\">\n        {[0, 1].map((row) => (\n          <div key={row} className=\"group flex overflow-hidden\">\n            <motion.div\n              className=\"flex w-max gap-4 pr-4 group-hover:[animation-play-state:paused]\"\n              animate={{ x: row === 0 ? [\"0%\", \"-50%\"] : [\"-50%\", \"0%\"] }}\n              transition={{ duration: 38, ease: \"linear\", repeat: Infinity }}\n            >\n              {[...REVIEWS, ...REVIEWS].map((r, i) => (\n                <figure\n                  key={i}\n                  className=\"w-72 shrink-0 rounded-2xl border bg-card p-5 shadow-sm\"\n                >\n                  <div className=\"flex gap-0.5 text-primary\">\n                    {Array.from({ length: 5 }).map((_, s) => (\n                      <Star key={s} className=\"size-3.5 fill-current\" />\n                    ))}\n                  </div>\n                  <blockquote className=\"mt-3 text-sm leading-relaxed\">\n                    “{r.quote}”\n                  </blockquote>\n                  <figcaption className=\"mt-3 text-xs text-muted-foreground\">\n                    {r.name} · {r.role}\n                  </figcaption>\n                </figure>\n              ))}\n            </motion.div>\n          </div>\n        ))}\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/testimonials-marquee.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

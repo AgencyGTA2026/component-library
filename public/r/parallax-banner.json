@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "parallax-banner",
+  "title": "Parallax banner",
+  "description": "Statement band whose background drifts as it passes.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/parallax/parallax-banner.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { motion, useScroll, useTransform } from \"framer-motion\"\n\n/**\n * Parallax banner — a statement band whose background drifts opposite to\n * the foreground as it passes through the viewport. Element-targeted\n * scroll; swap the gradient for a fixed photo.\n */\nexport function ParallaxBanner() {\n  const ref = React.useRef<HTMLDivElement>(null)\n  const { scrollYProgress } = useScroll({\n    target: ref,\n    offset: [\"start end\", \"end start\"],\n  })\n\n  const bgY = useTransform(scrollYProgress, [0, 1], [\"-15%\", \"15%\"])\n  const textX = useTransform(scrollYProgress, [0, 1], [\"8%\", \"-8%\"])\n\n  return (\n    <section\n      ref={ref}\n      className=\"relative flex h-[70vh] items-center overflow-hidden border-y-4 border-foreground bg-foreground text-background\"\n    >\n      <motion.div\n        style={{ y: bgY }}\n        className=\"absolute inset-0 scale-125 bg-[linear-gradient(115deg,color-mix(in_oklab,var(--primary)_70%,#000)_0%,var(--foreground)_55%,color-mix(in_oklab,var(--accent)_50%,#000)_100%)] opacity-90\"\n      />\n      <div className=\"absolute inset-0 opacity-20 [background-image:repeating-linear-gradient(45deg,rgba(255,255,255,0.25)_0,rgba(255,255,255,0.25)_1px,transparent_1px,transparent_14px)]\" />\n\n      <motion.div style={{ x: textX }} className=\"relative w-full px-5 sm:px-8\">\n        <p className=\"mx-auto max-w-5xl text-[clamp(2rem,7vw,5.5rem)] font-black leading-[0.95] tracking-tighter uppercase\">\n          Built to be remembered, not just visited.\n        </p>\n      </motion.div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/parallax-banner.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

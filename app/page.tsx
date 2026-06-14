@@ -1,65 +1,91 @@
-import Image from "next/image";
+import Link from "next/link"
+import { ArrowRight, Monitor } from "lucide-react"
+
+import { BLOCKS, CATEGORIES, blocksFor } from "@/lib/registry-index"
+
+const VIBES = [
+  { id: "editorial", label: "Editorial", swatch: "#b3401f", note: "serif, whitespace, ink on cream" },
+  { id: "brutal", label: "Brutal", swatch: "#d9f526", note: "borders, mono, hard shadows" },
+  { id: "soft", label: "Soft", swatch: "#0f8a74", note: "rounded, glass, gradient calm" },
+  { id: "landscape", label: "Landscape", swatch: "#3f7a33", note: "earthy green, clay accent — lawn & garden" },
+  { id: "trade", label: "Trade", swatch: "#f5610a", note: "steel + safety orange — roofing & contractors" },
+  { id: "services", label: "Services", swatch: "#1668c4", note: "trust blue, amber CTA — HVAC, plumbing, home" },
+]
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="min-h-screen bg-[#15120e] text-[#ece4d4]">
+      <header className="border-b border-[#ece4d4]/15 px-6 py-4 sm:px-10">
+        <div className="flex items-center justify-between font-mono text-[11px] tracking-[0.25em] uppercase text-[#ece4d4]/50">
+          <span>Connor / Agency</span>
+          <span>{BLOCKS.length} blocks · 3 vibes</span>
+        </div>
+      </header>
+
+      <section className="border-b border-[#ece4d4]/15 px-6 pt-16 pb-12 sm:px-10 sm:pt-24">
+        <h1 className="font-serif text-[clamp(3.5rem,12vw,11rem)] leading-[0.9] tracking-tight">
+          Blocks<span className="text-[#d9542b]">.</span>
+        </h1>
+        <div className="mt-8 flex flex-wrap items-end justify-between gap-8">
+          <p className="max-w-md text-lg leading-relaxed text-[#ece4d4]/70">
+            A parts catalog for client websites. Browse a block, copy one
+            command, and it lands in the project — code and all.
           </p>
+          <div className="flex flex-col items-start gap-5">
+            <Link
+              href="/demo"
+              className="inline-flex items-center gap-3 rounded-md bg-[#ece4d4] px-4 py-3 font-mono text-xs uppercase tracking-[0.18em] text-[#15120e] transition-transform hover:-translate-y-0.5"
+            >
+              <Monitor className="size-4" />
+              Open demo websites
+            </Link>
+            <div className="flex flex-col gap-2 font-mono text-xs">
+              {VIBES.map((v) => (
+                <span key={v.id} className="flex items-center gap-3">
+                  <span
+                    className="inline-block size-3 rounded-full"
+                    style={{ background: v.swatch }}
+                  />
+                  <span className="w-20 tracking-[0.2em] uppercase">{v.label}</span>
+                  <span className="text-[#ece4d4]/45">{v.note}</span>
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
+
+      <section>
+        {CATEGORIES.map((cat, i) => {
+          const count = blocksFor(cat.slug).length
+          return (
+            <Link
+              key={cat.slug}
+              href={`/${cat.slug}`}
+              className="group grid grid-cols-[3rem_1fr_auto] items-baseline gap-4 border-b border-[#ece4d4]/15 px-6 py-6 transition-colors hover:bg-[#ece4d4]/5 sm:grid-cols-[5rem_1fr_1fr_auto] sm:px-10"
+            >
+              <span className="font-mono text-xs text-[#ece4d4]/40">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="font-serif text-2xl tracking-tight transition-colors group-hover:text-[#d9542b] sm:text-3xl">
+                {cat.title}
+              </span>
+              <span className="hidden text-sm text-[#ece4d4]/50 sm:block">
+                {cat.blurb}
+              </span>
+              <span className="flex items-center gap-3 font-mono text-xs text-[#ece4d4]/50">
+                {count} {count === 1 ? "block" : "blocks"}
+                <ArrowRight className="size-4 -translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
+              </span>
+            </Link>
+          )
+        })}
+      </section>
+
+      <footer className="flex flex-wrap items-center justify-between gap-3 px-6 py-8 font-mono text-[11px] tracking-[0.2em] uppercase text-[#ece4d4]/40 sm:px-10">
+        <span>npx shadcn add &lt;this-site&gt;/r/&lt;block&gt;.json</span>
+        <span>Built with shadcn registry · Tailwind v4</span>
+      </footer>
     </div>
-  );
+  )
 }

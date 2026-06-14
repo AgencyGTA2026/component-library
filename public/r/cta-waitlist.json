@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-waitlist",
+  "title": "Waitlist CTA",
+  "description": "Coming-soon email capture with a spot counter and success state.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/cta/cta-waitlist.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { Check } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\n\n/**\n * Waitlist CTA — a coming-soon capture panel with a spot counter and\n * inline success state. Wire `join` to your waitlist provider.\n */\nexport function CtaWaitlist() {\n  const [email, setEmail] = React.useState(\"\")\n  const [joined, setJoined] = React.useState(false)\n  const [error, setError] = React.useState(false)\n\n  function join(e: React.FormEvent) {\n    e.preventDefault()\n    if (!/.+@.+\\..+/.test(email)) {\n      setError(true)\n      return\n    }\n    // Replace with your waitlist call.\n    setJoined(true)\n  }\n\n  return (\n    <section className=\"border-y-4 border-foreground bg-background px-5 py-20 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-2xl text-center\">\n        <p className=\"inline-block -rotate-1 border-2 border-foreground bg-accent px-3 py-1 font-mono text-xs font-bold uppercase text-accent-foreground\">\n          Launching this fall\n        </p>\n        <h2 className=\"mt-6 text-[clamp(2.25rem,7vw,4rem)] font-black leading-[0.95] tracking-tighter uppercase\">\n          Get in before the doors open.\n        </h2>\n        <p className=\"mx-auto mt-4 max-w-md font-mono text-sm\">\n          Join 1,800 people on the list. Early members get founder pricing and\n          first dibs on onboarding slots.\n        </p>\n\n        {joined ? (\n          <div className=\"mx-auto mt-8 flex max-w-md items-center justify-center gap-3 border-2 border-foreground bg-accent px-5 py-4 font-bold text-accent-foreground\">\n            <Check className=\"size-5\" />\n            You&apos;re on the list — watch your inbox.\n          </div>\n        ) : (\n          <form onSubmit={join} noValidate className=\"mx-auto mt-8 flex max-w-md flex-col gap-2 sm:flex-row\">\n            <Input\n              type=\"email\"\n              value={email}\n              onChange={(e) => {\n                setEmail(e.target.value)\n                setError(false)\n              }}\n              placeholder=\"you@company.com\"\n              aria-invalid={error}\n              className=\"h-12 rounded-none border-2 border-foreground bg-background text-base\"\n            />\n            <Button\n              type=\"submit\"\n              className=\"h-12 shrink-0 rounded-none border-2 border-foreground bg-foreground px-7 font-black uppercase shadow-[4px_4px_0_0_var(--accent)] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_var(--accent)]\"\n            >\n              Join the list\n            </Button>\n          </form>\n        )}\n        {error && (\n          <p className=\"mt-2 font-mono text-xs text-destructive\">\n            Enter a valid email to join.\n          </p>\n        )}\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/cta-waitlist.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

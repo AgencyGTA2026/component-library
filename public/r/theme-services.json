@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-services",
+  "title": "Services theme",
+  "description": "Trustworthy blue with a warm amber call-to-action. For HVAC, plumbing, electrical, and home services.",
+  "cssVars": {
+    "light": {
+      "background": "#f1f6fb",
+      "foreground": "#0c2740",
+      "card": "#ffffff",
+      "card-foreground": "#0c2740",
+      "popover": "#ffffff",
+      "popover-foreground": "#0c2740",
+      "primary": "#1668c4",
+      "primary-foreground": "#ffffff",
+      "secondary": "#dceaf7",
+      "secondary-foreground": "#0c2740",
+      "muted": "#e3eef8",
+      "muted-foreground": "#4a6076",
+      "accent": "#f5a524",
+      "accent-foreground": "#3a2600",
+      "destructive": "#dc2626",
+      "border": "#cadcec",
+      "input": "#cadcec",
+      "ring": "#1668c4",
+      "radius": "0.75rem"
+    }
+  },
+  "type": "registry:theme"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "footer-mega",
+  "title": "Mega footer",
+  "description": "Sitemap columns with an inline newsletter.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/footers/footer-mega.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport Link from \"next/link\"\nimport { Globe, Sparkles } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\n\nconst COLUMNS = [\n  { heading: \"Product\", links: [\"Features\", \"Templates\", \"Integrations\", \"Changelog\", \"Roadmap\"] },\n  { heading: \"Solutions\", links: [\"Agencies\", \"Startups\", \"Enterprise\", \"Creators\", \"Nonprofits\"] },\n  { heading: \"Resources\", links: [\"Docs\", \"Guides\", \"Blog\", \"Community\", \"Status\"] },\n  { heading: \"Company\", links: [\"About\", \"Careers\", \"Customers\", \"Press\", \"Contact\"] },\n]\n\n/**\n * Mega footer — a sitemap of link columns with an inline newsletter and\n * a legal/locale row. The \"everything goes here\" footer for big sites.\n */\nexport function FooterMega() {\n  const [email, setEmail] = React.useState(\"\")\n  const [done, setDone] = React.useState(false)\n\n  return (\n    <footer className=\"border-t bg-card text-card-foreground\">\n      <div className=\"mx-auto max-w-6xl px-5 py-14 sm:px-8\">\n        <div className=\"grid gap-12 lg:grid-cols-[1.3fr_2fr]\">\n          <div>\n            <Link href=\"#\" className=\"flex items-center gap-2 font-semibold\">\n              <span className=\"grid size-8 place-items-center rounded-lg bg-primary text-primary-foreground\">\n                <Sparkles className=\"size-4\" />\n              </span>\n              Lumen\n            </Link>\n            <p className=\"mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground\">\n              The fastest way to launch a site that looks like you paid for it.\n            </p>\n            <form\n              onSubmit={(e) => {\n                e.preventDefault()\n                if (/.+@.+\\..+/.test(email)) setDone(true)\n              }}\n              className=\"mt-6 max-w-sm\"\n            >\n              <p className=\"mb-2 text-sm font-medium\">Get product updates</p>\n              {done ? (\n                <p className=\"text-sm text-primary\">Thanks — you&apos;re subscribed.</p>\n              ) : (\n                <div className=\"flex gap-2\">\n                  <Input value={email} onChange={(e) => setEmail(e.target.value)} type=\"email\" placeholder=\"you@company.com\" className=\"h-10\" />\n                  <Button type=\"submit\" className=\"h-10\">Subscribe</Button>\n                </div>\n              )}\n            </form>\n          </div>\n\n          <div className=\"grid grid-cols-2 gap-8 sm:grid-cols-4\">\n            {COLUMNS.map((col) => (\n              <div key={col.heading}>\n                <p className=\"mb-3 text-sm font-semibold\">{col.heading}</p>\n                <ul className=\"space-y-2.5\">\n                  {col.links.map((l) => (\n                    <li key={l}>\n                      <Link href=\"#\" className=\"text-sm text-muted-foreground transition-colors hover:text-foreground\">\n                        {l}\n                      </Link>\n                    </li>\n                  ))}\n                </ul>\n              </div>\n            ))}\n          </div>\n        </div>\n\n        <div className=\"mt-12 flex flex-col items-center justify-between gap-4 border-t pt-6 text-sm text-muted-foreground sm:flex-row\">\n          <p>© {new Date().getFullYear()} Lumen, Inc. All rights reserved.</p>\n          <div className=\"flex items-center gap-5\">\n            <Link href=\"#\" className=\"hover:text-foreground\">Privacy</Link>\n            <Link href=\"#\" className=\"hover:text-foreground\">Terms</Link>\n            <Link href=\"#\" className=\"hover:text-foreground\">Cookies</Link>\n            <button className=\"flex items-center gap-1.5 hover:text-foreground\">\n              <Globe className=\"size-3.5\" />\n              English\n            </button>\n          </div>\n        </div>\n      </div>\n    </footer>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/footer-mega.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

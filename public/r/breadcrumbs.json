@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumbs",
+  "title": "Breadcrumbs",
+  "description": "Page-context trail with a current-page marker.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/misc/breadcrumbs.tsx",
+      "content": "import Link from \"next/link\"\nimport { ChevronRight, Home } from \"lucide-react\"\n\nconst TRAIL = [\n  { label: \"Home\", href: \"#\", icon: Home },\n  { label: \"Services\", href: \"#\" },\n  { label: \"Roof Replacement\", href: \"#\" },\n  { label: \"Architectural Shingles\" },\n]\n\n/**\n * Breadcrumbs — a page-context trail with a current-page marker. Pair\n * with deep service or content pages; reads from a simple array.\n */\nexport function Breadcrumbs() {\n  return (\n    <section className=\"border-b bg-background px-5 py-4 text-foreground sm:px-8\">\n      <nav aria-label=\"Breadcrumb\" className=\"mx-auto max-w-6xl\">\n        <ol className=\"flex flex-wrap items-center gap-1.5 text-sm\">\n          {TRAIL.map((crumb, i) => {\n            const last = i === TRAIL.length - 1\n            return (\n              <li key={crumb.label} className=\"flex items-center gap-1.5\">\n                {last ? (\n                  <span aria-current=\"page\" className=\"font-medium text-foreground\">\n                    {crumb.label}\n                  </span>\n                ) : (\n                  <Link\n                    href={crumb.href ?? \"#\"}\n                    className=\"flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-foreground\"\n                  >\n                    {crumb.icon && <crumb.icon className=\"size-3.5\" />}\n                    {crumb.label}\n                  </Link>\n                )}\n                {!last && <ChevronRight className=\"size-3.5 text-muted-foreground/60\" />}\n              </li>\n            )\n          })}\n        </ol>\n      </nav>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/breadcrumbs.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-call",
+  "title": "Click-to-call CTA",
+  "description": "Phone-forward emergency banner with a tappable number and 24/7 note.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/cta/cta-call.tsx",
+      "content": "import { Clock, Phone, ShieldCheck } from \"lucide-react\"\n\n/**\n * Click-to-call CTA — a phone-forward banner for urgent service work,\n * with a tappable number, hours, and a 24/7 emergency note. Swap the\n * tel: number for the client's tracking line.\n */\nexport function CtaCall() {\n  return (\n    <section className=\"bg-primary px-5 py-16 text-primary-foreground sm:px-8 sm:py-20\">\n      <div className=\"mx-auto flex max-w-5xl flex-col items-center gap-8 text-center md:flex-row md:justify-between md:text-left\">\n        <div>\n          <p className=\"flex items-center justify-center gap-2 text-sm font-semibold tracking-wide text-accent md:justify-start\">\n            <span className=\"relative flex size-2.5\">\n              <span className=\"absolute inline-flex size-full animate-ping rounded-full bg-accent opacity-75\" />\n              <span className=\"relative inline-flex size-2.5 rounded-full bg-accent\" />\n            </span>\n            Crews available now\n          </p>\n          <h2 className=\"mt-3 text-3xl font-bold tracking-tight text-balance sm:text-4xl\">\n            Burst pipe? No heat? Call and we&apos;ll roll a truck.\n          </h2>\n          <div className=\"mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-primary-foreground/80 md:justify-start\">\n            <span className=\"flex items-center gap-2\">\n              <Clock className=\"size-4\" />\n              24/7 emergency service\n            </span>\n            <span className=\"flex items-center gap-2\">\n              <ShieldCheck className=\"size-4\" />\n              Upfront pricing\n            </span>\n          </div>\n        </div>\n\n        <a\n          href=\"tel:+15551234567\"\n          className=\"group flex shrink-0 items-center gap-4 rounded-xl bg-accent px-7 py-5 text-accent-foreground shadow-lg transition-transform hover:-translate-y-0.5\"\n        >\n          <Phone className=\"size-8 transition-transform group-hover:rotate-12\" />\n          <span className=\"text-left\">\n            <span className=\"block text-xs font-semibold tracking-widest uppercase opacity-80\">\n              Call now\n            </span>\n            <span className=\"block text-2xl font-bold tracking-tight\">\n              (555) 123-4567\n            </span>\n          </span>\n        </a>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/cta-call.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

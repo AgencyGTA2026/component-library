@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "team-grid",
+  "title": "Team grid",
+  "description": "Portrait grid with hover lift and a built-in hiring tile.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/misc/team-grid.tsx",
+      "content": "import { ArrowUpRight } from \"lucide-react\"\nimport Link from \"next/link\"\n\nconst TEAM = [\n  { name: \"June Okafor\", role: \"Creative Director\", initials: \"JO\", hue: \"bg-chart-1\" },\n  { name: \"Theo Lindqvist\", role: \"Design Lead\", initials: \"TL\", hue: \"bg-chart-2\" },\n  { name: \"Mara Castillo\", role: \"Engineering Lead\", initials: \"MC\", hue: \"bg-chart-3\" },\n  { name: \"Felix Adeyemi\", role: \"Strategy\", initials: \"FA\", hue: \"bg-chart-4\" },\n  { name: \"Ines Baptiste\", role: \"Producer\", initials: \"IB\", hue: \"bg-chart-5\" },\n  { name: \"You?\", role: \"We're hiring\", initials: \"+\", hue: \"bg-muted-foreground/50\", hiring: true },\n]\n\n/**\n * Team grid — portrait slots (CSS placeholders — swap in photos), names\n * on hover-lift cards, and a built-in hiring tile.\n */\nexport function TeamGrid() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"mx-auto max-w-6xl\">\n        <div className=\"mb-14 max-w-xl\">\n          <p className=\"font-mono text-xs tracking-[0.25em] uppercase text-muted-foreground\">\n            The studio\n          </p>\n          <h2 className=\"mt-4 font-serif text-4xl leading-[1.05] tracking-tight text-balance sm:text-5xl\">\n            Small on purpose. Senior by default.\n          </h2>\n        </div>\n\n        <div className=\"grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-6\">\n          {TEAM.map((person) =>\n            person.hiring ? (\n              <Link\n                key={person.name}\n                href=\"#careers\"\n                className=\"group flex flex-col rounded-lg border border-dashed p-4 transition-colors hover:border-primary\"\n              >\n                <div className=\"grid aspect-[3/4] place-items-center rounded-md bg-muted text-4xl text-muted-foreground transition-colors group-hover:text-primary\">\n                  +\n                </div>\n                <p className=\"mt-3 flex items-center gap-1 text-sm font-medium\">\n                  {person.role}\n                  <ArrowUpRight className=\"size-3.5 opacity-0 transition-opacity group-hover:opacity-100\" />\n                </p>\n                <p className=\"text-xs text-muted-foreground\">Open roles →</p>\n              </Link>\n            ) : (\n              <div key={person.name} className=\"group\">\n                {/* Portrait slot — replace the div with next/image. */}\n                <div\n                  className={`grid aspect-[3/4] place-items-center rounded-lg ${person.hue} text-3xl font-semibold text-white transition-transform duration-300 group-hover:-translate-y-1.5`}\n                >\n                  {person.initials}\n                </div>\n                <p className=\"mt-3 text-sm font-medium\">{person.name}</p>\n                <p className=\"text-xs text-muted-foreground\">{person.role}</p>\n              </div>\n            )\n          )}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/team-grid.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-video",
+  "title": "Video hero",
+  "description": "Centered copy over a media stage with a play/pause control.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/heroes/hero-video.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { motion } from \"framer-motion\"\nimport { Pause, Play, Star } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\n\n/**\n * Video hero — centered copy over a media stage with a play/pause\n * control. The gradient \"video\" is a placeholder; drop in a <video> or\n * embed and drive `playing` from its events.\n */\nexport function HeroVideo() {\n  const [playing, setPlaying] = React.useState(false)\n\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-4xl text-center\">\n        <div className=\"mx-auto mb-5 flex w-fit items-center gap-2 rounded-full border bg-card px-3 py-1.5 text-sm\">\n          <span className=\"flex gap-0.5 text-accent\">\n            {Array.from({ length: 5 }).map((_, i) => (\n              <Star key={i} className=\"size-3.5 fill-current\" />\n            ))}\n          </span>\n          <span className=\"text-muted-foreground\">Loved by 2,000+ studios</span>\n        </div>\n        <h1 className=\"text-4xl font-semibold tracking-tight text-balance sm:text-6xl\">\n          See it work in ninety seconds.\n        </h1>\n        <p className=\"mx-auto mt-5 max-w-xl text-lg text-muted-foreground\">\n          No demo call, no sales script. Just press play and watch a real\n          project go from brief to launch.\n        </p>\n        <div className=\"mt-8 flex flex-wrap justify-center gap-3\">\n          <Button size=\"lg\" className=\"rounded-full px-8\">Start free</Button>\n          <Button size=\"lg\" variant=\"outline\" className=\"rounded-full px-8\">Book a demo</Button>\n        </div>\n      </div>\n\n      <div className=\"mx-auto mt-12 max-w-4xl\">\n        <div className=\"group relative aspect-video overflow-hidden rounded-2xl border bg-gradient-to-br from-primary/25 via-accent/15 to-secondary shadow-xl\">\n          {/* Media slot — replace with a real <video>. */}\n          <div className=\"absolute inset-0 [background-image:radial-gradient(circle_at_50%_45%,color-mix(in_oklab,var(--background)_30%,transparent),transparent_60%)]\" />\n          <button\n            onClick={() => setPlaying((p) => !p)}\n            aria-label={playing ? \"Pause video\" : \"Play video\"}\n            className=\"absolute inset-0 grid place-items-center\"\n          >\n            <motion.span\n              whileHover={{ scale: 1.08 }}\n              whileTap={{ scale: 0.94 }}\n              className=\"grid size-20 place-items-center rounded-full bg-background/90 text-foreground shadow-lg backdrop-blur\"\n            >\n              {playing ? (\n                <Pause className=\"size-8\" />\n              ) : (\n                <Play className=\"size-8 translate-x-0.5 fill-current\" />\n              )}\n            </motion.span>\n          </button>\n          {playing && (\n            <span className=\"absolute bottom-4 left-4 flex items-center gap-2 rounded-full bg-background/80 px-3 py-1 text-xs font-medium backdrop-blur\">\n              <span className=\"size-2 animate-pulse rounded-full bg-destructive\" />\n              Playing preview\n            </span>\n          )}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/hero-video.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

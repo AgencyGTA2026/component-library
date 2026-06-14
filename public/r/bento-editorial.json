@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bento-editorial",
+  "title": "Editorial bento",
+  "description": "Asymmetric capability grid with figure numbers and hover arrows.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/bento/bento-editorial.tsx",
+      "content": "import { ArrowUpRight, Compass, Layers, PenTool, Type } from \"lucide-react\"\n\nconst CAPABILITIES = [\n  {\n    icon: Compass,\n    title: \"Brand strategy\",\n    body: \"Positioning workshops that end with a point of view, not a word cloud.\",\n    span: \"md:col-span-3\",\n    num: \"01\",\n  },\n  {\n    icon: Type,\n    title: \"Identity & typography\",\n    body: \"Wordmarks, type systems, and the restraint to stop at enough.\",\n    span: \"md:col-span-2\",\n    num: \"02\",\n  },\n  {\n    icon: PenTool,\n    title: \"Editorial design\",\n    body: \"Layouts with the pacing of a well-edited magazine.\",\n    span: \"md:col-span-2\",\n    num: \"03\",\n  },\n  {\n    icon: Layers,\n    title: \"Web design & build\",\n    body: \"Design and engineering in the same room, shipping the same site. Performance budgets included.\",\n    span: \"md:col-span-3\",\n    num: \"04\",\n  },\n]\n\n/**\n * Editorial bento — an asymmetric 3/2 — 2/3 capability grid with figure\n * numbers and hover-revealed arrows. Quietly confident, no gimmicks.\n */\nexport function BentoEditorial() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"mx-auto max-w-6xl\">\n        <div className=\"mb-14 flex flex-wrap items-end justify-between gap-6\">\n          <h2 className=\"max-w-xl font-serif text-4xl leading-[1.05] tracking-tight text-balance sm:text-5xl\">\n            Four disciplines, <em className=\"text-primary\">one</em> conversation.\n          </h2>\n          <p className=\"font-mono text-xs tracking-[0.2em] uppercase text-muted-foreground\">\n            Capabilities — 2025\n          </p>\n        </div>\n\n        <div className=\"grid gap-px overflow-hidden border bg-border md:grid-cols-5\">\n          {CAPABILITIES.map((cap) => (\n            <article\n              key={cap.title}\n              className={`group relative flex min-h-56 flex-col justify-between bg-background p-7 transition-colors hover:bg-card ${cap.span}`}\n            >\n              <div className=\"flex items-start justify-between\">\n                <cap.icon className=\"size-6 text-primary\" strokeWidth={1.5} />\n                <span className=\"font-mono text-xs text-muted-foreground\">\n                  {cap.num}\n                </span>\n              </div>\n              <div>\n                <h3 className=\"flex items-center gap-2 font-serif text-2xl tracking-tight\">\n                  {cap.title}\n                  <ArrowUpRight className=\"size-4 -translate-x-1 translate-y-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100\" />\n                </h3>\n                <p className=\"mt-2 max-w-sm text-sm leading-relaxed text-muted-foreground\">\n                  {cap.body}\n                </p>\n              </div>\n            </article>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/bento-editorial.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

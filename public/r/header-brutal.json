@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "header-brutal",
+  "title": "Brutal header",
+  "description": "Sticky bar with boxed nav cells that invert on hover.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/headers/header-brutal.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport Link from \"next/link\"\nimport { ArrowRight, Menu, X } from \"lucide-react\"\n\nconst NAV = [\n  { label: \"Work\", href: \"#work\" },\n  { label: \"About\", href: \"#about\" },\n  { label: \"Process\", href: \"#process\" },\n  { label: \"Contact\", href: \"#contact\" },\n]\n\n/**\n * Brutal header — sticky bar with thick borders, boxed nav cells that\n * invert on hover, and a hard-shadow CTA.\n */\nexport function HeaderBrutal() {\n  const [open, setOpen] = React.useState(false)\n\n  return (\n    <header className=\"sticky top-0 z-50 border-b-4 border-foreground bg-background text-foreground\">\n      <div className=\"flex items-stretch justify-between\">\n        <Link\n          href=\"#\"\n          className=\"flex items-center gap-2 px-5 py-4 text-xl font-black tracking-tighter uppercase\"\n        >\n          <span className=\"grid size-7 place-items-center bg-foreground font-mono text-sm text-background\">\n            T\n          </span>\n          Tonne®\n        </Link>\n\n        <nav className=\"hidden items-stretch md:flex\">\n          {NAV.map((item) => (\n            <Link\n              key={item.label}\n              href={item.href}\n              className=\"flex items-center border-l-2 border-foreground px-6 text-sm font-bold tracking-wide uppercase transition-colors hover:bg-foreground hover:text-background\"\n            >\n              {item.label}\n            </Link>\n          ))}\n          <Link\n            href=\"#quote\"\n            className=\"flex items-center gap-2 border-l-2 border-foreground bg-accent px-6 text-sm font-black tracking-wide uppercase text-accent-foreground transition-colors hover:bg-foreground hover:text-background\"\n          >\n            Get a quote\n            <ArrowRight className=\"size-4\" />\n          </Link>\n        </nav>\n\n        <button\n          className=\"flex items-center border-l-2 border-foreground px-5 md:hidden\"\n          onClick={() => setOpen((v) => !v)}\n          aria-label={open ? \"Close menu\" : \"Open menu\"}\n        >\n          {open ? <X className=\"size-6\" /> : <Menu className=\"size-6\" />}\n        </button>\n      </div>\n\n      {open && (\n        <nav className=\"border-t-2 border-foreground md:hidden\">\n          {NAV.map((item) => (\n            <Link\n              key={item.label}\n              href={item.href}\n              onClick={() => setOpen(false)}\n              className=\"block border-b-2 border-foreground px-5 py-4 text-2xl font-black uppercase hover:bg-foreground hover:text-background\"\n            >\n              {item.label}\n            </Link>\n          ))}\n          <Link\n            href=\"#quote\"\n            onClick={() => setOpen(false)}\n            className=\"flex items-center justify-between bg-accent px-5 py-4 text-2xl font-black uppercase text-accent-foreground\"\n          >\n            Get a quote\n            <ArrowRight className=\"size-6\" />\n          </Link>\n        </nav>\n      )}\n    </header>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/header-brutal.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

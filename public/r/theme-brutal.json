@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-brutal",
+  "title": "Brutal theme",
+  "description": "Bone, black borders, and a chartreuse accent. Zero radius everywhere.",
+  "cssVars": {
+    "light": {
+      "background": "#f2f0e6",
+      "foreground": "#0c0c0c",
+      "card": "#fbfaf4",
+      "card-foreground": "#0c0c0c",
+      "popover": "#fbfaf4",
+      "popover-foreground": "#0c0c0c",
+      "primary": "#0c0c0c",
+      "primary-foreground": "#f2f0e6",
+      "secondary": "#e2dfd0",
+      "secondary-foreground": "#0c0c0c",
+      "muted": "#e2dfd0",
+      "muted-foreground": "#4d4a40",
+      "accent": "#d9f526",
+      "accent-foreground": "#0c0c0c",
+      "destructive": "#e11d48",
+      "border": "#0c0c0c",
+      "input": "#0c0c0c",
+      "ring": "#0c0c0c",
+      "radius": "0rem"
+    }
+  },
+  "type": "registry:theme"
+}

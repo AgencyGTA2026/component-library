@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "blog-post-header",
+  "title": "Blog post header",
+  "description": "Article masthead with byline, meta, and cover slot.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/content/blog-post-header.tsx",
+      "content": "import Link from \"next/link\"\nimport { ArrowLeft, Clock } from \"lucide-react\"\n\n/**\n * Blog post header — an article masthead with category, title, dek,\n * author byline, and a cover slot. Drop a <article> body below it.\n */\nexport function BlogPostHeader() {\n  return (\n    <header className=\"bg-background px-5 pt-12 text-foreground sm:px-8\">\n      <div className=\"mx-auto max-w-3xl\">\n        <Link\n          href=\"#blog\"\n          className=\"inline-flex items-center gap-2 font-mono text-xs tracking-[0.15em] uppercase text-muted-foreground transition-colors hover:text-foreground\"\n        >\n          <ArrowLeft className=\"size-3.5\" />\n          Back to journal\n        </Link>\n\n        <p className=\"mt-8 font-mono text-xs tracking-[0.2em] uppercase text-primary\">\n          Conversion · Essay\n        </p>\n        <h1 className=\"mt-4 font-serif text-4xl leading-[1.08] tracking-tight text-balance sm:text-5xl\">\n          Why your homepage hero is quietly costing you leads\n        </h1>\n        <p className=\"mt-5 text-lg leading-relaxed text-muted-foreground\">\n          The first screen is the most valuable real estate you own. Here&apos;s\n          how to stop wasting it on a stock photo and a slogan nobody reads.\n        </p>\n\n        <div className=\"mt-8 flex flex-wrap items-center justify-between gap-4 border-y py-5\">\n          <div className=\"flex items-center gap-3\">\n            <span className=\"grid size-11 place-items-center rounded-full bg-primary text-sm font-bold text-primary-foreground\">\n              JO\n            </span>\n            <div className=\"text-sm\">\n              <p className=\"font-semibold\">June Okafor</p>\n              <p className=\"text-muted-foreground\">Creative Director</p>\n            </div>\n          </div>\n          <div className=\"flex items-center gap-4 font-mono text-xs tracking-wide text-muted-foreground uppercase\">\n            <span>May 28, 2026</span>\n            <span className=\"flex items-center gap-1.5\">\n              <Clock className=\"size-3.5\" />6 min read\n            </span>\n          </div>\n        </div>\n      </div>\n\n      <div className=\"mx-auto mt-10 aspect-[16/9] max-w-4xl overflow-hidden rounded-xl bg-gradient-to-br from-primary/20 via-accent/15 to-secondary\" />\n    </header>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/blog-post-header.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

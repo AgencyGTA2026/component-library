@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-auth",
+  "title": "Auth card",
+  "description": "Tabbed sign-in / create-account with social buttons.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "input",
+    "label",
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/forms/form-auth.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { KeyRound, Mail } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label } from \"@/components/ui/label\"\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\"\n\n/**\n * Auth card — tabbed sign-in / create-account with social buttons and a\n * split brand panel. Wire the forms to your auth provider.\n */\nexport function FormAuth() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto grid max-w-4xl overflow-hidden rounded-[2rem] border bg-card shadow-xl lg:grid-cols-2\">\n        <div className=\"relative hidden flex-col justify-between bg-gradient-to-br from-primary to-secondary-foreground p-10 text-primary-foreground lg:flex\">\n          <p className=\"font-semibold\">Driftwell</p>\n          <div>\n            <p className=\"text-2xl font-semibold leading-snug text-balance\">\n              “The only app that made my morning routine actually stick.”\n            </p>\n            <p className=\"mt-4 text-sm opacity-80\">Jordan M. · joined 2024</p>\n          </div>\n          <div className=\"pointer-events-none absolute -right-16 -bottom-16 size-56 rounded-full bg-primary-foreground/10 blur-2xl\" />\n        </div>\n\n        <div className=\"p-8 sm:p-10\">\n          <Tabs defaultValue=\"signin\">\n            <TabsList className=\"mb-6 w-full\">\n              <TabsTrigger value=\"signin\" className=\"flex-1\">Sign in</TabsTrigger>\n              <TabsTrigger value=\"signup\" className=\"flex-1\">Create account</TabsTrigger>\n            </TabsList>\n\n            <TabsContent value=\"signin\" className=\"space-y-4\">\n              <Social />\n              <Divider />\n              <Field id=\"si-email\" label=\"Email\" type=\"email\" placeholder=\"you@company.com\" />\n              <Field id=\"si-pass\" label=\"Password\" type=\"password\" placeholder=\"••••••••\" hint=\"Forgot?\" />\n              <Button className=\"w-full\" size=\"lg\">Sign in</Button>\n            </TabsContent>\n\n            <TabsContent value=\"signup\" className=\"space-y-4\">\n              <Social verb=\"Sign up\" />\n              <Divider />\n              <Field id=\"su-name\" label=\"Name\" placeholder=\"Ada Lovelace\" />\n              <Field id=\"su-email\" label=\"Email\" type=\"email\" placeholder=\"you@company.com\" />\n              <Field id=\"su-pass\" label=\"Password\" type=\"password\" placeholder=\"At least 8 characters\" />\n              <Button className=\"w-full\" size=\"lg\">Create account</Button>\n              <p className=\"text-center text-xs text-muted-foreground\">\n                By continuing you agree to our Terms &amp; Privacy Policy.\n              </p>\n            </TabsContent>\n          </Tabs>\n        </div>\n      </div>\n    </section>\n  )\n}\n\nfunction Social({ verb = \"Continue\" }: { verb?: string }) {\n  return (\n    <div className=\"grid grid-cols-2 gap-3\">\n      <Button variant=\"outline\" className=\"w-full\">\n        <Mail className=\"size-4\" />\n        {verb} with Google\n      </Button>\n      <Button variant=\"outline\" className=\"w-full\">\n        <KeyRound className=\"size-4\" />\n        SSO\n      </Button>\n    </div>\n  )\n}\n\nfunction Divider() {\n  return (\n    <div className=\"flex items-center gap-3 text-xs text-muted-foreground\">\n      <span className=\"h-px flex-1 bg-border\" />\n      or\n      <span className=\"h-px flex-1 bg-border\" />\n    </div>\n  )\n}\n\nfunction Field({\n  id,\n  label,\n  type = \"text\",\n  placeholder,\n  hint,\n}: {\n  id: string\n  label: string\n  type?: string\n  placeholder?: string\n  hint?: string\n}) {\n  return (\n    <div className=\"space-y-2\">\n      <div className=\"flex items-center justify-between\">\n        <Label htmlFor={id}>{label}</Label>\n        {hint && <button type=\"button\" className=\"text-xs text-primary hover:underline\">{hint}</button>}\n      </div>\n      <Input id={id} type={type} placeholder={placeholder} />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/form-auth.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

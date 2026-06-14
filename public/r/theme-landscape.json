@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-landscape",
+  "title": "Landscape theme",
+  "description": "Earthy leaf green on warm sage with a terracotta accent. For landscapers, lawn care, and tree services.",
+  "cssVars": {
+    "light": {
+      "background": "#f4f6ee",
+      "foreground": "#1d2a1a",
+      "card": "#fbfcf7",
+      "card-foreground": "#1d2a1a",
+      "popover": "#fbfcf7",
+      "popover-foreground": "#1d2a1a",
+      "primary": "#3f7a33",
+      "primary-foreground": "#f4f6ee",
+      "secondary": "#e3ebd6",
+      "secondary-foreground": "#27361f",
+      "muted": "#e7edda",
+      "muted-foreground": "#5d6b51",
+      "accent": "#c8763a",
+      "accent-foreground": "#ffffff",
+      "destructive": "#b91c1c",
+      "border": "#d3ddc4",
+      "input": "#d3ddc4",
+      "ring": "#3f7a33",
+      "radius": "0.5rem"
+    }
+  },
+  "type": "registry:theme"
+}

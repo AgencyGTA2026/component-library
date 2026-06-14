@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-app",
+  "title": "App download CTA",
+  "description": "Phone mockup beside App Store / Google Play badges.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/cta/cta-app.tsx",
+      "content": "import { Apple, Play, Star } from \"lucide-react\"\n\n/**\n * App download CTA — a phone mockup beside store badges and a QR slot.\n * Swap the lucide marks for official App Store / Google Play artwork.\n */\nexport function CtaApp() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"mx-auto max-w-5xl overflow-hidden rounded-[2rem] border bg-gradient-to-br from-primary to-secondary-foreground text-primary-foreground\">\n        <div className=\"grid items-center gap-8 p-8 sm:p-12 lg:grid-cols-2\">\n          <div>\n            <div className=\"flex items-center gap-2 text-sm\">\n              <span className=\"flex gap-0.5 text-accent\">\n                {Array.from({ length: 5 }).map((_, i) => (\n                  <Star key={i} className=\"size-4 fill-current\" />\n                ))}\n              </span>\n              <span className=\"opacity-80\">4.9 · 18k ratings</span>\n            </div>\n            <h2 className=\"mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl\">\n              Take it with you. It&apos;s nicer on your phone.\n            </h2>\n            <p className=\"mt-3 max-w-md text-primary-foreground/80\">\n              Log habits, get gentle nudges, and check your streak from\n              anywhere. Free on iOS and Android.\n            </p>\n\n            <div className=\"mt-7 flex flex-wrap items-center gap-3\">\n              <a\n                href=\"#ios\"\n                className=\"flex items-center gap-3 rounded-xl bg-background px-5 py-3 text-foreground transition-transform hover:-translate-y-0.5\"\n              >\n                <Apple className=\"size-6\" />\n                <span className=\"text-left leading-tight\">\n                  <span className=\"block text-[10px] uppercase opacity-70\">Download on the</span>\n                  <span className=\"block text-base font-semibold\">App Store</span>\n                </span>\n              </a>\n              <a\n                href=\"#android\"\n                className=\"flex items-center gap-3 rounded-xl bg-background px-5 py-3 text-foreground transition-transform hover:-translate-y-0.5\"\n              >\n                <Play className=\"size-6 fill-current\" />\n                <span className=\"text-left leading-tight\">\n                  <span className=\"block text-[10px] uppercase opacity-70\">Get it on</span>\n                  <span className=\"block text-base font-semibold\">Google Play</span>\n                </span>\n              </a>\n            </div>\n          </div>\n\n          <div className=\"relative mx-auto hidden h-80 w-44 lg:block\">\n            {/* Phone mockup slot — drop in an app screenshot. */}\n            <div className=\"absolute inset-0 rounded-[2rem] border-4 border-background/30 bg-background/10 backdrop-blur\" />\n            <div className=\"absolute inset-3 overflow-hidden rounded-[1.5rem] bg-gradient-to-b from-background/25 to-background/5\">\n              <div className=\"absolute top-3 left-1/2 h-1.5 w-12 -translate-x-1/2 rounded-full bg-background/40\" />\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/cta-app.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

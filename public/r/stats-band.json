@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stats-band",
+  "title": "Stats band",
+  "description": "Numbers spring-count up when scrolled into view.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/misc/stats-band.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { motion, useInView, useSpring, useTransform } from \"framer-motion\"\n\nconst STATS = [\n  { value: 140, suffix: \"+\", label: \"Sites launched\" },\n  { value: 98, suffix: \"\", label: \"Avg. Lighthouse score\" },\n  { value: 27, suffix: \"M\", prefix: \"$\", label: \"Client revenue influenced\" },\n  { value: 9, suffix: \"\", label: \"Industry awards\" },\n]\n\n/**\n * Stats band — numbers count up with a spring when scrolled into view.\n * Works in any vibe; pairs well under a hero or above a footer.\n */\nexport function StatsBand() {\n  return (\n    <section className=\"border-y bg-background px-5 py-14 text-foreground sm:px-8\">\n      <div className=\"mx-auto grid max-w-6xl grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4\">\n        {STATS.map((stat, i) => (\n          <div key={stat.label} className=\"text-center md:border-l md:first:border-l-0\">\n            <CountUp\n              value={stat.value}\n              prefix={stat.prefix}\n              suffix={stat.suffix}\n              delay={i * 0.1}\n            />\n            <p className=\"mt-2 font-mono text-xs tracking-[0.18em] uppercase text-muted-foreground\">\n              {stat.label}\n            </p>\n          </div>\n        ))}\n      </div>\n    </section>\n  )\n}\n\nfunction CountUp({\n  value,\n  prefix = \"\",\n  suffix = \"\",\n  delay = 0,\n}: {\n  value: number\n  prefix?: string\n  suffix?: string\n  delay?: number\n}) {\n  const ref = React.useRef<HTMLParagraphElement>(null)\n  const inView = useInView(ref, { once: true, margin: \"-60px\" })\n  const spring = useSpring(0, { stiffness: 60, damping: 18 })\n  const text = useTransform(spring, (v) => `${prefix}${Math.round(v)}${suffix}`)\n\n  React.useEffect(() => {\n    if (inView) {\n      const t = setTimeout(() => spring.set(value), delay * 1000)\n      return () => clearTimeout(t)\n    }\n  }, [inView, spring, value, delay])\n\n  return (\n    <motion.p ref={ref} className=\"font-serif text-5xl tracking-tight text-primary sm:text-6xl\">\n      {text}\n    </motion.p>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/stats-band.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

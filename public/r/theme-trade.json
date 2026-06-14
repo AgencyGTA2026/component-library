@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-trade",
+  "title": "Trade theme",
+  "description": "Steel navy with a high-vis safety-orange accent and tight radius. For roofers, contractors, and construction.",
+  "cssVars": {
+    "light": {
+      "background": "#f4f5f7",
+      "foreground": "#0f1722",
+      "card": "#ffffff",
+      "card-foreground": "#0f1722",
+      "popover": "#ffffff",
+      "popover-foreground": "#0f1722",
+      "primary": "#16344f",
+      "primary-foreground": "#f4f5f7",
+      "secondary": "#e2e6ec",
+      "secondary-foreground": "#16344f",
+      "muted": "#e2e6ec",
+      "muted-foreground": "#51606f",
+      "accent": "#f5610a",
+      "accent-foreground": "#ffffff",
+      "destructive": "#dc2626",
+      "border": "#cfd6df",
+      "input": "#cfd6df",
+      "ring": "#16344f",
+      "radius": "0.25rem"
+    }
+  },
+  "type": "registry:theme"
+}

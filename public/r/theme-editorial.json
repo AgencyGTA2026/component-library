@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-editorial",
+  "title": "Editorial theme",
+  "description": "Ink on warm cream with a vermilion primary. Pair with a serif like Fraunces.",
+  "cssVars": {
+    "light": {
+      "background": "#f7f3ec",
+      "foreground": "#211d16",
+      "card": "#fdfbf6",
+      "card-foreground": "#211d16",
+      "popover": "#fdfbf6",
+      "popover-foreground": "#211d16",
+      "primary": "#b3401f",
+      "primary-foreground": "#f7f3ec",
+      "secondary": "#ece5d6",
+      "secondary-foreground": "#211d16",
+      "muted": "#ece5d6",
+      "muted-foreground": "#6f675a",
+      "accent": "#ece5d6",
+      "accent-foreground": "#211d16",
+      "destructive": "#991b1b",
+      "border": "#d9d0bd",
+      "input": "#d9d0bd",
+      "ring": "#211d16",
+      "radius": "0.125rem"
+    }
+  },
+  "type": "registry:theme"
+}

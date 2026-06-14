@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "guarantee",
+  "title": "Guarantee callout",
+  "description": "Warranty/satisfaction seal with plain-English promises.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/service/guarantee.tsx",
+      "content": "import { Check, ShieldCheck } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\n\nconst POINTS = [\n  \"If a repair fails within the warranty period, we fix it free — parts and labor.\",\n  \"Upfront, itemized pricing. No overtime charges, no surprise fees, ever.\",\n  \"Don't love the work? We'll make it right or refund the visit. Simple.\",\n]\n\n/**\n * Guarantee — a warranty / satisfaction callout with a seal graphic and\n * plain-English promises. Removes risk right before the CTA.\n */\nexport function Guarantee() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"mx-auto max-w-5xl overflow-hidden rounded-3xl border bg-card\">\n        <div className=\"grid items-center gap-8 p-8 sm:p-12 lg:grid-cols-[auto_1fr]\">\n          <div className=\"relative mx-auto grid size-40 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground\">\n            <div className=\"absolute inset-2 rounded-full border-2 border-dashed border-primary-foreground/40\" />\n            <div className=\"text-center\">\n              <ShieldCheck className=\"mx-auto size-9\" />\n              <p className=\"mt-1 text-xs font-bold tracking-widest uppercase\">100%</p>\n              <p className=\"text-[10px] tracking-wide uppercase opacity-80\">Guaranteed</p>\n            </div>\n          </div>\n\n          <div>\n            <h2 className=\"text-2xl font-bold tracking-tight text-balance sm:text-3xl\">\n              Our no-nonsense satisfaction guarantee.\n            </h2>\n            <ul className=\"mt-6 space-y-3\">\n              {POINTS.map((p) => (\n                <li key={p} className=\"flex items-start gap-3\">\n                  <span className=\"mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-accent text-accent-foreground\">\n                    <Check className=\"size-3.5\" />\n                  </span>\n                  <span className=\"text-sm leading-relaxed text-muted-foreground\">{p}</span>\n                </li>\n              ))}\n            </ul>\n            <Button className=\"mt-8\" size=\"lg\">\n              Schedule your free estimate\n            </Button>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/guarantee.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

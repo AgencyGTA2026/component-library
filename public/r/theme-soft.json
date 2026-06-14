@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-soft",
+  "title": "Soft theme",
+  "description": "Mint-tinted calm with a teal primary and generous radius.",
+  "cssVars": {
+    "light": {
+      "background": "#f5faf7",
+      "foreground": "#16302b",
+      "card": "#ffffff",
+      "card-foreground": "#16302b",
+      "popover": "#ffffff",
+      "popover-foreground": "#16302b",
+      "primary": "#0f8a74",
+      "primary-foreground": "#ffffff",
+      "secondary": "#e3f2ec",
+      "secondary-foreground": "#114b40",
+      "muted": "#e9f3ee",
+      "muted-foreground": "#5c7470",
+      "accent": "#fdecd9",
+      "accent-foreground": "#8a4412",
+      "destructive": "#dc2626",
+      "border": "#d7e7df",
+      "input": "#d7e7df",
+      "ring": "#0f8a74",
+      "radius": "1.1rem"
+    }
+  },
+  "type": "registry:theme"
+}

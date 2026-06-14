@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-soft",
+  "title": "Soft CTA panel",
+  "description": "Glowing gradient panel with a reassurance row.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/cta/cta-soft.tsx",
+      "content": "import Link from \"next/link\"\nimport { ArrowRight, ShieldCheck, Sparkles, Timer } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\n\nconst REASSURANCES = [\n  { icon: Timer, label: \"Set up in 4 minutes\" },\n  { icon: ShieldCheck, label: \"No card required\" },\n  { icon: Sparkles, label: \"Cancel anytime\" },\n]\n\n/**\n * Soft CTA — a glowing gradient panel with centered copy and a\n * reassurance row that melts away objections.\n */\nexport function CtaSoft() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"relative mx-auto max-w-4xl overflow-hidden rounded-[2.5rem] border bg-card px-7 py-16 text-center shadow-xl shadow-primary/10 sm:px-16\">\n        <div\n          aria-hidden\n          className=\"pointer-events-none absolute inset-0\"\n        >\n          <div className=\"absolute -top-24 left-1/2 size-72 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl\" />\n          <div className=\"absolute -bottom-28 -left-16 size-64 rounded-full bg-accent/70 blur-3xl\" />\n          <div className=\"absolute -right-20 -bottom-24 size-64 rounded-full bg-secondary blur-3xl\" />\n        </div>\n\n        <div className=\"relative\">\n          <h2 className=\"text-3xl font-semibold tracking-tight text-balance sm:text-5xl\">\n            Tonight, wind down a little earlier.\n          </h2>\n          <p className=\"mx-auto mt-4 max-w-md text-lg text-muted-foreground\">\n            Start your 30-day trial and let Driftwell take it from here —\n            gently, as always.\n          </p>\n          <Button asChild size=\"lg\" className=\"mt-8 rounded-full px-10\">\n            <Link href=\"#start\">\n              Start free\n              <ArrowRight className=\"size-4\" />\n            </Link>\n          </Button>\n          <div className=\"mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground\">\n            {REASSURANCES.map((r) => (\n              <span key={r.label} className=\"flex items-center gap-2\">\n                <r.icon className=\"size-4 text-primary\" />\n                {r.label}\n              </span>\n            ))}\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/cta-soft.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

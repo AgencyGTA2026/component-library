@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stat-cards",
+  "title": "Stat cards",
+  "description": "Four-up metric grid with icons and sub-labels.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/misc/stat-cards.tsx",
+      "content": "import { Clock, Home, Star, Users } from \"lucide-react\"\n\nconst STATS = [\n  { icon: Home, value: \"3,400+\", label: \"Roofs replaced\", sub: \"since 1999\" },\n  { icon: Star, value: \"4.9 / 5\", label: \"Average rating\", sub: \"612 reviews\" },\n  { icon: Clock, value: \"24 hrs\", label: \"Emergency response\", sub: \"most callouts\" },\n  { icon: Users, value: \"38\", label: \"Full-time crew\", sub: \"no subcontractors\" },\n]\n\n/**\n * Stat cards — a four-up metric grid with icons and sub-labels. Heavier\n * and more \"proof-forward\" than the inline stats band.\n */\nexport function StatCards() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4\">\n        {STATS.map((s) => (\n          <div key={s.label} className=\"rounded-xl border bg-card p-6\">\n            <span className=\"grid size-11 place-items-center rounded-lg bg-secondary text-primary\">\n              <s.icon className=\"size-5\" />\n            </span>\n            <p className=\"mt-5 text-4xl font-bold tracking-tight\">{s.value}</p>\n            <p className=\"mt-1 font-medium\">{s.label}</p>\n            <p className=\"text-sm text-muted-foreground\">{s.sub}</p>\n          </div>\n        ))}\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/stat-cards.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "footer-minimal",
+  "title": "Minimal footer",
+  "description": "Wordmark, compact link row, copyright on one band.",
+  "files": [
+    {
+      "path": "registry/blocks/footers/footer-minimal.tsx",
+      "content": "import Link from \"next/link\"\n\nconst LINKS = [\"Work\", \"Studio\", \"Journal\", \"Contact\"]\n\n/**\n * Minimal footer — wordmark, a compact link row, and a copyright line on\n * a single hairline-topped band. For sites that end quietly.\n */\nexport function FooterMinimal() {\n  return (\n    <footer className=\"border-t bg-background text-foreground\">\n      <div className=\"mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-5 py-8 sm:flex-row sm:px-8\">\n        <Link href=\"#\" className=\"font-serif text-xl tracking-tight\">\n          Harbor<span className=\"italic text-primary\">&amp;</span>Pine\n        </Link>\n\n        <nav className=\"flex flex-wrap items-center justify-center gap-x-7 gap-y-2\">\n          {LINKS.map((l) => (\n            <Link key={l} href=\"#\" className=\"text-sm text-muted-foreground transition-colors hover:text-foreground\">\n              {l}\n            </Link>\n          ))}\n        </nav>\n\n        <p className=\"font-mono text-[11px] tracking-widest uppercase text-muted-foreground\">\n          © {new Date().getFullYear()}\n        </p>\n      </div>\n    </footer>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/footer-minimal.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

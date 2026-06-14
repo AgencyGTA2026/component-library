@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comparison-table",
+  "title": "Comparison table",
+  "description": "'Us vs. the other guys' check/cross grid.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/features/comparison-table.tsx",
+      "content": "import { Check, X } from \"lucide-react\"\n\nconst ROWS = [\n  \"Free, no-obligation inspection\",\n  \"Fixed written quote up front\",\n  \"Licensed, bonded & insured crews\",\n  \"Cleanup & nail sweep included\",\n  \"10-year workmanship warranty\",\n  \"Financing options on approved credit\",\n  \"Answers the phone after 5pm\",\n]\n\n/**\n * Comparison table — an \"us vs. the other guys\" grid that makes the\n * choice obvious. Edit the column headers to name your real alternative.\n */\nexport function ComparisonTable() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8 sm:py-28\">\n      <div className=\"mx-auto max-w-3xl\">\n        <div className=\"mb-12 text-center\">\n          <p className=\"font-mono text-xs font-semibold tracking-[0.2em] uppercase text-accent\">\n            Why us\n          </p>\n          <h2 className=\"mt-3 text-3xl font-bold tracking-tight text-balance sm:text-4xl\">\n            The difference is in the fine print.\n          </h2>\n        </div>\n\n        <div className=\"overflow-hidden rounded-lg border\">\n          <div className=\"grid grid-cols-[1fr_auto_auto] items-stretch bg-card\">\n            <div className=\"p-4\" />\n            <div className=\"flex w-24 items-center justify-center bg-primary p-4 text-center text-sm font-bold text-primary-foreground sm:w-32\">\n              Our crew\n            </div>\n            <div className=\"flex w-24 items-center justify-center p-4 text-center text-sm font-medium text-muted-foreground sm:w-32\">\n              Typical guys\n            </div>\n          </div>\n\n          {ROWS.map((row, i) => (\n            <div\n              key={row}\n              className={`grid grid-cols-[1fr_auto_auto] items-center border-t ${\n                i % 2 === 1 ? \"bg-muted/40\" : \"bg-background\"\n              }`}\n            >\n              <p className=\"p-4 text-sm font-medium\">{row}</p>\n              <div className=\"flex w-24 justify-center p-4 sm:w-32\">\n                <span className=\"grid size-6 place-items-center rounded-full bg-primary text-primary-foreground\">\n                  <Check className=\"size-4\" />\n                </span>\n              </div>\n              <div className=\"flex w-24 justify-center p-4 sm:w-32\">\n                <span className=\"grid size-6 place-items-center rounded-full bg-muted text-muted-foreground\">\n                  <X className=\"size-4\" />\n                </span>\n              </div>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/comparison-table.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

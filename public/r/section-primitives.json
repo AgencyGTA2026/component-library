@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "section-primitives",
+  "title": "Section primitives",
+  "description": "Section, Container, Eyebrow, Heading, and Lead for consistent page rhythm.",
+  "files": [
+    {
+      "path": "registry/blocks/layouts/section-primitives.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\n\n/**\n * Layout primitives shared by page compositions. Install once, then use\n * them to keep section rhythm consistent across a client site.\n */\n\nexport function Section({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<\"section\">) {\n  return (\n    <section className={cn(\"py-20 sm:py-28\", className)} {...props}>\n      {children}\n    </section>\n  )\n}\n\nexport function Container({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      className={cn(\"mx-auto w-full max-w-6xl px-5 sm:px-8\", className)}\n      {...props}\n    >\n      {children}\n    </div>\n  )\n}\n\nexport function Eyebrow({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<\"p\">) {\n  return (\n    <p\n      className={cn(\n        \"font-mono text-xs font-medium tracking-[0.2em] uppercase text-muted-foreground\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n    </p>\n  )\n}\n\nexport function Heading({\n  className,\n  as: Tag = \"h2\",\n  children,\n  ...props\n}: React.ComponentProps<\"h2\"> & {\n  as?: \"h1\" | \"h2\" | \"h3\" | \"h4\"\n}) {\n  return (\n    <Tag\n      className={cn(\n        \"font-serif text-4xl leading-[1.05] tracking-tight text-balance sm:text-5xl\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n    </Tag>\n  )\n}\n\nexport function Lead({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<\"p\">) {\n  return (\n    <p\n      className={cn(\n        \"max-w-prose text-lg leading-relaxed text-muted-foreground\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n    </p>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/section-primitives.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

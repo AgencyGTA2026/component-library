@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-editorial",
+  "title": "Editorial CTA",
+  "description": "One oversized serif statement, one action.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/cta/cta-editorial.tsx",
+      "content": "import Link from \"next/link\"\nimport { ArrowRight } from \"lucide-react\"\n\n/**\n * Editorial CTA — one oversized serif statement, one action. Maximum\n * whitespace, maximum confidence. Lets the typography do the work.\n */\nexport function CtaEditorial() {\n  return (\n    <section className=\"bg-background px-5 py-24 text-foreground sm:px-8 sm:py-36\">\n      <div className=\"mx-auto max-w-4xl text-center\">\n        <p className=\"font-mono text-xs tracking-[0.3em] uppercase text-muted-foreground\">\n          The next move is yours\n        </p>\n        <h2 className=\"mt-8 font-serif text-[clamp(2.75rem,9vw,7rem)] leading-[0.95] tracking-tight text-balance\">\n          Good work starts with a{\" \"}\n          <em className=\"text-primary\">conversation.</em>\n        </h2>\n        <div className=\"mt-12 flex justify-center\">\n          <Link\n            href=\"#contact\"\n            className=\"group inline-flex items-center gap-3 border-b-2 border-foreground pb-1 text-lg font-medium transition-colors hover:border-primary hover:text-primary\"\n          >\n            Start one with us\n            <ArrowRight className=\"size-5 transition-transform group-hover:translate-x-1\" />\n          </Link>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/cta-editorial.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

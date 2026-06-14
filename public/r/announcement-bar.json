@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "announcement-bar",
+  "title": "Announcement bar",
+  "description": "Dismissible top strip for promos and launches.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/misc/announcement-bar.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { ArrowRight, X } from \"lucide-react\"\n\n/**\n * Announcement bar — a dismissible top strip for promos, launches, or\n * seasonal offers. Brutal by default; recolors with any theme.\n */\nexport function AnnouncementBar() {\n  const [open, setOpen] = React.useState(true)\n  if (!open) return null\n\n  return (\n    <div className=\"relative bg-accent text-accent-foreground\">\n      <div className=\"mx-auto flex max-w-6xl items-center justify-center gap-3 px-10 py-2.5 text-center text-sm font-semibold\">\n        <span className=\"hidden rounded-full bg-accent-foreground/15 px-2 py-0.5 font-mono text-[11px] tracking-wide uppercase sm:inline\">\n          New\n        </span>\n        <span>Spring booking is open — lock in 2025 pricing through April.</span>\n        <a href=\"#book\" className=\"group inline-flex items-center gap-1 underline underline-offset-4\">\n          Book now\n          <ArrowRight className=\"size-3.5 transition-transform group-hover:translate-x-0.5\" />\n        </a>\n      </div>\n      <button\n        onClick={() => setOpen(false)}\n        aria-label=\"Dismiss announcement\"\n        className=\"absolute top-1/2 right-3 -translate-y-1/2 rounded p-1 transition-colors hover:bg-accent-foreground/15\"\n      >\n        <X className=\"size-4\" />\n      </button>\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/announcement-bar.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

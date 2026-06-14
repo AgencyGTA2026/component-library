@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "countdown",
+  "title": "Countdown timer",
+  "description": "Live launch/sale timer ticking to a target date.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/misc/countdown.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\n\n/**\n * Countdown — a launch / sale timer that ticks to a target date. Pass\n * your own `target`; defaults to 6 days out so the preview always runs.\n */\nexport function Countdown({ target }: { target?: Date }) {\n  const deadline = React.useMemo(\n    () => target ?? new Date(Date.now() + 6 * 24 * 3600 * 1000 + 3600 * 1000 * 7),\n    [target]\n  )\n  const [now, setNow] = React.useState<number>(() => Date.now())\n\n  React.useEffect(() => {\n    const id = setInterval(() => setNow(Date.now()), 1000)\n    return () => clearInterval(id)\n  }, [])\n\n  const diff = Math.max(0, deadline.getTime() - now)\n  const units = [\n    { label: \"Days\", value: Math.floor(diff / 86400000) },\n    { label: \"Hours\", value: Math.floor((diff / 3600000) % 24) },\n    { label: \"Minutes\", value: Math.floor((diff / 60000) % 60) },\n    { label: \"Seconds\", value: Math.floor((diff / 1000) % 60) },\n  ]\n\n  return (\n    <section className=\"bg-foreground px-5 py-16 text-background sm:px-8 sm:py-20\">\n      <div className=\"mx-auto max-w-3xl text-center\">\n        <p className=\"font-mono text-xs font-bold tracking-[0.3em] uppercase text-accent\">\n          Founders&apos; pricing ends soon\n        </p>\n        <h2 className=\"mt-3 text-3xl font-black tracking-tight text-balance uppercase sm:text-4xl\">\n          Lock in 40% off for life.\n        </h2>\n\n        <div className=\"mt-8 flex justify-center gap-3 sm:gap-4\">\n          {units.map((u) => (\n            <div\n              key={u.label}\n              className=\"w-20 rounded-lg bg-background/10 py-4 backdrop-blur sm:w-24\"\n            >\n              <p className=\"font-mono text-3xl font-bold tabular-nums sm:text-5xl\">\n                {String(u.value).padStart(2, \"0\")}\n              </p>\n              <p className=\"mt-1 font-mono text-[10px] tracking-[0.2em] uppercase opacity-70\">\n                {u.label}\n              </p>\n            </div>\n          ))}\n        </div>\n\n        <Button variant=\"secondary\" size=\"lg\" className=\"mt-8\">\n          Claim the deal\n        </Button>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/countdown.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

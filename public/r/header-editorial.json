@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "header-editorial",
+  "title": "Editorial header",
+  "description": "Hairline utility bar, oversized serif wordmark, underline-reveal nav.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/headers/header-editorial.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport Link from \"next/link\"\nimport { ArrowUpRight, Menu, X } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\n\nconst NAV = [\n  { label: \"Work\", href: \"#work\" },\n  { label: \"Studio\", href: \"#studio\" },\n  { label: \"Services\", href: \"#services\" },\n  { label: \"Journal\", href: \"#journal\" },\n]\n\n/**\n * Editorial header — hairline utility bar with mono micro-details, an\n * oversized serif wordmark row, and underline-reveal navigation.\n */\nexport function HeaderEditorial() {\n  const [open, setOpen] = React.useState(false)\n\n  return (\n    <header className=\"border-b bg-background text-foreground\">\n      <div className=\"flex items-center justify-between border-b px-5 py-1.5 font-mono text-[11px] tracking-widest uppercase text-muted-foreground sm:px-8\">\n        <span>Est. 2014 — Portland, OR</span>\n        <span className=\"hidden items-center gap-2 sm:flex\">\n          <span className=\"size-1.5 rounded-full bg-primary\" />\n          Booking for Q3\n        </span>\n      </div>\n\n      <div className=\"flex items-end justify-between px-5 pt-5 pb-4 sm:px-8\">\n        <Link href=\"#\" className=\"font-serif text-3xl leading-none tracking-tight sm:text-4xl\">\n          Harbor<span className=\"italic text-primary\">&amp;</span>Pine\n        </Link>\n\n        <nav className=\"hidden items-center gap-8 md:flex\">\n          {NAV.map((item) => (\n            <Link\n              key={item.label}\n              href={item.href}\n              className=\"group relative pb-1 text-sm tracking-wide\"\n            >\n              {item.label}\n              <span className=\"absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-foreground transition-transform duration-300 group-hover:scale-x-100\" />\n            </Link>\n          ))}\n          <Button asChild variant=\"outline\" className=\"rounded-none border-foreground\">\n            <Link href=\"#contact\">\n              Start a project\n              <ArrowUpRight className=\"size-4\" />\n            </Link>\n          </Button>\n        </nav>\n\n        <button\n          className=\"md:hidden\"\n          onClick={() => setOpen((v) => !v)}\n          aria-label={open ? \"Close menu\" : \"Open menu\"}\n        >\n          {open ? <X className=\"size-6\" /> : <Menu className=\"size-6\" />}\n        </button>\n      </div>\n\n      {open && (\n        <nav className=\"flex flex-col border-t md:hidden\">\n          {NAV.map((item, i) => (\n            <Link\n              key={item.label}\n              href={item.href}\n              onClick={() => setOpen(false)}\n              className=\"flex items-baseline justify-between border-b px-5 py-4 font-serif text-2xl\"\n            >\n              {item.label}\n              <span className=\"font-mono text-xs text-muted-foreground\">\n                0{i + 1}\n              </span>\n            </Link>\n          ))}\n          <Link\n            href=\"#contact\"\n            onClick={() => setOpen(false)}\n            className=\"flex items-center justify-between bg-primary px-5 py-4 font-serif text-2xl text-primary-foreground\"\n          >\n            Start a project\n            <ArrowUpRight className=\"size-5\" />\n          </Link>\n        </nav>\n      )}\n    </header>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/header-editorial.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

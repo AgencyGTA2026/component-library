@@ -1,0 +1,2059 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "agency-blocks",
+  "homepage": "https://blocks.example.com",
+  "items": [
+    {
+      "name": "header-editorial",
+      "type": "registry:block",
+      "title": "Editorial header",
+      "description": "Hairline utility bar, oversized serif wordmark, underline-reveal nav.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/headers/header-editorial.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-editorial.tsx"
+        }
+      ]
+    },
+    {
+      "name": "header-brutal",
+      "type": "registry:block",
+      "title": "Brutal header",
+      "description": "Sticky bar with boxed nav cells that invert on hover.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/headers/header-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-brutal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "header-soft",
+      "type": "registry:block",
+      "title": "Soft header",
+      "description": "Floating glass pill nav with backdrop blur.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/headers/header-soft.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-soft.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-editorial",
+      "type": "registry:block",
+      "title": "Editorial hero",
+      "description": "Oversized serif headline, staggered reveal, mono meta column, layered media slot.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/heroes/hero-editorial.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-editorial.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-brutal",
+      "type": "registry:block",
+      "title": "Brutal hero",
+      "description": "Stacked mega-headline, sticker badge, hard shadows, infinite marquee.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/heroes/hero-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-brutal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-soft",
+      "type": "registry:block",
+      "title": "Soft hero",
+      "description": "Gradient-mesh wash, glassy product mock, floating habit cards.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/heroes/hero-soft.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-soft.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-bento",
+      "type": "registry:block",
+      "title": "Bento hero",
+      "description": "Headline beside a live proof grid: metric, mini chart, quote, avatars.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/heroes/hero-bento.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-bento.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bento-editorial",
+      "type": "registry:block",
+      "title": "Editorial bento",
+      "description": "Asymmetric capability grid with figure numbers and hover arrows.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/bento/bento-editorial.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-editorial.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bento-brutal",
+      "type": "registry:block",
+      "title": "Brutal bento",
+      "description": "Heavy bordered grid; cells invert to black on hover.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/bento/bento-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-brutal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bento-soft",
+      "type": "registry:block",
+      "title": "Soft bento",
+      "description": "Rounded glass cards with a cursor-tracking spotlight.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/bento/bento-soft.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-soft.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-contact",
+      "type": "registry:block",
+      "title": "Contact form",
+      "description": "React-hook-form + zod validation, budget chips, success state.",
+      "dependencies": [
+        "react-hook-form",
+        "zod",
+        "@hookform/resolvers",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/forms/form-contact.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-contact.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-quote-wizard",
+      "type": "registry:block",
+      "title": "Quote wizard",
+      "description": "Four-step request flow with progress bar and animated transitions.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/forms/form-quote-wizard.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-quote-wizard.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-newsletter",
+      "type": "registry:block",
+      "title": "Newsletter strip",
+      "description": "Single-field capture band with inline success swap.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/forms/form-newsletter.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-newsletter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calc-roi",
+      "type": "registry:block",
+      "title": "ROI calculator",
+      "description": "Sliders project revenue impact with spring-animated totals.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "label",
+        "slider"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/calculators/calc-roi.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/calc-roi.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calc-estimator",
+      "type": "registry:block",
+      "title": "Cost estimator",
+      "description": "Base package + add-ons with a live price range sidebar.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/calculators/calc-estimator.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/calc-estimator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calc-loan",
+      "type": "registry:block",
+      "title": "Loan calculator",
+      "description": "Amortization math with a principal/interest breakdown bar.",
+      "registryDependencies": [
+        "input",
+        "label",
+        "slider"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/calculators/calc-loan.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/calc-loan.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-editorial",
+      "type": "registry:block",
+      "title": "Editorial pricing table",
+      "description": "Typeset comparison table with a featured middle column.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/pricing/pricing-editorial.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/pricing-editorial.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-soft",
+      "type": "registry:block",
+      "title": "Soft pricing cards",
+      "description": "Monthly/annual toggle with a lifted, glowing featured plan.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/pricing/pricing-soft.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/pricing-soft.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-editorial",
+      "type": "registry:block",
+      "title": "Pull-quote carousel",
+      "description": "One typeset quote at a time, paged with a crossfade.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/testimonials-editorial.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-editorial.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-marquee",
+      "type": "registry:block",
+      "title": "Review marquee",
+      "description": "Press logos over counter-scrolling review cards; pauses on hover.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/testimonials-marquee.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-marquee.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-brutal",
+      "type": "registry:block",
+      "title": "Brutal CTA banner",
+      "description": "Full-bleed accent banner with mega headline and hard-shadow button.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-brutal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-soft",
+      "type": "registry:block",
+      "title": "Soft CTA panel",
+      "description": "Glowing gradient panel with a reassurance row.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-soft.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-soft.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-accordion",
+      "type": "registry:block",
+      "title": "FAQ accordion",
+      "description": "Sticky intro column beside a numbered accordion.",
+      "registryDependencies": [
+        "accordion"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/misc/faq-accordion.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/faq-accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stats-band",
+      "type": "registry:block",
+      "title": "Stats band",
+      "description": "Numbers spring-count up when scrolled into view.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/misc/stats-band.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats-band.tsx"
+        }
+      ]
+    },
+    {
+      "name": "team-grid",
+      "type": "registry:block",
+      "title": "Team grid",
+      "description": "Portrait grid with hover lift and a built-in hiring tile.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/misc/team-grid.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/team-grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-editorial",
+      "type": "registry:block",
+      "title": "Editorial footer",
+      "description": "Link columns over hairlines and a giant bleeding wordmark.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/footers/footer-editorial.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-editorial.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-brutal",
+      "type": "registry:block",
+      "title": "Brutal footer",
+      "description": "Bordered grid around a screaming LET'S WORK cell.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/footers/footer-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-brutal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-soft",
+      "type": "registry:block",
+      "title": "Soft footer",
+      "description": "Floating gradient CTA card above calm link columns.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/footers/footer-soft.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-soft.tsx"
+        }
+      ]
+    },
+    {
+      "name": "section-primitives",
+      "type": "registry:block",
+      "title": "Section primitives",
+      "description": "Section, Container, Eyebrow, Heading, and Lead for consistent page rhythm.",
+      "files": [
+        {
+          "path": "registry/blocks/layouts/section-primitives.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/section-primitives.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-landing",
+      "type": "registry:block",
+      "title": "Landing page (editorial)",
+      "description": "A complete one-pager pre-wired from eight editorial blocks.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react",
+        "react-hook-form",
+        "zod",
+        "@hookform/resolvers"
+      ],
+      "registryDependencies": [
+        "accordion",
+        "button",
+        "input",
+        "label",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/layouts/page-landing.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/page-landing.tsx"
+        },
+        {
+          "path": "registry/blocks/headers/header-editorial.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-editorial.tsx"
+        },
+        {
+          "path": "registry/blocks/heroes/hero-editorial.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-editorial.tsx"
+        },
+        {
+          "path": "registry/blocks/misc/stats-band.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats-band.tsx"
+        },
+        {
+          "path": "registry/blocks/bento/bento-editorial.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-editorial.tsx"
+        },
+        {
+          "path": "registry/blocks/testimonials/testimonials-editorial.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-editorial.tsx"
+        },
+        {
+          "path": "registry/blocks/misc/faq-accordion.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/faq-accordion.tsx"
+        },
+        {
+          "path": "registry/blocks/forms/form-contact.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-contact.tsx"
+        },
+        {
+          "path": "registry/blocks/footers/footer-editorial.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-editorial.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-services",
+      "type": "registry:block",
+      "title": "SaaS page (soft)",
+      "description": "Hero through pricing to CTA, pre-wired from seven soft blocks.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/layouts/page-services.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/page-services.tsx"
+        },
+        {
+          "path": "registry/blocks/headers/header-soft.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-soft.tsx"
+        },
+        {
+          "path": "registry/blocks/heroes/hero-soft.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-soft.tsx"
+        },
+        {
+          "path": "registry/blocks/bento/bento-soft.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-soft.tsx"
+        },
+        {
+          "path": "registry/blocks/testimonials/testimonials-marquee.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-marquee.tsx"
+        },
+        {
+          "path": "registry/blocks/pricing/pricing-soft.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/pricing-soft.tsx"
+        },
+        {
+          "path": "registry/blocks/cta/cta-soft.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-soft.tsx"
+        },
+        {
+          "path": "registry/blocks/footers/footer-soft.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-soft.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-stars",
+      "type": "registry:block",
+      "title": "Star review grid",
+      "description": "Google/Yelp-style rating cards with an aggregate score header.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/testimonials-stars.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-stars.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-call",
+      "type": "registry:block",
+      "title": "Click-to-call CTA",
+      "description": "Phone-forward emergency banner with a tappable number and 24/7 note.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-call.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-call.tsx"
+        }
+      ]
+    },
+    {
+      "name": "before-after",
+      "type": "registry:block",
+      "title": "Before / after slider",
+      "description": "Drag or arrow-key wipe between two states. For roofing, lawns, remodels.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/service/before-after.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/before-after.tsx"
+        }
+      ]
+    },
+    {
+      "name": "process-steps",
+      "type": "registry:block",
+      "title": "Process steps",
+      "description": "Four-step 'how it works' rail with connecting line and numbered nodes.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/service/process-steps.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/process-steps.tsx"
+        }
+      ]
+    },
+    {
+      "name": "service-area",
+      "type": "registry:block",
+      "title": "Service area",
+      "description": "ZIP-check band with a neighborhood list over a stylized map panel.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/service/service-area.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/service-area.tsx"
+        }
+      ]
+    },
+    {
+      "name": "trust-badges",
+      "type": "registry:block",
+      "title": "Trust badges",
+      "description": "Credentials band: licensed, insured, warranty, financing, BBB.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/service/trust-badges.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/trust-badges.tsx"
+        }
+      ]
+    },
+    {
+      "name": "guarantee",
+      "type": "registry:block",
+      "title": "Guarantee callout",
+      "description": "Warranty/satisfaction seal with plain-English promises.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/service/guarantee.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/guarantee.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-cards",
+      "type": "registry:block",
+      "title": "FAQ cards",
+      "description": "Two-column plain Q&A tiles with a call-to-call footer.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/misc/faq-cards.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/faq-cards.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-video",
+      "type": "registry:block",
+      "title": "Video hero",
+      "description": "Centered copy over a media stage with a play/pause control.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/heroes/hero-video.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-video.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-split",
+      "type": "registry:block",
+      "title": "Feature split",
+      "description": "Alternating media/copy rows with checklists.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/features/feature-split.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/feature-split.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-tabs",
+      "type": "registry:block",
+      "title": "Feature tabs",
+      "description": "Tabbed product showcase with an icon rail and media panel.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/features/feature-tabs.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/feature-tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "comparison-table",
+      "type": "registry:block",
+      "title": "Comparison table",
+      "description": "'Us vs. the other guys' check/cross grid.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/features/comparison-table.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/comparison-table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo-cloud",
+      "type": "registry:block",
+      "title": "Logo cloud",
+      "description": "Quiet 'trusted by' wordmark band.",
+      "files": [
+        {
+          "path": "registry/blocks/features/logo-cloud.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/logo-cloud.tsx"
+        }
+      ]
+    },
+    {
+      "name": "integration-grid",
+      "type": "registry:block",
+      "title": "Integration grid",
+      "description": "Connect-your-stack tiles with hover lift.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/features/integration-grid.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/integration-grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "blog-grid",
+      "type": "registry:block",
+      "title": "Blog grid",
+      "description": "Featured lead post beside a stack of recent articles.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/content/blog-grid.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/blog-grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "blog-post-header",
+      "type": "registry:block",
+      "title": "Blog post header",
+      "description": "Article masthead with byline, meta, and cover slot.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/content/blog-post-header.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/blog-post-header.tsx"
+        }
+      ]
+    },
+    {
+      "name": "gallery-masonry",
+      "type": "registry:block",
+      "title": "Gallery masonry",
+      "description": "Staggered project grid with hover captions and filters.",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/content/gallery-masonry.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/gallery-masonry.tsx"
+        }
+      ]
+    },
+    {
+      "name": "timeline",
+      "type": "registry:block",
+      "title": "Timeline",
+      "description": "Vertical company history with a spine and year nodes.",
+      "files": [
+        {
+          "path": "registry/blocks/content/timeline.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/timeline.tsx"
+        }
+      ]
+    },
+    {
+      "name": "contact-info",
+      "type": "registry:block",
+      "title": "Contact info",
+      "description": "Name/address/phone/hours over a map panel — local-business NAP.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/service/contact-info.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/contact-info.tsx"
+        }
+      ]
+    },
+    {
+      "name": "booking-scheduler",
+      "type": "registry:block",
+      "title": "Booking scheduler",
+      "description": "Pick service, day, and time slot, then confirm.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/service/booking-scheduler.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/booking-scheduler.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menu-list",
+      "type": "registry:block",
+      "title": "Services menu",
+      "description": "Price list with dotted leaders, like a printed card.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/service/menu-list.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/menu-list.tsx"
+        }
+      ]
+    },
+    {
+      "name": "announcement-bar",
+      "type": "registry:block",
+      "title": "Announcement bar",
+      "description": "Dismissible top strip for promos and launches.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/misc/announcement-bar.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/announcement-bar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "countdown",
+      "type": "registry:block",
+      "title": "Countdown timer",
+      "description": "Live launch/sale timer ticking to a target date.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/misc/countdown.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/countdown.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-cards",
+      "type": "registry:block",
+      "title": "Stat cards",
+      "description": "Four-up metric grid with icons and sub-labels.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/misc/stat-cards.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stat-cards.tsx"
+        }
+      ]
+    },
+    {
+      "name": "steps-checklist",
+      "type": "registry:block",
+      "title": "Steps checklist",
+      "description": "Interactive onboarding list with a progress ring.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/misc/steps-checklist.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/steps-checklist.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumbs",
+      "type": "registry:block",
+      "title": "Breadcrumbs",
+      "description": "Page-context trail with a current-page marker.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/misc/breadcrumbs.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/breadcrumbs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-waitlist",
+      "type": "registry:block",
+      "title": "Waitlist CTA",
+      "description": "Coming-soon email capture with a spot counter and success state.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-waitlist.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-waitlist.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-app",
+      "type": "registry:block",
+      "title": "App download CTA",
+      "description": "Phone mockup beside App Store / Google Play badges.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-app.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-app.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-brutal",
+      "type": "registry:block",
+      "title": "Agency page (brutal)",
+      "description": "Bold one-pager from eight blocks: announcement to footer.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/layouts/page-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/page-brutal.tsx"
+        },
+        {
+          "path": "registry/blocks/misc/announcement-bar.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/announcement-bar.tsx"
+        },
+        {
+          "path": "registry/blocks/bento/bento-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-brutal.tsx"
+        },
+        {
+          "path": "registry/blocks/features/comparison-table.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/comparison-table.tsx"
+        },
+        {
+          "path": "registry/blocks/cta/cta-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-brutal.tsx"
+        },
+        {
+          "path": "registry/blocks/footers/footer-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-brutal.tsx"
+        },
+        {
+          "path": "registry/blocks/headers/header-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-brutal.tsx"
+        },
+        {
+          "path": "registry/blocks/heroes/hero-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-brutal.tsx"
+        },
+        {
+          "path": "registry/blocks/misc/stat-cards.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stat-cards.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-landscape",
+      "type": "registry:block",
+      "title": "Landscaper site (landscape)",
+      "description": "Local-business page: portfolio, pricing, coverage, reviews.",
+      "dependencies": [
+        "@hookform/resolvers",
+        "framer-motion",
+        "lucide-react",
+        "react-hook-form",
+        "zod"
+      ],
+      "registryDependencies": [
+        "accordion",
+        "badge",
+        "button",
+        "input",
+        "label",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/layouts/page-landscape.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/page-landscape.tsx"
+        },
+        {
+          "path": "registry/blocks/service/before-after.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/before-after.tsx"
+        },
+        {
+          "path": "registry/blocks/footers/footer-editorial.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-editorial.tsx"
+        },
+        {
+          "path": "registry/blocks/content/gallery-masonry.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/gallery-masonry.tsx"
+        },
+        {
+          "path": "registry/blocks/headers/header-editorial.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-editorial.tsx"
+        },
+        {
+          "path": "registry/blocks/heroes/hero-editorial.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-editorial.tsx"
+        },
+        {
+          "path": "registry/blocks/service/menu-list.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/menu-list.tsx"
+        },
+        {
+          "path": "registry/blocks/service/process-steps.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/process-steps.tsx"
+        },
+        {
+          "path": "registry/blocks/service/service-area.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/service-area.tsx"
+        },
+        {
+          "path": "registry/blocks/testimonials/testimonials-stars.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-stars.tsx"
+        },
+        {
+          "path": "registry/blocks/service/trust-badges.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/trust-badges.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-trade",
+      "type": "registry:block",
+      "title": "Roofing site (trade)",
+      "description": "Proof-forward contractor page built to book inspections.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/layouts/page-trade.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/page-trade.tsx"
+        },
+        {
+          "path": "registry/blocks/service/before-after.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/before-after.tsx"
+        },
+        {
+          "path": "registry/blocks/features/comparison-table.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/comparison-table.tsx"
+        },
+        {
+          "path": "registry/blocks/cta/cta-call.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-call.tsx"
+        },
+        {
+          "path": "registry/blocks/misc/faq-cards.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/faq-cards.tsx"
+        },
+        {
+          "path": "registry/blocks/footers/footer-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-brutal.tsx"
+        },
+        {
+          "path": "registry/blocks/headers/header-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-brutal.tsx"
+        },
+        {
+          "path": "registry/blocks/heroes/hero-brutal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-brutal.tsx"
+        },
+        {
+          "path": "registry/blocks/service/process-steps.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/process-steps.tsx"
+        },
+        {
+          "path": "registry/blocks/misc/stat-cards.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stat-cards.tsx"
+        },
+        {
+          "path": "registry/blocks/service/trust-badges.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/trust-badges.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-home",
+      "type": "registry:block",
+      "title": "Home-services site (services)",
+      "description": "HVAC/plumbing page with online booking and trust building.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/layouts/page-home.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/page-home.tsx"
+        },
+        {
+          "path": "registry/blocks/service/booking-scheduler.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/booking-scheduler.tsx"
+        },
+        {
+          "path": "registry/blocks/service/contact-info.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/contact-info.tsx"
+        },
+        {
+          "path": "registry/blocks/misc/faq-cards.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/faq-cards.tsx"
+        },
+        {
+          "path": "registry/blocks/footers/footer-soft.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-soft.tsx"
+        },
+        {
+          "path": "registry/blocks/service/guarantee.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/guarantee.tsx"
+        },
+        {
+          "path": "registry/blocks/headers/header-soft.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-soft.tsx"
+        },
+        {
+          "path": "registry/blocks/heroes/hero-soft.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-soft.tsx"
+        },
+        {
+          "path": "registry/blocks/service/process-steps.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/process-steps.tsx"
+        },
+        {
+          "path": "registry/blocks/service/service-area.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/service-area.tsx"
+        },
+        {
+          "path": "registry/blocks/testimonials/testimonials-stars.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-stars.tsx"
+        },
+        {
+          "path": "registry/blocks/service/trust-badges.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/trust-badges.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calc-material-estimator",
+      "type": "registry:block",
+      "title": "Material estimator",
+      "description": "Area in, units + cost out; mulch/paint/roofing/sod/gravel.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "slider"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/calculators/calc-material-estimator.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/calc-material-estimator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calc-solar-savings",
+      "type": "registry:block",
+      "title": "Solar savings",
+      "description": "Monthly bill + sun exposure → payback and 25-yr savings.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "label",
+        "slider"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/calculators/calc-solar-savings.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/calc-solar-savings.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calc-affordability",
+      "type": "registry:block",
+      "title": "Affordability calculator",
+      "description": "Income/debts/rate → home price you qualify for.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "slider"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/calculators/calc-affordability.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/calc-affordability.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calc-margin-markup",
+      "type": "registry:block",
+      "title": "Margin / markup",
+      "description": "Cost + target → sell price; toggle margin vs markup.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "input",
+        "label",
+        "slider"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/calculators/calc-margin-markup.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/calc-margin-markup.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calc-savings-growth",
+      "type": "registry:block",
+      "title": "Savings growth",
+      "description": "Compound interest over time with a live area chart.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "label",
+        "slider"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/calculators/calc-savings-growth.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/calc-savings-growth.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calc-quote-builder",
+      "type": "registry:block",
+      "title": "Quote builder",
+      "description": "Line-item quote generator with rush fee + tax totals.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/calculators/calc-quote-builder.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/calc-quote-builder.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-auth",
+      "type": "registry:block",
+      "title": "Auth card",
+      "description": "Tabbed sign-in / create-account with social buttons.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/forms/form-auth.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-auth.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-checkout",
+      "type": "registry:block",
+      "title": "Checkout",
+      "description": "Contact + card fields beside a sticky order summary.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/forms/form-checkout.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-checkout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-feedback",
+      "type": "registry:block",
+      "title": "Feedback / NPS",
+      "description": "0-10 recommend scale with comment and thank-you state.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "label",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/forms/form-feedback.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-feedback.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-application",
+      "type": "registry:block",
+      "title": "Job application",
+      "description": "Careers form with role chips and a file-upload affordance.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/forms/form-application.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-application.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-search-filter",
+      "type": "registry:block",
+      "title": "Search + filter",
+      "description": "Faceted finder: query, location, service chips, sort.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/forms/form-search-filter.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-search-filter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-rfq",
+      "type": "registry:block",
+      "title": "Request for quote",
+      "description": "Structured multi-section RFQ for trades.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/forms/form-rfq.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-rfq.tsx"
+        }
+      ]
+    },
+    {
+      "name": "parallax-hero",
+      "type": "registry:block",
+      "title": "Parallax hero",
+      "description": "Layered foreground/background drift on scroll.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/parallax/parallax-hero.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/parallax-hero.tsx"
+        }
+      ]
+    },
+    {
+      "name": "parallax-banner",
+      "type": "registry:block",
+      "title": "Parallax banner",
+      "description": "Statement band whose background drifts as it passes.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/parallax/parallax-banner.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/parallax-banner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sticky-scroll-features",
+      "type": "registry:block",
+      "title": "Sticky scroll features",
+      "description": "Pinned visual + stepped copy scrollytelling.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/parallax/sticky-scroll-features.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/sticky-scroll-features.tsx"
+        }
+      ]
+    },
+    {
+      "name": "horizontal-scroll-gallery",
+      "type": "registry:block",
+      "title": "Horizontal scroll gallery",
+      "description": "Vertical scroll pans a horizontal row of project cards.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/parallax/horizontal-scroll-gallery.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/horizontal-scroll-gallery.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-sticky-bar",
+      "type": "registry:block",
+      "title": "Sticky CTA bar",
+      "description": "Dismissible bar pinned to the bottom of the viewport.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-sticky-bar.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-sticky-bar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-split",
+      "type": "registry:block",
+      "title": "Split CTA",
+      "description": "Offer copy beside a media panel with an editorial divider.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-split.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-split.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-editorial",
+      "type": "registry:block",
+      "title": "Editorial CTA",
+      "description": "One oversized serif statement, one action.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-editorial.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-editorial.tsx"
+        }
+      ]
+    },
+    {
+      "name": "header-mega",
+      "type": "registry:block",
+      "title": "Mega-menu header",
+      "description": "Hover/tap reveals a panel of linked features.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/headers/header-mega.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-mega.tsx"
+        }
+      ]
+    },
+    {
+      "name": "header-centered",
+      "type": "registry:block",
+      "title": "Centered header",
+      "description": "Serif wordmark flanked by split navigation.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/headers/header-centered.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-centered.tsx"
+        }
+      ]
+    },
+    {
+      "name": "header-app",
+      "type": "registry:block",
+      "title": "App header",
+      "description": "SaaS top bar: workspace switcher, search, avatar, tabs.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/headers/header-app.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-app.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-minimal",
+      "type": "registry:block",
+      "title": "Minimal footer",
+      "description": "Wordmark, compact link row, copyright on one band.",
+      "files": [
+        {
+          "path": "registry/blocks/footers/footer-minimal.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-minimal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-mega",
+      "type": "registry:block",
+      "title": "Mega footer",
+      "description": "Sitemap columns with an inline newsletter.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/footers/footer-mega.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-mega.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-local",
+      "type": "registry:block",
+      "title": "Local footer",
+      "description": "Service-business NAP, hours, badges, socials.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/footers/footer-local.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-local.tsx"
+        }
+      ]
+    },
+    {
+      "name": "theme-editorial",
+      "type": "registry:theme",
+      "title": "Editorial theme",
+      "description": "Ink on warm cream with a vermilion primary. Pair with a serif like Fraunces.",
+      "cssVars": {
+        "light": {
+          "background": "#f7f3ec",
+          "foreground": "#211d16",
+          "card": "#fdfbf6",
+          "card-foreground": "#211d16",
+          "popover": "#fdfbf6",
+          "popover-foreground": "#211d16",
+          "primary": "#b3401f",
+          "primary-foreground": "#f7f3ec",
+          "secondary": "#ece5d6",
+          "secondary-foreground": "#211d16",
+          "muted": "#ece5d6",
+          "muted-foreground": "#6f675a",
+          "accent": "#ece5d6",
+          "accent-foreground": "#211d16",
+          "destructive": "#991b1b",
+          "border": "#d9d0bd",
+          "input": "#d9d0bd",
+          "ring": "#211d16",
+          "radius": "0.125rem"
+        }
+      }
+    },
+    {
+      "name": "theme-brutal",
+      "type": "registry:theme",
+      "title": "Brutal theme",
+      "description": "Bone, black borders, and a chartreuse accent. Zero radius everywhere.",
+      "cssVars": {
+        "light": {
+          "background": "#f2f0e6",
+          "foreground": "#0c0c0c",
+          "card": "#fbfaf4",
+          "card-foreground": "#0c0c0c",
+          "popover": "#fbfaf4",
+          "popover-foreground": "#0c0c0c",
+          "primary": "#0c0c0c",
+          "primary-foreground": "#f2f0e6",
+          "secondary": "#e2dfd0",
+          "secondary-foreground": "#0c0c0c",
+          "muted": "#e2dfd0",
+          "muted-foreground": "#4d4a40",
+          "accent": "#d9f526",
+          "accent-foreground": "#0c0c0c",
+          "destructive": "#e11d48",
+          "border": "#0c0c0c",
+          "input": "#0c0c0c",
+          "ring": "#0c0c0c",
+          "radius": "0rem"
+        }
+      }
+    },
+    {
+      "name": "theme-soft",
+      "type": "registry:theme",
+      "title": "Soft theme",
+      "description": "Mint-tinted calm with a teal primary and generous radius.",
+      "cssVars": {
+        "light": {
+          "background": "#f5faf7",
+          "foreground": "#16302b",
+          "card": "#ffffff",
+          "card-foreground": "#16302b",
+          "popover": "#ffffff",
+          "popover-foreground": "#16302b",
+          "primary": "#0f8a74",
+          "primary-foreground": "#ffffff",
+          "secondary": "#e3f2ec",
+          "secondary-foreground": "#114b40",
+          "muted": "#e9f3ee",
+          "muted-foreground": "#5c7470",
+          "accent": "#fdecd9",
+          "accent-foreground": "#8a4412",
+          "destructive": "#dc2626",
+          "border": "#d7e7df",
+          "input": "#d7e7df",
+          "ring": "#0f8a74",
+          "radius": "1.1rem"
+        }
+      }
+    },
+    {
+      "name": "theme-landscape",
+      "type": "registry:theme",
+      "title": "Landscape theme",
+      "description": "Earthy leaf green on warm sage with a terracotta accent. For landscapers, lawn care, and tree services.",
+      "cssVars": {
+        "light": {
+          "background": "#f4f6ee",
+          "foreground": "#1d2a1a",
+          "card": "#fbfcf7",
+          "card-foreground": "#1d2a1a",
+          "popover": "#fbfcf7",
+          "popover-foreground": "#1d2a1a",
+          "primary": "#3f7a33",
+          "primary-foreground": "#f4f6ee",
+          "secondary": "#e3ebd6",
+          "secondary-foreground": "#27361f",
+          "muted": "#e7edda",
+          "muted-foreground": "#5d6b51",
+          "accent": "#c8763a",
+          "accent-foreground": "#ffffff",
+          "destructive": "#b91c1c",
+          "border": "#d3ddc4",
+          "input": "#d3ddc4",
+          "ring": "#3f7a33",
+          "radius": "0.5rem"
+        }
+      }
+    },
+    {
+      "name": "theme-trade",
+      "type": "registry:theme",
+      "title": "Trade theme",
+      "description": "Steel navy with a high-vis safety-orange accent and tight radius. For roofers, contractors, and construction.",
+      "cssVars": {
+        "light": {
+          "background": "#f4f5f7",
+          "foreground": "#0f1722",
+          "card": "#ffffff",
+          "card-foreground": "#0f1722",
+          "popover": "#ffffff",
+          "popover-foreground": "#0f1722",
+          "primary": "#16344f",
+          "primary-foreground": "#f4f5f7",
+          "secondary": "#e2e6ec",
+          "secondary-foreground": "#16344f",
+          "muted": "#e2e6ec",
+          "muted-foreground": "#51606f",
+          "accent": "#f5610a",
+          "accent-foreground": "#ffffff",
+          "destructive": "#dc2626",
+          "border": "#cfd6df",
+          "input": "#cfd6df",
+          "ring": "#16344f",
+          "radius": "0.25rem"
+        }
+      }
+    },
+    {
+      "name": "theme-services",
+      "type": "registry:theme",
+      "title": "Services theme",
+      "description": "Trustworthy blue with a warm amber call-to-action. For HVAC, plumbing, electrical, and home services.",
+      "cssVars": {
+        "light": {
+          "background": "#f1f6fb",
+          "foreground": "#0c2740",
+          "card": "#ffffff",
+          "card-foreground": "#0c2740",
+          "popover": "#ffffff",
+          "popover-foreground": "#0c2740",
+          "primary": "#1668c4",
+          "primary-foreground": "#ffffff",
+          "secondary": "#dceaf7",
+          "secondary-foreground": "#0c2740",
+          "muted": "#e3eef8",
+          "muted-foreground": "#4a6076",
+          "accent": "#f5a524",
+          "accent-foreground": "#3a2600",
+          "destructive": "#dc2626",
+          "border": "#cadcec",
+          "input": "#cadcec",
+          "ring": "#1668c4",
+          "radius": "0.75rem"
+        }
+      }
+    }
+  ]
+}

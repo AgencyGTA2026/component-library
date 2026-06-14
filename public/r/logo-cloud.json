@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "logo-cloud",
+  "title": "Logo cloud",
+  "description": "Quiet 'trusted by' wordmark band.",
+  "files": [
+    {
+      "path": "registry/blocks/features/logo-cloud.tsx",
+      "content": "const LOGOS = [\n  \"Northwind\",\n  \"Lumen\",\n  \"Pinewood\",\n  \"Vertex\",\n  \"Almanac\",\n  \"Soapbox\",\n  \"Cobalt\",\n  \"Maple & Co\",\n  \"Driftwell\",\n  \"Quantive\",\n]\n\n/**\n * Logo cloud — a quiet \"trusted by\" band. Swap the text wordmarks for\n * client <img> logos; the muted treatment keeps them from shouting.\n */\nexport function LogoCloud() {\n  return (\n    <section className=\"bg-background px-5 py-16 text-foreground sm:px-8\">\n      <div className=\"mx-auto max-w-6xl\">\n        <p className=\"text-center text-sm font-medium text-muted-foreground\">\n          Trusted by teams who&apos;ve outgrown the template.\n        </p>\n        <div className=\"mt-10 grid grid-cols-2 items-center gap-x-8 gap-y-8 sm:grid-cols-3 lg:grid-cols-5\">\n          {LOGOS.map((logo) => (\n            <span\n              key={logo}\n              className=\"text-center font-serif text-xl font-semibold tracking-tight text-muted-foreground/50 transition-colors hover:text-foreground\"\n            >\n              {logo}\n            </span>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/logo-cloud.tsx"
+    }
+  ],
+  "type": "registry:block"
+}
