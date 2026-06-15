@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stats-kinetic",
+  "title": "Kinetic stats",
+  "description": "Four big numbers that count up when scrolled into view.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/misc/stats-kinetic.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { motion, useInView, useReducedMotion, useSpring, useTransform } from \"framer-motion\"\n\nconst STATS = [\n  { to: 240, suffix: \"+\", label: \"Projects shipped\" },\n  { to: 19, suffix: \"\", label: \"Awards & features\" },\n  { to: 98, suffix: \"%\", label: \"Client return rate\" },\n  { to: 12, suffix: \"yrs\", label: \"In motion\" },\n]\n\nfunction CountUp({ to, suffix }: { to: number; suffix: string }) {\n  const ref = React.useRef<HTMLSpanElement>(null)\n  const inView = useInView(ref, { once: true, margin: \"-60px\" })\n  const reduce = useReducedMotion()\n  const spring = useSpring(0, { stiffness: 55, damping: 18 })\n  const text = useTransform(spring, (v) => `${Math.round(v)}${suffix}`)\n\n  React.useEffect(() => {\n    if (!inView) return\n    if (reduce) spring.jump(to)\n    else spring.set(to)\n  }, [inView, reduce, spring, to])\n\n  return (\n    <motion.span ref={ref} className=\"tabular-nums\">\n      {text}\n    </motion.span>\n  )\n}\n\n/**\n * Kinetic stats — four numbers that count up when scrolled into view.\n */\nexport function StatsKinetic() {\n  return (\n    <section className=\"bg-background px-5 py-20 text-foreground sm:px-8\">\n      <div className=\"mx-auto grid max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-4\">\n        {STATS.map((s, i) => (\n          <motion.div\n            key={s.label}\n            initial={{ opacity: 0, y: 16 }}\n            whileInView={{ opacity: 1, y: 0 }}\n            viewport={{ once: true }}\n            transition={{ delay: i * 0.08 }}\n            className=\"border-t-2 border-primary pt-5\"\n          >\n            <p className=\"text-[clamp(2.5rem,7vw,4.5rem)] font-black leading-none tracking-tight\">\n              <CountUp to={s.to} suffix={s.suffix} />\n            </p>\n            <p className=\"mt-2 text-sm font-semibold tracking-wide uppercase text-muted-foreground\">\n              {s.label}\n            </p>\n          </motion.div>\n        ))}\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/stats-kinetic.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

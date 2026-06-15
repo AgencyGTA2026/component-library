@@ -15,6 +15,7 @@ const VIBES = [
   { id: "bauhaus", label: "Bauhaus", swatch: "#e63422", note: "primary color, geometry, heavy type" },
   { id: "cyber", label: "Cyber", swatch: "#22d3ee", note: "neon cyan & magenta on slate, mono, glow" },
   { id: "studio", label: "Studio", swatch: "#c98e86", note: "blush & stone — airy modernist calm" },
+  { id: "kinetic", label: "Kinetic", swatch: "#ff4d2e", note: "bold motion type, springy interactions — light" },
 ]
 
 export default function Home() {

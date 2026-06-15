@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "parallax-kinetic",
+  "title": "Kinetic parallax",
+  "description": "A statement whose two lines slide past each other on scroll.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/parallax/parallax-kinetic.tsx",
+      "content": "\"use client\"\n\nimport { useRef } from \"react\"\nimport { motion, useScroll, useTransform } from \"framer-motion\"\n\n/**\n * Kinetic parallax — a statement whose two lines slide past each other in opposite\n * directions as the section scrolls through the viewport.\n */\nexport function ParallaxKinetic() {\n  const ref = useRef<HTMLDivElement>(null)\n  const { scrollYProgress } = useScroll({ target: ref, offset: [\"start end\", \"end start\"] })\n\n  const lineA = useTransform(scrollYProgress, [0, 1], [\"12%\", \"-12%\"])\n  const lineB = useTransform(scrollYProgress, [0, 1], [\"-14%\", \"14%\"])\n  const accent = useTransform(scrollYProgress, [0, 1], [\"-25%\", \"25%\"])\n\n  return (\n    <section\n      ref={ref}\n      className=\"relative grid min-h-[420px] place-items-center overflow-hidden bg-foreground px-5 py-24 text-background\"\n    >\n      <div className=\"w-full max-w-6xl text-center font-black uppercase leading-[0.85] tracking-tight\">\n        <motion.p style={{ x: lineA }} className=\"text-[clamp(2.5rem,12vw,9rem)] whitespace-nowrap\">\n          We don&apos;t do\n        </motion.p>\n        <motion.p\n          style={{ x: lineB }}\n          className=\"text-[clamp(2.5rem,12vw,9rem)] whitespace-nowrap text-primary\"\n        >\n          static.\n        </motion.p>\n      </div>\n\n      <motion.div\n        aria-hidden\n        style={{ x: accent }}\n        className=\"pointer-events-none absolute -bottom-6 left-1/2 h-2 w-[60%] -translate-x-1/2 rounded-full bg-accent\"\n      />\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/parallax-kinetic.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

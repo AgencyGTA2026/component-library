@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "feature-kinetic",
+  "title": "Kinetic features",
+  "description": "Alternating rows that slide in from opposite sides on scroll.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/features/feature-kinetic.tsx",
+      "content": "\"use client\"\n\nimport { motion, useReducedMotion } from \"framer-motion\"\nimport { Check } from \"lucide-react\"\n\nconst ROWS = [\n  {\n    kicker: \"01 — Discovery\",\n    title: \"We pin down the feeling first.\",\n    body: \"Before a single keyframe, we agree on tone, pacing, and the one moment people should remember.\",\n    points: [\"Moodboards & motion references\", \"Tone and tempo workshop\", \"Shot-by-shot direction\"],\n  },\n  {\n    kicker: \"02 — Design\",\n    title: \"Frames worth pausing on.\",\n    body: \"Every still is composed as if it were the poster — type, color, and rhythm locked before animation.\",\n    points: [\"Style frames & boards\", \"Type and color systems\", \"Sound-led timing\"],\n  },\n  {\n    kicker: \"03 — Motion\",\n    title: \"Then we make it move.\",\n    body: \"Springs, eases, and hand-tuned curves — animation that feels intentional, never templated.\",\n    points: [\"Hand-tuned easing\", \"2D & 3D animation\", \"Final grade & delivery\"],\n  },\n]\n\n/**\n * Kinetic feature — alternating rows that slide in from opposite sides on scroll.\n */\nexport function FeatureKinetic() {\n  const reduce = useReducedMotion()\n\n  return (\n    <section className=\"bg-secondary px-5 py-20 text-foreground sm:px-8\">\n      <div className=\"mx-auto max-w-5xl space-y-16\">\n        {ROWS.map((row, i) => {\n          const fromLeft = i % 2 === 0\n          return (\n            <motion.div\n              key={row.kicker}\n              initial={reduce ? undefined : { opacity: 0, x: fromLeft ? -60 : 60 }}\n              whileInView={reduce ? undefined : { opacity: 1, x: 0 }}\n              viewport={{ once: true, margin: \"-80px\" }}\n              transition={{ type: \"spring\", stiffness: 80, damping: 18 }}\n              className={`grid items-center gap-8 sm:grid-cols-2 ${fromLeft ? \"\" : \"sm:[&>*:first-child]:order-2\"}`}\n            >\n              <div>\n                <p className=\"text-xs font-bold tracking-[0.2em] uppercase text-primary\">{row.kicker}</p>\n                <h3 className=\"mt-3 text-[clamp(1.6rem,4vw,2.4rem)] font-black leading-tight tracking-tight\">\n                  {row.title}\n                </h3>\n                <p className=\"mt-4 text-muted-foreground\">{row.body}</p>\n              </div>\n              <ul className=\"grid gap-3 rounded-[calc(var(--radius)+4px)] border border-border bg-card p-6\">\n                {row.points.map((p) => (\n                  <li key={p} className=\"flex items-center gap-3 font-medium\">\n                    <span className=\"grid size-6 shrink-0 place-items-center rounded-full bg-primary/15 text-primary\">\n                      <Check className=\"size-3.5\" />\n                    </span>\n                    {p}\n                  </li>\n                ))}\n              </ul>\n            </motion.div>\n          )\n        })}\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/feature-kinetic.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

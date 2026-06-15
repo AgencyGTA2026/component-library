@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "testimonials-kinetic",
+  "title": "Kinetic testimonials",
+  "description": "Two marquee rows of quote cards; hover pauses a row.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/testimonials/testimonials-kinetic.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { motion, useReducedMotion } from \"framer-motion\"\nimport { Quote } from \"lucide-react\"\n\nconst QUOTES = [\n  { body: \"They turned a dry product update into the thing everyone shared internally.\", who: \"Priya N.\", role: \"VP Brand, Lattice\" },\n  { body: \"The title sequence got applause at the premiere. Actual applause.\", who: \"Marcus B.\", role: \"Director, Field Films\" },\n  { body: \"Fastest turnaround we've had — and the most on-brand.\", who: \"Dana R.\", role: \"Head of Design, Plume\" },\n  { body: \"Every frame felt deliberate. You can tell they sweat the easing.\", who: \"Theo K.\", role: \"Founder, Cadence\" },\n  { body: \"Our launch video doubled completion rate over the old one.\", who: \"Sofia L.\", role: \"Growth, Northwind\" },\n]\n\nfunction Row({ reverse }: { reverse?: boolean }) {\n  const reduce = useReducedMotion()\n  const [paused, setPaused] = React.useState(false)\n  return (\n    <div\n      className=\"flex overflow-hidden\"\n      onMouseEnter={() => setPaused(true)}\n      onMouseLeave={() => setPaused(false)}\n    >\n      <motion.div\n        animate={reduce || paused ? undefined : { x: reverse ? [\"-50%\", \"0%\"] : [\"0%\", \"-50%\"] }}\n        transition={{ duration: 28, repeat: Infinity, ease: \"linear\" }}\n        className=\"flex w-max gap-5 pr-5\"\n      >\n        {[...QUOTES, ...QUOTES].map((q, i) => (\n          <figure\n            key={i}\n            className=\"w-[320px] shrink-0 rounded-[calc(var(--radius)+4px)] border border-border bg-card p-6\"\n          >\n            <Quote className=\"size-6 text-primary\" />\n            <blockquote className=\"mt-3 font-medium leading-relaxed\">{q.body}</blockquote>\n            <figcaption className=\"mt-4 text-sm\">\n              <span className=\"font-bold\">{q.who}</span>{\" \"}\n              <span className=\"text-muted-foreground\">· {q.role}</span>\n            </figcaption>\n          </figure>\n        ))}\n      </motion.div>\n    </div>\n  )\n}\n\n/**\n * Kinetic testimonials — two marquee rows of quote cards drifting in opposite\n * directions. Hover pauses the row under the cursor.\n */\nexport function TestimonialsKinetic() {\n  return (\n    <section className=\"overflow-hidden bg-secondary py-20 text-foreground\">\n      <div className=\"mx-auto mb-10 max-w-6xl px-5 sm:px-8\">\n        <h2 className=\"max-w-2xl text-[clamp(1.9rem,5vw,3rem)] font-black leading-tight tracking-tight\">\n          Teams keep coming back for the motion.\n        </h2>\n      </div>\n      <div className=\"flex flex-col gap-5\">\n        <Row />\n        <Row reverse />\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/testimonials-kinetic.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "footer-kinetic",
+  "title": "Kinetic footer",
+  "description": "Intentionally still — a bold wordmark over tidy link columns.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/footers/footer-kinetic.tsx",
+      "content": "import Link from \"next/link\"\nimport { Play } from \"lucide-react\"\n\nconst COLUMNS = [\n  { title: \"Studio\", links: [\"Work\", \"About\", \"Process\", \"Careers\"] },\n  { title: \"Services\", links: [\"Brand films\", \"Title design\", \"Product motion\", \"3D\"] },\n  { title: \"Connect\", links: [\"Instagram\", \"Vimeo\", \"LinkedIn\", \"Newsletter\"] },\n]\n\n/**\n * Kinetic footer — intentionally still. A bold wordmark over tidy link columns.\n */\nexport function FooterKinetic() {\n  return (\n    <footer className=\"bg-foreground px-5 py-16 text-background sm:px-8\">\n      <div className=\"mx-auto max-w-6xl\">\n        <div className=\"grid gap-10 border-b border-background/15 pb-12 lg:grid-cols-[1.6fr_1fr_1fr_1fr]\">\n          <div>\n            <div className=\"flex items-center gap-2\">\n              <span className=\"grid size-8 place-items-center rounded-[var(--radius)] bg-primary text-primary-foreground\">\n                <Play className=\"size-4\" />\n              </span>\n              <span className=\"text-2xl font-black tracking-tight uppercase\">Tempo</span>\n            </div>\n            <p className=\"mt-4 max-w-xs text-background/60\">\n              A motion design studio for brands that refuse to sit still.\n            </p>\n          </div>\n\n          {COLUMNS.map((col) => (\n            <div key={col.title}>\n              <p className=\"text-xs font-bold tracking-[0.2em] uppercase text-background/50\">{col.title}</p>\n              <ul className=\"mt-4 space-y-2.5\">\n                {col.links.map((l) => (\n                  <li key={l}>\n                    <Link href=\"#\" className=\"text-sm text-background/75 transition-colors hover:text-background\">\n                      {l}\n                    </Link>\n                  </li>\n                ))}\n              </ul>\n            </div>\n          ))}\n        </div>\n\n        <div className=\"flex flex-col items-start justify-between gap-2 pt-6 text-xs tracking-wide uppercase text-background/45 sm:flex-row sm:items-center\">\n          <span>© {new Date().getFullYear()} Tempo Studio</span>\n          <span>Made in motion</span>\n        </div>\n      </div>\n    </footer>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/footer-kinetic.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

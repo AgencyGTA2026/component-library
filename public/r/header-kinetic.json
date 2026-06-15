@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "header-kinetic",
+  "title": "Kinetic header",
+  "description": "A bar that springs compact on scroll, with underline-sweep nav links.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/headers/header-kinetic.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport Link from \"next/link\"\nimport { motion, useScroll, useMotionValueEvent } from \"framer-motion\"\nimport { Menu, X, Play } from \"lucide-react\"\n\nconst LINKS = [\"Work\", \"Studio\", \"Motion\", \"Contact\"]\n\n/**\n * Kinetic header — a bar that compresses on scroll, with underline-sweep nav links.\n */\nexport function HeaderKinetic() {\n  const [open, setOpen] = React.useState(false)\n  const [scrolled, setScrolled] = React.useState(false)\n  const { scrollY } = useScroll()\n\n  useMotionValueEvent(scrollY, \"change\", (y) => setScrolled(y > 12))\n\n  return (\n    <header className=\"sticky top-0 z-40 bg-background/85 text-foreground backdrop-blur-md\">\n      <motion.div\n        animate={{ paddingTop: scrolled ? 10 : 20, paddingBottom: scrolled ? 10 : 20 }}\n        transition={{ type: \"spring\", stiffness: 320, damping: 32 }}\n        className=\"mx-auto flex max-w-6xl items-center justify-between border-b border-border px-5 sm:px-8\"\n      >\n        <Link href=\"#\" className=\"flex items-center gap-2\">\n          <span className=\"grid size-8 place-items-center rounded-[var(--radius)] bg-primary text-primary-foreground\">\n            <Play className=\"size-4\" />\n          </span>\n          <span className=\"text-xl font-black tracking-tight uppercase\">Tempo</span>\n        </Link>\n\n        <nav className=\"hidden items-center gap-8 md:flex\">\n          {LINKS.map((l) => (\n            <Link\n              key={l}\n              href=\"#\"\n              className=\"group relative text-sm font-semibold text-foreground\"\n            >\n              {l}\n              <span className=\"absolute -bottom-1 left-0 h-0.5 w-full origin-left scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100\" />\n            </Link>\n          ))}\n        </nav>\n\n        <div className=\"flex items-center gap-3\">\n          <Link\n            href=\"#\"\n            className=\"hidden rounded-full bg-foreground px-5 py-2 text-sm font-semibold text-background transition-transform hover:-translate-y-0.5 sm:block\"\n          >\n            Start a project\n          </Link>\n          <button onClick={() => setOpen((o) => !o)} aria-label=\"Menu\" className=\"md:hidden\">\n            {open ? <X className=\"size-6\" /> : <Menu className=\"size-6\" />}\n          </button>\n        </div>\n      </motion.div>\n\n      {open && (\n        <nav className=\"grid border-b border-border md:hidden\">\n          {LINKS.map((l) => (\n            <Link\n              key={l}\n              href=\"#\"\n              className=\"border-b border-border px-5 py-3 text-sm font-semibold last:border-b-0\"\n            >\n              {l}\n            </Link>\n          ))}\n        </nav>\n      )}\n    </header>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/header-kinetic.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

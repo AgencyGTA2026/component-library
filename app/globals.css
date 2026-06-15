@@ -316,6 +316,32 @@
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
 }
 
+/* Kinetic — bright, high-energy motion design: warm white, blaze orange, electric blue. */
+
+[data-vibe="kinetic"] {
+  --background: #f4f3ee;
+  --foreground: #14130f;
+  --card: #ffffff;
+  --card-foreground: #14130f;
+  --popover: #ffffff;
+  --popover-foreground: #14130f;
+  --primary: #ff4d2e;
+  --primary-foreground: #ffffff;
+  --secondary: #ece9e1;
+  --secondary-foreground: #14130f;
+  --muted: #ece9e1;
+  --muted-foreground: #6b6862;
+  --accent: #2e5cff;
+  --accent-foreground: #ffffff;
+  --destructive: #d23b2a;
+  --border: #e2ded3;
+  --input: #e2ded3;
+  --ring: #ff4d2e;
+  --radius: 0.6rem;
+  --font-body: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

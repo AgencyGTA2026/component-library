@@ -252,6 +252,17 @@ import { ServiceStudio } from "@/registry/blocks/service/service-studio"
 import { FaqStudio } from "@/registry/blocks/misc/faq-studio"
 import { FooterStudio } from "@/registry/blocks/footers/footer-studio"
 import { PageStudio } from "@/registry/blocks/layouts/page-studio"
+import { HeaderKinetic } from "@/registry/blocks/headers/header-kinetic"
+import { HeroKinetic } from "@/registry/blocks/heroes/hero-kinetic"
+import { BentoKinetic } from "@/registry/blocks/bento/bento-kinetic"
+import { FeatureKinetic } from "@/registry/blocks/features/feature-kinetic"
+import { ParallaxKinetic } from "@/registry/blocks/parallax/parallax-kinetic"
+import { StatsKinetic } from "@/registry/blocks/misc/stats-kinetic"
+import { TestimonialsKinetic } from "@/registry/blocks/testimonials/testimonials-kinetic"
+import { PricingKinetic } from "@/registry/blocks/pricing/pricing-kinetic"
+import { CtaKinetic } from "@/registry/blocks/cta/cta-kinetic"
+import { FooterKinetic } from "@/registry/blocks/footers/footer-kinetic"
+import { PageKinetic } from "@/registry/blocks/layouts/page-kinetic"
 
 export type Vibe =
   | "editorial"
@@ -265,6 +276,7 @@ export type Vibe =
   | "bauhaus"
   | "cyber"
   | "studio"
+  | "kinetic"
 
 export interface CategoryMeta {
   slug: string
@@ -589,6 +601,18 @@ export const BLOCKS: BlockMeta[] = [
   { name: "faq-studio", title: "Studio FAQ", category: "misc", vibe: "studio", description: "A calm hairline accordion with a soft blush toggle.", previewHeight: 620, component: FaqStudio },
   { name: "footer-studio", title: "Studio footer", category: "footers", vibe: "studio", description: "A calm serif wordmark over quiet hairline link columns.", previewHeight: 520, component: FooterStudio },
   { name: "page-studio", title: "Pilates studio site (studio)", category: "layouts", vibe: "studio", description: "Calm modernist one-pager from nine studio blocks.", previewHeight: 900, component: PageStudio },
+  // kinetic
+  { name: "header-kinetic", title: "Kinetic header", category: "headers", vibe: "kinetic", description: "A bar that springs compact on scroll, with underline-sweep nav links.", previewHeight: 200, component: HeaderKinetic },
+  { name: "hero-kinetic", title: "Kinetic hero", category: "heroes", vibe: "kinetic", description: "An oversized headline whose words spring up into place, a looping service marquee, and a magnetic CTA.", previewHeight: 760, component: HeroKinetic },
+  { name: "bento-kinetic", title: "Kinetic bento", category: "bento", vibe: "kinetic", description: "A capability grid that springs in on scroll, lifts on hover, and counts a metric up.", previewHeight: 720, component: BentoKinetic },
+  { name: "feature-kinetic", title: "Kinetic features", category: "features", vibe: "kinetic", description: "Alternating rows that slide in from opposite sides on scroll.", previewHeight: 1100, component: FeatureKinetic },
+  { name: "parallax-kinetic", title: "Kinetic parallax", category: "parallax", vibe: "kinetic", description: "A statement whose two lines slide past each other on scroll.", previewHeight: 520, component: ParallaxKinetic },
+  { name: "stats-kinetic", title: "Kinetic stats", category: "misc", vibe: "kinetic", description: "Four big numbers that count up when scrolled into view.", previewHeight: 360, component: StatsKinetic },
+  { name: "testimonials-kinetic", title: "Kinetic testimonials", category: "testimonials", vibe: "kinetic", description: "Two marquee rows of quote cards drifting opposite ways; hover pauses a row.", previewHeight: 520, component: TestimonialsKinetic },
+  { name: "pricing-kinetic", title: "Kinetic pricing", category: "pricing", vibe: "kinetic", description: "A calm rate card whose only motion is a spring billing toggle and hover lift.", previewHeight: 720, component: PricingKinetic },
+  { name: "cta-kinetic", title: "Kinetic CTA", category: "cta", vibe: "kinetic", description: "A closing line whose final word cycles, beside a magnetic button.", previewHeight: 420, component: CtaKinetic },
+  { name: "footer-kinetic", title: "Kinetic footer", category: "footers", vibe: "kinetic", description: "Intentionally still — a bold wordmark over tidy link columns.", previewHeight: 480, component: FooterKinetic },
+  { name: "page-kinetic", title: "Motion studio site (kinetic)", category: "layouts", vibe: "kinetic", description: "An animation-forward one-pager from ten kinetic blocks.", previewHeight: 900, component: PageKinetic },
 ]
 
 export interface DemoMeta {
@@ -612,6 +636,7 @@ export const DEMOS: DemoMeta[] = [
   { vibe: "bauhaus", business: "Werkbund", industry: "Design school & poster studio", tagline: "Bauhaus — primary color, geometry, heavy type", component: PageBauhaus },
   { vibe: "cyber", business: "Nexen", industry: "Neural OS / netrunner platform", tagline: "Cyber — neon on slate, mono, glow", component: PageCyber },
   { vibe: "studio", business: "Méthode", industry: "Pilates & movement studio", tagline: "Studio — blush & stone, airy minimalist calm", component: PageStudio },
+  { vibe: "kinetic", business: "Tempo", industry: "Motion design studio", tagline: "Kinetic — bold motion typography, springy interactions", component: PageKinetic },
 ]
 
 export function getDemo(vibe: string) {

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-kinetic",
+  "title": "Kinetic CTA",
+  "description": "A closing line whose final word cycles, beside a magnetic button.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/cta/cta-kinetic.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { motion, AnimatePresence, useReducedMotion } from \"framer-motion\"\nimport { ArrowUpRight } from \"lucide-react\"\n\nconst WORDS = [\"move\", \"land\", \"convert\", \"stick\"]\n\n/** A button that leans toward the cursor. */\nfunction MagneticButton({ children }: { children: React.ReactNode }) {\n  const ref = React.useRef<HTMLAnchorElement>(null)\n  const reduce = useReducedMotion()\n  const [pos, setPos] = React.useState({ x: 0, y: 0 })\n\n  function onMove(e: React.MouseEvent) {\n    if (reduce || !ref.current) return\n    const r = ref.current.getBoundingClientRect()\n    setPos({ x: (e.clientX - (r.left + r.width / 2)) * 0.35, y: (e.clientY - (r.top + r.height / 2)) * 0.35 })\n  }\n\n  return (\n    <motion.a\n      ref={ref}\n      href=\"#\"\n      onMouseMove={onMove}\n      onMouseLeave={() => setPos({ x: 0, y: 0 })}\n      animate={{ x: pos.x, y: pos.y }}\n      transition={{ type: \"spring\", stiffness: 240, damping: 16 }}\n      className=\"inline-flex items-center gap-2 rounded-full bg-primary px-9 py-4 text-base font-bold text-primary-foreground\"\n    >\n      {children}\n    </motion.a>\n  )\n}\n\n/**\n * Kinetic CTA — a closing line whose final word cycles through synonyms, beside a\n * magnetic primary button.\n */\nexport function CtaKinetic() {\n  const reduce = useReducedMotion()\n  const [i, setI] = React.useState(0)\n\n  React.useEffect(() => {\n    if (reduce) return\n    const id = setInterval(() => setI((n) => (n + 1) % WORDS.length), 2000)\n    return () => clearInterval(id)\n  }, [reduce])\n\n  return (\n    <section className=\"bg-accent px-5 py-24 text-accent-foreground sm:px-8\">\n      <div className=\"mx-auto flex max-w-5xl flex-col items-start gap-10 lg:flex-row lg:items-center lg:justify-between\">\n        <h2 className=\"text-[clamp(2.2rem,7vw,5rem)] font-black leading-[0.95] tracking-tight\">\n          Let&apos;s make it{\" \"}\n          <span className=\"relative inline-grid\">\n            <AnimatePresence mode=\"popLayout\" initial={false}>\n              <motion.span\n                key={WORDS[i]}\n                initial={reduce ? false : { y: \"100%\", opacity: 0 }}\n                animate={{ y: 0, opacity: 1 }}\n                exit={reduce ? undefined : { y: \"-100%\", opacity: 0 }}\n                transition={{ type: \"spring\", stiffness: 320, damping: 30 }}\n                className=\"col-start-1 row-start-1 underline decoration-[6px] underline-offset-[6px]\"\n              >\n                {WORDS[i]}.\n              </motion.span>\n            </AnimatePresence>\n          </span>\n        </h2>\n\n        <MagneticButton>\n          Start a project <ArrowUpRight className=\"size-5\" />\n        </MagneticButton>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/cta-kinetic.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

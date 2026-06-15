@@ -4769,6 +4769,240 @@
           "target": "components/blocks/footer-studio.tsx"
         }
       ]
+    },
+    {
+      "name": "header-kinetic",
+      "type": "registry:block",
+      "title": "Kinetic header",
+      "description": "A bar that springs compact on scroll, with underline-sweep nav links.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/headers/header-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-kinetic.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-kinetic",
+      "type": "registry:block",
+      "title": "Kinetic hero",
+      "description": "Oversized headline whose words spring up, a looping marquee, and a magnetic CTA.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/heroes/hero-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-kinetic.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bento-kinetic",
+      "type": "registry:block",
+      "title": "Kinetic bento",
+      "description": "A grid that springs in on scroll, lifts on hover, and counts a metric up.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/bento/bento-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-kinetic.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-kinetic",
+      "type": "registry:block",
+      "title": "Kinetic features",
+      "description": "Alternating rows that slide in from opposite sides on scroll.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/features/feature-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/feature-kinetic.tsx"
+        }
+      ]
+    },
+    {
+      "name": "parallax-kinetic",
+      "type": "registry:block",
+      "title": "Kinetic parallax",
+      "description": "A statement whose two lines slide past each other on scroll.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/parallax/parallax-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/parallax-kinetic.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stats-kinetic",
+      "type": "registry:block",
+      "title": "Kinetic stats",
+      "description": "Four big numbers that count up when scrolled into view.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/misc/stats-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats-kinetic.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-kinetic",
+      "type": "registry:block",
+      "title": "Kinetic testimonials",
+      "description": "Two marquee rows of quote cards; hover pauses a row.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/testimonials-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-kinetic.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-kinetic",
+      "type": "registry:block",
+      "title": "Kinetic pricing",
+      "description": "A calm rate card with a spring billing toggle and hover lift.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/pricing/pricing-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/pricing-kinetic.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-kinetic",
+      "type": "registry:block",
+      "title": "Kinetic CTA",
+      "description": "A closing line whose final word cycles, beside a magnetic button.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-kinetic.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-kinetic",
+      "type": "registry:block",
+      "title": "Kinetic footer",
+      "description": "Intentionally still — a bold wordmark over tidy link columns.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/footers/footer-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-kinetic.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-kinetic",
+      "type": "registry:block",
+      "title": "Motion studio site (kinetic)",
+      "description": "An animation-forward one-pager from ten kinetic blocks.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/layouts/page-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/page-kinetic.tsx"
+        },
+        {
+          "path": "registry/blocks/headers/header-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-kinetic.tsx"
+        },
+        {
+          "path": "registry/blocks/heroes/hero-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-kinetic.tsx"
+        },
+        {
+          "path": "registry/blocks/bento/bento-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-kinetic.tsx"
+        },
+        {
+          "path": "registry/blocks/features/feature-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/feature-kinetic.tsx"
+        },
+        {
+          "path": "registry/blocks/parallax/parallax-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/parallax-kinetic.tsx"
+        },
+        {
+          "path": "registry/blocks/misc/stats-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/stats-kinetic.tsx"
+        },
+        {
+          "path": "registry/blocks/testimonials/testimonials-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-kinetic.tsx"
+        },
+        {
+          "path": "registry/blocks/pricing/pricing-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/pricing-kinetic.tsx"
+        },
+        {
+          "path": "registry/blocks/cta/cta-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-kinetic.tsx"
+        },
+        {
+          "path": "registry/blocks/footers/footer-kinetic.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-kinetic.tsx"
+        }
+      ]
     }
   ]
 }
