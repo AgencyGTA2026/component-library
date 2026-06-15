@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "parallax-cyber",
+  "title": "Cyber parallax",
+  "description": "A neon statement over a perspective grid that drifts on scroll.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/parallax/parallax-cyber.tsx",
+      "content": "\"use client\"\n\nimport { useRef } from \"react\"\nimport { motion, useScroll, useTransform } from \"framer-motion\"\n\n/**\n * Cyber parallax — a neon statement over a perspective grid that drifts on scroll.\n */\nexport function ParallaxCyber() {\n  const ref = useRef<HTMLDivElement>(null)\n  const { scrollYProgress } = useScroll({ target: ref, offset: [\"start end\", \"end start\"] })\n\n  const grid = useTransform(scrollYProgress, [0, 1], [\"0%\", \"30%\"])\n  const glow = useTransform(scrollYProgress, [0, 0.5, 1], [0.25, 0.6, 0.25])\n\n  return (\n    <section\n      ref={ref}\n      className=\"relative grid min-h-[460px] place-items-center overflow-hidden border-b border-primary/20 bg-background px-5 py-24 text-foreground\"\n    >\n      <motion.div\n        aria-hidden\n        style={{ backgroundPositionY: grid }}\n        className=\"pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.12)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:linear-gradient(to_bottom,transparent,black,transparent)]\"\n      />\n      <motion.div\n        aria-hidden\n        style={{ opacity: glow }}\n        className=\"pointer-events-none absolute left-1/2 top-1/2 size-[55vw] max-w-[640px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,0,229,0.22),transparent_65%)]\"\n      />\n\n      <div className=\"relative max-w-3xl text-center\">\n        <p className=\"font-mono text-[11px] tracking-[0.3em] uppercase text-primary\">// nexen.manifest</p>\n        <h2 className=\"mt-5 text-[clamp(2rem,7vw,4.75rem)] font-black leading-[0.95] tracking-tight\">\n          The grid belongs to whoever moves fastest.\n        </h2>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/parallax-cyber.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

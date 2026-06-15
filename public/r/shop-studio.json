@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shop-studio",
+  "title": "Studio shop",
+  "description": "Soft rounded retail cards with a quiet hover reveal.",
+  "files": [
+    {
+      "path": "registry/blocks/commerce/shop-studio.tsx",
+      "content": "import Link from \"next/link\"\n\nconst PRODUCTS = [\n  { name: \"Grip Socks\", meta: \"Studio essential\", price: \"18\", tint: \"rgba(201,142,134,0.3)\" },\n  { name: \"Cork Block\", meta: \"Props\", price: \"24\", tint: \"rgba(217,194,184,0.55)\" },\n  { name: \"Organic Tee\", meta: \"Apparel\", price: \"42\", tint: \"rgba(201,142,134,0.22)\" },\n  { name: \"Linen Towel\", meta: \"Studio essential\", price: \"32\", tint: \"rgba(217,194,184,0.45)\" },\n  { name: \"Recovery Balm\", meta: \"Care\", price: \"28\", tint: \"rgba(201,142,134,0.28)\" },\n  { name: \"Water Bottle\", meta: \"Essential\", price: \"36\", tint: \"rgba(217,194,184,0.5)\" },\n]\n\n/**\n * Studio shop — soft rounded retail cards with a quiet hover reveal.\n */\nexport function ShopStudio() {\n  return (\n    <section className=\"bg-background px-6 py-20 text-foreground sm:px-10 sm:py-28\">\n      <div className=\"mx-auto max-w-6xl\">\n        <div className=\"flex flex-wrap items-end justify-between gap-4 border-b border-border pb-6\">\n          <h2 className=\"font-serif text-[clamp(1.75rem,4vw,3rem)] tracking-tight\">The Shop</h2>\n          <p className=\"text-xs tracking-[0.2em] uppercase text-muted-foreground\">Studio essentials</p>\n        </div>\n\n        <div className=\"mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3\">\n          {PRODUCTS.map((p) => (\n            <Link key={p.name} href=\"#\" className=\"group\">\n              <div\n                className=\"relative aspect-square overflow-hidden rounded-[1.25rem] border border-border\"\n                style={{ background: `radial-gradient(circle at 50% 40%, ${p.tint}, var(--card) 72%)` }}\n              >\n                <span className=\"absolute inset-x-3 bottom-3 rounded-full bg-card/90 py-2 text-center text-xs tracking-[0.15em] uppercase text-foreground opacity-0 backdrop-blur transition-opacity group-hover:opacity-100\">\n                  Add to bag\n                </span>\n              </div>\n              <div className=\"mt-4 flex items-baseline justify-between\">\n                <div>\n                  <p className=\"font-serif text-lg\">{p.name}</p>\n                  <p className=\"text-xs tracking-[0.15em] uppercase text-muted-foreground\">{p.meta}</p>\n                </div>\n                <p className=\"text-sm text-muted-foreground\">${p.price}</p>\n              </div>\n            </Link>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/shop-studio.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

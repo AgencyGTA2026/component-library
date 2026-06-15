@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "service-bauhaus",
+  "title": "Bauhaus process",
+  "description": "A four-step rail of flat-color cells over a keyline grid.",
+  "files": [
+    {
+      "path": "registry/blocks/service/service-bauhaus.tsx",
+      "content": "const STEPS = [\n  { n: \"01\", title: \"Apply\", body: \"Send a portfolio and a paragraph. We read every one — no fee, no forms in triplicate.\", color: \"bg-primary text-primary-foreground\" },\n  { n: \"02\", title: \"Interview\", body: \"A conversation, not an exam. We want to see how you think with your hands.\", color: \"bg-accent\" },\n  { n: \"03\", title: \"Foundation\", body: \"Everyone starts on the same floor: colour, form, type, material. No shortcuts.\", color: \"bg-secondary text-secondary-foreground\" },\n  { n: \"04\", title: \"Specialise\", body: \"Choose your workshop and go deep. Finish with a degree show on the wall.\", color: \"bg-card\" },\n]\n\n/**\n * Bauhaus process — a four-step rail of flat-color cells over a keyline grid.\n */\nexport function ServiceBauhaus() {\n  return (\n    <section className=\"border-b-4 border-foreground bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl\">\n        <p className=\"font-mono text-xs tracking-[0.3em] uppercase text-primary\">How it works</p>\n        <h2 className=\"mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black uppercase leading-[0.92] tracking-tighter\">\n          Four steps onto the floor.\n        </h2>\n\n        <div className=\"mt-10 grid gap-0 border-2 border-foreground sm:grid-cols-2 lg:grid-cols-4\">\n          {STEPS.map((s, i) => (\n            <div\n              key={s.n}\n              className={`border-foreground p-6 ${s.color} ${\n                i < STEPS.length - 1 ? \"border-b-2 lg:border-b-0\" : \"\"\n              } sm:[&:nth-child(odd)]:border-r-2 lg:[&:not(:last-child)]:border-r-2`}\n            >\n              <span className=\"text-5xl font-black tracking-tighter\">{s.n}</span>\n              <p className=\"mt-4 text-xl font-black uppercase\">{s.title}</p>\n              <p className=\"mt-2 font-medium leading-relaxed opacity-85\">{s.body}</p>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/service-bauhaus.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

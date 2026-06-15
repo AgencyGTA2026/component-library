@@ -12,6 +12,9 @@ const SWATCH: Record<string, string> = {
   services: "#1668c4",
   retro: "#ff5a5f",
   noir: "#c8a45a",
+  bauhaus: "#e63422",
+  cyber: "#22d3ee",
+  studio: "#c98e86",
 }
 
 const demos = DEMOS.map((demo) => ({

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-cyber",
+  "title": "Cyber stats",
+  "description": "Glowing neon KPI tiles with charged progress bars.",
+  "files": [
+    {
+      "path": "registry/blocks/charts/chart-cyber.tsx",
+      "content": "const STATS = [\n  { label: \"Uptime\", value: \"99.99%\", fill: 99, glow: \"primary\" },\n  { label: \"Avg compile\", value: \"0.8ms\", fill: 88, glow: \"accent\" },\n  { label: \"Active runners\", value: \"240k\", fill: 76, glow: \"primary\" },\n  { label: \"ICE bypass rate\", value: \"97%\", fill: 97, glow: \"accent\" },\n]\n\n/**\n * Cyber stats — glowing neon KPI tiles with charged progress bars.\n */\nexport function ChartCyber() {\n  return (\n    <section className=\"border-b border-primary/20 bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-5xl\">\n        <p className=\"font-mono text-[11px] tracking-[0.3em] uppercase text-primary\">// telemetry</p>\n\n        <div className=\"mt-8 grid gap-5 sm:grid-cols-2\">\n          {STATS.map((s) => (\n            <div\n              key={s.label}\n              className={`border bg-card p-6 ${s.glow === \"accent\" ? \"border-accent/40\" : \"border-primary/40\"}`}\n            >\n              <div className=\"flex items-end justify-between\">\n                <span className=\"font-mono text-xs tracking-[0.2em] uppercase text-muted-foreground\">{s.label}</span>\n                <span className={`font-mono text-3xl font-black ${s.glow === \"accent\" ? \"text-accent\" : \"text-primary\"}`}>\n                  {s.value}\n                </span>\n              </div>\n              <div className=\"mt-4 h-2.5 overflow-hidden border border-border bg-background\">\n                <div\n                  className={`h-full ${s.glow === \"accent\" ? \"bg-accent shadow-[0_0_12px_rgba(255,0,229,0.7)]\" : \"bg-primary shadow-[0_0_12px_rgba(34,211,238,0.7)]\"}`}\n                  style={{ width: `${s.fill}%` }}\n                />\n              </div>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/chart-cyber.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

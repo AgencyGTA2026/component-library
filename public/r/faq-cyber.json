@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "faq-cyber",
+  "title": "Cyber FAQ",
+  "description": "Glowing slate accordion with a neon toggle.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/misc/faq-cyber.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { Plus } from \"lucide-react\"\n\nconst FAQS = [\n  { q: \"Do I need my own deck to start?\", a: \"No. The free tier runs entirely in the cloud rig — spin up a virtual deck and you're on the grid in under a minute.\" },\n  { q: \"Is my traffic actually private?\", a: \"Yes. Every run is zero-knowledge and encrypted end to end. We can't read your traces, and there are no backdoors for anyone else either.\" },\n  { q: \"What happens when ICE adapts?\", a: \"So does the breaker. ICE-breaker v3 re-routes live when a wall shifts, with a silent fallback if a route burns.\" },\n  { q: \"Can I run a crew on one account?\", a: \"Runner and Corp tiers include private mesh networking — invite your crew, share daemons, and monitor runs together.\" },\n  { q: \"How does billing work?\", a: \"Pay-as-you-run in eddies, billed monthly. Scale up, scale down, or kill the rig anytime. No contracts on the grid.\" },\n]\n\n/**\n * Cyber FAQ — glowing slate accordion with a neon toggle.\n */\nexport function FaqCyber() {\n  const [open, setOpen] = React.useState<number | null>(0)\n\n  return (\n    <section className=\"border-b border-primary/20 bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto grid max-w-5xl gap-10 lg:grid-cols-[1fr_1.6fr]\">\n        <div className=\"h-fit lg:sticky lg:top-16\">\n          <p className=\"font-mono text-[11px] tracking-[0.3em] uppercase text-primary\">// faq.log</p>\n          <h2 className=\"mt-4 text-4xl font-black leading-[0.95] tracking-tight\">Queries, resolved.</h2>\n        </div>\n\n        <div className=\"space-y-3\">\n          {FAQS.map((f, i) => {\n            const isOpen = open === i\n            return (\n              <div\n                key={f.q}\n                className={`border bg-card transition-all ${isOpen ? \"border-primary/50 shadow-[0_0_20px_rgba(34,211,238,0.15)]\" : \"border-border\"}`}\n              >\n                <button\n                  onClick={() => setOpen(isOpen ? null : i)}\n                  className=\"flex w-full items-center justify-between gap-4 p-5 text-left\"\n                >\n                  <span className=\"text-lg font-black\">{f.q}</span>\n                  <span\n                    className={`grid size-8 shrink-0 place-items-center border transition-all ${\n                      isOpen ? \"rotate-45 border-primary text-primary shadow-[0_0_12px_rgba(34,211,238,0.5)]\" : \"border-border text-muted-foreground\"\n                    }`}\n                  >\n                    <Plus className=\"size-4\" />\n                  </span>\n                </button>\n                {isOpen && <p className=\"px-5 pb-5 text-muted-foreground\">{f.a}</p>}\n              </div>\n            )\n          })}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/faq-cyber.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

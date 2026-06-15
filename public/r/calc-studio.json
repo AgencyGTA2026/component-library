@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calc-studio",
+  "title": "Studio cost calculator",
+  "description": "Set classes per week; see drop-in vs membership savings.",
+  "files": [
+    {
+      "path": "registry/blocks/calculators/calc-studio.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nconst PER_CLASS = 28\nconst MEMBER_RATE = 22\n\n/**\n * Studio cost calculator — set classes per week; see drop-in vs membership savings.\n */\nexport function CalcStudio() {\n  const [perWeek, setPerWeek] = React.useState(2)\n\n  const monthly = perWeek * 4\n  const dropInCost = monthly * PER_CLASS\n  const memberCost = monthly * MEMBER_RATE\n  const saving = dropInCost - memberCost\n\n  return (\n    <section className=\"bg-background px-6 py-20 text-foreground sm:px-10 sm:py-28\">\n      <div className=\"mx-auto grid max-w-4xl gap-8 lg:grid-cols-[1.2fr_1fr]\">\n        <div className=\"rounded-[1.5rem] border border-border bg-card p-7 sm:p-9\">\n          <p className=\"text-xs tracking-[0.25em] uppercase text-primary\">Plan your practice</p>\n          <h2 className=\"mt-4 font-serif text-3xl tracking-tight\">How often will you move?</h2>\n\n          <div className=\"mt-8\">\n            <div className=\"flex items-end justify-between\">\n              <span className=\"text-sm text-muted-foreground\">Classes per week</span>\n              <span className=\"font-serif text-2xl text-primary\">{perWeek}</span>\n            </div>\n            <input\n              type=\"range\"\n              min={1}\n              max={6}\n              value={perWeek}\n              onChange={(e) => setPerWeek(Number(e.target.value))}\n              className=\"mt-3 w-full accent-[var(--primary)]\"\n            />\n            <p className=\"mt-3 text-sm text-muted-foreground\">That&apos;s about {monthly} classes a month.</p>\n          </div>\n\n          <div className=\"mt-8 flex items-center justify-between border-t border-border pt-5 text-sm\">\n            <span className=\"text-muted-foreground\">Drop-in at ${PER_CLASS}/class</span>\n            <span className=\"text-foreground\">${dropInCost}/mo</span>\n          </div>\n        </div>\n\n        <div className=\"flex flex-col justify-center rounded-[1.5rem] bg-primary p-8 text-center text-primary-foreground\">\n          <p className=\"text-xs tracking-[0.2em] uppercase text-primary-foreground/80\">Unlimited membership</p>\n          <p className=\"mt-2 font-serif text-[clamp(2.5rem,8vw,3.75rem)] leading-none tracking-tight\">${memberCost}</p>\n          <p className=\"mt-1 text-sm text-primary-foreground/80\">per month</p>\n          <p className=\"mt-5 rounded-full bg-primary-foreground/15 px-4 py-2 text-sm\">\n            You&apos;d save ${saving > 0 ? saving : 0}/mo\n          </p>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/calc-studio.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

@@ -12,6 +12,9 @@ const VIBES = [
   { id: "services", label: "Services", swatch: "#1668c4", note: "trust blue, amber CTA — HVAC, plumbing, home" },
   { id: "retro", label: "Retro", swatch: "#ff5a5f", note: "Memphis pop — cream, coral, geometric" },
   { id: "noir", label: "Noir", swatch: "#c8a45a", note: "near-black, gold, serif luxury" },
+  { id: "bauhaus", label: "Bauhaus", swatch: "#e63422", note: "primary color, geometry, heavy type" },
+  { id: "cyber", label: "Cyber", swatch: "#22d3ee", note: "neon cyan & magenta on slate, mono, glow" },
+  { id: "studio", label: "Studio", swatch: "#c98e86", note: "blush & stone — airy modernist calm" },
 ]
 
 export default function Home() {

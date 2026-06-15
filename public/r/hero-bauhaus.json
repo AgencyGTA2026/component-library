@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-bauhaus",
+  "title": "Bauhaus hero",
+  "description": "Heavy slab headline beside a composition of primary shapes.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/heroes/hero-bauhaus.tsx",
+      "content": "\"use client\"\n\nimport Link from \"next/link\"\nimport { motion } from \"framer-motion\"\nimport { ArrowRight } from \"lucide-react\"\n\n/**\n * Bauhaus hero — a heavy slab headline beside a composition of primary shapes.\n */\nexport function HeroBauhaus() {\n  return (\n    <section className=\"overflow-hidden border-b-4 border-foreground bg-background text-foreground\">\n      <div className=\"mx-auto grid max-w-6xl gap-0 lg:grid-cols-2\">\n        <div className=\"border-foreground px-5 py-16 sm:px-8 sm:py-20 lg:border-r-4\">\n          <p className=\"font-mono text-xs tracking-[0.3em] uppercase text-primary\">Werkbund · Est. 1919</p>\n          <h1 className=\"mt-8 text-[clamp(2.75rem,8vw,6rem)] font-black leading-[0.88] tracking-tighter uppercase\">\n            Form\n            <br />\n            follows\n            <br />\n            <span className=\"bg-primary px-2 text-primary-foreground\">function.</span>\n          </h1>\n          <p className=\"mt-8 max-w-md text-lg leading-relaxed text-muted-foreground\">\n            A school of design where the circle, the square, and the triangle do the talking. Learn\n            to make things that work — and look like it.\n          </p>\n          <div className=\"mt-10 flex flex-wrap items-center gap-5\">\n            <Link\n              href=\"#\"\n              className=\"inline-flex items-center gap-2 border-2 border-foreground bg-secondary px-7 py-3.5 text-sm font-black uppercase text-secondary-foreground transition-colors hover:bg-foreground\"\n            >\n              Apply now <ArrowRight className=\"size-4\" />\n            </Link>\n            <Link href=\"#\" className=\"text-sm font-bold uppercase underline decoration-2 underline-offset-4\">\n              See the work\n            </Link>\n          </div>\n        </div>\n\n        <div className=\"relative grid min-h-[320px] place-items-center bg-accent p-10 lg:min-h-full\">\n          <div className=\"relative size-56 sm:size-72\">\n            <motion.span\n              initial={{ scale: 0 }}\n              animate={{ scale: 1 }}\n              transition={{ type: \"spring\", stiffness: 160, damping: 14 }}\n              className=\"absolute left-0 top-0 size-32 rounded-full bg-primary sm:size-40\"\n            />\n            <motion.span\n              initial={{ y: 40, opacity: 0 }}\n              animate={{ y: 0, opacity: 1 }}\n              transition={{ delay: 0.15, duration: 0.5 }}\n              className=\"absolute bottom-0 right-0 size-28 bg-secondary sm:size-36\"\n            />\n            <motion.span\n              initial={{ rotate: -30, opacity: 0 }}\n              animate={{ rotate: 0, opacity: 1 }}\n              transition={{ delay: 0.3, duration: 0.5 }}\n              aria-hidden\n              className=\"absolute bottom-6 left-10 h-0 w-0 border-x-[28px] border-b-[48px] border-x-transparent border-b-foreground\"\n            />\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/hero-bauhaus.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

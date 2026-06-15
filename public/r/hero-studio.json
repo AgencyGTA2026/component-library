@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-studio",
+  "title": "Studio hero",
+  "description": "A soft serif headline over greige with an airy media panel.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/heroes/hero-studio.tsx",
+      "content": "\"use client\"\n\nimport Link from \"next/link\"\nimport { motion } from \"framer-motion\"\nimport { ArrowRight } from \"lucide-react\"\n\nconst fadeUp = {\n  hidden: { opacity: 0, y: 20 },\n  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const } },\n}\n\n/**\n * Studio hero — a soft serif headline over greige with an airy media panel.\n */\nexport function HeroStudio() {\n  return (\n    <section className=\"overflow-hidden bg-background text-foreground\">\n      <div className=\"mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 sm:px-10 sm:py-28 lg:grid-cols-[1.1fr_1fr]\">\n        <motion.div initial=\"hidden\" animate=\"show\" transition={{ staggerChildren: 0.12 }}>\n          <motion.p variants={fadeUp} className=\"text-xs tracking-[0.25em] uppercase text-muted-foreground\">\n            Reformer Pilates · Studio Méthode\n          </motion.p>\n          <motion.h1\n            variants={fadeUp}\n            className=\"mt-7 font-serif text-[clamp(2.75rem,7vw,5rem)] leading-[1.02] tracking-tight text-balance\"\n          >\n            Move with intention. Leave lighter.\n          </motion.h1>\n          <motion.p variants={fadeUp} className=\"mt-6 max-w-md text-lg leading-relaxed text-muted-foreground\">\n            Small classes, slow tempo, real attention. A calm place to build strength that follows\n            you off the mat.\n          </motion.p>\n          <motion.div variants={fadeUp} className=\"mt-9 flex flex-wrap items-center gap-5\">\n            <Link\n              href=\"#\"\n              className=\"inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90\"\n            >\n              Try an intro class <ArrowRight className=\"size-4\" />\n            </Link>\n            <Link href=\"#\" className=\"text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline\">\n              View the schedule\n            </Link>\n          </motion.div>\n        </motion.div>\n\n        <motion.div\n          initial={{ opacity: 0, scale: 0.98 }}\n          animate={{ opacity: 1, scale: 1 }}\n          transition={{ duration: 1, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}\n          className=\"relative aspect-[4/5] w-full overflow-hidden rounded-[1.5rem] bg-secondary\"\n        >\n          <div className=\"absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(201,142,134,0.35),transparent_60%)]\" />\n          <div className=\"absolute inset-0 bg-[radial-gradient(circle_at_80%_85%,rgba(217,194,184,0.5),transparent_55%)]\" />\n          <span className=\"absolute bottom-5 left-5 text-xs tracking-[0.2em] uppercase text-muted-foreground\">\n            No. 01 — The reformer room\n          </span>\n        </motion.div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/hero-studio.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

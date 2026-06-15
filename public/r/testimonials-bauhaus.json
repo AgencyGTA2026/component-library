@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "testimonials-bauhaus",
+  "title": "Bauhaus testimonials",
+  "description": "One flat-color pull-quote over a keyline review grid.",
+  "files": [
+    {
+      "path": "registry/blocks/testimonials/testimonials-bauhaus.tsx",
+      "content": "const QUOTES = [\n  {\n    quote: \"I arrived able to draw and left able to think. The workshop floor changed how I see everything.\",\n    name: \"Anni T.\",\n    role: \"Textile, class of '21\",\n    big: true,\n  },\n  { quote: \"Three colours and a grid. I have never felt so free.\", name: \"Josef A.\", role: \"Print\" },\n  { quote: \"They mark what you make, not what you say. It keeps you honest.\", name: \"Marcel B.\", role: \"Furniture\" },\n  { quote: \"The best brief I ever got was: remove something.\", name: \"Lyonel F.\", role: \"Type\" },\n]\n\n/**\n * Bauhaus testimonials — one flat-color pull-quote over a keyline review grid.\n */\nexport function TestimonialsBauhaus() {\n  const [lead, ...rest] = QUOTES\n  return (\n    <section className=\"border-b-4 border-foreground bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl\">\n        <div className=\"border-2 border-foreground bg-secondary p-7 text-secondary-foreground sm:p-10\">\n          <p className=\"text-[clamp(1.5rem,4vw,3rem)] font-black leading-[1.02] tracking-tight uppercase\">\n            &ldquo;{lead.quote}&rdquo;\n          </p>\n          <p className=\"mt-6 font-mono text-sm font-bold uppercase\">\n            {lead.name} — {lead.role}\n          </p>\n        </div>\n\n        <div className=\"mt-0 grid gap-0 border-x-2 border-b-2 border-foreground md:grid-cols-3\">\n          {rest.map((q) => (\n            <figure\n              key={q.name}\n              className=\"border-foreground p-6 [&:not(:last-child)]:border-b-2 md:[&:not(:last-child)]:border-b-0 md:[&:not(:last-child)]:border-r-2\"\n            >\n              <blockquote className=\"text-base font-bold leading-snug\">&ldquo;{q.quote}&rdquo;</blockquote>\n              <figcaption className=\"mt-4 font-mono text-xs font-bold uppercase text-muted-foreground\">\n                {q.name} · {q.role}\n              </figcaption>\n            </figure>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/testimonials-bauhaus.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

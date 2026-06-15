@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "parallax-bauhaus",
+  "title": "Bauhaus parallax",
+  "description": "A statement band where primary shapes drift on scroll.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/parallax/parallax-bauhaus.tsx",
+      "content": "\"use client\"\n\nimport { useRef } from \"react\"\nimport { motion, useScroll, useTransform } from \"framer-motion\"\n\n/**\n * Bauhaus parallax — a statement band where primary shapes drift on scroll.\n */\nexport function ParallaxBauhaus() {\n  const ref = useRef<HTMLDivElement>(null)\n  const { scrollYProgress } = useScroll({ target: ref, offset: [\"start end\", \"end start\"] })\n\n  const y1 = useTransform(scrollYProgress, [0, 1], [\"-40%\", \"40%\"])\n  const y2 = useTransform(scrollYProgress, [0, 1], [\"30%\", \"-30%\"])\n  const rotate = useTransform(scrollYProgress, [0, 1], [0, 90])\n\n  return (\n    <section\n      ref={ref}\n      className=\"relative grid min-h-[440px] place-items-center overflow-hidden border-b-4 border-foreground bg-accent px-5 py-20 text-foreground\"\n    >\n      <motion.span style={{ y: y1 }} aria-hidden className=\"pointer-events-none absolute left-[8%] top-10 size-28 rounded-full bg-primary\" />\n      <motion.span style={{ y: y2, rotate }} aria-hidden className=\"pointer-events-none absolute right-[10%] bottom-10 size-24 bg-secondary\" />\n      <motion.span\n        style={{ y: y2 }}\n        aria-hidden\n        className=\"pointer-events-none absolute left-[18%] bottom-12 h-0 w-0 border-x-[26px] border-b-[46px] border-x-transparent border-b-foreground\"\n      />\n\n      <div className=\"relative max-w-3xl text-center\">\n        <p className=\"font-mono text-xs tracking-[0.3em] uppercase\">Werkbund Manifesto</p>\n        <h2 className=\"mt-4 text-[clamp(2rem,7vw,5rem)] font-black leading-[0.92] tracking-tighter uppercase\">\n          Less, but better.\n        </h2>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/parallax-bauhaus.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

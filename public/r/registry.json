@@ -3638,6 +3638,1137 @@
           "target": "components/blocks/footer-noir.tsx"
         }
       ]
+    },
+    {
+      "name": "header-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus header",
+      "description": "Geometric logo mark beside heavy nav over a thick keyline.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/headers/header-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus hero",
+      "description": "Heavy slab headline beside a composition of primary shapes.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/heroes/hero-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bento-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus bento",
+      "description": "Thick-keyline grid of flat primary-color cells.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/bento/bento-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus features",
+      "description": "Numbered rows with a flat color block and a hard shape.",
+      "files": [
+        {
+          "path": "registry/blocks/features/feature-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/feature-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus bulletin",
+      "description": "Flat color cards with hard category labels.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/content/content-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/content-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "parallax-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus parallax",
+      "description": "A statement band where primary shapes drift on scroll.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/parallax/parallax-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/parallax-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "shop-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus poster shop",
+      "description": "Bordered cells with geometric prints and an add button.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/commerce/shop-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/shop-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "media-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus gallery",
+      "description": "A hard-edged grid that opens a flat-color lightbox.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/media/media-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/media-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "modal-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus modal",
+      "description": "A thick-keyline dialog with a primary-shape header.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/overlays/modal-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/modal-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nav-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus anchor nav",
+      "description": "Boxed cells; the active one fills with primary red.",
+      "files": [
+        {
+          "path": "registry/blocks/navigation/nav-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/nav-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "about-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus about",
+      "description": "Principles as flat-color cells over a thick keyline grid.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/about/about-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/about-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chart-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus stats",
+      "description": "Flat color bars in a thick-keyline frame.",
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/chart-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "states-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus 404",
+      "description": "Oversized slab numeral over a composition of primary shapes.",
+      "files": [
+        {
+          "path": "registry/blocks/states/states-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/states-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus enrolment form",
+      "description": "Thick-keyline fields and flat chips with a success swap.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/forms/form-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calc-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus tuition estimator",
+      "description": "Pick a course and extras; a slab total updates.",
+      "files": [
+        {
+          "path": "registry/blocks/calculators/calc-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/calc-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus pricing",
+      "description": "Flat-color plan cards in a thick-keyline frame.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/pricing/pricing-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/pricing-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus testimonials",
+      "description": "One flat-color pull-quote over a keyline review grid.",
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/testimonials-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus CTA",
+      "description": "A flat primary banner cut by a diagonal of geometric shapes.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "service-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus process",
+      "description": "A four-step rail of flat-color cells over a keyline grid.",
+      "files": [
+        {
+          "path": "registry/blocks/service/service-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/service-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus FAQ",
+      "description": "A thick-keyline accordion with a flat-color toggle.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/misc/faq-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/faq-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-bauhaus",
+      "type": "registry:block",
+      "title": "Bauhaus footer",
+      "description": "A geometric mark and keyline link columns over a thick rule.",
+      "files": [
+        {
+          "path": "registry/blocks/footers/footer-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-bauhaus",
+      "type": "registry:block",
+      "title": "Design school site (bauhaus)",
+      "description": "Constructivist one-pager from nine bauhaus blocks.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/layouts/page-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/page-bauhaus.tsx"
+        },
+        {
+          "path": "registry/blocks/headers/header-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-bauhaus.tsx"
+        },
+        {
+          "path": "registry/blocks/heroes/hero-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-bauhaus.tsx"
+        },
+        {
+          "path": "registry/blocks/bento/bento-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-bauhaus.tsx"
+        },
+        {
+          "path": "registry/blocks/features/feature-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/feature-bauhaus.tsx"
+        },
+        {
+          "path": "registry/blocks/parallax/parallax-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/parallax-bauhaus.tsx"
+        },
+        {
+          "path": "registry/blocks/testimonials/testimonials-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-bauhaus.tsx"
+        },
+        {
+          "path": "registry/blocks/pricing/pricing-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/pricing-bauhaus.tsx"
+        },
+        {
+          "path": "registry/blocks/cta/cta-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-bauhaus.tsx"
+        },
+        {
+          "path": "registry/blocks/footers/footer-bauhaus.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-bauhaus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "header-cyber",
+      "type": "registry:block",
+      "title": "Cyber header",
+      "description": "Glowing mono nav bar with a cyan status dot.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/headers/header-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-cyber",
+      "type": "registry:block",
+      "title": "Cyber hero",
+      "description": "Neon gradient headline over a scanline grid with glowing CTAs.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/heroes/hero-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bento-cyber",
+      "type": "registry:block",
+      "title": "Cyber bento",
+      "description": "Glowing slate panels with neon icon accents.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/bento/bento-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-cyber",
+      "type": "registry:block",
+      "title": "Cyber features",
+      "description": "Alternating rows with a neon checklist and a glowing panel.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/features/feature-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/feature-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-cyber",
+      "type": "registry:block",
+      "title": "Cyber feed",
+      "description": "Glowing slate cards with mono category tags.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/content/content-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/content-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "parallax-cyber",
+      "type": "registry:block",
+      "title": "Cyber parallax",
+      "description": "A neon statement over a perspective grid that drifts on scroll.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/parallax/parallax-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/parallax-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "shop-cyber",
+      "type": "registry:block",
+      "title": "Cyber gear shop",
+      "description": "Glowing slate cards with neon prices and add buttons.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/commerce/shop-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/shop-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "media-cyber",
+      "type": "registry:block",
+      "title": "Cyber gallery",
+      "description": "A neon grid that opens a glowing scanline lightbox.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/media/media-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/media-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "modal-cyber",
+      "type": "registry:block",
+      "title": "Cyber modal",
+      "description": "A glowing terminal-style access dialog with Escape close.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/overlays/modal-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/modal-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nav-cyber",
+      "type": "registry:block",
+      "title": "Cyber anchor nav",
+      "description": "A glowing tab rail; the active tab lights up cyan.",
+      "files": [
+        {
+          "path": "registry/blocks/navigation/nav-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/nav-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "about-cyber",
+      "type": "registry:block",
+      "title": "Cyber about",
+      "description": "Manifesto cards with glowing neon icon frames.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/about/about-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/about-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chart-cyber",
+      "type": "registry:block",
+      "title": "Cyber stats",
+      "description": "Glowing neon KPI tiles with charged progress bars.",
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/chart-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "states-cyber",
+      "type": "registry:block",
+      "title": "Cyber 404",
+      "description": "A glitched neon error code over a scanline grid backdrop.",
+      "files": [
+        {
+          "path": "registry/blocks/states/states-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/states-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-cyber",
+      "type": "registry:block",
+      "title": "Cyber access form",
+      "description": "Glowing terminal fields and neon chips with a success swap.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/forms/form-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calc-cyber",
+      "type": "registry:block",
+      "title": "Cyber compute estimator",
+      "description": "Scale cores and memory; a neon total updates.",
+      "files": [
+        {
+          "path": "registry/blocks/calculators/calc-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/calc-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-cyber",
+      "type": "registry:block",
+      "title": "Cyber pricing",
+      "description": "Slate plan cards; the featured one glows cyan.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/pricing/pricing-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/pricing-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-cyber",
+      "type": "registry:block",
+      "title": "Cyber testimonials",
+      "description": "Glowing slate review cards with mono handles.",
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/testimonials-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-cyber",
+      "type": "registry:block",
+      "title": "Cyber CTA",
+      "description": "A neon-bordered panel over a glowing grid with a charged button.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "service-cyber",
+      "type": "registry:block",
+      "title": "Cyber process",
+      "description": "A four-step rail of glowing neon-numbered cells.",
+      "files": [
+        {
+          "path": "registry/blocks/service/service-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/service-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-cyber",
+      "type": "registry:block",
+      "title": "Cyber FAQ",
+      "description": "Glowing slate accordion with a neon toggle.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/misc/faq-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/faq-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-cyber",
+      "type": "registry:block",
+      "title": "Cyber footer",
+      "description": "A glowing mono mark over neon link columns.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/footers/footer-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-cyber",
+      "type": "registry:block",
+      "title": "Neural-OS site (cyber)",
+      "description": "Neon cyberpunk one-pager from nine cyber blocks.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/layouts/page-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/page-cyber.tsx"
+        },
+        {
+          "path": "registry/blocks/headers/header-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-cyber.tsx"
+        },
+        {
+          "path": "registry/blocks/heroes/hero-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-cyber.tsx"
+        },
+        {
+          "path": "registry/blocks/bento/bento-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-cyber.tsx"
+        },
+        {
+          "path": "registry/blocks/features/feature-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/feature-cyber.tsx"
+        },
+        {
+          "path": "registry/blocks/parallax/parallax-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/parallax-cyber.tsx"
+        },
+        {
+          "path": "registry/blocks/testimonials/testimonials-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-cyber.tsx"
+        },
+        {
+          "path": "registry/blocks/pricing/pricing-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/pricing-cyber.tsx"
+        },
+        {
+          "path": "registry/blocks/cta/cta-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-cyber.tsx"
+        },
+        {
+          "path": "registry/blocks/footers/footer-cyber.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-cyber.tsx"
+        }
+      ]
+    },
+    {
+      "name": "header-studio",
+      "type": "registry:block",
+      "title": "Studio header",
+      "description": "Airy serif wordmark with quiet sans nav and a blush CTA.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/headers/header-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-studio",
+      "type": "registry:block",
+      "title": "Studio hero",
+      "description": "A soft serif headline over greige with an airy media panel.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/heroes/hero-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bento-studio",
+      "type": "registry:block",
+      "title": "Studio bento",
+      "description": "Calm rounded cards in greige with a single blush accent cell.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/bento/bento-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-studio",
+      "type": "registry:block",
+      "title": "Studio features",
+      "description": "Alternating airy rows with a soft media panel and checklist.",
+      "files": [
+        {
+          "path": "registry/blocks/features/feature-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/feature-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-studio",
+      "type": "registry:block",
+      "title": "Studio journal",
+      "description": "A soft serif featured post beside a quiet hairline list.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/content/content-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/content-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "parallax-studio",
+      "type": "registry:block",
+      "title": "Studio parallax",
+      "description": "A calm serif statement with soft blush washes drifting on scroll.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/parallax/parallax-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/parallax-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "shop-studio",
+      "type": "registry:block",
+      "title": "Studio shop",
+      "description": "Soft rounded retail cards with a quiet hover reveal.",
+      "files": [
+        {
+          "path": "registry/blocks/commerce/shop-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/shop-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "media-studio",
+      "type": "registry:block",
+      "title": "Studio gallery",
+      "description": "A soft rounded grid that opens a calm lightbox.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/media/media-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/media-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "modal-studio",
+      "type": "registry:block",
+      "title": "Studio modal",
+      "description": "A soft rounded intro-offer dialog with Escape and backdrop close.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/overlays/modal-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/modal-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nav-studio",
+      "type": "registry:block",
+      "title": "Studio anchor nav",
+      "description": "A calm sticky rail with a soft blush active pill.",
+      "files": [
+        {
+          "path": "registry/blocks/navigation/nav-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/nav-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "about-studio",
+      "type": "registry:block",
+      "title": "Studio about",
+      "description": "Values as soft hairline cards with quiet blush icons.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/about/about-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/about-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chart-studio",
+      "type": "registry:block",
+      "title": "Studio stats",
+      "description": "Calm KPI cards with soft blush measure bars.",
+      "files": [
+        {
+          "path": "registry/blocks/charts/chart-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/chart-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "states-studio",
+      "type": "registry:block",
+      "title": "Studio 404",
+      "description": "A soft serif numeral over greige with a calm blush wash.",
+      "files": [
+        {
+          "path": "registry/blocks/states/states-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/states-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-studio",
+      "type": "registry:block",
+      "title": "Studio enquiry form",
+      "description": "Soft rounded fields and quiet blush chips with a success swap.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/forms/form-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calc-studio",
+      "type": "registry:block",
+      "title": "Studio cost calculator",
+      "description": "Set classes per week; see drop-in vs membership savings.",
+      "files": [
+        {
+          "path": "registry/blocks/calculators/calc-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/calc-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-studio",
+      "type": "registry:block",
+      "title": "Studio memberships",
+      "description": "Soft rounded plan cards; the featured one in blush.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/pricing/pricing-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/pricing-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials-studio",
+      "type": "registry:block",
+      "title": "Studio testimonials",
+      "description": "One soft serif quote at a time, paged with a crossfade.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/testimonials/testimonials-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-studio",
+      "type": "registry:block",
+      "title": "Studio CTA",
+      "description": "A calm rounded panel with a soft blush wash and one quiet action.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/cta-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "service-studio",
+      "type": "registry:block",
+      "title": "Studio process",
+      "description": "A calm four-step rail with soft serif numerals.",
+      "files": [
+        {
+          "path": "registry/blocks/service/service-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/service-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-studio",
+      "type": "registry:block",
+      "title": "Studio FAQ",
+      "description": "A calm hairline accordion with a soft blush toggle.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/misc/faq-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/faq-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-studio",
+      "type": "registry:block",
+      "title": "Studio footer",
+      "description": "A calm serif wordmark over quiet hairline link columns.",
+      "files": [
+        {
+          "path": "registry/blocks/footers/footer-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-studio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-studio",
+      "type": "registry:block",
+      "title": "Pilates studio site (studio)",
+      "description": "Calm modernist one-pager from nine studio blocks.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/layouts/page-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/page-studio.tsx"
+        },
+        {
+          "path": "registry/blocks/headers/header-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/header-studio.tsx"
+        },
+        {
+          "path": "registry/blocks/heroes/hero-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/hero-studio.tsx"
+        },
+        {
+          "path": "registry/blocks/bento/bento-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/bento-studio.tsx"
+        },
+        {
+          "path": "registry/blocks/features/feature-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/feature-studio.tsx"
+        },
+        {
+          "path": "registry/blocks/parallax/parallax-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/parallax-studio.tsx"
+        },
+        {
+          "path": "registry/blocks/testimonials/testimonials-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/testimonials-studio.tsx"
+        },
+        {
+          "path": "registry/blocks/pricing/pricing-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/pricing-studio.tsx"
+        },
+        {
+          "path": "registry/blocks/cta/cta-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/cta-studio.tsx"
+        },
+        {
+          "path": "registry/blocks/footers/footer-studio.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/footer-studio.tsx"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "nav-bauhaus",
+  "title": "Bauhaus anchor nav",
+  "description": "Boxed cells; the active one fills with primary red.",
+  "files": [
+    {
+      "path": "registry/blocks/navigation/nav-bauhaus.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nconst SECTIONS = [\n  { id: \"foundation\", label: \"Foundation\" },\n  { id: \"colour\", label: \"Colour\" },\n  { id: \"type\", label: \"Type\" },\n  { id: \"print\", label: \"Print\" },\n  { id: \"apply\", label: \"Apply\" },\n]\n\n/**\n * Bauhaus anchor nav — boxed cells, the active one fills with primary red.\n */\nexport function NavBauhaus() {\n  const [active, setActive] = React.useState(SECTIONS[0].id)\n\n  return (\n    <section className=\"border-b-4 border-foreground bg-background text-foreground\">\n      <nav className=\"flex flex-wrap border-b-2 border-foreground\">\n        {SECTIONS.map((s) => (\n          <button\n            key={s.id}\n            onClick={() => setActive(s.id)}\n            className={`flex-1 border-foreground px-5 py-4 text-sm font-black uppercase whitespace-nowrap transition-colors [&:not(:last-child)]:border-r-2 ${\n              active === s.id ? \"bg-primary text-primary-foreground\" : \"hover:bg-accent\"\n            }`}\n          >\n            {s.label}\n          </button>\n        ))}\n      </nav>\n\n      <div className=\"mx-auto max-w-4xl px-5 py-14 sm:px-8\">\n        {SECTIONS.map((s, i) => (\n          <div key={s.id} className={active === s.id ? \"\" : \"hidden\"}>\n            <span className=\"text-5xl font-black tracking-tighter text-primary\">{String(i + 1).padStart(2, \"0\")}</span>\n            <h3 className=\"mt-3 text-3xl font-black uppercase tracking-tight\">{s.label}</h3>\n            <p className=\"mt-3 max-w-xl font-medium leading-relaxed text-muted-foreground\">\n              The {s.label.toLowerCase()} module — taught as a workshop, assessed by what you make,\n              pinned to the wall when it works.\n            </p>\n          </div>\n        ))}\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/nav-bauhaus.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

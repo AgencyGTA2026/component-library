@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "feature-bauhaus",
+  "title": "Bauhaus features",
+  "description": "Numbered rows with a flat color block and a hard shape.",
+  "files": [
+    {
+      "path": "registry/blocks/features/feature-bauhaus.tsx",
+      "content": "const ROWS = [\n  {\n    n: \"01\",\n    title: \"Workshops, not lectures\",\n    body: \"You learn by making. Every course ends with something printed, bound, or built — not a grade on a screen.\",\n    shape: \"circle\",\n    color: \"bg-primary\",\n  },\n  {\n    n: \"02\",\n    title: \"Masters who still make\",\n    body: \"Taught by working designers. The people marking your work ship theirs every week.\",\n    shape: \"square\",\n    color: \"bg-secondary\",\n  },\n  {\n    n: \"03\",\n    title: \"One language, three colours\",\n    body: \"Constraint is the point. With a circle, a square, and three primaries you can say almost anything.\",\n    shape: \"triangle\",\n    color: \"bg-accent\",\n  },\n]\n\nfunction Shape({ kind }: { kind: string }) {\n  if (kind === \"circle\") return <span className=\"size-12 rounded-full bg-foreground\" />\n  if (kind === \"square\") return <span className=\"size-12 bg-foreground\" />\n  return <span aria-hidden className=\"h-0 w-0 border-x-[24px] border-b-[42px] border-x-transparent border-b-foreground\" />\n}\n\n/**\n * Bauhaus features — numbered rows with a flat color block and a hard shape.\n */\nexport function FeatureBauhaus() {\n  return (\n    <section className=\"border-b-4 border-foreground bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-5xl divide-y-2 divide-foreground border-y-2 border-foreground\">\n        {ROWS.map((r) => (\n          <div key={r.n} className=\"grid items-center gap-6 py-8 sm:grid-cols-[auto_1fr_auto] sm:gap-10\">\n            <span className=\"text-5xl font-black tracking-tighter text-primary\">{r.n}</span>\n            <div>\n              <h3 className=\"text-2xl font-black uppercase tracking-tight\">{r.title}</h3>\n              <p className=\"mt-2 max-w-xl font-medium leading-relaxed text-muted-foreground\">{r.body}</p>\n            </div>\n            <div className={`hidden size-24 place-items-center border-2 border-foreground sm:grid ${r.color}`}>\n              <Shape kind={r.shape} />\n            </div>\n          </div>\n        ))}\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/feature-bauhaus.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

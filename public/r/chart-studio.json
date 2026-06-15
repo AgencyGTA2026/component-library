@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-studio",
+  "title": "Studio stats",
+  "description": "Calm KPI cards with soft blush measure bars.",
+  "files": [
+    {
+      "path": "registry/blocks/charts/chart-studio.tsx",
+      "content": "const STATS = [\n  { label: \"Members who stay past a year\", value: \"88%\", fill: 88 },\n  { label: \"Average class size\", value: \"6\", fill: 40 },\n  { label: \"Report better sleep\", value: \"9 in 10\", fill: 90 },\n  { label: \"Teachers, fully certified\", value: \"100%\", fill: 100 },\n]\n\n/**\n * Studio stats — calm KPI cards with soft blush measure bars.\n */\nexport function ChartStudio() {\n  return (\n    <section className=\"bg-background px-6 py-20 text-foreground sm:px-10 sm:py-28\">\n      <div className=\"mx-auto max-w-5xl\">\n        <p className=\"text-xs tracking-[0.25em] uppercase text-primary\">The quiet results</p>\n        <h2 className=\"mt-4 font-serif text-[clamp(1.75rem,4vw,3rem)] tracking-tight\">What members tell us</h2>\n\n        <div className=\"mt-10 grid gap-5 sm:grid-cols-2\">\n          {STATS.map((s) => (\n            <div key={s.label} className=\"rounded-2xl border border-border bg-card p-7\">\n              <div className=\"flex items-baseline justify-between\">\n                <span className=\"text-sm text-muted-foreground\">{s.label}</span>\n                <span className=\"font-serif text-3xl tracking-tight text-primary\">{s.value}</span>\n              </div>\n              <div className=\"mt-4 h-1.5 overflow-hidden rounded-full bg-secondary\">\n                <div className=\"h-full rounded-full bg-primary\" style={{ width: `${s.fill}%` }} />\n              </div>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/chart-studio.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-cyber",
+  "title": "Cyber hero",
+  "description": "Neon gradient headline over a scanline grid with glowing CTAs.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/heroes/hero-cyber.tsx",
+      "content": "\"use client\"\n\nimport Link from \"next/link\"\nimport { motion } from \"framer-motion\"\nimport { ArrowRight, Zap } from \"lucide-react\"\n\n/**\n * Cyber hero — a neon headline over a scanline grid with glowing CTAs.\n */\nexport function HeroCyber() {\n  return (\n    <section className=\"relative overflow-hidden border-b border-primary/20 bg-background text-foreground\">\n      {/* grid + glow backdrop */}\n      <div aria-hidden className=\"pointer-events-none absolute inset-0\">\n        <div className=\"absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.07)_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_at_50%_0%,black,transparent_75%)]\" />\n        <div className=\"absolute left-1/2 top-0 size-[60vw] max-w-[760px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-[radial-gradient(circle,rgba(255,0,229,0.18),transparent_65%)]\" />\n      </div>\n\n      <div className=\"relative mx-auto max-w-4xl px-5 py-20 text-center sm:px-8 sm:py-28\">\n        <motion.span\n          initial={{ opacity: 0, y: 12 }}\n          animate={{ opacity: 1, y: 0 }}\n          className=\"inline-flex items-center gap-2 border border-accent/50 bg-accent/10 px-4 py-1.5 font-mono text-[11px] tracking-[0.25em] uppercase text-accent shadow-[0_0_16px_rgba(255,0,229,0.4)]\"\n        >\n          <Zap className=\"size-3.5\" /> v3.0 — neural link live\n        </motion.span>\n\n        <motion.h1\n          initial={{ opacity: 0, y: 20 }}\n          animate={{ opacity: 1, y: 0 }}\n          transition={{ delay: 0.1 }}\n          className=\"mt-8 text-[clamp(2.75rem,9vw,6rem)] font-black leading-[0.9] tracking-tight\"\n        >\n          Run the net at the\n          <br />\n          <span className=\"bg-[linear-gradient(90deg,#22d3ee,#ff00e5)] bg-clip-text text-transparent [text-shadow:0_0_40px_rgba(34,211,238,0.4)]\">\n            speed of thought.\n          </span>\n        </motion.h1>\n\n        <p className=\"mx-auto mt-6 max-w-md text-lg text-muted-foreground\">\n          Nexen is the neural OS for netrunners. Compile intent, deploy daemons, own the grid.\n        </p>\n\n        <div className=\"mt-9 flex flex-wrap items-center justify-center gap-4\">\n          <Link\n            href=\"#\"\n            className=\"inline-flex items-center gap-2 border border-primary bg-primary px-7 py-3.5 font-mono text-sm tracking-[0.15em] uppercase text-primary-foreground transition-all hover:shadow-[0_0_24px_rgba(34,211,238,0.7)]\"\n          >\n            Jack in <ArrowRight className=\"size-4\" />\n          </Link>\n          <Link href=\"#\" className=\"border border-primary/40 px-7 py-3.5 font-mono text-sm tracking-[0.15em] uppercase text-primary transition-colors hover:bg-primary/10\">\n            Read the docs\n          </Link>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/hero-cyber.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

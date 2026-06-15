@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "modal-bauhaus",
+  "title": "Bauhaus modal",
+  "description": "A thick-keyline dialog with a primary-shape header.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/overlays/modal-bauhaus.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { X } from \"lucide-react\"\n\n/**\n * Bauhaus modal — a thick-keyline dialog with a primary-shape header.\n */\nexport function ModalBauhaus() {\n  const [open, setOpen] = React.useState(false)\n\n  React.useEffect(() => {\n    if (!open) return\n    const onKey = (e: KeyboardEvent) => e.key === \"Escape\" && setOpen(false)\n    window.addEventListener(\"keydown\", onKey)\n    return () => window.removeEventListener(\"keydown\", onKey)\n  }, [open])\n\n  return (\n    <section className=\"grid min-h-[360px] place-items-center border-b-4 border-foreground bg-background px-5 py-16 text-foreground\">\n      <button\n        onClick={() => setOpen(true)}\n        className=\"border-2 border-foreground bg-primary px-8 py-3.5 text-sm font-black uppercase text-primary-foreground transition-colors hover:bg-secondary\"\n      >\n        Request a prospectus\n      </button>\n\n      {open && (\n        <div className=\"fixed inset-0 z-50 grid place-items-center bg-foreground/45 p-5\" onClick={() => setOpen(false)}>\n          <div\n            role=\"dialog\"\n            aria-modal=\"true\"\n            onClick={(e) => e.stopPropagation()}\n            className=\"w-full max-w-md border-4 border-foreground bg-background\"\n          >\n            <div className=\"flex items-center justify-between border-b-4 border-foreground bg-accent px-5 py-4\">\n              <span className=\"flex items-center gap-2\" aria-hidden>\n                <span className=\"size-5 rounded-full bg-primary\" />\n                <span className=\"size-5 bg-secondary\" />\n                <span className=\"h-0 w-0 border-x-[10px] border-b-[18px] border-x-transparent border-b-foreground\" />\n              </span>\n              <button aria-label=\"Close\" onClick={() => setOpen(false)} className=\"grid size-8 place-items-center border-2 border-foreground bg-background hover:bg-primary hover:text-primary-foreground\">\n                <X className=\"size-4\" />\n              </button>\n            </div>\n            <div className=\"p-6\">\n              <h3 className=\"text-2xl font-black uppercase leading-none\">Join the school</h3>\n              <p className=\"mt-3 font-medium leading-relaxed text-muted-foreground\">\n                Drop your email and we&apos;ll send the prospectus, term dates, and a sample brief.\n              </p>\n              <div className=\"mt-5 space-y-3\">\n                <input\n                  type=\"email\"\n                  placeholder=\"you@email.com\"\n                  className=\"w-full border-2 border-foreground bg-card px-4 py-2.5 text-sm outline-none focus:bg-accent\"\n                />\n                <button\n                  onClick={() => setOpen(false)}\n                  className=\"w-full border-2 border-foreground bg-primary py-3 text-sm font-black uppercase text-primary-foreground transition-colors hover:bg-secondary\"\n                >\n                  Send it\n                </button>\n              </div>\n            </div>\n          </div>\n        </div>\n      )}\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/modal-bauhaus.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

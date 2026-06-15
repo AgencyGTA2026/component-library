@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "nav-cyber",
+  "title": "Cyber anchor nav",
+  "description": "A glowing tab rail; the active tab lights up cyan.",
+  "files": [
+    {
+      "path": "registry/blocks/navigation/nav-cyber.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nconst SECTIONS = [\n  { id: \"boot\", label: \"Boot\" },\n  { id: \"runtime\", label: \"Runtime\" },\n  { id: \"defense\", label: \"Defense\" },\n  { id: \"deploy\", label: \"Deploy\" },\n  { id: \"access\", label: \"Access\" },\n]\n\n/**\n * Cyber anchor nav — a glowing tab rail; the active tab lights up cyan.\n */\nexport function NavCyber() {\n  const [active, setActive] = React.useState(SECTIONS[0].id)\n\n  return (\n    <section className=\"border-b border-primary/20 bg-background text-foreground\">\n      <nav className=\"flex flex-wrap border-b border-primary/20\">\n        {SECTIONS.map((s) => (\n          <button\n            key={s.id}\n            onClick={() => setActive(s.id)}\n            className={`flex-1 border-r border-primary/10 px-5 py-4 font-mono text-xs tracking-[0.2em] uppercase whitespace-nowrap transition-all last:border-r-0 ${\n              active === s.id\n                ? \"bg-primary/10 text-primary shadow-[inset_0_-2px_0_0_#22d3ee]\"\n                : \"text-muted-foreground hover:text-primary\"\n            }`}\n          >\n            {s.label}\n          </button>\n        ))}\n      </nav>\n\n      <div className=\"mx-auto max-w-4xl px-5 py-14 sm:px-8\">\n        {SECTIONS.map((s, i) => (\n          <div key={s.id} className={active === s.id ? \"\" : \"hidden\"}>\n            <span className=\"font-mono text-5xl font-black text-primary [text-shadow:0_0_24px_rgba(34,211,238,0.5)]\">\n              {String(i + 1).padStart(2, \"0\")}\n            </span>\n            <h3 className=\"mt-3 text-3xl font-black tracking-tight\">{s.label}</h3>\n            <p className=\"mt-3 max-w-xl text-muted-foreground\">\n              The {s.label.toLowerCase()} stage of a run — wired, monitored, and reversible. Jump\n              straight to it from the rail above.\n            </p>\n          </div>\n        ))}\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/nav-cyber.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

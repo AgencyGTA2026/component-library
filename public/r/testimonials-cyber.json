@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "testimonials-cyber",
+  "title": "Cyber testimonials",
+  "description": "Glowing slate review cards with mono handles.",
+  "files": [
+    {
+      "path": "registry/blocks/testimonials/testimonials-cyber.tsx",
+      "content": "const REVIEWS = [\n  { quote: \"Compiled a daemon mid-run and walked straight through the ICE. Nothing else comes close.\", handle: \"@v_nightcity\", role: \"Netrunner\", glow: \"primary\" },\n  { quote: \"The trace monitor saved my deck twice this week. I don't run without it now.\", handle: \"@rogue_amend\", role: \"Solo\", glow: \"accent\" },\n  { quote: \"Latency dropped to nothing. It feels like the grid reads my mind.\", handle: \"@t_bug\", role: \"Techie\", glow: \"primary\" },\n  { quote: \"Set up a private mesh in four minutes. My whole crew is on it.\", handle: \"@panam_p\", role: \"Fixer\", glow: \"accent\" },\n]\n\n/**\n * Cyber testimonials — glowing slate review cards with mono handles.\n */\nexport function TestimonialsCyber() {\n  return (\n    <section className=\"border-b border-primary/20 bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl\">\n        <p className=\"font-mono text-[11px] tracking-[0.3em] uppercase text-primary\">// runner_logs</p>\n        <h2 className=\"mt-4 text-[clamp(2rem,5vw,3.25rem)] font-black tracking-tight\">Word from the grid</h2>\n\n        <div className=\"mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4\">\n          {REVIEWS.map((r) => (\n            <figure\n              key={r.handle}\n              className={`flex flex-col justify-between border bg-card p-6 ${r.glow === \"accent\" ? \"border-accent/40\" : \"border-primary/40\"}`}\n            >\n              <blockquote className=\"text-base leading-snug\">&ldquo;{r.quote}&rdquo;</blockquote>\n              <figcaption className=\"mt-5\">\n                <span className={`block font-mono text-sm font-bold ${r.glow === \"accent\" ? \"text-accent\" : \"text-primary\"}`}>\n                  {r.handle}\n                </span>\n                <span className=\"font-mono text-[11px] tracking-[0.15em] uppercase text-muted-foreground\">{r.role}</span>\n              </figcaption>\n            </figure>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/testimonials-cyber.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

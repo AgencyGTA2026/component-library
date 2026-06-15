@@ -183,6 +183,75 @@ import { ServiceNoir } from "@/registry/blocks/service/service-noir"
 import { FaqNoir } from "@/registry/blocks/misc/faq-noir"
 import { FooterNoir } from "@/registry/blocks/footers/footer-noir"
 import { PageNoir } from "@/registry/blocks/layouts/page-noir"
+// bauhaus — a full constructivist theme, one block per category
+import { HeaderBauhaus } from "@/registry/blocks/headers/header-bauhaus"
+import { HeroBauhaus } from "@/registry/blocks/heroes/hero-bauhaus"
+import { BentoBauhaus } from "@/registry/blocks/bento/bento-bauhaus"
+import { FeatureBauhaus } from "@/registry/blocks/features/feature-bauhaus"
+import { ContentBauhaus } from "@/registry/blocks/content/content-bauhaus"
+import { ParallaxBauhaus } from "@/registry/blocks/parallax/parallax-bauhaus"
+import { ShopBauhaus } from "@/registry/blocks/commerce/shop-bauhaus"
+import { MediaBauhaus } from "@/registry/blocks/media/media-bauhaus"
+import { ModalBauhaus } from "@/registry/blocks/overlays/modal-bauhaus"
+import { NavBauhaus } from "@/registry/blocks/navigation/nav-bauhaus"
+import { AboutBauhaus } from "@/registry/blocks/about/about-bauhaus"
+import { ChartBauhaus } from "@/registry/blocks/charts/chart-bauhaus"
+import { StatesBauhaus } from "@/registry/blocks/states/states-bauhaus"
+import { FormBauhaus } from "@/registry/blocks/forms/form-bauhaus"
+import { CalcBauhaus } from "@/registry/blocks/calculators/calc-bauhaus"
+import { PricingBauhaus } from "@/registry/blocks/pricing/pricing-bauhaus"
+import { TestimonialsBauhaus } from "@/registry/blocks/testimonials/testimonials-bauhaus"
+import { CtaBauhaus } from "@/registry/blocks/cta/cta-bauhaus"
+import { ServiceBauhaus } from "@/registry/blocks/service/service-bauhaus"
+import { FaqBauhaus } from "@/registry/blocks/misc/faq-bauhaus"
+import { FooterBauhaus } from "@/registry/blocks/footers/footer-bauhaus"
+import { PageBauhaus } from "@/registry/blocks/layouts/page-bauhaus"
+// cyber — a full cyberpunk/neon theme, one block per category
+import { HeaderCyber } from "@/registry/blocks/headers/header-cyber"
+import { HeroCyber } from "@/registry/blocks/heroes/hero-cyber"
+import { BentoCyber } from "@/registry/blocks/bento/bento-cyber"
+import { FeatureCyber } from "@/registry/blocks/features/feature-cyber"
+import { ContentCyber } from "@/registry/blocks/content/content-cyber"
+import { ParallaxCyber } from "@/registry/blocks/parallax/parallax-cyber"
+import { ShopCyber } from "@/registry/blocks/commerce/shop-cyber"
+import { MediaCyber } from "@/registry/blocks/media/media-cyber"
+import { ModalCyber } from "@/registry/blocks/overlays/modal-cyber"
+import { NavCyber } from "@/registry/blocks/navigation/nav-cyber"
+import { AboutCyber } from "@/registry/blocks/about/about-cyber"
+import { ChartCyber } from "@/registry/blocks/charts/chart-cyber"
+import { StatesCyber } from "@/registry/blocks/states/states-cyber"
+import { FormCyber } from "@/registry/blocks/forms/form-cyber"
+import { CalcCyber } from "@/registry/blocks/calculators/calc-cyber"
+import { PricingCyber } from "@/registry/blocks/pricing/pricing-cyber"
+import { TestimonialsCyber } from "@/registry/blocks/testimonials/testimonials-cyber"
+import { CtaCyber } from "@/registry/blocks/cta/cta-cyber"
+import { ServiceCyber } from "@/registry/blocks/service/service-cyber"
+import { FaqCyber } from "@/registry/blocks/misc/faq-cyber"
+import { FooterCyber } from "@/registry/blocks/footers/footer-cyber"
+import { PageCyber } from "@/registry/blocks/layouts/page-cyber"
+// studio — a full modernist-wellness theme, one block per category
+import { HeaderStudio } from "@/registry/blocks/headers/header-studio"
+import { HeroStudio } from "@/registry/blocks/heroes/hero-studio"
+import { BentoStudio } from "@/registry/blocks/bento/bento-studio"
+import { FeatureStudio } from "@/registry/blocks/features/feature-studio"
+import { ContentStudio } from "@/registry/blocks/content/content-studio"
+import { ParallaxStudio } from "@/registry/blocks/parallax/parallax-studio"
+import { ShopStudio } from "@/registry/blocks/commerce/shop-studio"
+import { MediaStudio } from "@/registry/blocks/media/media-studio"
+import { ModalStudio } from "@/registry/blocks/overlays/modal-studio"
+import { NavStudio } from "@/registry/blocks/navigation/nav-studio"
+import { AboutStudio } from "@/registry/blocks/about/about-studio"
+import { ChartStudio } from "@/registry/blocks/charts/chart-studio"
+import { StatesStudio } from "@/registry/blocks/states/states-studio"
+import { FormStudio } from "@/registry/blocks/forms/form-studio"
+import { CalcStudio } from "@/registry/blocks/calculators/calc-studio"
+import { PricingStudio } from "@/registry/blocks/pricing/pricing-studio"
+import { TestimonialsStudio } from "@/registry/blocks/testimonials/testimonials-studio"
+import { CtaStudio } from "@/registry/blocks/cta/cta-studio"
+import { ServiceStudio } from "@/registry/blocks/service/service-studio"
+import { FaqStudio } from "@/registry/blocks/misc/faq-studio"
+import { FooterStudio } from "@/registry/blocks/footers/footer-studio"
+import { PageStudio } from "@/registry/blocks/layouts/page-studio"
 
 export type Vibe =
   | "editorial"
@@ -193,6 +262,9 @@ export type Vibe =
   | "services"
   | "retro"
   | "noir"
+  | "bauhaus"
+  | "cyber"
+  | "studio"
 
 export interface CategoryMeta {
   slug: string
@@ -445,6 +517,78 @@ export const BLOCKS: BlockMeta[] = [
   { name: "faq-noir", title: "Noir FAQ", category: "misc", vibe: "noir", description: "A serif accordion divided by gold hairlines.", previewHeight: 620, component: FaqNoir },
   { name: "footer-noir", title: "Noir footer", category: "footers", vibe: "noir", description: "Hairline link columns beneath a serif wordmark and gold rule.", previewHeight: 520, component: FooterNoir },
   { name: "page-noir", title: "Jewellery maison site (noir)", category: "layouts", vibe: "noir", description: "Dark-luxury one-pager from ten noir blocks.", previewHeight: 900, component: PageNoir },
+
+  // bauhaus — a full constructivist theme, one block per category
+  { name: "header-bauhaus", title: "Bauhaus header", category: "headers", vibe: "bauhaus", description: "Geometric logo mark beside heavy nav over a thick keyline.", previewHeight: 220, component: HeaderBauhaus },
+  { name: "hero-bauhaus", title: "Bauhaus hero", category: "heroes", vibe: "bauhaus", description: "Heavy slab headline beside a composition of primary shapes.", previewHeight: 640, component: HeroBauhaus },
+  { name: "bento-bauhaus", title: "Bauhaus bento", category: "bento", vibe: "bauhaus", description: "Thick-keyline grid of flat primary-color cells.", previewHeight: 700, component: BentoBauhaus },
+  { name: "feature-bauhaus", title: "Bauhaus features", category: "features", vibe: "bauhaus", description: "Numbered rows with a flat color block and a hard shape.", previewHeight: 620, component: FeatureBauhaus },
+  { name: "content-bauhaus", title: "Bauhaus bulletin", category: "content", vibe: "bauhaus", description: "Flat color cards with hard category labels.", previewHeight: 560, component: ContentBauhaus },
+  { name: "parallax-bauhaus", title: "Bauhaus parallax", category: "parallax", vibe: "bauhaus", description: "A statement band where primary shapes drift on scroll.", previewHeight: 520, component: ParallaxBauhaus },
+  { name: "shop-bauhaus", title: "Bauhaus poster shop", category: "commerce", vibe: "bauhaus", description: "Bordered cells with geometric prints and an add button.", previewHeight: 820, component: ShopBauhaus },
+  { name: "media-bauhaus", title: "Bauhaus gallery", category: "media", vibe: "bauhaus", description: "A hard-edged grid that opens a flat-color lightbox.", previewHeight: 560, component: MediaBauhaus },
+  { name: "modal-bauhaus", title: "Bauhaus modal", category: "overlays", vibe: "bauhaus", description: "A thick-keyline dialog with a primary-shape header.", previewHeight: 360, component: ModalBauhaus },
+  { name: "nav-bauhaus", title: "Bauhaus anchor nav", category: "navigation", vibe: "bauhaus", description: "Boxed cells; the active one fills with primary red.", previewHeight: 520, component: NavBauhaus },
+  { name: "about-bauhaus", title: "Bauhaus about", category: "about", vibe: "bauhaus", description: "Principles as flat-color cells over a thick keyline grid.", previewHeight: 560, component: AboutBauhaus },
+  { name: "chart-bauhaus", title: "Bauhaus stats", category: "charts", vibe: "bauhaus", description: "Flat color bars in a thick-keyline frame.", previewHeight: 480, component: ChartBauhaus },
+  { name: "states-bauhaus", title: "Bauhaus 404", category: "states", vibe: "bauhaus", description: "Oversized slab numeral over a composition of primary shapes.", previewHeight: 600, component: StatesBauhaus },
+  { name: "form-bauhaus", title: "Bauhaus enrolment form", category: "forms", vibe: "bauhaus", description: "Thick-keyline fields and flat chips with a success swap.", previewHeight: 720, component: FormBauhaus },
+  { name: "calc-bauhaus", title: "Bauhaus tuition estimator", category: "calculators", vibe: "bauhaus", description: "Pick a course and extras; a slab total updates.", previewHeight: 640, component: CalcBauhaus },
+  { name: "pricing-bauhaus", title: "Bauhaus pricing", category: "pricing", vibe: "bauhaus", description: "Flat-color plan cards in a thick-keyline frame.", previewHeight: 720, component: PricingBauhaus },
+  { name: "testimonials-bauhaus", title: "Bauhaus testimonials", category: "testimonials", vibe: "bauhaus", description: "One flat-color pull-quote over a keyline review grid.", previewHeight: 600, component: TestimonialsBauhaus },
+  { name: "cta-bauhaus", title: "Bauhaus CTA", category: "cta", vibe: "bauhaus", description: "A flat primary banner cut by a diagonal of geometric shapes.", previewHeight: 520, component: CtaBauhaus },
+  { name: "service-bauhaus", title: "Bauhaus process", category: "service", vibe: "bauhaus", description: "A four-step rail of flat-color cells over a keyline grid.", previewHeight: 560, component: ServiceBauhaus },
+  { name: "faq-bauhaus", title: "Bauhaus FAQ", category: "misc", vibe: "bauhaus", description: "A thick-keyline accordion with a flat-color toggle.", previewHeight: 620, component: FaqBauhaus },
+  { name: "footer-bauhaus", title: "Bauhaus footer", category: "footers", vibe: "bauhaus", description: "A geometric mark and keyline link columns over a thick rule.", previewHeight: 520, component: FooterBauhaus },
+  { name: "page-bauhaus", title: "Design school site (bauhaus)", category: "layouts", vibe: "bauhaus", description: "Constructivist one-pager from nine bauhaus blocks.", previewHeight: 900, component: PageBauhaus },
+
+  // cyber — a full cyberpunk/neon theme, one block per category
+  { name: "header-cyber", title: "Cyber header", category: "headers", vibe: "cyber", description: "Glowing mono nav bar with a cyan status dot.", previewHeight: 220, component: HeaderCyber },
+  { name: "hero-cyber", title: "Cyber hero", category: "heroes", vibe: "cyber", description: "Neon gradient headline over a scanline grid with glowing CTAs.", previewHeight: 640, component: HeroCyber },
+  { name: "bento-cyber", title: "Cyber bento", category: "bento", vibe: "cyber", description: "Glowing slate panels with neon icon accents.", previewHeight: 760, component: BentoCyber },
+  { name: "feature-cyber", title: "Cyber features", category: "features", vibe: "cyber", description: "Alternating rows with a neon checklist and a glowing panel.", previewHeight: 720, component: FeatureCyber },
+  { name: "content-cyber", title: "Cyber feed", category: "content", vibe: "cyber", description: "Glowing slate cards with mono category tags.", previewHeight: 560, component: ContentCyber },
+  { name: "parallax-cyber", title: "Cyber parallax", category: "parallax", vibe: "cyber", description: "A neon statement over a perspective grid that drifts on scroll.", previewHeight: 520, component: ParallaxCyber },
+  { name: "shop-cyber", title: "Cyber gear shop", category: "commerce", vibe: "cyber", description: "Glowing slate cards with neon prices and add buttons.", previewHeight: 820, component: ShopCyber },
+  { name: "media-cyber", title: "Cyber gallery", category: "media", vibe: "cyber", description: "A neon grid that opens a glowing scanline lightbox.", previewHeight: 560, component: MediaCyber },
+  { name: "modal-cyber", title: "Cyber modal", category: "overlays", vibe: "cyber", description: "A glowing terminal-style access dialog with Escape close.", previewHeight: 360, component: ModalCyber },
+  { name: "nav-cyber", title: "Cyber anchor nav", category: "navigation", vibe: "cyber", description: "A glowing tab rail; the active tab lights up cyan.", previewHeight: 520, component: NavCyber },
+  { name: "about-cyber", title: "Cyber about", category: "about", vibe: "cyber", description: "Manifesto cards with glowing neon icon frames.", previewHeight: 560, component: AboutCyber },
+  { name: "chart-cyber", title: "Cyber stats", category: "charts", vibe: "cyber", description: "Glowing neon KPI tiles with charged progress bars.", previewHeight: 480, component: ChartCyber },
+  { name: "states-cyber", title: "Cyber 404", category: "states", vibe: "cyber", description: "A glitched neon error code over a scanline grid backdrop.", previewHeight: 600, component: StatesCyber },
+  { name: "form-cyber", title: "Cyber access form", category: "forms", vibe: "cyber", description: "Glowing terminal fields and neon chips with a success swap.", previewHeight: 700, component: FormCyber },
+  { name: "calc-cyber", title: "Cyber compute estimator", category: "calculators", vibe: "cyber", description: "Scale cores and memory; a neon total updates.", previewHeight: 640, component: CalcCyber },
+  { name: "pricing-cyber", title: "Cyber pricing", category: "pricing", vibe: "cyber", description: "Slate plan cards; the featured one glows cyan.", previewHeight: 720, component: PricingCyber },
+  { name: "testimonials-cyber", title: "Cyber testimonials", category: "testimonials", vibe: "cyber", description: "Glowing slate review cards with mono handles.", previewHeight: 560, component: TestimonialsCyber },
+  { name: "cta-cyber", title: "Cyber CTA", category: "cta", vibe: "cyber", description: "A neon-bordered panel over a glowing grid with a charged button.", previewHeight: 520, component: CtaCyber },
+  { name: "service-cyber", title: "Cyber process", category: "service", vibe: "cyber", description: "A four-step rail of glowing neon-numbered cells.", previewHeight: 560, component: ServiceCyber },
+  { name: "faq-cyber", title: "Cyber FAQ", category: "misc", vibe: "cyber", description: "Glowing slate accordion with a neon toggle.", previewHeight: 620, component: FaqCyber },
+  { name: "footer-cyber", title: "Cyber footer", category: "footers", vibe: "cyber", description: "A glowing mono mark over neon link columns.", previewHeight: 520, component: FooterCyber },
+  { name: "page-cyber", title: "Neural-OS site (cyber)", category: "layouts", vibe: "cyber", description: "Neon cyberpunk one-pager from nine cyber blocks.", previewHeight: 900, component: PageCyber },
+
+  // studio — a full modernist-wellness theme, one block per category
+  { name: "header-studio", title: "Studio header", category: "headers", vibe: "studio", description: "Airy serif wordmark with quiet sans nav and a blush CTA.", previewHeight: 200, component: HeaderStudio },
+  { name: "hero-studio", title: "Studio hero", category: "heroes", vibe: "studio", description: "A soft serif headline over greige with an airy media panel.", previewHeight: 680, component: HeroStudio },
+  { name: "bento-studio", title: "Studio bento", category: "bento", vibe: "studio", description: "Calm rounded cards in greige with a single blush accent cell.", previewHeight: 720, component: BentoStudio },
+  { name: "feature-studio", title: "Studio features", category: "features", vibe: "studio", description: "Alternating airy rows with a soft media panel and checklist.", previewHeight: 900, component: FeatureStudio },
+  { name: "content-studio", title: "Studio journal", category: "content", vibe: "studio", description: "A soft serif featured post beside a quiet hairline list.", previewHeight: 680, component: ContentStudio },
+  { name: "parallax-studio", title: "Studio parallax", category: "parallax", vibe: "studio", description: "A calm serif statement with soft blush washes drifting on scroll.", previewHeight: 520, component: ParallaxStudio },
+  { name: "shop-studio", title: "Studio shop", category: "commerce", vibe: "studio", description: "Soft rounded retail cards with a quiet hover reveal.", previewHeight: 820, component: ShopStudio },
+  { name: "media-studio", title: "Studio gallery", category: "media", vibe: "studio", description: "A soft rounded grid that opens a calm lightbox.", previewHeight: 560, component: MediaStudio },
+  { name: "modal-studio", title: "Studio modal", category: "overlays", vibe: "studio", description: "A soft rounded intro-offer dialog with Escape and backdrop close.", previewHeight: 360, component: ModalStudio },
+  { name: "nav-studio", title: "Studio anchor nav", category: "navigation", vibe: "studio", description: "A calm sticky rail with a soft blush active pill.", previewHeight: 520, component: NavStudio },
+  { name: "about-studio", title: "Studio about", category: "about", vibe: "studio", description: "Values as soft hairline cards with quiet blush icons.", previewHeight: 560, component: AboutStudio },
+  { name: "chart-studio", title: "Studio stats", category: "charts", vibe: "studio", description: "Calm KPI cards with soft blush measure bars.", previewHeight: 460, component: ChartStudio },
+  { name: "states-studio", title: "Studio 404", category: "states", vibe: "studio", description: "A soft serif numeral over greige with a calm blush wash.", previewHeight: 600, component: StatesStudio },
+  { name: "form-studio", title: "Studio enquiry form", category: "forms", vibe: "studio", description: "Soft rounded fields and quiet blush chips with a success swap.", previewHeight: 720, component: FormStudio },
+  { name: "calc-studio", title: "Studio cost calculator", category: "calculators", vibe: "studio", description: "Set classes per week; see drop-in vs membership savings.", previewHeight: 520, component: CalcStudio },
+  { name: "pricing-studio", title: "Studio memberships", category: "pricing", vibe: "studio", description: "Soft rounded plan cards; the featured one in blush.", previewHeight: 760, component: PricingStudio },
+  { name: "testimonials-studio", title: "Studio testimonials", category: "testimonials", vibe: "studio", description: "One soft serif quote at a time, paged with a crossfade.", previewHeight: 520, component: TestimonialsStudio },
+  { name: "cta-studio", title: "Studio CTA", category: "cta", vibe: "studio", description: "A calm rounded panel with a soft blush wash and one quiet action.", previewHeight: 520, component: CtaStudio },
+  { name: "service-studio", title: "Studio process", category: "service", vibe: "studio", description: "A calm four-step rail with soft serif numerals.", previewHeight: 520, component: ServiceStudio },
+  { name: "faq-studio", title: "Studio FAQ", category: "misc", vibe: "studio", description: "A calm hairline accordion with a soft blush toggle.", previewHeight: 620, component: FaqStudio },
+  { name: "footer-studio", title: "Studio footer", category: "footers", vibe: "studio", description: "A calm serif wordmark over quiet hairline link columns.", previewHeight: 520, component: FooterStudio },
+  { name: "page-studio", title: "Pilates studio site (studio)", category: "layouts", vibe: "studio", description: "Calm modernist one-pager from nine studio blocks.", previewHeight: 900, component: PageStudio },
 ]
 
 export interface DemoMeta {
@@ -465,6 +609,9 @@ export const DEMOS: DemoMeta[] = [
   { vibe: "services", business: "Calder Home Services", industry: "HVAC, plumbing & electric", tagline: "Services — trust blue, amber CTA", component: PageHome },
   { vibe: "retro", business: "Poptone Soda Co.", industry: "Craft soda brand", tagline: "Retro — Memphis pop, cream & coral", component: PageRetro },
   { vibe: "noir", business: "Aurum", industry: "Fine jewellery maison", tagline: "Noir — near-black, gold, serif luxury", component: PageNoir },
+  { vibe: "bauhaus", business: "Werkbund", industry: "Design school & poster studio", tagline: "Bauhaus — primary color, geometry, heavy type", component: PageBauhaus },
+  { vibe: "cyber", business: "Nexen", industry: "Neural OS / netrunner platform", tagline: "Cyber — neon on slate, mono, glow", component: PageCyber },
+  { vibe: "studio", business: "Méthode", industry: "Pilates & movement studio", tagline: "Studio — blush & stone, airy minimalist calm", component: PageStudio },
 ]
 
 export function getDemo(vibe: string) {

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "nav-studio",
+  "title": "Studio anchor nav",
+  "description": "A calm sticky rail with a soft blush active pill.",
+  "files": [
+    {
+      "path": "registry/blocks/navigation/nav-studio.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nconst SECTIONS = [\n  { id: \"classes\", label: \"Classes\" },\n  { id: \"method\", label: \"The method\" },\n  { id: \"teachers\", label: \"Teachers\" },\n  { id: \"memberships\", label: \"Memberships\" },\n  { id: \"visit\", label: \"Visit\" },\n]\n\n/**\n * Studio anchor nav — a calm sticky rail with a soft blush active pill.\n */\nexport function NavStudio() {\n  const [active, setActive] = React.useState(SECTIONS[0].id)\n\n  return (\n    <section className=\"bg-background text-foreground\">\n      <nav className=\"sticky top-0 z-10 flex flex-wrap gap-2 border-b border-border bg-background/85 px-6 py-4 backdrop-blur sm:px-10\">\n        {SECTIONS.map((s) => (\n          <button\n            key={s.id}\n            onClick={() => setActive(s.id)}\n            className={`rounded-full px-4 py-1.5 text-sm transition-colors ${\n              active === s.id ? \"bg-primary text-primary-foreground\" : \"text-muted-foreground hover:text-foreground\"\n            }`}\n          >\n            {s.label}\n          </button>\n        ))}\n      </nav>\n\n      <div className=\"mx-auto max-w-4xl px-6 py-16 sm:px-10\">\n        {SECTIONS.map((s, i) => (\n          <div key={s.id} className={active === s.id ? \"\" : \"hidden\"}>\n            <p className=\"text-xs tracking-[0.25em] uppercase text-primary\">\n              {String(i + 1).padStart(2, \"0\")}\n            </p>\n            <h3 className=\"mt-3 font-serif text-4xl tracking-tight\">{s.label}</h3>\n            <p className=\"mt-4 max-w-xl leading-relaxed text-muted-foreground\">\n              A quiet word on {s.label.toLowerCase()} — everything you need to know before your first\n              visit, gathered in one calm place.\n            </p>\n          </div>\n        ))}\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/nav-studio.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

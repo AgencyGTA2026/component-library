@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "content-studio",
+  "title": "Studio journal",
+  "description": "A soft serif featured post beside a quiet hairline list.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/content/content-studio.tsx",
+      "content": "import Link from \"next/link\"\nimport { ArrowUpRight } from \"lucide-react\"\n\nconst POSTS = [\n  { cat: \"Movement\", title: \"Five minutes of mobility before coffee\", read: \"4 min\", featured: true },\n  { cat: \"Wellbeing\", title: \"Why we made the studio phone-free\", read: \"3 min\" },\n  { cat: \"Nutrition\", title: \"Eating to recover, not to restrict\", read: \"6 min\" },\n  { cat: \"Studio\", title: \"Meet the teachers behind Méthode\", read: \"5 min\" },\n]\n\n/**\n * Studio journal — a soft serif featured post beside a quiet hairline list.\n */\nexport function ContentStudio() {\n  const [lead, ...rest] = POSTS\n  return (\n    <section className=\"bg-background px-6 py-20 text-foreground sm:px-10 sm:py-28\">\n      <div className=\"mx-auto max-w-6xl\">\n        <div className=\"flex items-end justify-between border-b border-border pb-6\">\n          <h2 className=\"font-serif text-[clamp(1.75rem,4vw,3rem)] tracking-tight\">The Journal</h2>\n          <Link href=\"#\" className=\"text-sm text-muted-foreground hover:text-foreground\">\n            All entries\n          </Link>\n        </div>\n\n        <div className=\"mt-10 grid gap-12 lg:grid-cols-[1.4fr_1fr]\">\n          <Link href=\"#\" className=\"group\">\n            <div className=\"relative aspect-[16/10] overflow-hidden rounded-[1.25rem] bg-secondary\">\n              <div className=\"absolute inset-0 bg-[radial-gradient(circle_at_35%_30%,rgba(201,142,134,0.32),transparent_60%)]\" />\n              <span className=\"absolute top-4 left-4 text-xs tracking-[0.2em] uppercase text-muted-foreground\">{lead.cat}</span>\n            </div>\n            <h3 className=\"mt-6 font-serif text-3xl leading-tight tracking-tight transition-colors group-hover:text-primary\">\n              {lead.title}\n            </h3>\n            <p className=\"mt-3 text-xs tracking-[0.15em] uppercase text-muted-foreground\">{lead.read} read</p>\n          </Link>\n\n          <div className=\"divide-y divide-border border-y border-border\">\n            {rest.map((p) => (\n              <Link key={p.title} href=\"#\" className=\"group flex items-start justify-between gap-4 py-6\">\n                <div>\n                  <span className=\"text-[11px] tracking-[0.2em] uppercase text-primary\">{p.cat}</span>\n                  <p className=\"mt-2 font-serif text-xl leading-snug transition-colors group-hover:text-primary\">{p.title}</p>\n                  <p className=\"mt-2 text-[11px] tracking-[0.15em] uppercase text-muted-foreground\">{p.read}</p>\n                </div>\n                <ArrowUpRight className=\"mt-1 size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary\" />\n              </Link>\n            ))}\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/content-studio.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

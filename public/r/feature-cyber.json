@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "feature-cyber",
+  "title": "Cyber features",
+  "description": "Alternating rows with a neon checklist and a glowing panel.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/features/feature-cyber.tsx",
+      "content": "import { Check } from \"lucide-react\"\n\nconst ROWS = [\n  {\n    kicker: \"// runtime\",\n    title: \"Compile intent, not code\",\n    body: \"Describe the outcome; Nexen routes the daemons, allocates the cycles, and ships the trace. You stay in the flow.\",\n    points: [\"Sub-ms compile\", \"Auto-allocated cycles\", \"Zero boilerplate\"],\n  },\n  {\n    kicker: \"// defense\",\n    title: \"Walk past the ICE\",\n    body: \"Adaptive ICE-breakers learn the grid as you move. When the wall shifts, your route shifts with it.\",\n    points: [\"Adaptive routing\", \"Live threat map\", \"Silent fallback\"],\n  },\n]\n\n/**\n * Cyber features — alternating rows with a neon checklist and a glowing panel.\n */\nexport function FeatureCyber() {\n  return (\n    <section className=\"border-b border-primary/20 bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl space-y-6\">\n        {ROWS.map((r, i) => (\n          <div\n            key={r.title}\n            className={`grid items-center gap-8 border border-border bg-card p-6 sm:p-8 md:grid-cols-2 ${\n              i % 2 === 1 ? \"md:[&>*:first-child]:order-2\" : \"\"\n            }`}\n          >\n            <div>\n              <p className=\"font-mono text-[11px] tracking-[0.25em] uppercase text-accent\">{r.kicker}</p>\n              <h3 className=\"mt-3 text-3xl font-black tracking-tight\">{r.title}</h3>\n              <p className=\"mt-3 text-muted-foreground\">{r.body}</p>\n              <ul className=\"mt-5 space-y-2\">\n                {r.points.map((p) => (\n                  <li key={p} className=\"flex items-center gap-2.5 font-mono text-sm tracking-wide\">\n                    <span className=\"grid size-5 place-items-center border border-primary/50 text-primary shadow-[0_0_8px_rgba(34,211,238,0.4)]\">\n                      <Check className=\"size-3\" />\n                    </span>\n                    {p}\n                  </li>\n                ))}\n              </ul>\n            </div>\n            <div className=\"relative grid min-h-[200px] place-items-center overflow-hidden border border-primary/30 bg-[linear-gradient(135deg,rgba(34,211,238,0.12),rgba(255,0,229,0.12))]\">\n              <div aria-hidden className=\"absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.12)_1px,transparent_1px)] bg-[size:100%_22px]\" />\n              <span className=\"relative font-mono text-5xl font-black text-primary/70\">0{i + 1}</span>\n            </div>\n          </div>\n        ))}\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/feature-cyber.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

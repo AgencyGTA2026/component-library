@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "header-studio",
+  "title": "Studio header",
+  "description": "Airy serif wordmark with quiet sans nav and a blush CTA.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/headers/header-studio.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport Link from \"next/link\"\nimport { Menu, X } from \"lucide-react\"\n\nconst LINKS = [\"Classes\", \"Schedule\", \"Studio\", \"Journal\"]\n\n/**\n * Studio header — an airy serif wordmark with quiet sans nav and a blush CTA.\n */\nexport function HeaderStudio() {\n  const [open, setOpen] = React.useState(false)\n\n  return (\n    <header className=\"border-b border-border bg-background text-foreground\">\n      <div className=\"mx-auto flex max-w-6xl items-center justify-between px-6 py-5 sm:px-10\">\n        <Link href=\"#\" className=\"font-serif text-2xl tracking-tight\">\n          Méthode\n        </Link>\n\n        <nav className=\"hidden items-center gap-9 md:flex\">\n          {LINKS.map((l) => (\n            <Link key={l} href=\"#\" className=\"text-sm text-muted-foreground transition-colors hover:text-foreground\">\n              {l}\n            </Link>\n          ))}\n        </nav>\n\n        <div className=\"flex items-center gap-4\">\n          <Link\n            href=\"#\"\n            className=\"hidden rounded-full bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 sm:block\"\n          >\n            Book a class\n          </Link>\n          <button onClick={() => setOpen((o) => !o)} aria-label=\"Menu\" className=\"text-foreground md:hidden\">\n            {open ? <X className=\"size-5\" /> : <Menu className=\"size-5\" />}\n          </button>\n        </div>\n      </div>\n\n      {open && (\n        <nav className=\"grid gap-1 border-t border-border px-6 py-4 md:hidden\">\n          {LINKS.map((l) => (\n            <Link key={l} href=\"#\" className=\"py-2 text-sm text-muted-foreground hover:text-foreground\">\n              {l}\n            </Link>\n          ))}\n        </nav>\n      )}\n    </header>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/header-studio.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "about-studio",
+  "title": "Studio about",
+  "description": "Values as soft hairline cards with quiet blush icons.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/about/about-studio.tsx",
+      "content": "import { Leaf, Heart, Hand, Sparkles } from \"lucide-react\"\n\nconst VALUES = [\n  { icon: Hand, title: \"Hands-on, always\", body: \"Real cues, real corrections. We teach the body in front of us, not a routine on a card.\" },\n  { icon: Leaf, title: \"Calm by design\", body: \"Soft light, quiet rooms, unhurried tempo. The studio should lower your shoulders the moment you walk in.\" },\n  { icon: Heart, title: \"Every body welcome\", body: \"Beginners, post-natal, returning from injury. We meet you where you are and move from there.\" },\n  { icon: Sparkles, title: \"Progress you can feel\", body: \"Not before-and-afters — the quiet wins. Standing taller, sleeping better, moving easier.\" },\n]\n\n/**\n * Studio about — values as soft hairline cards with quiet blush icons.\n */\nexport function AboutStudio() {\n  return (\n    <section className=\"bg-background px-6 py-20 text-foreground sm:px-10 sm:py-28\">\n      <div className=\"mx-auto max-w-6xl\">\n        <div className=\"max-w-2xl\">\n          <p className=\"text-xs tracking-[0.25em] uppercase text-primary\">What we believe</p>\n          <h2 className=\"mt-4 font-serif text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] tracking-tight\">\n            A studio built around how you feel, not how you look.\n          </h2>\n        </div>\n\n        <div className=\"mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4\">\n          {VALUES.map(({ icon: Icon, title, body }) => (\n            <div key={title} className=\"rounded-2xl border border-border bg-card p-7\">\n              <span className=\"grid size-11 place-items-center rounded-full bg-secondary text-primary\">\n                <Icon className=\"size-5\" />\n              </span>\n              <p className=\"mt-5 font-serif text-lg\">{title}</p>\n              <p className=\"mt-2 text-sm leading-relaxed text-muted-foreground\">{body}</p>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/about-studio.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

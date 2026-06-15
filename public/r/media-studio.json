@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "media-studio",
+  "title": "Studio gallery",
+  "description": "A soft rounded grid that opens a calm lightbox.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/media/media-studio.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { X } from \"lucide-react\"\n\nconst TILES = [\n  { label: \"The reformer room\", tint: \"rgba(201,142,134,0.3)\", span: \"sm:col-span-2 sm:row-span-2\" },\n  { label: \"Morning light\", tint: \"rgba(217,194,184,0.55)\" },\n  { label: \"The mat floor\", tint: \"rgba(201,142,134,0.22)\" },\n  { label: \"Tea corner\", tint: \"rgba(217,194,184,0.45)\" },\n  { label: \"Changing rooms\", tint: \"rgba(201,142,134,0.28)\" },\n]\n\n/**\n * Studio gallery — a soft rounded grid that opens a calm lightbox.\n */\nexport function MediaStudio() {\n  const [open, setOpen] = React.useState<number | null>(null)\n\n  React.useEffect(() => {\n    if (open === null) return\n    const onKey = (e: KeyboardEvent) => e.key === \"Escape\" && setOpen(null)\n    window.addEventListener(\"keydown\", onKey)\n    return () => window.removeEventListener(\"keydown\", onKey)\n  }, [open])\n\n  return (\n    <section className=\"bg-background px-6 py-20 text-foreground sm:px-10 sm:py-28\">\n      <div className=\"mx-auto max-w-6xl\">\n        <p className=\"text-xs tracking-[0.25em] uppercase text-muted-foreground\">A look inside</p>\n        <h2 className=\"mt-4 font-serif text-[clamp(1.75rem,4vw,3rem)] tracking-tight\">The space</h2>\n\n        <div className=\"mt-10 grid auto-rows-[160px] grid-cols-2 gap-4 sm:grid-cols-4\">\n          {TILES.map((t, i) => (\n            <button\n              key={t.label}\n              onClick={() => setOpen(i)}\n              className={`group relative overflow-hidden rounded-[1.25rem] border border-border transition-shadow hover:shadow-sm ${t.span ?? \"\"}`}\n              style={{ background: `radial-gradient(circle at 50% 40%, ${t.tint}, var(--card) 75%)` }}\n            >\n              <span className=\"absolute bottom-3 left-3 text-[11px] tracking-[0.18em] uppercase text-muted-foreground\">{t.label}</span>\n            </button>\n          ))}\n        </div>\n      </div>\n\n      {open !== null && (\n        <div className=\"fixed inset-0 z-50 grid place-items-center bg-foreground/40 p-5 backdrop-blur-sm\" onClick={() => setOpen(null)}>\n          <button aria-label=\"Close\" onClick={() => setOpen(null)} className=\"absolute top-6 right-6 text-background hover:opacity-80\">\n            <X className=\"size-6\" />\n          </button>\n          <div\n            onClick={(e) => e.stopPropagation()}\n            className=\"relative w-full max-w-3xl overflow-hidden rounded-[1.5rem]\"\n            style={{ aspectRatio: \"16 / 10\", background: `radial-gradient(circle at 50% 40%, ${TILES[open].tint}, #fcf9f6 78%)` }}\n          >\n            <span className=\"absolute bottom-4 left-4 text-xs tracking-[0.2em] uppercase text-muted-foreground\">{TILES[open].label}</span>\n          </div>\n        </div>\n      )}\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/media-studio.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

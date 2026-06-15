@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "header-cyber",
+  "title": "Cyber header",
+  "description": "Glowing mono nav bar with a cyan status dot.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/headers/header-cyber.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport Link from \"next/link\"\nimport { Menu, X, Terminal } from \"lucide-react\"\n\nconst LINKS = [\"Console\", \"Modules\", \"Pricing\", \"Docs\"]\n\n/**\n * Cyber header — a glowing mono nav bar with a cyan status dot.\n */\nexport function HeaderCyber() {\n  const [open, setOpen] = React.useState(false)\n\n  return (\n    <header className=\"border-b border-primary/30 bg-background text-foreground shadow-[0_1px_0_0_rgba(34,211,238,0.4)]\">\n      <div className=\"mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8\">\n        <Link href=\"#\" className=\"flex items-center gap-2\">\n          <span className=\"grid size-8 place-items-center border border-primary/50 bg-primary/10 text-primary shadow-[0_0_12px_rgba(34,211,238,0.5)]\">\n            <Terminal className=\"size-4\" />\n          </span>\n          <span className=\"font-mono text-lg font-bold tracking-[0.15em] uppercase\">Nexen</span>\n          <span className=\"ml-1 size-1.5 animate-pulse rounded-full bg-primary shadow-[0_0_8px_rgba(34,211,238,0.9)]\" />\n        </Link>\n\n        <nav className=\"hidden items-center gap-7 md:flex\">\n          {LINKS.map((l) => (\n            <Link key={l} href=\"#\" className=\"font-mono text-xs tracking-[0.2em] uppercase text-muted-foreground transition-colors hover:text-primary\">\n              {l}\n            </Link>\n          ))}\n        </nav>\n\n        <div className=\"flex items-center gap-3\">\n          <Link\n            href=\"#\"\n            className=\"hidden border border-primary bg-primary/10 px-5 py-2 font-mono text-xs tracking-[0.2em] uppercase text-primary transition-all hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_16px_rgba(34,211,238,0.6)] sm:block\"\n          >\n            Jack in\n          </Link>\n          <button onClick={() => setOpen((o) => !o)} aria-label=\"Menu\" className=\"text-primary md:hidden\">\n            {open ? <X className=\"size-6\" /> : <Menu className=\"size-6\" />}\n          </button>\n        </div>\n      </div>\n\n      {open && (\n        <nav className=\"grid border-t border-primary/20 md:hidden\">\n          {LINKS.map((l) => (\n            <Link key={l} href=\"#\" className=\"border-b border-primary/10 px-5 py-3 font-mono text-xs tracking-[0.2em] uppercase last:border-b-0 hover:text-primary\">\n              {l}\n            </Link>\n          ))}\n        </nav>\n      )}\n    </header>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/header-cyber.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

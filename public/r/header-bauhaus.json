@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "header-bauhaus",
+  "title": "Bauhaus header",
+  "description": "Geometric logo mark beside heavy nav over a thick keyline.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/headers/header-bauhaus.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport Link from \"next/link\"\nimport { Menu, X } from \"lucide-react\"\n\nconst LINKS = [\"Work\", \"School\", \"Press\", \"Shop\"]\n\n/**\n * Bauhaus header — a geometric logo mark beside heavy nav over a thick keyline.\n */\nexport function HeaderBauhaus() {\n  const [open, setOpen] = React.useState(false)\n\n  return (\n    <header className=\"border-b-4 border-foreground bg-background text-foreground\">\n      <div className=\"mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8\">\n        <Link href=\"#\" className=\"flex items-center gap-3\">\n          <span className=\"flex\" aria-hidden>\n            <span className=\"size-6 rounded-full bg-primary\" />\n            <span className=\"size-6 bg-accent\" />\n            <span className=\"size-6 rounded-bl-full bg-secondary\" />\n          </span>\n          <span className=\"text-xl font-black tracking-tight uppercase\">Werkbund</span>\n        </Link>\n\n        <nav className=\"hidden items-center gap-8 md:flex\">\n          {LINKS.map((l) => (\n            <Link key={l} href=\"#\" className=\"text-sm font-bold tracking-wide uppercase transition-colors hover:text-primary\">\n              {l}\n            </Link>\n          ))}\n        </nav>\n\n        <div className=\"flex items-center gap-3\">\n          <Link\n            href=\"#\"\n            className=\"hidden border-2 border-foreground bg-primary px-5 py-2 text-sm font-black uppercase text-primary-foreground transition-colors hover:bg-secondary sm:block\"\n          >\n            Enrol\n          </Link>\n          <button onClick={() => setOpen((o) => !o)} aria-label=\"Menu\" className=\"md:hidden\">\n            {open ? <X className=\"size-6\" /> : <Menu className=\"size-6\" />}\n          </button>\n        </div>\n      </div>\n\n      {open && (\n        <nav className=\"grid border-t-2 border-foreground md:hidden\">\n          {LINKS.map((l) => (\n            <Link key={l} href=\"#\" className=\"border-b-2 border-foreground px-5 py-3 text-sm font-black uppercase last:border-b-0 hover:bg-accent\">\n              {l}\n            </Link>\n          ))}\n        </nav>\n      )}\n    </header>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/header-bauhaus.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "feature-studio",
+  "title": "Studio features",
+  "description": "Alternating airy rows with a soft media panel and checklist.",
+  "files": [
+    {
+      "path": "registry/blocks/features/feature-studio.tsx",
+      "content": "const ROWS = [\n  {\n    kicker: \"Strength\",\n    title: \"Build it slowly, keep it longer\",\n    body: \"Spring resistance meets controlled tempo. You leave stronger without the strain — the kind of strength that lasts past the soreness.\",\n    points: [\"Progressive loading\", \"Joint-friendly\", \"Posture-first\"],\n  },\n  {\n    kicker: \"Calm\",\n    title: \"A reset for your nervous system\",\n    body: \"Soft light, quiet rooms, breath-led movement. Most members tell us the calm is the part they can't go without.\",\n    points: [\"Breath cues throughout\", \"No mirrors, no rush\", \"Phone-free floor\"],\n  },\n]\n\n/**\n * Studio features — alternating airy rows with a soft media panel and checklist.\n */\nexport function FeatureStudio() {\n  return (\n    <section className=\"bg-background px-6 py-20 text-foreground sm:px-10 sm:py-28\">\n      <div className=\"mx-auto max-w-6xl space-y-20\">\n        {ROWS.map((r, i) => (\n          <div\n            key={r.title}\n            className={`grid items-center gap-10 lg:grid-cols-2 lg:gap-16 ${\n              i % 2 === 1 ? \"lg:[&>*:first-child]:order-2\" : \"\"\n            }`}\n          >\n            <div>\n              <p className=\"text-xs tracking-[0.25em] uppercase text-primary\">{r.kicker}</p>\n              <h3 className=\"mt-3 font-serif text-3xl leading-tight tracking-tight\">{r.title}</h3>\n              <p className=\"mt-4 leading-relaxed text-muted-foreground\">{r.body}</p>\n              <ul className=\"mt-6 space-y-3\">\n                {r.points.map((p) => (\n                  <li key={p} className=\"flex items-center gap-3 text-sm\">\n                    <span className=\"size-1.5 rounded-full bg-primary\" />\n                    {p}\n                  </li>\n                ))}\n              </ul>\n            </div>\n            <div className=\"relative aspect-[5/4] overflow-hidden rounded-[1.5rem] bg-secondary\">\n              <div className=\"absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(201,142,134,0.3),transparent_60%)]\" />\n            </div>\n          </div>\n        ))}\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/feature-studio.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

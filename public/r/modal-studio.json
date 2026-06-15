@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "modal-studio",
+  "title": "Studio modal",
+  "description": "A soft rounded intro-offer dialog with Escape and backdrop close.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/overlays/modal-studio.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { X } from \"lucide-react\"\n\n/**\n * Studio modal — a soft rounded intro-offer dialog with Escape + backdrop close.\n */\nexport function ModalStudio() {\n  const [open, setOpen] = React.useState(false)\n\n  React.useEffect(() => {\n    if (!open) return\n    const onKey = (e: KeyboardEvent) => e.key === \"Escape\" && setOpen(false)\n    window.addEventListener(\"keydown\", onKey)\n    return () => window.removeEventListener(\"keydown\", onKey)\n  }, [open])\n\n  return (\n    <section className=\"grid min-h-[360px] place-items-center bg-background px-6 py-16 text-foreground\">\n      <button\n        onClick={() => setOpen(true)}\n        className=\"rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90\"\n      >\n        Claim intro offer\n      </button>\n\n      {open && (\n        <div className=\"fixed inset-0 z-50 grid place-items-center bg-foreground/35 p-5 backdrop-blur-sm\" onClick={() => setOpen(false)}>\n          <div\n            role=\"dialog\"\n            aria-modal=\"true\"\n            onClick={(e) => e.stopPropagation()}\n            className=\"relative w-full max-w-sm overflow-hidden rounded-[1.5rem] border border-border bg-card text-center shadow-sm\"\n          >\n            <div className=\"h-28 bg-[radial-gradient(circle_at_50%_120%,rgba(201,142,134,0.4),transparent_70%)]\" />\n            <button aria-label=\"Close\" onClick={() => setOpen(false)} className=\"absolute top-4 right-4 text-muted-foreground hover:text-foreground\">\n              <X className=\"size-5\" />\n            </button>\n            <div className=\"px-7 pb-7\">\n              <h3 className=\"-mt-6 font-serif text-2xl tracking-tight\">Three classes, $39</h3>\n              <p className=\"mt-3 leading-relaxed text-muted-foreground\">\n                New to Méthode? Try us for two weeks. Leave your email and we&apos;ll send your intro pass.\n              </p>\n              <div className=\"mt-5 space-y-3\">\n                <input\n                  type=\"email\"\n                  placeholder=\"you@email.com\"\n                  className=\"w-full rounded-full border border-input bg-background px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring\"\n                />\n                <button\n                  onClick={() => setOpen(false)}\n                  className=\"w-full rounded-full bg-primary py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90\"\n                >\n                  Send my pass\n                </button>\n              </div>\n            </div>\n          </div>\n        </div>\n      )}\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/modal-studio.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

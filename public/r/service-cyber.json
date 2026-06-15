@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "service-cyber",
+  "title": "Cyber process",
+  "description": "A four-step rail of glowing neon-numbered cells.",
+  "files": [
+    {
+      "path": "registry/blocks/service/service-cyber.tsx",
+      "content": "const STEPS = [\n  { n: \"01\", title: \"Jack in\", body: \"Create a handle and link your deck. The grid recognises you in seconds.\", glow: \"primary\" },\n  { n: \"02\", title: \"Compile\", body: \"Describe the run. Nexen routes daemons and allocates cycles automatically.\", glow: \"accent\" },\n  { n: \"03\", title: \"Deploy\", body: \"Push to the mesh and watch the trace monitor light up in real time.\", glow: \"primary\" },\n  { n: \"04\", title: \"Extract\", body: \"Pull your payload clean, roll back any bad trace, and vanish off the grid.\", glow: \"accent\" },\n]\n\n/**\n * Cyber process — a four-step rail of glowing neon-numbered cells.\n */\nexport function ServiceCyber() {\n  return (\n    <section className=\"border-b border-primary/20 bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl\">\n        <p className=\"font-mono text-[11px] tracking-[0.3em] uppercase text-primary\">// run_sequence</p>\n        <h2 className=\"mt-4 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[0.95] tracking-tight\">\n          Four steps to own the grid.\n        </h2>\n\n        <div className=\"mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4\">\n          {STEPS.map((s) => (\n            <div\n              key={s.n}\n              className={`border bg-card p-6 ${s.glow === \"accent\" ? \"border-accent/40\" : \"border-primary/40\"}`}\n            >\n              <span\n                className={`font-mono text-5xl font-black ${\n                  s.glow === \"accent\"\n                    ? \"text-accent [text-shadow:0_0_20px_rgba(255,0,229,0.5)]\"\n                    : \"text-primary [text-shadow:0_0_20px_rgba(34,211,238,0.5)]\"\n                }`}\n              >\n                {s.n}\n              </span>\n              <p className=\"mt-4 text-xl font-black\">{s.title}</p>\n              <p className=\"mt-2 text-sm text-muted-foreground\">{s.body}</p>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/service-cyber.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

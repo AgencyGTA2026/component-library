@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "about-cyber",
+  "title": "Cyber about",
+  "description": "Manifesto cards with glowing neon icon frames.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/about/about-cyber.tsx",
+      "content": "import { Eye, Lock, Network, Zap } from \"lucide-react\"\n\nconst VALUES = [\n  { icon: Network, title: \"Open the grid\", body: \"Infrastructure should answer to its users, not its owners. We build for the runners.\", glow: \"primary\" },\n  { icon: Lock, title: \"Privacy is armor\", body: \"Your traces are yours. Zero-knowledge by default, encrypted end to end, no backdoors.\", glow: \"accent\" },\n  { icon: Zap, title: \"Speed is freedom\", body: \"Latency is a cage. Every cycle we shave is a cycle you spend ahead of the ICE.\", glow: \"primary\" },\n  { icon: Eye, title: \"Stay invisible\", body: \"The best run is the one nobody logs. We obsess over leaving no trace behind.\", glow: \"accent\" },\n]\n\n/**\n * Cyber about — manifesto cards with glowing neon icon frames.\n */\nexport function AboutCyber() {\n  return (\n    <section className=\"border-b border-primary/20 bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl\">\n        <p className=\"font-mono text-[11px] tracking-[0.3em] uppercase text-primary\">// manifest.txt</p>\n        <h2 className=\"mt-4 max-w-2xl text-[clamp(2rem,5vw,3.5rem)] font-black leading-[0.95] tracking-tight\">\n          Four rules we run by.\n        </h2>\n\n        <div className=\"mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4\">\n          {VALUES.map(({ icon: Icon, title, body, glow }) => (\n            <div\n              key={title}\n              className={`border bg-card p-6 ${glow === \"accent\" ? \"border-accent/40\" : \"border-primary/40\"}`}\n            >\n              <span\n                className={`grid size-11 place-items-center border ${\n                  glow === \"accent\"\n                    ? \"border-accent/50 text-accent shadow-[0_0_14px_rgba(255,0,229,0.45)]\"\n                    : \"border-primary/50 text-primary shadow-[0_0_14px_rgba(34,211,238,0.45)]\"\n                }`}\n              >\n                <Icon className=\"size-5\" />\n              </span>\n              <p className=\"mt-5 text-lg font-black\">{title}</p>\n              <p className=\"mt-2 text-sm text-muted-foreground\">{body}</p>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/about-cyber.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

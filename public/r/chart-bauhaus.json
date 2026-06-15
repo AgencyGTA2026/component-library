@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-bauhaus",
+  "title": "Bauhaus stats",
+  "description": "Flat color bars in a thick-keyline frame.",
+  "files": [
+    {
+      "path": "registry/blocks/charts/chart-bauhaus.tsx",
+      "content": "const BARS = [\n  { label: \"Graduates working in design\", value: 94, color: \"bg-primary\" },\n  { label: \"Courses that end in a print\", value: 100, color: \"bg-secondary\" },\n  { label: \"Students per master\", value: 8, display: \"8:1\", color: \"bg-accent\" },\n  { label: \"Years since 1919\", value: 70, display: \"106\", color: \"bg-primary\" },\n]\n\n/**\n * Bauhaus stats — flat color bars in a thick-keyline frame.\n */\nexport function ChartBauhaus() {\n  return (\n    <section className=\"border-b-4 border-foreground bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-4xl\">\n        <h2 className=\"text-[clamp(2rem,5vw,3.25rem)] font-black uppercase tracking-tighter\">The record</h2>\n\n        <div className=\"mt-10 space-y-6\">\n          {BARS.map((b) => (\n            <div key={b.label}>\n              <div className=\"flex items-end justify-between\">\n                <span className=\"text-sm font-black uppercase\">{b.label}</span>\n                <span className=\"font-mono text-lg font-black\">{b.display ?? `${b.value}%`}</span>\n              </div>\n              <div className=\"mt-2 h-8 border-2 border-foreground bg-card p-0.5\">\n                <div className={`h-full ${b.color}`} style={{ width: `${b.value}%` }} />\n              </div>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/chart-bauhaus.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

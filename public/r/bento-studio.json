@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bento-studio",
+  "title": "Studio bento",
+  "description": "Calm rounded cards in greige with a single blush accent cell.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/bento/bento-studio.tsx",
+      "content": "import { Flower2, HeartPulse, Users, Wind } from \"lucide-react\"\n\n/**\n * Studio bento — calm rounded cards in greige with a single blush accent cell.\n */\nexport function BentoStudio() {\n  return (\n    <section className=\"bg-background px-6 py-20 text-foreground sm:px-10 sm:py-28\">\n      <div className=\"mx-auto max-w-6xl\">\n        <p className=\"text-xs tracking-[0.25em] uppercase text-muted-foreground\">Why Méthode</p>\n        <h2 className=\"mt-4 max-w-2xl font-serif text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] tracking-tight\">\n          A studio that moves at your pace.\n        </h2>\n\n        <div className=\"mt-12 grid auto-rows-[minmax(150px,auto)] gap-4 sm:grid-cols-3\">\n          <div className=\"flex flex-col justify-between rounded-2xl bg-primary p-7 text-primary-foreground sm:col-span-2 sm:row-span-2\">\n            <Flower2 className=\"size-8\" />\n            <div>\n              <p className=\"font-serif text-2xl\">Six to a class, never more</p>\n              <p className=\"mt-2 max-w-sm leading-relaxed text-primary-foreground/85\">\n                Every session is small enough for hands-on cues and real corrections. You are seen,\n                not herded.\n              </p>\n            </div>\n          </div>\n\n          <div className=\"flex flex-col justify-between rounded-2xl border border-border bg-card p-7\">\n            <HeartPulse className=\"size-6 text-primary\" />\n            <p className=\"font-serif text-lg\">Low-impact, all levels</p>\n          </div>\n\n          <div className=\"flex flex-col justify-between rounded-2xl border border-border bg-card p-7\">\n            <Wind className=\"size-6 text-primary\" />\n            <p className=\"font-serif text-lg\">Breath-led tempo</p>\n          </div>\n\n          <div className=\"flex items-center gap-4 rounded-2xl bg-secondary p-7 text-secondary-foreground sm:col-span-3\">\n            <Users className=\"size-7 shrink-0\" />\n            <div>\n              <p className=\"font-serif text-lg\">Teachers who remember your name</p>\n              <p className=\"leading-relaxed text-muted-foreground\">And your last session, and what your back was doing.</p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/bento-studio.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

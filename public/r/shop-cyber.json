@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shop-cyber",
+  "title": "Cyber gear shop",
+  "description": "Glowing slate cards with neon prices and add buttons.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/commerce/shop-cyber.tsx",
+      "content": "import { Plus } from \"lucide-react\"\n\nconst GEAR = [\n  { name: \"Kiroshi Optics\", meta: \"Mk.IV implant\", price: \"2,400\", glow: \"primary\" },\n  { name: \"Sandevistan\", meta: \"Reflex booster\", price: \"8,900\", glow: \"accent\" },\n  { name: \"Mantis Blades\", meta: \"Arm cyberware\", price: \"5,200\", glow: \"primary\" },\n  { name: \"Neural Port\", meta: \"Deck interface\", price: \"1,800\", glow: \"accent\" },\n  { name: \"Subdermal Armor\", meta: \"Tier-3 plating\", price: \"3,600\", glow: \"primary\" },\n  { name: \"Ping Daemon\", meta: \"Quickhack\", price: \"640\", glow: \"accent\" },\n]\n\n/**\n * Cyber gear shop — glowing slate cards with neon prices and add buttons.\n */\nexport function ShopCyber() {\n  return (\n    <section className=\"border-b border-primary/20 bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl\">\n        <div className=\"flex flex-wrap items-end justify-between gap-4 border-b border-border pb-5\">\n          <h2 className=\"text-[clamp(2rem,5vw,3.25rem)] font-black tracking-tight\">// black_market</h2>\n          <p className=\"font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground\">eddies accepted</p>\n        </div>\n\n        <div className=\"mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3\">\n          {GEAR.map((g) => (\n            <div\n              key={g.name}\n              className={`group overflow-hidden border bg-card transition-all ${\n                g.glow === \"accent\" ? \"border-accent/40 hover:shadow-[0_0_24px_rgba(255,0,229,0.22)]\" : \"border-primary/40 hover:shadow-[0_0_24px_rgba(34,211,238,0.22)]\"\n              }`}\n            >\n              <div className=\"relative grid h-40 place-items-center overflow-hidden bg-[linear-gradient(135deg,rgba(34,211,238,0.14),rgba(255,0,229,0.14))]\">\n                <div aria-hidden className=\"absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:100%_18px]\" />\n                <span className=\"relative font-mono text-xs tracking-[0.3em] uppercase text-foreground/60\">{g.meta}</span>\n              </div>\n              <div className=\"flex items-center justify-between p-5\">\n                <div>\n                  <p className=\"text-lg font-black\">{g.name}</p>\n                  <p className=\"font-mono text-sm text-primary\">€$ {g.price}</p>\n                </div>\n                <button\n                  aria-label={`Add ${g.name}`}\n                  className=\"grid size-11 place-items-center border border-primary bg-primary/10 text-primary transition-all hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_16px_rgba(34,211,238,0.6)]\"\n                >\n                  <Plus className=\"size-5\" />\n                </button>\n              </div>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/shop-cyber.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

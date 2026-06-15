@@ -238,6 +238,84 @@
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
 }
 
+/* Bauhaus — constructivist: paper canvas, primary red/blue/yellow, heavy type. */
+
+[data-vibe="bauhaus"] {
+  --background: #f3efe6;
+  --foreground: #1a1a1a;
+  --card: #faf7f0;
+  --card-foreground: #1a1a1a;
+  --popover: #faf7f0;
+  --popover-foreground: #1a1a1a;
+  --primary: #e63422;
+  --primary-foreground: #f3efe6;
+  --secondary: #2b4cc4;
+  --secondary-foreground: #ffffff;
+  --muted: #e7e1d3;
+  --muted-foreground: #595549;
+  --accent: #f5c518;
+  --accent-foreground: #1a1a1a;
+  --destructive: #c0271a;
+  --border: #1a1a1a;
+  --input: #1a1a1a;
+  --ring: #2b4cc4;
+  --radius: 0.125rem;
+  --font-body: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Cyber — cyberpunk/neon: deep slate canvas, cyan + magenta, mono, glow. */
+
+[data-vibe="cyber"] {
+  --background: #0a0e1a;
+  --foreground: #d6f7ff;
+  --card: #111726;
+  --card-foreground: #d6f7ff;
+  --popover: #111726;
+  --popover-foreground: #d6f7ff;
+  --primary: #22d3ee;
+  --primary-foreground: #04121a;
+  --secondary: #1b2740;
+  --secondary-foreground: #d6f7ff;
+  --muted: #16203a;
+  --muted-foreground: #7d8bb0;
+  --accent: #ff00e5;
+  --accent-foreground: #12001a;
+  --destructive: #ff3b6b;
+  --border: #243049;
+  --input: #243049;
+  --ring: #22d3ee;
+  --radius: 0.25rem;
+  --font-body: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-plex-mono), ui-monospace, "SF Mono", monospace;
+}
+
+/* Studio — modernist wellness: warm greige, soft charcoal, dusty blush, airy. */
+
+[data-vibe="studio"] {
+  --background: #f6f1ee;
+  --foreground: #38322f;
+  --card: #fcf9f6;
+  --card-foreground: #38322f;
+  --popover: #fcf9f6;
+  --popover-foreground: #38322f;
+  --primary: #c98e86;
+  --primary-foreground: #fcf9f6;
+  --secondary: #ece3dd;
+  --secondary-foreground: #4a423d;
+  --muted: #ece3dd;
+  --muted-foreground: #8a7e76;
+  --accent: #d9c2b8;
+  --accent-foreground: #38322f;
+  --destructive: #b4554b;
+  --border: #e2d7cf;
+  --input: #e2d7cf;
+  --ring: #c98e86;
+  --radius: 0.7rem;
+  --font-body: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

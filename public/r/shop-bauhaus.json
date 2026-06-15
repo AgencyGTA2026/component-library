@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shop-bauhaus",
+  "title": "Bauhaus poster shop",
+  "description": "Bordered cells with geometric prints and an add button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/commerce/shop-bauhaus.tsx",
+      "content": "import { Plus } from \"lucide-react\"\n\nconst POSTERS = [\n  { name: \"Composition I\", price: 45, color: \"#e63422\", shape: \"circle\" },\n  { name: \"Blue Square\", price: 45, color: \"#2b4cc4\", shape: \"square\" },\n  { name: \"Yellow Angle\", price: 40, color: \"#f5c518\", shape: \"triangle\" },\n  { name: \"Three Points\", price: 55, color: \"#e63422\", shape: \"triangle\" },\n  { name: \"Red Circle\", price: 50, color: \"#2b4cc4\", shape: \"circle\" },\n  { name: \"Grid Study\", price: 38, color: \"#f5c518\", shape: \"square\" },\n]\n\nfunction Mark({ kind }: { kind: string }) {\n  if (kind === \"circle\") return <span className=\"size-20 rounded-full bg-foreground/85\" />\n  if (kind === \"square\") return <span className=\"size-20 bg-foreground/85\" />\n  return <span aria-hidden className=\"h-0 w-0 border-x-[40px] border-b-[70px] border-x-transparent border-b-foreground/85\" />\n}\n\n/**\n * Bauhaus poster shop — bordered cells with geometric prints and an add button.\n */\nexport function ShopBauhaus() {\n  return (\n    <section className=\"border-b-4 border-foreground bg-background px-5 py-16 text-foreground sm:px-8 sm:py-24\">\n      <div className=\"mx-auto max-w-6xl\">\n        <div className=\"flex flex-wrap items-end justify-between gap-4\">\n          <h2 className=\"text-[clamp(2rem,5vw,3.25rem)] font-black uppercase tracking-tighter\">The Poster Shop</h2>\n          <p className=\"font-mono text-xs uppercase text-muted-foreground\">Screen-printed · A1</p>\n        </div>\n\n        <div className=\"mt-10 grid gap-0 border-2 border-foreground sm:grid-cols-2 lg:grid-cols-3\">\n          {POSTERS.map((p, i) => (\n            <div\n              key={p.name}\n              className=\"group border-foreground p-5 [&:not(:last-child)]:border-b-2 sm:[&:not(:nth-child(2n))]:border-r-2 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:not(:nth-child(3n))]:border-r-2 lg:[&:nth-last-child(-n+3)]:border-b-0\"\n            >\n              <div\n                className=\"grid aspect-[3/4] place-items-center border-2 border-foreground\"\n                style={{ backgroundColor: p.color }}\n              >\n                <Mark kind={p.shape} />\n              </div>\n              <div className=\"mt-4 flex items-center justify-between\">\n                <div>\n                  <p className=\"text-lg font-black uppercase\">{p.name}</p>\n                  <p className=\"font-mono text-sm\">${p.price}</p>\n                </div>\n                <button\n                  aria-label={`Add ${p.name}`}\n                  className=\"grid size-11 place-items-center border-2 border-foreground bg-accent transition-colors hover:bg-primary hover:text-primary-foreground\"\n                >\n                  <Plus className=\"size-5\" />\n                </button>\n              </div>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/blocks/shop-bauhaus.tsx"
+    }
+  ],
+  "type": "registry:block"
+}
